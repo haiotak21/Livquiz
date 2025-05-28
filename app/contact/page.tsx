@@ -13,21 +13,21 @@ const contactMethods = [
   {
     icon: Mail,
     title: "Email Support",
-    description: "Get help via email",
+    description: "Reach out anytime via email and get a response within 24 hours.",
     contact: "support@livquiz.com",
     availability: "24/7 response",
   },
   {
     icon: Phone,
     title: "Phone Support",
-    description: "Speak with our team",
-    contact: "+1 (555) 123-4567",
+    description: "Speak directly with our team during business hours.",
+    contact: "+251 996916442",
     availability: "Mon-Fri, 9AM-6PM EST",
   },
   {
     icon: MessageCircle,
     title: "Live Chat",
-    description: "Instant help available",
+    description: "Start chatting with a specialist now!",
     contact: "Start chat",
     availability: "24/7 available",
   },
@@ -35,22 +35,22 @@ const contactMethods = [
 
 const offices = [
   {
-    city: "San Francisco",
-    address: "123 Innovation Drive, San Francisco, CA 94105",
-    phone: "+1 (555) 123-4567",
-    email: "sf@livquiz.com",
+    city: "Canada",
+    address: "Toronto, CA 94105",
+    phone: "+251 996916442",
+    email: "Canada@livquiz.com",
   },
   {
     city: "New York",
-    address: "456 Tech Avenue, New York, NY 10001",
-    phone: "+1 (555) 987-6543",
-    email: "ny@livquiz.com",
+    address: "New, New York, 10001",
+    phone: "+251 996916442",
+    email: "Newyork@livquiz.com",
   },
   {
-    city: "London",
-    address: "789 Digital Street, London, UK EC1A 1BB",
-    phone: "+44 20 7123 4567",
-    email: "london@livquiz.com",
+    city: "Ethiopia",
+    address: "Addis ababa, Mexico",
+    phone: "+251 996916442",
+    email: "Ethiopia@livquiz.com",
   },
 ]
 
@@ -74,8 +74,7 @@ export default function ContactPage() {
                 Get in Touch with LivQuiz
               </h1>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Have questions about our platform? Need help getting started? Our team is here to support you every step
-                of the way.
+                Have questions? Need assistance getting started? Our dedicated support team is here to guide you every step of the way.
               </p>
             </motion.div>
 
@@ -122,17 +121,17 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">First Name *</label>
-                      <Input placeholder="John" className="rounded-xl border-gray-200" />
+                      <Input placeholder="Haile" className="rounded-xl border-gray-200" />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Last Name *</label>
-                      <Input placeholder="Doe" className="rounded-xl border-gray-200" />
+                      <Input placeholder="Takele" className="rounded-xl border-gray-200" />
                     </div>
                   </div>
 
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
-                    <Input type="email" placeholder="john@company.com" className="rounded-xl border-gray-200" />
+                    <Input type="email" placeholder="haiotak21@gmail.com" className="rounded-xl border-gray-200" />
                   </div>
 
                   <div>

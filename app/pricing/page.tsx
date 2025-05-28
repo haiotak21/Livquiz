@@ -14,10 +14,10 @@ const planTypes = ["Personal", "Business", "School"]
 const basePlans = {
   Personal: [
     {
-      name: "Free",
-      monthlyPrice: 0,
-      annualPrice: 0,
-      period: "forever",
+      name: "Personal Basic",
+      monthlyPrice: 5.99,
+      annualPrice: 57.99,
+      period: "per month",
       description: "Perfect for individual users getting started",
       popular: false,
       features: {
@@ -36,9 +36,9 @@ const basePlans = {
       highlight: false,
     },
     {
-      name: "Pro",
-      monthlyPrice: 9,
-      annualPrice: 7.2, // 20% discount
+      name: "Active Learner",
+      monthlyPrice: 12.99,
+      annualPrice: 123.99, // 20% discount
       period: "per month",
       description: "Best for individual educators and trainers",
       popular: true,
@@ -59,9 +59,9 @@ const basePlans = {
       highlight: true,
     },
     {
-      name: "Premium",
-      monthlyPrice: 19,
-      annualPrice: 15.2, // 20% discount
+      name: "Active Learner Pro",
+      monthlyPrice: 19.99,
+      annualPrice: 191.99, // 20% discount
       period: "per month",
       description: "Advanced features for power users",
       popular: false,
@@ -84,9 +84,9 @@ const basePlans = {
   ],
   Business: [
     {
-      name: "Team",
-      monthlyPrice: 29,
-      annualPrice: 23.2, // 20% discount
+      name: "Business Basic",
+      monthlyPrice: 29.99,
+      annualPrice: 287.99, // 20% discount
       period: "per month",
       description: "Perfect for small to medium teams",
       popular: false,
@@ -107,9 +107,9 @@ const basePlans = {
       highlight: false,
     },
     {
-      name: "Enterprise",
-      monthlyPrice: 99,
-      annualPrice: 79.2, // 20% discount
+      name: "Business Pro",
+      monthlyPrice: 69.99,
+      annualPrice: 671.99, // 20% discount
       period: "per month",
       description: "For large organizations with advanced needs",
       popular: true,
@@ -157,9 +157,9 @@ const basePlans = {
   ],
   School: [
     {
-      name: "Classroom",
-      monthlyPrice: 19,
-      annualPrice: 15.2, // 20% discount
+      name: "School Basic",
+      monthlyPrice: 89.99,
+      annualPrice: 863.99, // 20% discount
       period: "per month",
       description: "Perfect for individual teachers and classrooms",
       popular: false,
@@ -180,9 +180,9 @@ const basePlans = {
       highlight: false,
     },
     {
-      name: "School",
-      monthlyPrice: 99,
-      annualPrice: 79.2, // 20% discount
+      name: "School Pro",
+      monthlyPrice: 149.99,
+      annualPrice: 1439.99, // 20% discount
       period: "per month",
       description: "Complete solution for entire schools",
       popular: true,
@@ -205,9 +205,9 @@ const basePlans = {
       highlight: true,
     },
     {
-      name: "District",
-      monthlyPrice: 299,
-      annualPrice: 239.2, // 20% discount
+      name: "Enterprise",
+      monthlyPrice: 299.99,
+      annualPrice: 2879.99, // 20% discount
       period: "per month",
       description: "Enterprise solution for school districts",
       popular: false,

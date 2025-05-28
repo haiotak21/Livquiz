@@ -8,8 +8,8 @@ const steps = [
   {
     number: "01",
     title: "Create",
-    description: "Create amazing tests using the app's numerous question forms and quiz options.",
-    features: ["Multiple question types", "Rich media support", "Custom branding", "Template library"],
+    description: "Create engaging quizzes with various question types, rich media, and flexible configuration options.",
+    features: ["Multiple question types", "Flashcard", "Study set", "Exam's", "Rich media support"],
     image: "https://images.unsplash.com/photo-1596496181848-3091d4878b24?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGVkdWNhdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
     bgColor: "bg-blue-50",
     borderColor: "border-purple-200",
@@ -17,7 +17,7 @@ const steps = [
   {
     number: "02",
     title: "Host or Share",
-    description: "Elevate excitement with live game sessions and thrilling sessions on a large screen.",
+    description: "Host live sessions or share links to engage players on any device, instantly.",
     features: ["Multiple sharing options", "Live sessions", "Real-time participation", "Mobile-friendly"],
     image: "https://images.unsplash.com/photo-1567057419565-4349c49d8a04?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     bgColor: "bg-pink-50",
@@ -26,7 +26,7 @@ const steps = [
   {
     number: "03",
     title: "Play",
-    description: "Engage in live quizzes with a host-provided PIN, answering questions on your device.",
+    description: "Join live quizzes with a host-provided code and track your performance instantly with in-depth stats and leaderboards.",
     features: ["Real-time analytics", "Performance tracking", "Detailed reports", "Export capabilities"],
     image: "https://plus.unsplash.com/premium_photo-1676998931123-75789162f170?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDl8fGVkdWNhdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
     bgColor: "bg-yellow-50",

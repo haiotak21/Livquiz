@@ -13,7 +13,7 @@ const useCases = [
     subtitle: "For Students & Teachers",
     description:
       "Transform classrooms with interactive quizzes that make learning engaging and fun. Perfect for homework, assessments, and review sessions.",
-    features: ["Classroom Management", "Progress Tracking", "Curriculum Integration", "Student Engagement"],
+    features: ["Classroom Management", "Progress Tracking", "Student Engagement", "Flashcards & Study Sets", "Live Exam Mode"],
     image: "https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     color: "from-blue-500 to-blue-600",
     bgColor: "bg-blue-50",
@@ -28,17 +28,6 @@ const useCases = [
     image: "https://images.unsplash.com/photo-1533854775446-95c4609da544?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     color: "from-purple-500 to-purple-600",
     bgColor: "bg-purple-50",
-  },
-  {
-    icon: Users,
-    title: "Events & Conferences",
-    subtitle: "For Audience Engagement",
-    description:
-      "Captivate your audience with live polls, Q&A sessions, and interactive presentations that boost participation.",
-    features: ["Live Polling", "Audience Q&A", "Real-time Feedback", "Event Analytics"],
-    image: "https://plus.unsplash.com/premium_photo-1682284353484-4e16001c58eb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    color: "from-green-500 to-green-600",
-    bgColor: "bg-green-50",
   },
 ]
 
@@ -64,8 +53,7 @@ export default function UseCasesSection() {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            From classrooms to boardrooms, LivQuiz adapts to your needs with powerful features designed for diverse
-            learning environments.
+           From classrooms to boardrooms, LivQuiz adapts to your needs with powerful features designed for diverse learning environments.
           </p>
         </motion.div>
 

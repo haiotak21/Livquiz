@@ -56,7 +56,7 @@ export default function DemoSection() {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            No signup required! Jump into a live demo and see why millions choose LivQuiz for interactive learning.
+            No signup required! Jump into a demo or join a live session to see how LivQuiz transforms learning.
           </p>
         </motion.div>
 

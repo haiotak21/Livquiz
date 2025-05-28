@@ -37,7 +37,7 @@ const popularArticles = [
   "How to create your first quiz",
   "Setting up live quiz sessions",
   "Understanding quiz analytics",
-  "Customizing quiz themes",
+  "Customizing Tag themes",
   "Managing participants",
 ]
 
@@ -112,7 +112,7 @@ export default function HelpPage() {
               <div className="bg-white p-8 rounded-3xl shadow-lg">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Still need help?</h2>
                 <p className="text-gray-600 mb-6">
-                  Can't find what you're looking for? Our support team is here to help you.
+                  Can't find what you're looking for? Our support team is ready to assist you.
                 </p>
                 <div className="space-y-4">
                   <Button

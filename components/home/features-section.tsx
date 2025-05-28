@@ -8,14 +8,14 @@ const features = [
     icon: Users,
     title: "Live Multiplayer Quizzes",
     description:
-      "Real-time quiz sessions with unlimited participants. Perfect for classrooms, events, and team building.",
+      "Host real-time quizzes with unlimited participants. Perfect for classrooms, training sessions, and group challenges.",
     color: "from-blue-500 to-blue-600",
     bgColor: "bg-blue-50",
   },
   {
     icon: Play,
     title: "Instructor Control Panel",
-    description: "Complete control over quiz flow, timing, and participant management with real-time moderation tools.",
+    description: "Control flow, reveal questions one at a time, view live stats, manage players — all with full instructor/tutor access.",
     color: "from-purple-500 to-purple-600",
     bgColor: "bg-purple-50",
   },
@@ -23,49 +23,49 @@ const features = [
     icon: BarChart3,
     title: "Advanced Analytics",
     description:
-      "Detailed insights into performance, learning patterns, and progress tracking with exportable reports.",
+      "Track individual and group stats, question performance, leaderboard insights, and quiz-level analytics.",
     color: "from-green-500 to-green-600",
     bgColor: "bg-green-50",
   },
   {
     icon: Shield,
     title: "Anti-Cheating Technology",
-    description: "Secure quiz delivery with randomized questions, time limits, and advanced monitoring systems.",
+    description: "One-question-at-a-time reveal, countdowns, guest name obfuscation Guest<x>, and restricted creation permissions.",
     color: "from-red-500 to-red-600",
     bgColor: "bg-red-50",
   },
   {
     icon: Clock,
     title: "Resumable Progress",
-    description: "Never lose progress with auto-save functionality and seamless session recovery capabilities.",
+    description: "Auto-saves progress even when disconnected or exiting — for solo and assigned quizzes.",
     color: "from-blue-500 to-blue-600",
     bgColor: "bg-blue-50",
   },
   {
     icon: BookOpen,
     title: "All-in-One Learning Suite",
-    description: "Quizzes, flashcards, exams, certifications, and LMS integration in one comprehensive platform.",
+    description: "Supports quizzes, flashcards, exams, certifications — fully integrated, no need for third-party tools.",
     color: "from-indigo-500 to-indigo-600",
     bgColor: "bg-indigo-50",
   },
   {
     icon: Zap,
     title: "Instant Feedback",
-    description: "Real-time scoring and immediate feedback to enhance learning outcomes and engagement.",
+    description: "Real-time scoring and submission stats during live sessions, helping players learn immediately.",
     color: "from-yellow-500 to-yellow-600",
     bgColor: "bg-yellow-50",
   },
   {
     icon: Globe,
     title: "Global Accessibility",
-    description: "Multi-language support, mobile-responsive design, and accessibility features for inclusive learning.",
+    description: "Fully responsive on mobile, tablet, and desktop; designed for accessibility and broad device compatibility.",
     color: "from-teal-500 to-teal-600",
     bgColor: "bg-teal-50",
   },
   {
     icon: Award,
     title: "Gamification & Rewards",
-    description: "Leaderboards, badges, achievements, and point systems to motivate and engage learners.",
+    description: "Leaderboards and competitive features are built-in. (Badges/XP systems can be marked as future if not live yet.)",
     color: "from-pink-500 to-pink-600",
     bgColor: "bg-pink-50",
   },
@@ -93,8 +93,7 @@ export default function FeaturesSection() {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover the comprehensive features that make LivQuiz the ultimate platform for creating engaging
-            educational experiences.
+           Unlock the tools that make LivQuiz a complete solution for students, teachers, tutors, and professionals.
           </p>
         </motion.div>
 

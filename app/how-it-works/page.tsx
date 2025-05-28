@@ -13,7 +13,7 @@ const steps = [
     title: "Create Your Quiz",
     description:
       "Use our intuitive drag-and-drop builder to create engaging quizzes with multiple question types, media, and custom themes.",
-    features: ["Multiple question types", "Rich media support", "Custom branding", "Template library"],
+    features: ["Multiple question types", "Rich media support", "Study set", "Exams"],
     image: "https://images.unsplash.com/photo-1516298252535-cf2ac5147f9b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
     color: "bg-blue-100",
     iconColor: "text-blue-600",
@@ -91,8 +91,7 @@ export default function HowItWorksPage() {
                 How LivQuiz Works
               </h1>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Discover how easy it is to create, share, and analyze interactive quizzes that engage your audience and
-                drive results.
+                Discover how simple it is to create, share, and analyze interactive quizzes that captivate your audience and drive real results.
               </p>
             </motion.div>
 
@@ -232,7 +231,7 @@ export default function HowItWorksPage() {
             >
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">Ready to Get Started?</h2>
               <p className="text-lg lg:text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-                Join thousands of educators and trainers who trust LivQuiz for their interactive learning needs.
+                Join thousands of educators and trainers who rely on LivQuiz to create engaging, interactive learning experiences.
               </p>
               <Button
                 size="lg"

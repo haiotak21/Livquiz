@@ -30,38 +30,38 @@ const features = [
   {
     icon: Zap,
     title: "Easy Quiz Creation",
-    description: "Create professional quizzes in minutes with our intuitive drag-and-drop builder",
+    description: "Create professional quizzes in minutes using our intuitive drag-and-drop builder.",
     benefits: ["Multiple question types", "Custom themes", "Media integration", "Real-time preview"],
   },
   {
     icon: Users,
     title: "Live Interactive Sessions",
-    description: "Host engaging live quiz sessions with real-time participation and instant feedback",
+    description: "Host real-time quiz events with dynamic engagement features.",
     benefits: ["Unlimited participants", "Live leaderboards", "Real-time responses", "Audience engagement"],
   },
   {
     icon: BarChart3,
     title: "Advanced Analytics",
-    description: "Get detailed insights into participant performance and learning outcomes",
-    benefits: ["Performance tracking", "Detailed reports", "Progress monitoring", "Export capabilities"],
+    description: "Gain detailed insights to track performance and learning outcomes.",
+    benefits: ["Performance tracking", "Detailed reports", "Progress monitoring", "Export reports"],
   },
   {
     icon: Shield,
     title: "Secure & Reliable",
-    description: "Enterprise-grade security with 99.9% uptime guarantee",
-    benefits: ["Data encryption", "GDPR compliant", "Secure hosting", "Regular backups"],
+    description: "Enterprise-grade security and infrastructure for peace of mind.",
+    benefits: ["Data encryption", "GDPR compliant", "Secure cloud hosting", "Regular automated backups", "99.9% uptime guarantee"],
   },
   {
     icon: Clock,
     title: "Time Management",
-    description: "Advanced timing controls and scheduling features for better quiz management",
+    description: "Stay in control with precise timing and scheduling options.",
     benefits: ["Custom timers", "Scheduled quizzes", "Auto-submission", "Time tracking"],
   },
   {
     icon: BookOpen,
     title: "Learning Management",
-    description: "Complete LMS integration with course management and progress tracking",
-    benefits: ["Course creation", "Student management", "Grade tracking", "Certification"],
+    description: "Seamlessly manage learners, track progress, and issue certifications.",
+    benefits: ["Course creation tools", "Student management", "Grade tracking", "Certification"],
   },
 ]
 
@@ -84,7 +84,7 @@ const lmsFeatures = [
   {
     icon: Monitor,
     title: "Centralized Portal",
-    description: "Users can get to their learning activities using any online device with our portals.",
+    description: "Access all your learning materials from any device, Web-based platform for seamless learning, Compatible with mobile, tablet, and desktop",
     color: "bg-pink-100",
     iconColor: "text-pink-600",
   },
@@ -205,11 +205,10 @@ export default function ProductsPage() {
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                  LivQuiz Is A Powerful Online Quiz Maker That Lets You Create And Publish Engaging Quizzes
+                  LivQuiz – The Powerful Online Quiz Maker.
                 </h1>
                 <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed">
-                  Transform your teaching and training with interactive quizzes that engage, educate, and inspire.
-                  Perfect for educators, trainers, and organizations of all sizes.
+                  Transform your teaching, training, or team development with interactive quizzes built to captivate and educate.
                 </p>
                 <Button
                   size="lg"
@@ -255,10 +254,10 @@ export default function ProductsPage() {
               className="text-center mb-16"
             >
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
-                Amazing Tools To Assist You In Creating Expert Quizzes
+                Amazing Tools to Build Expert Quizzes
               </h2>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                Discover powerful features designed to make quiz creation effortless and engaging
+                Discover powerful features designed to make quiz creation effortless and effective.
               </p>
             </motion.div>
 
@@ -360,7 +359,7 @@ export default function ProductsPage() {
                 viewport={{ once: true }}
               >
                 <div className="inline-block bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold mb-6">
-                  Live Quizzes
+                  Live Quizzes, Real-Time Engagement
                 </div>
                 <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-12">
                   Create and Deliver <span className="font-black">Interactive Quizzes</span> in Real-Time
@@ -517,7 +516,7 @@ export default function ProductsPage() {
                 Ready to create amazing quizzes?
               </h2>
               <p className="text-lg lg:text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-                Join thousands of educators and trainers who trust LivQuiz for their interactive learning needs.
+                Join thousands of educators and trainers using LivQuiz for interactive learning.
               </p>
               <Button
                 size="lg"

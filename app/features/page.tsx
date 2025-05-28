@@ -51,7 +51,7 @@ const mainFeatures = [
     icon: Lightbulb,
     title: "Intuitive Quiz Builder",
     description: "Create professional quizzes with our drag-and-drop interface. No technical skills required.",
-    features: ["Multiple question types", "Rich media support", "Custom themes", "Template library"],
+    features: ["Multiple question types", "Rich media support", "Custom Tags", "Exams"],
     color: "bg-blue-50",
     iconColor: "text-blue-600",
   },
@@ -59,7 +59,7 @@ const mainFeatures = [
     icon: Play,
     title: "Live Interactive Sessions",
     description: "Engage your audience with real-time quizzes that keep everyone participating.",
-    features: ["Live leaderboards", "Real-time responses", "Instant feedback", "Audience polls"],
+    features: ["Live leaderboards", "Real-time responses", "Instant feedback"],
     color: "bg-purple-50",
     iconColor: "text-purple-600",
   },
@@ -67,7 +67,7 @@ const mainFeatures = [
     icon: BarChart3,
     title: "Advanced Analytics",
     description: "Get detailed insights into performance and learning outcomes with comprehensive reports.",
-    features: ["Performance tracking", "Progress monitoring", "Custom reports", "Data export"],
+    features: ["Performance tracking", "Progress monitoring", "Export reports", "Data export"],
     color: "bg-green-50",
     iconColor: "text-green-600",
   },
@@ -91,7 +91,7 @@ const mainFeatures = [
     icon: Globe,
     title: "Global Accessibility",
     description: "Multi-language support and accessibility features for inclusive learning experiences.",
-    features: ["Multi-language", "Mobile responsive", "Screen reader support", "Keyboard navigation"],
+    features: ["Multi-language", "Mobile responsive", "Tablet responsive"],
     color: "bg-indigo-50",
     iconColor: "text-indigo-600",
   },
@@ -390,7 +390,7 @@ export default function FeaturesPage() {
                 Ready to Transform Your Learning Experience?
               </h2>
               <p className="text-lg lg:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                Start creating engaging quizzes today. No credit card required, no setup fees.
+                Start creating engaging quizzes today. No Requirment, no setup fees.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

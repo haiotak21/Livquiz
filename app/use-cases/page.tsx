@@ -14,16 +14,15 @@ const useCases = [
   {
     icon: Building2,
     title: "Corporate Training",
-    subtitle: "Enhance Employee Development",
+    subtitle: "Boost Employee Development with Interactive Learning",
     description:
-      "Boost employee engagement and knowledge retention with interactive training modules and assessments that drive real business results.",
+      "Empower your workforce with engaging training modules, skill assessments, and real-time quizzes designed to enhance retention and drive measurable outcomes.",
     features: [
-      "Employee onboarding",
-      "Skills assessment",
-      "Compliance training",
+      "Streamline employee onboarding and compliance training",
+      "Evaluate skills and performance with actionable insights",
+      "Foster teamwork through interactive multiplayer quizzes",
       "Performance evaluation",
-      "Team building activities",
-    ],
+      ],
     image: "https://images.unsplash.com/photo-1622481178814-529856e39ba8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
     stats: { companies: "1K+", employees: "100K+", completion: "95%" },
     id: "corporate-training",
@@ -31,15 +30,13 @@ const useCases = [
   {
     icon: GraduationCap,
     title: "Education",
-    subtitle: "Transform Learning Experiences",
+    subtitle: "Revolutionize Learning for Students and Educators",
     description:
-      "Engage students with interactive quizzes that make learning fun and effective. Perfect for classrooms, online courses, and educational assessments.",
+      "Transform classrooms and online courses with interactive quizzes that promote engagement and improve knowledge retention.",
     features: [
-      "Classroom engagement tools",
-      "Student progress tracking",
-      "Curriculum integration",
-      "Homework and assignments",
-      "Parent-teacher communication",
+      "Track student progress and assign personalized homework",
+      "Organize quizzes easily to fit your curriculum needs",
+      "Boost classroom participation with live instructor-led quizzes",
     ],
     image: "https://images.unsplash.com/photo-1600510424051-30d592a75353?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
     stats: { users: "50K+", quizzes: "500K+", satisfaction: "98%" },
@@ -48,15 +45,12 @@ const useCases = [
   {
     icon: Users,
     title: "Events & Conferences",
-    subtitle: "Engage Your Audience",
+    subtitle: "Create Engaging and Interactive Event Experiences",
     description:
-      "Create memorable event experiences with live polls, Q&A sessions, and interactive presentations that keep audiences engaged.",
+      "Capture audience attention with live quizzes and polls that bring energy and participation to your presentations.",
     features: [
-      "Live audience polling",
-      "Real-time Q&A",
-      "Event feedback collection",
-      "Networking activities",
-      "Speaker evaluations",
+      "Run real-time quizzes and polls for instant feedback",
+      "Moderate sessions with live controls for smooth interaction",
     ],
     image: "https://images.unsplash.com/photo-1617814086906-d847a8bc6fca?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzh8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
     stats: { events: "5K+", participants: "2M+", engagement: "92%" },
@@ -65,15 +59,13 @@ const useCases = [
   {
     icon: Briefcase,
     title: "Recruitment",
-    subtitle: "Streamline Hiring Process",
+    subtitle: "Simplify Candidate Assessment with Customized Quizzes",
     description:
-      "Efficiently assess candidates with customized skill tests and personality assessments that help you find the perfect fit for your team.",
+      "Make hiring smarter and faster by using skill-based quizzes to evaluate candidates objectively.",
     features: [
-      "Skill-based assessments",
-      "Personality tests",
-      "Technical evaluations",
-      "Interview preparation",
-      "Candidate ranking",
+      "Build tailored skill and technical assessments",
+      "Gather performance data to support hiring decisions",
+      "Prepare candidates with practice quizzes",
     ],
     image: "https://images.unsplash.com/photo-1549458395-e14f2e6d39c7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTh8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
     stats: { hires: "25K+", companies: "800+", accuracy: "89%" },
@@ -100,11 +92,10 @@ export default function UseCasesPage() {
               className="text-center mb-16"
             >
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                LivQuiz Powers Success Across Industries
+                🎯 LivQuiz Powers Success Across Industries
               </h1>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                From classrooms to boardrooms, discover how organizations worldwide use LivQuiz to create engaging
-                experiences that drive results.
+                From classrooms to boardrooms, LivQuiz helps educators, trainers, and leaders deliver impactful learning experiences that inspire engagement and deliver measurable results.
               </p>
             </motion.div>
 
@@ -233,7 +224,7 @@ export default function UseCasesPage() {
                 Ready to transform your industry?
               </h2>
               <p className="text-lg lg:text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-                Join thousands of organizations that trust LivQuiz to deliver exceptional interactive experiences.
+                Join thousands of organizations who rely on LivQuiz to create engaging, interactive learning and assessment experiences that drive real results.
               </p>
               <Button
                 size="lg"

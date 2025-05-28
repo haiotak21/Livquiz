@@ -46,8 +46,8 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
-            LivQuiz transforms learning into an engaging, interactive experience. Create, share, and play quizzes that
-            make education enjoyable and effective.
+            LivQuiz makes learning engaging, collaborative, and impactful. Whether you're a student, educator, or
+            professional, create, play, or host quizzes in real time — on any device.
           </motion.p>
 
           {/* Quiz Code Input */}
