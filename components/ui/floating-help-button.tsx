@@ -5,13 +5,12 @@ import { motion, AnimatePresence } from "framer-motion"
 import { HelpCircle, X, MessageCircle, Book, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import LiveChat from "./live-chat"
 
 const helpOptions = [
   {
     icon: MessageCircle,
     title: "Live Chat",
-    description: "Get instant help from our AI assistant",
+    description: "Chat with our support team",
     action: "Start Chat",
     onClick: "startLiveChat",
   },
@@ -24,10 +23,17 @@ const helpOptions = [
   },
   {
     icon: Phone,
-    title: "Contact Us",
-    description: "Reach out via email or phone",
-    action: "Get in Touch",
-    href: "/contact",
+    title: "Email Support",
+    description: "support@livquiz.com",
+    action: "Copy Email",
+    onClick: "copyEmail",
+  },
+  {
+    icon: Phone,
+    title: "Phone Support",
+    description: "+1 (555) 123-4567",
+    action: "Copy Number",
+    onClick: "copyPhone",
   },
 ]
 
@@ -38,10 +44,34 @@ interface FloatingHelpButtonProps {
 export default function FloatingHelpButton({ showOnPage = true }: FloatingHelpButtonProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [isChatOpen, setIsChatOpen] = useState(false)
+  const [copied, setCopied] = useState<string | null>(null)
 
   const handleLiveChat = () => {
+    if (window.Tawk_API) {
+      window.Tawk_API.maximize();
+    }
     setIsChatOpen(true)
     setIsOpen(false)
+  }
+
+  const copyToClipboard = (text: string, type: string) => {
+    navigator.clipboard.writeText(text)
+    setCopied(type)
+    setTimeout(() => setCopied(null), 2000)
+  }
+
+  const handleOptionClick = (option: typeof helpOptions[0]) => {
+    switch (option.onClick) {
+      case "startLiveChat":
+        handleLiveChat()
+        break
+      case "copyEmail":
+        copyToClipboard("support@livquiz.com", "email")
+        break
+      case "copyPhone":
+        copyToClipboard("+1 (555) 123-4567", "phone")
+        break
+    }
   }
 
   useEffect(() => {
@@ -79,7 +109,7 @@ export default function FloatingHelpButton({ showOnPage = true }: FloatingHelpBu
                   <motion.div key={index} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                     {option.onClick === "startLiveChat" ? (
                       <button
-                        onClick={() => window.dispatchEvent(new CustomEvent('open-live-chat'))}
+                        onClick={() => handleLiveChat()}
                         className="w-full p-3 text-left rounded-xl hover:bg-purple-50 transition-colors border border-gray-100 hover:border-[#6052CC]"
                       >
                         <div className="flex items-start space-x-3">
@@ -93,21 +123,19 @@ export default function FloatingHelpButton({ showOnPage = true }: FloatingHelpBu
                         </div>
                       </button>
                     ) : (
-                      <Link
-                        href={option.href || "#"}
-                        onClick={() => setIsOpen(false)}
-                        className="block w-full p-3 text-left rounded-xl hover:bg-purple-50 transition-colors border border-gray-100 hover:border-[#6052CC]"
+                      <div
+                        className="p-3 border rounded-lg hover:bg-gray-50 cursor-pointer"
+                        onClick={() => handleOptionClick(option)}
                       >
-                        <div className="flex items-start space-x-3">
-                          <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <option.icon className="w-4 h-4 text-[#6052CC]" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="font-medium text-gray-900 text-sm">{option.title}</div>
-                            <div className="text-gray-600 text-xs">{option.description}</div>
-                          </div>
-                        </div>
-                      </Link>
+                        <h4 className="font-medium">{option.title}</h4>
+                        <p className="text-sm text-gray-600">{option.description}</p>
+                        <Button
+                          variant="link"
+                          className="p-0 h-auto text-blue-600 hover:text-blue-700"
+                        >
+                          {copied === option.onClick ? "Copied!" : option.action}
+                        </Button>
+                      </div>
                     )}
                   </motion.div>
                 ))}
@@ -157,9 +185,6 @@ export default function FloatingHelpButton({ showOnPage = true }: FloatingHelpBu
           <div className="absolute inset-0 rounded-full bg-[#6052CC] animate-ping opacity-20"></div>
         </motion.button>
       </div>
-
-      {/* Live Chat Component */}
-      <LiveChat isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
     </>
   )
 }

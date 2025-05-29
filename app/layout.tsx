@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import React from 'react'
 import FloatingHelpButton from "@/components/ui/floating-help-button";
+import TawkToChat from '@/components/TawkToChat';
 
 export const metadata: Metadata = {
   title: 'LivQuiz',
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-background font-sans antialiased">
         {children}
         <FloatingHelpButton />
+        <TawkToChat />
       </body>
     </html>
   )
