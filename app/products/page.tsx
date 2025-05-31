@@ -10,6 +10,7 @@ import { motion } from "framer-motion"
 import { handlePageLoadScroll } from "@/utils/navigation"
 import {
   Check,
+  X,
   Zap,
   Users,
   BarChart3,
@@ -24,6 +25,15 @@ import {
   Target,
   Smartphone,
   Activity,
+  GraduationCap,
+  Building2,
+  Globe,
+  Link,
+  FileText,
+  Settings,
+  Palette,
+  HeadphonesIcon,
+  Award,
 } from "lucide-react"
 
 const features = [
@@ -49,7 +59,13 @@ const features = [
     icon: Shield,
     title: "Secure & Reliable",
     description: "Enterprise-grade security and infrastructure for peace of mind.",
-    benefits: ["Data encryption", "GDPR compliant", "Secure cloud hosting", "Regular automated backups", "99.9% uptime guarantee"],
+    benefits: [
+      "Data encryption",
+      "GDPR compliant",
+      "Secure cloud hosting",
+      "Regular automated backups",
+      "99.9% uptime guarantee",
+    ],
   },
   {
     icon: Clock,
@@ -62,6 +78,46 @@ const features = [
     title: "Learning Management",
     description: "Seamlessly manage learners, track progress, and issue certifications.",
     benefits: ["Course creation tools", "Student management", "Grade tracking", "Certification"],
+  },
+]
+
+// Feature Comparison Data
+const comparisonFeatures = [
+  { name: "Quiz Participants", free: "50", pro: "Unlimited", team: "Unlimited", enterprise: "Unlimited" },
+  { name: "Monthly Quizzes", free: "5", pro: "Unlimited", team: "Unlimited", enterprise: "Unlimited" },
+  { name: "Question Types", free: "Basic", pro: "✓", team: "✓", enterprise: "✓" },
+  { name: "Advanced Analytics", free: "✗", pro: "✓", team: "✓", enterprise: "✓" },
+  { name: "Exam Mode", free: "✗", pro: "✓", team: "✓", enterprise: "✓" },
+  { name: "Custom Branding", free: "✗", pro: "✓", team: "✓", enterprise: "✓" },
+  { name: "Team Collaboration", free: "✗", pro: "✗", team: "✓", enterprise: "✓" },
+  { name: "LMS Integration", free: "✗", pro: "✗", team: "✓", enterprise: "✓" },
+  { name: "API Access", free: "✗", pro: "✗", team: "Limited", enterprise: "Full" },
+  { name: "Priority Support", free: "✗", pro: "Email", team: "Phone & Chat", enterprise: "24/7 Dedicated" },
+]
+
+// Enterprise Solutions
+const enterpriseSolutions = [
+  {
+    icon: Shield,
+    title: "Enterprise Security",
+    description: "Advanced security features including SSO, SAML, LDAP integration, and comprehensive audit trails.",
+    color: "bg-blue-100",
+    iconColor: "text-blue-600",
+  },
+  {
+    icon: Palette,
+    title: "Custom Branding",
+    description:
+      "Complete white-label solutions with your branding, custom domains, and personalized user experiences.",
+    color: "bg-purple-100",
+    iconColor: "text-purple-600",
+  },
+  {
+    icon: HeadphonesIcon,
+    title: "Dedicated Support",
+    description: "Dedicated account managers, 24/7 support, training programs, and SLA guarantees.",
+    color: "bg-yellow-100",
+    iconColor: "text-yellow-600",
   },
 ]
 
@@ -84,7 +140,8 @@ const lmsFeatures = [
   {
     icon: Monitor,
     title: "Centralized Portal",
-    description: "Access all your learning materials from any device, Web-based platform for seamless learning, Compatible with mobile, tablet, and desktop",
+    description:
+      "Access all your learning materials from any device, Web-based platform for seamless learning, Compatible with mobile, tablet, and desktop",
     color: "bg-pink-100",
     iconColor: "text-pink-600",
   },
@@ -208,7 +265,8 @@ export default function ProductsPage() {
                   LivQuiz – The Powerful Online Quiz Maker.
                 </h1>
                 <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed">
-                  Transform your teaching, training, or team development with interactive quizzes built to captivate and educate.
+                  Transform your teaching, training, or team development with interactive quizzes built to captivate and
+                  educate.
                 </p>
                 <Button
                   size="lg"
@@ -243,8 +301,126 @@ export default function ProductsPage() {
           </div>
         </section>
 
+        {/* Platform Editions Section */}
+        <section className="py-16 lg:py-24 bg-gray-50">
+          <div className="container max-w-7xl mx-auto px-4 lg:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">Platform Editions</h2>
+              <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+                Specialized versions of LivQuiz designed for specific use cases and environments
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              {/* Education Edition */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className="flex items-start gap-6 mb-8">
+                  <div className="w-36 h-36 bg-blue-500 rounded-2xl flex flex-col items-center justify-center text-white p-4">
+                    <GraduationCap className="w-12 h-12 mb-2" />
+                    <div className="text-center">
+                      <div className="font-bold">LivQuiz</div>
+                      <div className="text-xs">Optimized for K-12 and higher education</div>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">LivQuiz for Education</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Specially designed for educational institutions with features that support curriculum standards,
+                      grade management, and student privacy compliance.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  <div className="flex items-center gap-2 bg-gray-50 rounded-full py-2 px-4">
+                    <Monitor className="w-5 h-5 text-gray-600" />
+                    <span className="text-sm font-medium text-gray-700">Computer Sharing</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-gray-50 rounded-full py-2 px-4">
+                    <Users className="w-5 h-5 text-gray-600" />
+                    <span className="text-sm font-medium text-gray-700">Parent Portal</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-gray-50 rounded-full py-2 px-4">
+                    <Shield className="w-5 h-5 text-gray-600" />
+                    <span className="text-sm font-medium text-gray-700">FERPA Compliance</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-gray-50 rounded-full py-2 px-4">
+                    <BarChart3 className="w-5 h-5 text-gray-600" />
+                    <span className="text-sm font-medium text-gray-700">Grade Integration</span>
+                  </div>
+                </div>
+
+                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-full py-3 font-semibold">
+                  Learn More
+                </Button>
+              </motion.div>
+
+              {/* Business Edition */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className="flex items-start gap-6 mb-8">
+                  <div className="w-36 h-36 bg-purple-500 rounded-2xl flex flex-col items-center justify-center text-white p-4">
+                    <Building2 className="w-12 h-12 mb-2" />
+                    <div className="text-center">
+                      <div className="font-bold">LivQuiz</div>
+                      <div className="text-xs">Optimized for K-12 and higher education</div>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">LivQuiz for Business</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Tailored for corporate training, employee development, and professional certification programs
+                      with advanced reporting and compliance features.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  <div className="flex items-center gap-2 bg-gray-50 rounded-full py-2 px-4">
+                    <Users className="w-5 h-5 text-gray-600" />
+                    <span className="text-sm font-medium text-gray-700">HR Tracking</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-gray-50 rounded-full py-2 px-4">
+                    <Award className="w-5 h-5 text-gray-600" />
+                    <span className="text-sm font-medium text-gray-700">Certification Management</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-gray-50 rounded-full py-2 px-4">
+                    <Shield className="w-5 h-5 text-gray-600" />
+                    <span className="text-sm font-medium text-gray-700">Enterprise Security</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-gray-50 rounded-full py-2 px-4">
+                    <FileText className="w-5 h-5 text-gray-600" />
+                    <span className="text-sm font-medium text-gray-700">Compliance Reporting</span>
+                  </div>
+                </div>
+
+                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-full py-3 font-semibold">
+                  Learn More
+                </Button>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Amazing Tools Section */}
-        <section id="amazing-tools" className="py-16 lg:py-24 bg-gray-50">
+        <section id="amazing-tools" className="py-16 lg:py-24 bg-white">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -269,7 +445,7 @@ export default function ProductsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300"
+                  className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100"
                 >
                   <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
                     <feature.icon className="w-6 h-6 text-purple-600" />
@@ -287,6 +463,124 @@ export default function ProductsPage() {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Feature Comparison Section */}
+        <section className="py-16 lg:py-24 bg-gray-50">
+          <div className="container max-w-7xl mx-auto px-4 lg:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">Feature Comparison</h2>
+              <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+                Compare features across all our plans to find the perfect fit for your needs
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-3xl shadow-xl overflow-hidden"
+            >
+              {/* Header */}
+              <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-6">
+                <h3 className="text-2xl font-bold text-center">Plan Feature Comparison</h3>
+              </div>
+
+              {/* Comparison Table */}
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-gray-200">
+                      <th className="text-left p-6 font-semibold text-gray-900">Feature</th>
+                      <th className="text-center p-6 font-semibold text-gray-900">Free</th>
+                      <th className="text-center p-6 font-semibold text-gray-900">Pro</th>
+                      <th className="text-center p-6 font-semibold text-gray-900">Team</th>
+                      <th className="text-center p-6 font-semibold text-gray-900">Enterprise</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {comparisonFeatures.map((feature, index) => (
+                      <tr
+                        key={index}
+                        className={`border-b border-gray-100 ${index % 2 === 0 ? "bg-gray-50" : "bg-white"}`}
+                      >
+                        <td className="p-6 font-medium text-gray-900">{feature.name}</td>
+                        <td className="p-6 text-center">
+                          {feature.free === "✗" ? (
+                            <X className="w-5 h-5 text-red-500 mx-auto" />
+                          ) : feature.free === "✓" ? (
+                            <Check className="w-5 h-5 text-green-500 mx-auto" />
+                          ) : (
+                            <span
+                              className={feature.free === "Basic" ? "text-orange-600 font-medium" : "text-gray-900"}
+                            >
+                              {feature.free}
+                            </span>
+                          )}
+                        </td>
+                        <td className="p-6 text-center">
+                          {feature.pro === "✗" ? (
+                            <X className="w-5 h-5 text-red-500 mx-auto" />
+                          ) : feature.pro === "✓" ? (
+                            <Check className="w-5 h-5 text-green-500 mx-auto" />
+                          ) : (
+                            <span className={feature.pro === "Email" ? "text-green-600 font-medium" : "text-gray-900"}>
+                              {feature.pro}
+                            </span>
+                          )}
+                        </td>
+                        <td className="p-6 text-center">
+                          {feature.team === "✗" ? (
+                            <X className="w-5 h-5 text-red-500 mx-auto" />
+                          ) : feature.team === "✓" ? (
+                            <Check className="w-5 h-5 text-green-500 mx-auto" />
+                          ) : (
+                            <span
+                              className={
+                                feature.team === "Limited"
+                                  ? "text-orange-600 font-medium"
+                                  : feature.team === "Phone & Chat"
+                                    ? "text-green-600 font-medium"
+                                    : "text-gray-900"
+                              }
+                            >
+                              {feature.team}
+                            </span>
+                          )}
+                        </td>
+                        <td className="p-6 text-center">
+                          {feature.enterprise === "✗" ? (
+                            <X className="w-5 h-5 text-red-500 mx-auto" />
+                          ) : feature.enterprise === "✓" ? (
+                            <Check className="w-5 h-5 text-green-500 mx-auto" />
+                          ) : (
+                            <span
+                              className={
+                                feature.enterprise === "Full"
+                                  ? "text-green-600 font-medium"
+                                  : feature.enterprise === "24/7 Dedicated"
+                                    ? "text-green-600 font-medium"
+                                    : "text-gray-900"
+                              }
+                            >
+                              {feature.enterprise}
+                            </span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </motion.div>
           </div>
         </section>
 
@@ -347,7 +641,7 @@ export default function ProductsPage() {
                     alt="Live Quiz Mobile Interface"
                     width={900}
                     height={800}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 rounded-2xl"
                   />
                 </div>
               </motion.div>
@@ -439,6 +733,191 @@ export default function ProductsPage() {
                   </div>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Enterprise Solutions Section */}
+        <section className="py-16 lg:py-24 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-700">
+          <div className="container max-w-7xl mx-auto px-4 lg:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">Enterprise Solutions</h2>
+              <p className="text-lg lg:text-xl text-white/90 max-w-3xl mx-auto">
+                Scalable, secure, and customizable solutions for large organizations and institutions
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              {enterpriseSolutions.map((solution, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-8 text-center hover:bg-white/15 transition-all duration-300"
+                >
+                  <div
+                    className={`w-16 h-16 ${solution.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}
+                  >
+                    <solution.icon className={`w-8 h-8 ${solution.iconColor}`} />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-4">{solution.title}</h3>
+                  <p className="text-white/80 leading-relaxed">{solution.description}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold">
+                  Contact Sales Team
+                </Button>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                viewport={{ once: true }}
+              >
+                <Button
+                  variant="outline"
+                  className="border-2 border-purple text-purple hover:bg-purple hover:text-purple-700 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300"
+                >
+                  Request Demo
+                </Button>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Product Ecosystem Section */}
+        <section className="py-16 lg:py-24 bg-gray-50">
+          <div className="container max-w-7xl mx-auto px-4 lg:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">Our Product Ecosystem</h2>
+              <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+                Comprehensive solutions for every learning environment and educational need
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all duration-300"
+              >
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                    <Globe className="w-8 h-8 text-blue-500" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">LivQuiz Web Platform</h3>
+                  <p className="text-gray-600 leading-relaxed mb-8">
+                    Full-featured web application with complete quiz creation, hosting, and analytics capabilities.
+                    Perfect for classrooms, training sessions, and remote learning.
+                  </p>
+                  <Button
+                    variant="outline"
+                    className="border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white rounded-full px-6 py-2 font-medium"
+                  >
+                    Explore Web Platform
+                  </Button>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all duration-300"
+              >
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                    <Smartphone className="w-8 h-8 text-purple-500" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">LivQuiz Mobile Apps</h3>
+                  <p className="text-gray-600 leading-relaxed mb-8">
+                    Native iOS and Android applications optimized for on-the-go learning and participation. Seamless
+                    sync with web platform for cross-device continuity.
+                  </p>
+                  <Button
+                    variant="outline"
+                    className="border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white rounded-full px-6 py-2 font-medium"
+                  >
+                    Download Apps
+                  </Button>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all duration-300"
+              >
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                    <Link className="w-8 h-8 text-green-500" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">LivQuiz API & Integrations</h3>
+                  <p className="text-gray-600 leading-relaxed mb-8">
+                    Powerful APIs and integrations for LMS platforms, educational tools, and custom applications. Build
+                    LivQuiz functionality into your existing workflows.
+                  </p>
+                  <Button
+                    variant="outline"
+                    className="border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white rounded-full px-6 py-2 font-medium"
+                  >
+                    View API Docs
+                  </Button>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 md:col-span-2 lg:col-span-1"
+              >
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-6">
+                    <Settings className="w-8 h-8 text-gray-700" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">LivQuiz Enterprise</h3>
+                  <p className="text-gray-600 leading-relaxed mb-8">
+                    Scalable enterprise solution with advanced security, compliance features, custom branding, and
+                    dedicated support for large organizations.
+                  </p>
+                  <Button
+                    variant="outline"
+                    className="border-2 border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white rounded-full px-6 py-2 font-medium"
+                  >
+                    Contact Sales
+                  </Button>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
