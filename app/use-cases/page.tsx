@@ -84,7 +84,7 @@ const useCases = [
       "Performance evaluation",
     ],
     image:
-      "https://images.unsplash.com/photo-1622481178814-529856e39ba8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
     stats: { companies: "1K+", employees: "100K+", completion: "95%" },
     id: "corporate-training",
     headerTitle: "🏢 Corporate Training & Development",
@@ -142,7 +142,7 @@ const useCases = [
       "Boost classroom participation with live instructor-led quizzes",
     ],
     image:
-      "https://images.unsplash.com/photo-1600510424051-30d592a75353?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
+      "https://plus.unsplash.com/premium_photo-1686730540270-93f2c33351b6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
     stats: { users: "50K+", quizzes: "500K+", satisfaction: "98%" },
     id: "education",
     headerTitle: "🎓 Education & Academic Learning",
@@ -252,7 +252,7 @@ const useCases = [
       "Prepare candidates with practice quizzes",
     ],
     image:
-      "https://images.unsplash.com/photo-1549458395-e14f2e6d39c7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTh8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
+      "https://plus.unsplash.com/premium_photo-1664304752635-3e0d8d8185e3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3VwZXIlMjBjYXJ8ZW58MHx8MHx8fDA%3D",
     stats: { hires: "25K+", companies: "800+", accuracy: "89%" },
     id: "recruitment",
     headerTitle: "💼 Recruitment & Hiring",
@@ -430,21 +430,21 @@ export default function UseCasesPage() {
         </section>
 
         {/* Category Navigation */}
-        <section className="bg-white border-b border-gray-200 sticky top-20 z-40">
+        <section className="bg-white border-b border-gray-200 sticky top-20 z-40 max-lg:hidden">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
             <div className="flex flex-wrap justify-center gap-2 py-4">
               {categoryNavigation.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => scrollToSection(category.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                  className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                     activeSection === category.id
-                      ? "bg-[#9333ea] text-white shadow-lg"
-                      : "text-gray-600 hover:text-[#9333ea] hover:bg-purple-50"
+                      ? "bg-purple-600 text-white shadow-lg"
+                      : "text-gray-600 hover:text-purple-600 hover:bg-purple-50"
                   }`}
                 >
-                  <category.icon className="w-4 h-4" />
-                  <span className="text-sm">{category.name}</span>
+                  <category.icon className="w-5 h-5" />
+                  <span>{category.name}</span>
                 </button>
               ))}
             </div>
@@ -477,13 +477,13 @@ export default function UseCasesPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${
+                    className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch ${
                       index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
                     }`}
                   >
-                    <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
+                    <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""} flex flex-col h-full`}>
                       <div className="flex items-center space-x-4 mb-6">
-                        <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center">
+                        <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center flex-shrink-0">
                           <useCase.icon className="w-8 h-8 text-purple-600" />
                         </div>
                         <div>
@@ -497,7 +497,7 @@ export default function UseCasesPage() {
                       <div className="grid grid-cols-1 gap-3 mb-8">
                         {useCase.features.map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-center space-x-3">
-                            <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+                            <div className="w-2 h-2 bg-purple-600 rounded-full flex-shrink-0"></div>
                             <span className="text-gray-700">{feature}</span>
                           </div>
                         ))}
@@ -512,19 +512,23 @@ export default function UseCasesPage() {
                         ))}
                       </div>
 
-                      <Button className="bg-[#6052CC] hover:bg-[#4A4093] text-white px-6 py-3 rounded-full border border-[#4A4093]">
+                      <Button className="bg-[#6052CC] hover:bg-[#4A4093] text-white px-6 py-3 rounded-full border border-[#4A4093] w-fit mt-auto">
                         Learn More
                       </Button>
                     </div>
 
-                    <div className={`${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
-                      <Image
-                        src={useCase.image || "/placeholder.svg"}
-                        alt={`${useCase.title} use case`}
-                        width={600}
-                        height={400}
-                        className="w-full h-auto rounded-2xl shadow-lg"
-                      />
+                    <div
+                      className={`${index % 2 === 1 ? "lg:col-start-1" : ""}  flex items-center justify-center h-full`}
+                    >
+                      <div className="w-full h-full min-h-[400px] flex items-center justify-center">
+                        <Image
+                          src={useCase.image || "/placeholder.svg"}
+                          alt={`${useCase.title} use case`}
+                          width={600}
+                          height={400}
+                          className="w-full h-full object-cover rounded-2xl shadow-lg"
+                        />
+                      </div>
                     </div>
                   </motion.div>
 
@@ -753,8 +757,8 @@ export default function UseCasesPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 lg:py-24 bg-[#9333ea]">
+         {/* CTA Section */}
+         <section className="py-16 lg:py-24 bg-[#7c3aed]">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -771,7 +775,7 @@ export default function UseCasesPage() {
               </p>
               <Button
                 size="lg"
-                className="bg-white text-[#6052CC] hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold"
+                className="bg-white text-[#7c3aed] hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold"
               >
                 Start Your Free Trial
               </Button>

@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react"
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
-import FloatingHelpButton from "@/components/ui/floating-help-button"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { handlePageLoadScroll } from "@/utils/navigation"
@@ -29,6 +28,7 @@ import {
   GraduationCap,
   QrCode,
   Monitor,
+  Target,
 } from "lucide-react"
 
 const heroFeatures = [
@@ -60,13 +60,14 @@ const featureCategories = [
   { id: "multiplayer", name: "Live Multiplayer", icon: Gamepad2 },
   { id: "analytics", name: "Analytics", icon: BarChart3 },
   { id: "security", name: "Security", icon: Shield },
+  { id: "accessibility", name: "Accessibility", icon: Users },
 ]
 
 const creationFeatures = [
   {
     icon: Edit3,
     title: "Multiple Question Types",
-    description: "Create diverse, engaging quizzes with various question formats to suit any learning objective.",
+    description: "Design quizzes that align with any learning goal using a wide variety of question formats:",
     features: [
       "Multiple Choice Questions (MCQ)",
       "True/False Questions",
@@ -82,11 +83,9 @@ const creationFeatures = [
     title: "Rich Media Support",
     description: "Enhance your quizzes with multimedia content to create more engaging learning experiences.",
     features: [
-      "Image uploads and embedding",
-      "Mathematical formulas and equations",
+      "Image uploads",
       "Rich text formatting",
-      "Visual content integration",
-      "Custom styling options",
+      "Video and audio integration",
     ],
     color: "bg-blue-50",
     iconColor: "text-blue-600",
@@ -101,9 +100,24 @@ const creationFeatures = [
       "Share quizzes with colleagues",
       "Template creation and reuse",
       "Bulk editing capabilities",
+      "Tag and categorization",
     ],
     color: "bg-green-50",
     iconColor: "text-green-600",
+  },
+  {
+    icon: Target,
+    title: "Flashcards & Study Sets",
+    description: "Create complementary study materials that work seamlessly with your quizzes.",
+    features: [
+      "Create standalone flashcards and study sets",
+      "Organize by topic, subject, or difficulty",
+      "Enable self-study and group practice modes",
+      "Track progress and completion status",
+      "Progress tracking integration",
+    ],
+    color: "bg-pink-50",
+    iconColor: "text-pink-600",
   },
 ]
 
@@ -179,7 +193,7 @@ const multiplayerFeatures = [
       "Multiple ways for participants to join sessions, making it easy for anyone to participate regardless of their setup or preparation level.",
     features: [
       "QR code scanning for instant access",
-      "Simple access codes for quick joining",
+      "Simple access codes or PIN codes for quick joining",
       "Direct link sharing options",
       "Guest participation without signup",
     ],
@@ -274,6 +288,49 @@ const securityFeatures = [
       title: "Secure Assessment",
       subtitle: "Maintain integrity without compromising usability",
       bgColor: "bg-red-600",
+    },
+  },
+]
+
+const accessibilityFeatures = [
+  {
+    icon: Users,
+    title: "Inclusive Design",
+    description:
+      "Our platform is designed to be accessible to all users, including those with disabilities, ensuring an inclusive learning experience.",
+    features: [
+      "Screen reader compatibility",
+      "Keyboard navigation support",
+      "Color contrast compliance",
+      "Text-to-speech functionality",
+      "Customizable font sizes",
+    ],
+    color: "bg-green-100",
+    visual: {
+      icon: Users,
+      title: "Inclusive Learning",
+      subtitle: "Making education accessible to everyone",
+      bgColor: "bg-green-600",
+    },
+  },
+  {
+    icon: Monitor,
+    title: "Adaptive Interface",
+    description:
+      "Automatically adapts to different user needs and preferences, providing a personalized learning experience.",
+    features: [
+      "Responsive design for all devices",
+      "Adjustable timing settings",
+      "Alternative text for images",
+      "Caption support for videos",
+      "Focus indicators for navigation",
+    ],
+    color: "bg-blue-100",
+    visual: {
+      icon: Monitor,
+      title: "Adaptive Experience",
+      subtitle: "Personalized for every learner's needs",
+      bgColor: "bg-blue-600",
     },
   },
 ]
@@ -439,7 +496,7 @@ export default function FeaturesPage() {
                 className="order-1 lg:order-2"
               >
                 <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                  Make Quality Learning Content <span className="text-yellow-800">Fast And Easy</span> For Business,
+                Create Effective Learning <span className="text-yellow-800">Content Quickly and easy</span> For Business,
                   School, Or Personal Use.
                 </h1>
                 <p className="text-lg lg:text-xl text-gray-700 mb-8 leading-relaxed">
@@ -479,7 +536,7 @@ export default function FeaturesPage() {
 
         {/* Feature Categories Navigation */}
         <section className="bg-white border-b border-gray-200 sticky top-20 z-40">
-          <div className="container max-w-7xl mx-auto px-4 lg:px-6">
+          <div className="container max-w-7xl mx-auto px-4 lg:px-6 max-lg:hidden">
             <div className="flex flex-wrap justify-center gap-2 py-4">
               {featureCategories.map((category) => (
                 <button
@@ -523,7 +580,8 @@ export default function FeaturesPage() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Fixed equal height cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
               {creationFeatures.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -532,14 +590,14 @@ export default function FeaturesPage() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -8, scale: 1.02 }}
-                  className={`${feature.color} p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300`}
+                  className={`${feature.color} p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 h-full flex flex-col`}
                 >
                   <div className={`w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6`}>
                     <feature.icon className={`w-6 h-6 ${feature.iconColor}`} />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
                   <p className="text-gray-600 mb-6 leading-relaxed">{feature.description}</p>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 mt-auto">
                     {feature.features.map((item, itemIndex) => (
                       <li key={itemIndex} className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
@@ -577,6 +635,7 @@ export default function FeaturesPage() {
               </p>
             </motion.div>
 
+            {/* Fixed equal height cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {instructorFeatures.map((feature, index) => (
                 <motion.div
@@ -586,14 +645,14 @@ export default function FeaturesPage() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -8, scale: 1.02 }}
-                  className={`${feature.color} p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300`}
+                  className={`${feature.color} p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 h-full flex flex-col`}
                 >
                   <div className={`w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6`}>
                     <feature.icon className={`w-6 h-6 ${feature.iconColor}`} />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{feature.description}</p>
-                  <ul className="space-y-2">
+                  <p className="text-gray-600 mb-6 leading-relaxed flex-grow">{feature.description}</p>
+                  <ul className="space-y-2 mt-auto">
                     {feature.features.map((item, itemIndex) => (
                       <li key={itemIndex} className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
@@ -638,26 +697,30 @@ export default function FeaturesPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.2 }}
                   viewport={{ once: true }}
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch ${
                     index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
                   }`}
                 >
-                  <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
-                    <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                    <p className="text-lg text-gray-600 mb-8 leading-relaxed">{feature.description}</p>
-                    <ul className="space-y-3">
-                      {feature.features.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex items-center space-x-3">
-                          <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                          <span className="text-gray-700">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  {/* Text content side */}
+                  <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""} flex flex-col h-full`}>
+                    <div className="flex flex-col h-full justify-center">
+                      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                      <p className="text-lg text-gray-600 mb-8 leading-relaxed">{feature.description}</p>
+                      <ul className="space-y-3">
+                        {feature.features.map((item, itemIndex) => (
+                          <li key={itemIndex} className="flex items-center space-x-3">
+                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                            <span className="text-gray-700">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
 
-                  <div className={`${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+                  {/* Visual card side */}
+                  <div className={`${index % 2 === 1 ? "lg:col-start-1" : ""} flex items-center h-full`}>
                     <div
-                      className={`${feature.visual.bgColor} rounded-3xl p-8 text-white text-center shadow-xl hover:shadow-2xl transition-all duration-300`}
+                      className={`${feature.visual.bgColor} rounded-3xl p-8 text-white text-center shadow-xl hover:shadow-2xl transition-all duration-300 w-full h-full flex flex-col justify-center`}
                     >
                       <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                         <feature.visual.icon className="w-8 h-8 text-white" />
@@ -704,26 +767,30 @@ export default function FeaturesPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.2 }}
                   viewport={{ once: true }}
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch ${
                     index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
                   }`}
                 >
-                  <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
-                    <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                    <p className="text-lg text-gray-600 mb-8 leading-relaxed">{feature.description}</p>
-                    <ul className="space-y-3">
-                      {feature.features.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex items-center space-x-3">
-                          <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                          <span className="text-gray-700">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  {/* Text content side */}
+                  <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""} flex flex-col h-full`}>
+                    <div className="flex flex-col h-full justify-center">
+                      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                      <p className="text-lg text-gray-600 mb-8 leading-relaxed">{feature.description}</p>
+                      <ul className="space-y-3">
+                        {feature.features.map((item, itemIndex) => (
+                          <li key={itemIndex} className="flex items-center space-x-3">
+                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                            <span className="text-gray-700">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
 
-                  <div className={`${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+                  {/* Visual card side */}
+                  <div className={`${index % 2 === 1 ? "lg:col-start-1" : ""} flex items-center h-full`}>
                     <div
-                      className={`${feature.visual.bgColor} rounded-3xl p-8 text-white text-center shadow-xl hover:shadow-2xl transition-all duration-300`}
+                      className={`${feature.visual.bgColor} rounded-3xl p-8 text-white text-center shadow-xl hover:shadow-2xl transition-all duration-300 w-full h-full flex flex-col justify-center`}
                     >
                       <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                         <feature.visual.icon className="w-8 h-8 text-white" />
@@ -768,26 +835,30 @@ export default function FeaturesPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.2 }}
                   viewport={{ once: true }}
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch ${
                     index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
                   }`}
                 >
-                  <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
-                    <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                    <p className="text-lg text-gray-600 mb-8 leading-relaxed">{feature.description}</p>
-                    <ul className="space-y-3">
-                      {feature.features.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex items-center space-x-3">
-                          <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                          <span className="text-gray-700">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  {/* Text content side */}
+                  <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""} flex flex-col h-full`}>
+                    <div className="flex flex-col h-full justify-center">
+                      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                      <p className="text-lg text-gray-600 mb-8 leading-relaxed">{feature.description}</p>
+                      <ul className="space-y-3">
+                        {feature.features.map((item, itemIndex) => (
+                          <li key={itemIndex} className="flex items-center space-x-3">
+                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                            <span className="text-gray-700">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
 
-                  <div className={`${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+                  {/* Visual card side */}
+                  <div className={`${index % 2 === 1 ? "lg:col-start-1" : ""} flex items-center h-full`}>
                     <div
-                      className={`${feature.visual.bgColor} rounded-3xl p-8 text-white text-center shadow-xl hover:shadow-2xl transition-all duration-300`}
+                      className={`${feature.visual.bgColor} rounded-3xl p-8 text-white text-center shadow-xl hover:shadow-2xl transition-all duration-300 w-full h-full flex flex-col justify-center`}
                     >
                       <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                         <feature.visual.icon className="w-8 h-8 text-white" />
@@ -802,8 +873,8 @@ export default function FeaturesPage() {
           </div>
         </section>
 
-        {/* Built for Every Platform */}
-        <section className="py-16 lg:py-24 bg-gray-50">
+        {/* Accessibility Section */}
+        <section id="accessibility" className="py-16 lg:py-24 bg-gray-50">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -812,91 +883,57 @@ export default function FeaturesPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Built for Every Platform</h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Access LivQuiz anywhere, anytime, on any device. Our platform is designed for maximum compatibility and
-                ease of use.
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                  <Users className="w-6 h-6 text-green-600" />
+                </div>
+                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">Accessibility</h2>
+              </div>
+              <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+                Making learning accessible to everyone with inclusive design and adaptive features.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  icon: Smartphone,
-                  title: "Mobile First",
-                  description: "Optimized for all devices with native mobile apps",
-                },
-                {
-                  icon: Monitor,
-                  title: "Web Based",
-                  description: "No downloads required, works in any browser",
-                },
-                {
-                  icon: Gamepad2,
-                  title: "Gamification",
-                  description: "Points, badges, and leaderboards to boost engagement",
-                },
-                {
-                  icon: Trophy,
-                  title: "Certifications",
-                  description: "Issue certificates and track achievements",
-                },
-              ].map((feature, index) => (
+            <div className="space-y-16">
+              {accessibilityFeatures.map((feature, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -5, scale: 1.05 }}
-                  className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 text-center"
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch ${
+                    index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                  }`}
                 >
-                  <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <feature.icon className="w-8 h-8 text-purple-600" />
+                  {/* Text content side */}
+                  <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""} flex flex-col h-full`}>
+                    <div className="flex flex-col h-full justify-center">
+                      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                      <p className="text-lg text-gray-600 mb-8 leading-relaxed">{feature.description}</p>
+                      <ul className="space-y-3">
+                        {feature.features.map((item, itemIndex) => (
+                          <li key={itemIndex} className="flex items-center space-x-3">
+                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                            <span className="text-gray-700">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* Stats Section */}
-        <section className="py-16 lg:py-24 bg-purple-600">
-          <div className="container max-w-7xl mx-auto px-4 lg:px-6 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">
-                Trusted by Millions Worldwide
-              </h2>
-              <p className="text-lg lg:text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-                Join the global community of educators, trainers, and organizations using LivQuiz.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {[
-                { number: "2M+", label: "Active Users" },
-                { number: "10M+", label: "Quizzes Created" },
-                { number: "150+", label: "Countries" },
-                { number: "99.9%", label: "Uptime" },
-              ].map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center"
-                >
-                  <div className="text-3xl lg:text-4xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-purple-100">{stat.label}</div>
+                  {/* Visual card side */}
+                  <div className={`${index % 2 === 1 ? "lg:col-start-1" : ""} flex items-center h-full`}>
+                    <div
+                      className={`${feature.visual.bgColor} rounded-3xl p-8 text-white text-center shadow-xl hover:shadow-2xl transition-all duration-300 w-full h-full flex flex-col justify-center`}
+                    >
+                      <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <feature.visual.icon className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="text-xl font-bold mb-2">{feature.visual.title}</h4>
+                      <p className="text-white/90">{feature.visual.subtitle}</p>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -904,7 +941,7 @@ export default function FeaturesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 lg:py-24 bg-white">
+        <section className="py-16 lg:py-24 bg-[#7c3aed]">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -912,37 +949,24 @@ export default function FeaturesPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
-                Ready to Transform Your Learning Experience?
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">
+                Ready to Transform Your Quizzes?
               </h2>
-              <p className="text-lg lg:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                Start creating engaging quizzes today. No requirements, no setup fees.
+              <p className="text-lg lg:text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
+                Join thousands of educators, trainers, and organizations who trust LivQuiz to deliver engaging learning
+                experiences.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button
-                    size="lg"
-                    className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-600"
-                  >
-                    Start Free Trial
-                  </Button>
-                </motion.div>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300"
-                  >
-                    Watch Demo
-                  </Button>
-                </motion.div>
-              </div>
+              <Button
+                size="lg"
+                className="bg-white text-[#7c3aed] hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold"
+              >
+                Start Your Free Trial
+              </Button>
             </motion.div>
           </div>
         </section>
       </main>
       <Footer />
-      <FloatingHelpButton />
     </div>
   )
 }

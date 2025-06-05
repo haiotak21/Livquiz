@@ -5,6 +5,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import {
   ChevronDown,
@@ -30,6 +31,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,6 +50,13 @@ export default function Header() {
 
   const toggleDropdown = (name: string) => {
     setOpenDropdown(openDropdown === name ? null : name)
+  }
+
+  const isActivePath = (path: string) => {
+    if (path === '/') {
+      return pathname === path
+    }
+    return pathname.startsWith(path)
   }
 
   const navItems = [
@@ -181,10 +190,10 @@ export default function Header() {
               >
                 {item.dropdown ? (
                   <DropdownMenu>
-                    <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-[#6052CC] transition-colors duration-200 font-medium group relative outline-none">
+                    <DropdownMenuTrigger className={`flex items-center text-gray-700 hover:text-[#6052CC] transition-colors duration-200 font-medium group relative outline-none ${isActivePath(item.href) ? 'text-[#6052CC]' : ''}`}>
                       {item.name}
                       <ChevronDown className="ml-1 h-4 w-4 group-hover:rotate-180 transition-transform duration-200" />
-                      <span className="absolute -left-2 top-1/2 -translate-y-1/2 w-1 h-0 bg-[#6052CC] group-hover:h-6 transition-all duration-200 rounded-full"></span>
+                      <span className={`absolute -left-2 top-1/2 -translate-y-1/2 w-1 h-0 bg-[#6052CC] group-hover:h-6 transition-all duration-200 rounded-full ${isActivePath(item.href) ? 'h-6' : ''}`}></span>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="w-80 p-2 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100">
                       <div className="space-y-1">
@@ -192,7 +201,7 @@ export default function Header() {
                           <DropdownMenuItem key={subItem.name || subIndex} className="p-0">
                             <button
                               onClick={(e) => handleNavClick(subItem.href || "#", e)}
-                              className="flex items-start space-x-3 p-3 rounded-xl hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-200 group w-full text-left"
+                              className={`flex items-start space-x-3 p-3 rounded-xl hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-200 group w-full text-left ${isActivePath(subItem.href) ? 'bg-gradient-to-r from-purple-50 to-pink-50' : ''}`}
                             >
                               <motion.div
                                 className="w-10 h-10 bg-gradient-to-r from-purple-100 to-pink-100 rounded-lg flex items-center justify-center flex-shrink-0"
@@ -202,7 +211,7 @@ export default function Header() {
                                 {subItem.icon && <subItem.icon className="w-5 h-5 text-[#6052CC]" />}
                               </motion.div>
                               <div className="flex-1 min-w-0">
-                                <div className="font-semibold text-gray-900 group-hover:text-[#6052CC] transition-colors text-sm">
+                                <div className={`font-semibold text-gray-900 group-hover:text-[#6052CC] transition-colors text-sm ${isActivePath(subItem.href) ? 'text-[#6052CC]' : ''}`}>
                                   {subItem.name}
                                 </div>
                                 <div className="text-xs text-gray-500 group-hover:text-gray-600 transition-colors mt-1">
@@ -231,10 +240,10 @@ export default function Header() {
                 ) : (
                   <button
                     onClick={(e) => handleNavClick(item.href || "#", e)}
-                    className="text-gray-700 hover:text-[#6052CC] transition-colors duration-200 font-medium relative group"
+                    className={`text-gray-700 hover:text-[#6052CC] transition-colors duration-200 font-medium relative group ${isActivePath(item.href) ? 'text-[#6052CC]' : ''}`}
                   >
                     {item.name}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6052CC] transition-all duration-200 group-hover:w-full"></span>
+                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-[#6052CC] transition-all duration-200 ${isActivePath(item.href) ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
                   </button>
                 )}
               </motion.div>
@@ -318,7 +327,7 @@ export default function Header() {
                                 <button
                                   key={subItem.name || subIndex}
                                   onClick={(e) => handleNavClick(subItem.href || "#", e)}
-                                  className="flex items-center space-x-2 text-gray-600 hover:text-[#6052CC] transition-colors py-1 w-full text-left"
+                                  className={`flex items-center space-x-2 text-gray-600 hover:text-[#6052CC] transition-colors py-1 w-full text-left ${isActivePath(subItem.href) ? 'text-[#6052CC]' : ''}`}
                                 >
                                   {subItem.icon && <subItem.icon className="w-4 h-4" />}
                                   <span>{subItem.name}</span>
@@ -331,7 +340,7 @@ export default function Header() {
                     ) : (
                       <button
                         onClick={(e) => handleNavClick(item.href || "#", e)}
-                        className="block text-gray-700 hover:text-[#6052CC] transition-colors py-2 font-medium px-2 w-full text-left"
+                        className={`block text-gray-700 hover:text-[#6052CC] transition-colors py-2 font-medium px-2 w-full text-left ${isActivePath(item.href) ? 'text-[#6052CC]' : ''}`}
                       >
                         {item.name}
                       </button>

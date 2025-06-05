@@ -145,7 +145,7 @@ export default function CTASection() {
               className="w-28 h-28"
             >
              <Image
-                src="/placeholder.svg?height=120&width=120"
+                src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZXhhbXxlbnwwfHwwfHx8MA%3D%3D"
                 alt="Floating element"
                 width={120}
                 height={120}

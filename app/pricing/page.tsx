@@ -250,6 +250,72 @@ const faqs = [
   },
 ]
 
+const comparisonFeatures = [
+  {
+    name: "Number of Quizzes",
+    free: "5/month",
+    pro: "Unlimited",
+    team: "Unlimited",
+    enterprise: "Unlimited",
+  },
+  {
+    name: "Max Participants per Quiz",
+    free: "25",
+    pro: "100",
+    team: "1,000",
+    enterprise: "Unlimited",
+  },
+  {
+    name: "Question Types",
+    free: "Basic",
+    pro: "All",
+    team: "All",
+    enterprise: "All",
+  },
+  {
+    name: "Custom Branding",
+    free: "✗",
+    pro: "✓",
+    team: "✓",
+    enterprise: "✓",
+  },
+  {
+    name: "Advanced Analytics",
+    free: "✗",
+    pro: "✓",
+    team: "✓",
+    enterprise: "✓",
+  },
+  {
+    name: "Team Collaboration",
+    free: "✗",
+    pro: "✗",
+    team: "✓",
+    enterprise: "✓",
+  },
+  {
+    name: "API Access",
+    free: "✗",
+    pro: "✗",
+    team: "✗",
+    enterprise: "✓",
+  },
+  {
+    name: "SSO Integration",
+    free: "✗",
+    pro: "✗",
+    team: "✗",
+    enterprise: "✓",
+  },
+  {
+    name: "Priority Support",
+    free: "✗",
+    pro: "Email",
+    team: "Phone & Chat",
+    enterprise: "24/7 Dedicated",
+  },
+];
+
 export default function PricingPage() {
   const [selectedPlanType, setSelectedPlanType] = useState("Personal")
   const [billingPeriod, setBillingPeriod] = useState("monthly")
@@ -486,6 +552,124 @@ export default function PricingPage() {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Feature Comparison Section */}
+        <section className="py-16 lg:py-24 bg-gray-50">
+          <div className="container max-w-7xl mx-auto px-4 lg:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">Feature Comparison</h2>
+              <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+                Compare features across all our plans to find the perfect fit for your needs
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-3xl shadow-xl overflow-hidden"
+            >
+              {/* Header */}
+              <div className="bg-gradient-to-r from-purple-600 to-purple-600 text-white p-6">
+                <h3 className="text-2xl font-bold text-center">Plan Feature Comparison</h3>
+              </div>
+
+              {/* Comparison Table */}
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-gray-200">
+                      <th className="text-left p-6 font-semibold text-gray-900">Feature</th>
+                      <th className="text-center p-6 font-semibold text-gray-900">Free</th>
+                      <th className="text-center p-6 font-semibold text-gray-900">Pro</th>
+                      <th className="text-center p-6 font-semibold text-gray-900">Team</th>
+                      <th className="text-center p-6 font-semibold text-gray-900">Enterprise</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {comparisonFeatures.map((feature, index) => (
+                      <tr
+                        key={index}
+                        className={`border-b border-gray-100 ${index % 2 === 0 ? "bg-gray-50" : "bg-white"}`}
+                      >
+                        <td className="p-6 font-medium text-gray-900">{feature.name}</td>
+                        <td className="p-6 text-center">
+                          {feature.free === "✗" ? (
+                            <X className="w-5 h-5 text-red-500 mx-auto" />
+                          ) : feature.free === "✓" ? (
+                            <Check className="w-5 h-5 text-green-500 mx-auto" />
+                          ) : ( 
+                            <span
+                              className={feature.free === "Basic" ? "text-orange-600 font-medium" : "text-gray-900"}
+                            >
+                              {feature.free}
+                            </span>
+                          )}
+                        </td>
+                        <td className="p-6 text-center">
+                          {feature.pro === "✗" ? (
+                            <X className="w-5 h-5 text-red-500 mx-auto" />
+                          ) : feature.pro === "✓" ? (
+                            <Check className="w-5 h-5 text-green-500 mx-auto" />
+                          ) : (
+                            <span className={feature.pro === "Email" ? "text-green-600 font-medium" : "text-gray-900"}>
+                              {feature.pro}
+                            </span>
+                          )}
+                        </td>
+                        <td className="p-6 text-center">
+                          {feature.team === "✗" ? (
+                            <X className="w-5 h-5 text-red-500 mx-auto" />
+                          ) : feature.team === "✓" ? (
+                            <Check className="w-5 h-5 text-green-500 mx-auto" />
+                          ) : (
+                            <span
+                              className={
+                                feature.team === "Limited"
+                                  ? "text-orange-600 font-medium"
+                                  : feature.team === "Phone & Chat"
+                                    ? "text-green-600 font-medium"
+                                    : "text-gray-900"
+                              }
+                            >
+                              {feature.team}
+                            </span>
+                          )}
+                        </td>
+                        <td className="p-6 text-center">
+                          {feature.enterprise === "✗" ? (
+                            <X className="w-5 h-5 text-red-500 mx-auto" />
+                          ) : feature.enterprise === "✓" ? (
+                            <Check className="w-5 h-5 text-green-500 mx-auto" />
+                          ) : (
+                            <span
+                              className={
+                                feature.enterprise === "Full"
+                                  ? "text-green-600 font-medium"
+                                  : feature.enterprise === "24/7 Dedicated"
+                                    ? "text-green-600 font-medium"
+                                    : "text-gray-900"
+                              }
+                            >
+                              {feature.enterprise}
+                            </span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </motion.div>
           </div>
         </section>
 

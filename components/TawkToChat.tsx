@@ -15,6 +15,18 @@ const TawkToChat = () => {
     window.Tawk_API = window.Tawk_API || {};
     window.Tawk_LoadStart = new Date();
 
+    // Set up Tawk_API callbacks
+    window.Tawk_API.onLoad = function() {
+      // Initialize i18next if needed
+      if (typeof window.Tawk_API.$_Tawk !== 'undefined' && typeof window.Tawk_API.$_Tawk.i18next === 'undefined') {
+        window.Tawk_API.$_Tawk.i18next = {
+          t: function(key: string) { return key; }
+        };
+      }
+      // Hide the default Tawk.to widget
+      window.Tawk_API.hideWidget();
+    };
+
     // Tawk.to script
     const s1 = document.createElement('script');
     const s0 = document.getElementsByTagName('script')[0];

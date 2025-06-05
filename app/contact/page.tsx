@@ -92,7 +92,17 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{method.title}</h3>
                   <p className="text-gray-600 mb-4">{method.description}</p>
-                  <p className="text-purple-600 font-semibold mb-2">{method.contact}</p>
+                  {method.title === "Live Chat" ? (
+                    <Button
+                      variant="link"
+                      className="text-purple-600 font-semibold mb-2 p-0"
+                      onClick={() => window.dispatchEvent(new CustomEvent('open-live-chat'))}
+                    >
+                      {method.contact}
+                    </Button>
+                  ) : (
+                    <p className="text-purple-600 font-semibold mb-2">{method.contact}</p>
+                  )}
                   <p className="text-sm text-gray-500">{method.availability}</p>
                 </motion.div>
               ))}
@@ -101,7 +111,7 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Form Section */}
-        <section className="py-16 lg:py-24 bg-gray-50">
+        <section className="py-16 lg:py-24 bg-gray-50" id="send-message">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Form */}

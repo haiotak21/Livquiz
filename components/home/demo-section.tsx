@@ -117,7 +117,7 @@ export default function DemoSection() {
           </div>
 
           {/* Platform Icons */}
-          <div className="flex justify-center items-center space-x-8 pt-8 border-t border-gray-100">
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:space-x-8 pt-8 border-t border-gray-100">
             <span className="text-gray-500 font-medium">Available on:</span>
             {platforms.map((platform, index) => (
               <motion.div key={index} whileHover={{ scale: 1.1 }} className="flex items-center space-x-2 text-gray-600">

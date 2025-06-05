@@ -5,6 +5,7 @@ import Footer from "@/components/layout/footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search, BookOpen, MessageCircle, Video, FileText } from "lucide-react"
+import Link from "next/link"
 
 const categories = [
   {
@@ -117,7 +118,7 @@ export default function HelpPage() {
                 <div className="space-y-4">
                   <Button
                     className="w-full bg-gradient-to-r from-purple-600 to-purple-600 hover:from-purple-700 hover:to-purple-800 text-white py-3 rounded-xl font-semibold flex items-center justify-center space-x-2"
-                    onClick={() => window.dispatchEvent(new CustomEvent('open-live-chat'))}
+                    onClick={() => window.dispatchEvent(new CustomEvent("open-live-chat"))}
                   >
                     <MessageCircle className="w-5 h-5" />
                     <span>Start Live Chat</span>
@@ -125,8 +126,9 @@ export default function HelpPage() {
                   <Button
                     variant="outline"
                     className="w-full border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white py-3 rounded-xl font-semibold"
+                    asChild
                   >
-                    Contact Support
+                    <Link href="/contact">Contact Support</Link>
                   </Button>
                 </div>
               </div>

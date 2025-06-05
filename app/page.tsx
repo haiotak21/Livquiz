@@ -9,7 +9,6 @@ import UseCasesSection from "@/components/home/use-cases-section"
 import HowItWorksSection from "@/components/home/how-it-works-section"
 import DemoSection from "@/components/home/demo-section"
 import CTASection from "@/components/home/cta-section"
-import FloatingHelpButton from "@/components/ui/floating-help-button"
 import { handlePageLoadScroll } from "@/utils/navigation"
 
 export default function Home() {
@@ -29,7 +28,6 @@ export default function Home() {
         <CTASection />
       </main>
       <Footer />
-      <FloatingHelpButton />
     </div>
   )
 }

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { HelpCircle, X, MessageCircle, Book, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const helpOptions = [
   {
@@ -25,8 +26,8 @@ const helpOptions = [
     icon: Phone,
     title: "Email Support",
     description: "support@livquiz.com",
-    action: "Copy Email",
-    onClick: "copyEmail",
+    action: "Send us a message",
+    href: "/contact#send-message",
   },
   {
     icon: Phone,
@@ -45,6 +46,7 @@ export default function FloatingHelpButton({ showOnPage = true }: FloatingHelpBu
   const [isOpen, setIsOpen] = useState(false)
   const [isChatOpen, setIsChatOpen] = useState(false)
   const [copied, setCopied] = useState<string | null>(null)
+  const isMobile = useIsMobile();
 
   const handleLiveChat = () => {
     if (window.Tawk_API) {
@@ -75,10 +77,12 @@ export default function FloatingHelpButton({ showOnPage = true }: FloatingHelpBu
   }
 
   useEffect(() => {
-    const openChat = () => setIsChatOpen(true)
-    window.addEventListener('open-live-chat', openChat)
-    return () => window.removeEventListener('open-live-chat', openChat)
-  }, [])
+    const openChat = () => {
+      handleLiveChat();
+    };
+    window.addEventListener('open-live-chat', openChat);
+    return () => window.removeEventListener('open-live-chat', openChat);
+  }, [handleLiveChat]);
 
   if (!showOnPage) return null
 
@@ -122,6 +126,37 @@ export default function FloatingHelpButton({ showOnPage = true }: FloatingHelpBu
                           </div>
                         </div>
                       </button>
+                    ) : option.href ? (
+                      <Link href={option.href} passHref legacyBehavior>
+                        <a className="block p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                          <h4 className="font-medium">{option.title}</h4>
+                          <p className="text-sm text-gray-600">{option.description}</p>
+                          <Button variant="link" className="p-0 h-auto text-blue-600 hover:text-blue-700">
+                            {option.action}
+                          </Button>
+                        </a>
+                      </Link>
+                    ) : option.onClick === "copyPhone" ? (
+                      isMobile ? (
+                        <a href={`tel:${option.description}`} className="block p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                          <h4 className="font-medium">{option.title}</h4>
+                          <p className="text-sm text-gray-600">{option.description}</p>
+                          <Button variant="link" className="p-0 h-auto text-blue-600 hover:text-blue-700">
+                            {option.action}
+                          </Button>
+                        </a>
+                      ) : (
+                        <div
+                          className="p-3 border rounded-lg hover:bg-gray-50 cursor-pointer"
+                          onClick={() => handleOptionClick(option)}
+                        >
+                          <h4 className="font-medium">{option.title}</h4>
+                          <p className="text-sm text-gray-600">{option.description}</p>
+                          <Button variant="link" className="p-0 h-auto text-blue-600 hover:text-blue-700">
+                            {copied === option.onClick ? "Copied!" : option.action}
+                          </Button>
+                        </div>
+                      )
                     ) : (
                       <div
                         className="p-3 border rounded-lg hover:bg-gray-50 cursor-pointer"
@@ -129,10 +164,7 @@ export default function FloatingHelpButton({ showOnPage = true }: FloatingHelpBu
                       >
                         <h4 className="font-medium">{option.title}</h4>
                         <p className="text-sm text-gray-600">{option.description}</p>
-                        <Button
-                          variant="link"
-                          className="p-0 h-auto text-blue-600 hover:text-blue-700"
-                        >
+                        <Button variant="link" className="p-0 h-auto text-blue-600 hover:text-blue-700">
                           {copied === option.onClick ? "Copied!" : option.action}
                         </Button>
                       </div>
@@ -151,39 +183,41 @@ export default function FloatingHelpButton({ showOnPage = true }: FloatingHelpBu
         </AnimatePresence>
 
         {/* Main Help Button */}
-        <motion.button
-          onClick={() => setIsOpen(!isOpen)}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="w-14 h-14 bg-purple-600 hover:bg-purple-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center group border border-purple-600"
-        >
-          <AnimatePresence mode="wait">
-            {isOpen ? (
-              <motion.div
-                key="close"
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <X className="w-6 h-6" />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="help"
-                initial={{ rotate: 90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: -90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <HelpCircle className="w-6 h-6" />
-              </motion.div>
-            )}
-          </AnimatePresence>
+        {!isChatOpen && (
+          <motion.button
+            onClick={() => setIsOpen(!isOpen)}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="w-14 h-14 bg-purple-600 hover:bg-purple-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center group border border-purple-600"
+          >
+            <AnimatePresence mode="wait">
+              {isOpen ? (
+                <motion.div
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <X className="w-6 h-6" />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="help"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <HelpCircle className="w-6 h-6" />
+                </motion.div>
+              )}
+            </AnimatePresence>
 
-          {/* Pulse animation */}
-          <div className="absolute inset-0 rounded-full bg-[#6052CC] animate-ping opacity-20"></div>
-        </motion.button>
+            {/* Pulse animation */}
+            <div className="absolute inset-0 rounded-full bg-[#6052CC] animate-ping opacity-20"></div>
+          </motion.button>
+        )}
       </div>
     </>
   )

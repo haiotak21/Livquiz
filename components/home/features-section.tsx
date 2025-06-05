@@ -1,21 +1,21 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Users, Play, BarChart3, Shield, Clock, BookOpen, Zap, Globe, Award } from "lucide-react"
+import { Users, Play, BarChart3, Shield, Clock, BookOpen, Zap, Globe, Award, Book} from "lucide-react"
 
 const features = [
   {
     icon: Users,
     title: "Live Multiplayer Quizzes",
     description:
-      "Host real-time quizzes with unlimited participants. Perfect for classrooms, training sessions, and group challenges.",
+      "Host real-time quizzes with unlimited players. Perfect for classrooms, training, or group competitions.",
     color: "from-blue-500 to-blue-600",
     bgColor: "bg-blue-50",
   },
   {
     icon: Play,
     title: "Instructor Control Panel",
-    description: "Control flow, reveal questions one at a time, view live stats, manage players — all with full instructor/tutor access.",
+    description: "Manage live sessions with full control — reveal questions manually, pause anytime, skip questions, and monitor submissions and participation.",
     color: "from-purple-500 to-purple-600",
     bgColor: "bg-purple-50",
   },
@@ -23,21 +23,21 @@ const features = [
     icon: BarChart3,
     title: "Advanced Analytics",
     description:
-      "Track individual and group stats, question performance, leaderboard insights, and quiz-level analytics.",
+      "Track performance at every level — per player, question, quiz, or session. Export data for deeper insights.",
     color: "from-green-500 to-green-600",
     bgColor: "bg-green-50",
   },
   {
     icon: Shield,
     title: "Anti-Cheating Technology",
-    description: "One-question-at-a-time reveal, countdowns, guest name obfuscation Guest<x>, and restricted creation permissions.",
+    description: "Ensure fair play with timed question reveal, navigation locks, Guest<x> anonymization, and restricted quiz creation based on roles.",
     color: "from-red-500 to-red-600",
     bgColor: "bg-red-50",
   },
   {
     icon: Clock,
     title: "Resumable Progress",
-    description: "Auto-saves progress even when disconnected or exiting — for solo and assigned quizzes.",
+    description: "Solo or assigned quizzes auto-save progress — players can disconnect and return without losing their place.",
     color: "from-blue-500 to-blue-600",
     bgColor: "bg-blue-50",
   },
@@ -51,22 +51,29 @@ const features = [
   {
     icon: Zap,
     title: "Instant Feedback",
-    description: "Real-time scoring and submission stats during live sessions, helping players learn immediately.",
+    description: "Players get real-time scoring and response feedback. Hosts see submission rates and progress live.",
     color: "from-yellow-500 to-yellow-600",
     bgColor: "bg-yellow-50",
   },
   {
     icon: Globe,
     title: "Global Accessibility",
-    description: "Fully responsive on mobile, tablet, and desktop; designed for accessibility and broad device compatibility.",
+    description: "Designed to work smoothly on mobile, tablet, and desktop — no downloads, fully web-based and responsive.",
     color: "from-teal-500 to-teal-600",
     bgColor: "bg-teal-50",
   },
   {
     icon: Award,
     title: "Gamification & Rewards",
-    description: "Leaderboards and competitive features are built-in. (Badges/XP systems can be marked as future if not live yet.)",
+    description: "Keep learners motivated with built-in leaderboards. (Badges, XP, and streaks coming soon)",
     color: "from-pink-500 to-pink-600",
+    bgColor: "bg-pink-50",
+  },
+  {
+    icon: Book,
+    title: "Gamification & Rewards",
+    description: "Create and assign standalone flashcards or grouped study sets — ideal for review, self-paced learning, or prep.",
+    color: "from-red-500 to-red-600",
     bgColor: "bg-pink-50",
   },
 ]
@@ -93,7 +100,7 @@ export default function FeaturesSection() {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-           Unlock the tools that make LivQuiz a complete solution for students, teachers, tutors, and professionals.
+          LivQuiz gives students, teachers, tutors, and professionals the tools to create, host, and engage in interactive learning — in real time and at scale.
           </p>
         </motion.div>
 

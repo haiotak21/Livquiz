@@ -12,10 +12,10 @@ const footerSections = [
   {
     title: "Product",
     links: [
-      { name: "Quiz Maker", href: "/products#amazing-tools" },
-      { name: "LMS", href: "/products#lms" },
-      { name: "Live Quizzes", href: "/products#live-quizzes" },
-      { name: "Exam Builder", href: "/products#exam-builder" },
+      { name: "Quiz Maker", href: "/features#quiz-maker" },
+      { name: "Live Quizzes", href: "/features#live-quizzes" },
+      { name: "Exam Builder", href: "/features#exam-builder" },
+      { name: "Flashcards", href: "/features#flashcards" },
     ],
   },
   {
