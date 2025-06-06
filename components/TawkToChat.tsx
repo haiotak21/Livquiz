@@ -11,9 +11,10 @@ declare global {
 
 const TawkToChat = () => {
   useEffect(() => {
-    // Initialize Tawk_API
+    // Ensure Tawk_API is initialized and set autoStart before loading the script
     window.Tawk_API = window.Tawk_API || {};
     window.Tawk_LoadStart = new Date();
+    window.Tawk_API.autoStart = false; // Disable auto-start
 
     // Set up Tawk_API callbacks
     window.Tawk_API.onLoad = function() {
@@ -23,7 +24,7 @@ const TawkToChat = () => {
           t: function(key: string) { return key; }
         };
       }
-      // Hide the default Tawk.to widget
+      // Hide the default Tawk.to widget (redundant with autoStart=false, but kept as fallback)
       window.Tawk_API.hideWidget();
     };
 

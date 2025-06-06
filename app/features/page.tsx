@@ -12,6 +12,7 @@ import {
   BarChart3,
   Shield,
   Clock,
+  Bot,
   Play,
   CheckCircle,
   Gamepad2,
@@ -84,8 +85,9 @@ const creationFeatures = [
     description: "Enhance your quizzes with multimedia content to create more engaging learning experiences.",
     features: [
       "Image uploads",
-      "Rich text formatting",
-      "Video and audio integration",
+      "Audio uploads",
+      "Pdf uploads",
+      "Video uploads",
     ],
     color: "bg-blue-50",
     iconColor: "text-blue-600",
@@ -95,10 +97,8 @@ const creationFeatures = [
     title: "Organization & Reusability",
     description: "Efficiently organize and reuse your quiz content with powerful management tools.",
     features: [
-      "Clone and duplicate quizzes",
-      "Folder and collection organization",
-      "Share quizzes with colleagues",
-      "Template creation and reuse",
+      "Clone and duplicate quizzes/flashcards/study sets",
+      "Share quizzes with friends",
       "Bulk editing capabilities",
       "Tag and categorization",
     ],
@@ -111,10 +111,8 @@ const creationFeatures = [
     description: "Create complementary study materials that work seamlessly with your quizzes.",
     features: [
       "Create standalone flashcards and study sets",
-      "Organize by topic, subject, or difficulty",
+      "Organize by Tag, subject, or difficulty",
       "Enable self-study and group practice modes",
-      "Track progress and completion status",
-      "Progress tracking integration",
     ],
     color: "bg-pink-50",
     iconColor: "text-pink-600",
@@ -130,7 +128,6 @@ const instructorFeatures = [
       "Manual question reveal control",
       "Start, pause, and end sessions",
       "Skip questions when needed",
-      "Adjust timing on the fly",
       "Real-time session monitoring",
     ],
     color: "bg-cyan-50",
@@ -142,7 +139,6 @@ const instructorFeatures = [
     description: "Maintain a positive learning environment with comprehensive participant management tools.",
     features: [
       "Remove disruptive participants",
-      "Assign teams and groups",
       "Mute or restrict players",
       "Monitor individual progress",
       "View submission status",
@@ -159,7 +155,6 @@ const instructorFeatures = [
       "Overall session timers",
       "Extended time for special needs",
       "Countdown displays",
-      "Time warnings and alerts",
     ],
     color: "bg-orange-50",
     iconColor: "text-orange-600",
@@ -215,8 +210,6 @@ const analyticsFeatures = [
       "Gain deep insights into learning patterns and quiz performance with detailed analytics that help improve educational outcomes.",
     features: [
       "Individual student performance tracking",
-      "Group and class-wide statistics",
-      "Question-level difficulty analysis",
       "Response time and accuracy metrics",
       "Progress over time visualization",
     ],
@@ -235,9 +228,6 @@ const analyticsFeatures = [
     features: [
       "Real-time ranking updates",
       "Multiple ranking criteria",
-      "Achievement badges and rewards",
-      "Historical performance comparison",
-      "Customizable display options",
     ],
     color: "bg-yellow-100",
     visual: {
@@ -245,6 +235,24 @@ const analyticsFeatures = [
       title: "Competitive Learning",
       subtitle: "Gamify education with engaging competitions",
       bgColor: "bg-yellow-600",
+    },
+  },
+  {
+    icon: Bot,
+    title: "AI-Powered Quiz Assistance",
+    description:
+      "Leverage the power of AI to enhance content creation, personalization, and learning outcomes.",
+    features: [
+      "AI Quiz Generator: Instantly generate quizzes from text, documents, or topics using AI.",
+      "Smart Question Suggestions: Get AI-driven suggestions while building quizzes to save time and improve quality.",
+      "Answer Explanation Generator: Auto-generate clear, simple explanations for each question to support deeper understanding.",
+    ],
+    color: "bg-green-100",
+    visual: {
+      icon: Bot,
+      title: "AI-Powered Quiz Assistance",
+      subtitle: "Generate questions automatically using topics or documents.",
+      bgColor: "bg-green-600",
     },
   },
 ]
@@ -279,7 +287,6 @@ const securityFeatures = [
       "One-question-at-a-time reveal",
       "Controlled navigation restrictions",
       "Session monitoring capabilities",
-      "Identity verification features",
       "Suspicious activity detection",
     ],
     color: "bg-red-100",
@@ -299,11 +306,7 @@ const accessibilityFeatures = [
     description:
       "Our platform is designed to be accessible to all users, including those with disabilities, ensuring an inclusive learning experience.",
     features: [
-      "Screen reader compatibility",
       "Keyboard navigation support",
-      "Color contrast compliance",
-      "Text-to-speech functionality",
-      "Customizable font sizes",
     ],
     color: "bg-green-100",
     visual: {
@@ -321,9 +324,6 @@ const accessibilityFeatures = [
     features: [
       "Responsive design for all devices",
       "Adjustable timing settings",
-      "Alternative text for images",
-      "Caption support for videos",
-      "Focus indicators for navigation",
     ],
     color: "bg-blue-100",
     visual: {

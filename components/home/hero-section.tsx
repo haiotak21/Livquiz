@@ -58,13 +58,12 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-12"
           >
             <div className="relative flex-1">
-              <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
               <Input
                 type="text"
                 placeholder="Enter quiz code..."
                 value={quizCode}
                 onChange={(e) => setQuizCode(e.target.value)}
-                className="pl-12 pr-4 py-4 rounded-2xl border-2 border-purple-200 focus:border-purple-500 text-lg"
+                className="px-4 py-4 rounded-2xl border-2 border-purple-200 focus:border-purple-500 text-lg"
               />
             </div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

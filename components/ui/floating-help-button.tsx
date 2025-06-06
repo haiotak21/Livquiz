@@ -51,6 +51,8 @@ export default function FloatingHelpButton({ showOnPage = true }: FloatingHelpBu
   const handleLiveChat = () => {
     if (window.Tawk_API) {
       window.Tawk_API.maximize();
+    } else {
+      console.error("Tawk_API is not available.");
     }
     setIsChatOpen(true)
     setIsOpen(false)

@@ -72,12 +72,6 @@ export default function Header() {
           description: "Create engaging quizzes with our intuitive builder",
         },
         {
-          name: "LMS Platform",
-          href: "/products#lms",
-          icon: BookOpen,
-          description: "Complete learning management system",
-        },
-        {
           name: "Live Quizzes",
           href: "/products#live-quizzes",
           icon: Users,

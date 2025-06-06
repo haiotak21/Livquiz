@@ -22,15 +22,13 @@ const basePlans = {
       popular: false,
       features: {
         included: [
-          "Up to 5 quizzes per month",
-          "Basic question types",
-          "Up to 25 participants per quiz",
-          "Up to 25 participants per quiz",
-          "Basic analytics",
-          "Community support",
-          "LivQuiz branding",
+          "Up to 5 images per quiz/flashcard/study set",
+          "Up to 20 quizzes, 20 flashcard sets, 10 study sets per month",
+          "Up to 10 players per game",
+          "Can clone up to 5 resources per month",
+          "15 AI-generated items per month",
         ],
-        excluded: ["Custom branding", "Advanced analytics", "Priority support", "API access"],
+        excluded: ["Video or audio attachments"],
       },
       cta: "Get Started Free",
       highlight: false,
@@ -44,16 +42,15 @@ const basePlans = {
       popular: true,
       features: {
         included: [
-          "Unlimited quizzes",
-          "All question types",
-          "Up to 100 participants per quiz",
-          "Advanced analytics & reports",
-          "Priority email support",
-          "Custom branding",
-          "Export results",
-          "Quiz templates",
+          "Up to 15 images per quiz/flashcard/study set",
+          "Up to 2 audio files per resource",
+          "1 video (up to 2 minutes) per resource",
+          "Up to 50 quizzes, 50 flashcard sets, 30 study sets per month",
+          "Up to 25 players per game",
+          "Can clone up to 20 resources per month",
+          "40 AI-generated items per month",
         ],
-        excluded: ["Team collaboration", "API access", "SSO integration"],
+        excluded: [],
       },
       cta: "Start 14-Day Free Trial",
       highlight: true,
@@ -67,14 +64,13 @@ const basePlans = {
       popular: false,
       features: {
         included: [
-          "Everything in Pro",
-          "Up to 500 participants per quiz",
-          "Advanced integrations",
-          "White-label options",
-          "Priority phone support",
-          "Custom themes",
-          "Advanced security",
-          "API access",
+          "Unlimited images per quiz/flashcard/study set",
+          "Up to 10 audio files per resource",
+          "Up to 5 videos (up to 5 minutes each) per resource",
+          "Unlimited resource creation",
+          "Up to 50 players per game",
+          "Unlimited cloning",
+          "Unlimited AI generation",
         ],
         excluded: [],
       },
@@ -92,16 +88,16 @@ const basePlans = {
       popular: false,
       features: {
         included: [
-          "Everything in Premium",
-          "Up to 1000 participants per quiz",
-          "Team collaboration",
-          "Advanced analytics",
-          "Priority support",
-          "Custom branding",
-          "Export results",
-          "Integration support",
+          "Up to 20 images per quiz/flashcard/study set",
+          "Up to 5 audio files per resource",
+          "Up to 3 videos (up to 5 minutes each) per resource",
+          "Up to 10 team members",
+          "Up to 30 participants in live training sessions",
+          "Up to 15 active training modules",
+          "Up to 3 collaborators per resource",
+          "75 AI-generated items per month",
         ],
-        excluded: ["Dedicated support", "Custom development"],
+        excluded: ["Unlimited media resources", "Unlimited team members"],
       },
       cta: "Start Free Trial",
       highlight: false,
@@ -115,44 +111,18 @@ const basePlans = {
       popular: true,
       features: {
         included: [
-          "Everything in Team",
-          "Unlimited participants",
-          "API access",
-          "SSO integration",
-          "Dedicated account manager",
-          "Custom integrations",
-          "Advanced security features",
-          "SLA guarantee",
-          "White-label solution",
-          "Custom training",
+          "Unlimited images, audio, and video per resource",
+          "Extended video length (up to 20 minutes each)",
+          "Up to 50 team members",
+          "Up to 150 participants in live training sessions",
+          "Unlimited training modules",
+          "Up to 10 collaborators per resource",
+          "Unlimited AI generation",
         ],
-        excluded: [],
+        excluded: ["Unlimited team members"],
       },
       cta: "Contact Sales",
       highlight: true,
-    },
-    {
-      name: "Custom",
-      monthlyPrice: "Custom",
-      annualPrice: "Custom",
-      period: "contact us",
-      description: "Tailored solutions for enterprise needs",
-      popular: false,
-      features: {
-        included: [
-          "Everything in Enterprise",
-          "Custom development",
-          "Dedicated infrastructure",
-          "24/7 phone support",
-          "On-premise deployment",
-          "Custom SLA",
-          "Unlimited everything",
-          "Personal success manager",
-        ],
-        excluded: [],
-      },
-      cta: "Contact Sales",
-      highlight: false,
     },
   ],
   School: [
@@ -165,16 +135,16 @@ const basePlans = {
       popular: false,
       features: {
         included: [
-          "Unlimited quizzes",
-          "All question types",
-          "Up to 200 students per quiz",
-          "Student progress tracking",
-          "Grade book integration",
-          "Parent communication tools",
-          "Educational templates",
-          "Curriculum alignment",
+          "Up to 20 images per quiz/flashcard/study set",
+          "Up to 5 audio files per resource",
+          "Up to 3 videos (up to 5 minutes each) per resource",
+          "Up to 30 students per classroom",
+          "1 classroom",
+          "Up to 50 participants in live instructor games",
+          "75 AI-generated items per month",
+          "Up to 75 tasks per month",
         ],
-        excluded: ["School-wide analytics", "Admin dashboard", "Bulk user management"],
+        excluded: ["Multiple classrooms", "Unlimited students"],
       },
       cta: "Start Free Trial",
       highlight: false,
@@ -188,18 +158,16 @@ const basePlans = {
       popular: true,
       features: {
         included: [
-          "Everything in Classroom",
-          "Unlimited students",
-          "School-wide analytics",
-          "Admin dashboard",
-          "Bulk user management",
-          "Custom branding",
-          "Priority support",
-          "Training sessions",
-          "Data export",
-          "FERPA compliance",
+          "Unlimited images per quiz/flashcard/study set",
+          "Up to 15 audio files per resource",
+          "Up to 10 videos (up to 10 minutes each) per resource",
+          "Up to 50 students per classroom",
+          "Up to 5 classrooms",
+          "Up to 100 participants in live instructor games",
+          "200 AI-generated items per month",
+          "Up to 250 tasks per month",
         ],
-        excluded: [],
+        excluded: ["Unlimited classrooms", "Unlimited students"],
       },
       cta: "Contact Sales",
       highlight: true,
@@ -213,14 +181,13 @@ const basePlans = {
       popular: false,
       features: {
         included: [
-          "Everything in School",
-          "Multi-school management",
-          "District-wide reporting",
-          "Advanced security",
-          "SSO integration",
-          "Custom integrations",
-          "Dedicated support",
-          "Professional development",
+          "Unlimited images, audio, and video per resource",
+          "Extended video length (up to 30 minutes each)",
+          "Unlimited students per classroom",
+          "Unlimited classrooms",
+          "Up to 300 participants in live instructor games",
+          "Unlimited AI generation",
+          "Unlimited task assignment",
         ],
         excluded: [],
       },
@@ -252,69 +219,54 @@ const faqs = [
 
 const comparisonFeatures = [
   {
-    name: "Number of Quizzes",
-    free: "5/month",
-    pro: "Unlimited",
-    team: "Unlimited",
-    enterprise: "Unlimited",
+    name: "-----",
+    Personal: "-----",
+    Business: "-----",
+    School: "-----",
   },
   {
-    name: "Max Participants per Quiz",
-    free: "25",
-    pro: "100",
-    team: "1,000",
-    enterprise: "Unlimited",
+    name: "-----",
+    Personal: "-----",
+    Business: "-----",
+    School: "-----",
   },
   {
-    name: "Question Types",
-    free: "Basic",
-    pro: "All",
-    team: "All",
-    enterprise: "All",
+    name: "-----",
+    Personal: "-----",
+    Business: "-----",
+    School: "-----",
   },
   {
-    name: "Custom Branding",
-    free: "✗",
-    pro: "✓",
-    team: "✓",
-    enterprise: "✓",
+    name: "-----",
+    Personal: "-----",
+    Business: "-----",
+    School: "-----",
   },
   {
-    name: "Advanced Analytics",
-    free: "✗",
-    pro: "✓",
-    team: "✓",
-    enterprise: "✓",
+    name: "-----",
+    Personal: "-----",
+    Business: "✓",
+    School: "✓",
   },
   {
-    name: "Team Collaboration",
-    free: "✗",
-    pro: "✗",
-    team: "✓",
-    enterprise: "✓",
+    name: "-----",
+    Personal: "N/A",
+    Business: "✓",
+    School: "✓",
   },
   {
-    name: "API Access",
-    free: "✗",
-    pro: "✗",
-    team: "✗",
-    enterprise: "✓",
+    name: "-----",
+    Personal: "✗",
+    Business: "✓",
+    School: "✓",
   },
   {
-    name: "SSO Integration",
-    free: "✗",
-    pro: "✗",
-    team: "✗",
-    enterprise: "✓",
+    name: "-----",
+    Personal: "✗",
+    Business: "✓",
+    School: "✓",
   },
-  {
-    name: "Priority Support",
-    free: "✗",
-    pro: "Email",
-    team: "Phone & Chat",
-    enterprise: "24/7 Dedicated",
-  },
-];
+]
 
 export default function PricingPage() {
   const [selectedPlanType, setSelectedPlanType] = useState("Personal")
@@ -493,10 +445,11 @@ export default function PricingPage() {
                         >
                           {getDisplayPrice(plan)}
                         </motion.span>
-                        {plan.period !== "contact us" && plan.period !== "forever" && (
+                        {plan.period === "contact us" ? (
                           <span className="text-gray-600 ml-2">/{plan.period}</span>
+                        ) : (
+                          <span className="text-gray-600 ml-2">/{billingPeriod === "monthly" ? "per month" : "annual"}</span>
                         )}
-                        {plan.period === "forever" && <span className="text-gray-600 ml-2">{plan.period}</span>}
                       </div>
                       {getSavings(plan) && (
                         <motion.div
@@ -589,10 +542,9 @@ export default function PricingPage() {
                   <thead>
                     <tr className="border-b border-gray-200">
                       <th className="text-left p-6 font-semibold text-gray-900">Feature</th>
-                      <th className="text-center p-6 font-semibold text-gray-900">Free</th>
-                      <th className="text-center p-6 font-semibold text-gray-900">Pro</th>
-                      <th className="text-center p-6 font-semibold text-gray-900">Team</th>
-                      <th className="text-center p-6 font-semibold text-gray-900">Enterprise</th>
+                      <th className="text-center p-6 font-semibold text-gray-900">Personal</th>
+                      <th className="text-center p-6 font-semibold text-gray-900">Business</th>
+                      <th className="text-center p-6 font-semibold text-gray-900">School</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -603,65 +555,30 @@ export default function PricingPage() {
                       >
                         <td className="p-6 font-medium text-gray-900">{feature.name}</td>
                         <td className="p-6 text-center">
-                          {feature.free === "✗" ? (
-                            <X className="w-5 h-5 text-red-500 mx-auto" />
-                          ) : feature.free === "✓" ? (
+                          {feature.Personal === "✓" ? (
                             <Check className="w-5 h-5 text-green-500 mx-auto" />
-                          ) : ( 
-                            <span
-                              className={feature.free === "Basic" ? "text-orange-600 font-medium" : "text-gray-900"}
-                            >
-                              {feature.free}
-                            </span>
+                          ) : feature.Personal === "✗" ? (
+                            <X className="w-5 h-5 text-red-500 mx-auto" />
+                          ) : (
+                            <span className="text-gray-900">{feature.Personal}</span>
                           )}
                         </td>
                         <td className="p-6 text-center">
-                          {feature.pro === "✗" ? (
-                            <X className="w-5 h-5 text-red-500 mx-auto" />
-                          ) : feature.pro === "✓" ? (
+                          {feature.Business === "✓" ? (
                             <Check className="w-5 h-5 text-green-500 mx-auto" />
+                          ) : feature.Business === "✗" ? (
+                            <X className="w-5 h-5 text-red-500 mx-auto" />
                           ) : (
-                            <span className={feature.pro === "Email" ? "text-green-600 font-medium" : "text-gray-900"}>
-                              {feature.pro}
-                            </span>
+                            <span className="text-gray-900">{feature.Business}</span>
                           )}
                         </td>
                         <td className="p-6 text-center">
-                          {feature.team === "✗" ? (
-                            <X className="w-5 h-5 text-red-500 mx-auto" />
-                          ) : feature.team === "✓" ? (
+                          {feature.School === "✓" ? (
                             <Check className="w-5 h-5 text-green-500 mx-auto" />
-                          ) : (
-                            <span
-                              className={
-                                feature.team === "Limited"
-                                  ? "text-orange-600 font-medium"
-                                  : feature.team === "Phone & Chat"
-                                    ? "text-green-600 font-medium"
-                                    : "text-gray-900"
-                              }
-                            >
-                              {feature.team}
-                            </span>
-                          )}
-                        </td>
-                        <td className="p-6 text-center">
-                          {feature.enterprise === "✗" ? (
+                          ) : feature.School === "✗" ? (
                             <X className="w-5 h-5 text-red-500 mx-auto" />
-                          ) : feature.enterprise === "✓" ? (
-                            <Check className="w-5 h-5 text-green-500 mx-auto" />
                           ) : (
-                            <span
-                              className={
-                                feature.enterprise === "Full"
-                                  ? "text-green-600 font-medium"
-                                  : feature.enterprise === "24/7 Dedicated"
-                                    ? "text-green-600 font-medium"
-                                    : "text-gray-900"
-                              }
-                            >
-                              {feature.enterprise}
-                            </span>
+                            <span className="text-gray-900">{feature.School}</span>
                           )}
                         </td>
                       </tr>
