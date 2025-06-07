@@ -13,7 +13,7 @@ const useCases = [
     subtitle: "For Students & Teachers",
     description:
       "Transform classrooms with interactive quizzes that make learning engaging and fun. Perfect for homework, assessments, and review sessions.",
-    features: ["Classroom Management", "Progress Tracking", "Student Engagement", "Flashcards & Study Sets", "Live Exam Mode"],
+    features: ["Classroom Management", "Progress Tracking","Flashcards & Study Sets", "Live Exam Mode"],
     image: "https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     color: "from-blue-500 to-blue-600",
     bgColor: "bg-blue-50",
@@ -43,7 +43,7 @@ export default function UseCasesSection() {
           viewport={{ once: true }}
           className="text-center mb-16 lg:mb-24"
         >
-          <div className="inline-block bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+          <div className="inline-block bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
             🎯 Use Cases
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
@@ -99,14 +99,7 @@ export default function UseCasesSection() {
                   ))}
                 </div>
 
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Link
-                    href={`/use-cases/${useCase.title.toLowerCase().replace(/\s+/g, "-").replace("&", "and")}`}
-                    className={`inline-block px-6 py-3 bg-gradient-to-r ${useCase.color} text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200`}
-                  >
-                    Learn More →
-                  </Link>
-                </motion.div>
+                
               </div>
 
               {/* Image */}

@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search, Play, Users, Zap } from "lucide-react"
+import Link from "next/link"
 
 const stats = [
   { icon: Users, value: "50K+", label: "Active Users" },
@@ -81,17 +82,14 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-600 hover:from-purple-700 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg">
-                Create Your First Quiz
-              </Button>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                variant="outline"
-                className="px-8 py-4 border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-lg"
-              >
-                Watch Demo
-              </Button>
+              <Link href="https://livquiz.com/auth/sign-up">
+                <Button
+                  variant="outline"
+                  className="px-8 py-4 border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-lg"
+                >
+                  Create Your First Quiz
+                </Button>
+              </Link>
             </motion.div>
           </motion.div>
 

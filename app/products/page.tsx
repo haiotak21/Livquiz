@@ -233,12 +233,14 @@ export default function ProductsPage() {
                   Transform your teaching, training, or team development with interactive quizzes built to captivate and
                   educate.
                 </p>
-                <Button
-                  size="lg"
-                  className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold"
-                >
-                  Sign Up - It's free
-                </Button>
+                <Link href="https://livquiz.com/auth/sign-up">
+                  <Button
+                    size="lg"
+                    className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold"
+                  >
+                    Sign Up - It's free
+                  </Button>
+                </Link>
               </motion.div>
 
               <motion.div
@@ -728,12 +730,14 @@ export default function ProductsPage() {
                 Join thousands of educators, trainers, and organizations who trust LivQuiz to deliver engaging learning
                 experiences.
               </p>
-              <Button
-                size="lg"
-                className="bg-white text-[#7c3aed] hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold"
-              >
-                Start Your Free Trial
-              </Button>
+              <Link href="https://livquiz.com/auth/sign-up">
+                <Button
+                  size="lg"
+                  className="bg-white text-[#7c3aed] hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold"
+                >
+                  Start Your Free Trial
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </section>

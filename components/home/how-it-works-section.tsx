@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 const steps = [
   {
@@ -105,10 +106,7 @@ export default function HowItWorksSection() {
                   ))}
                 </div>
 
-                {/* CTA Button */}
-                <Button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full transition-all duration-300 group-hover:shadow-lg">
-                  Try This Step
-                </Button>
+                
               </div>
             </motion.div>
           ))}
@@ -123,9 +121,11 @@ export default function HowItWorksSection() {
           className="text-center mt-16 lg:mt-24"
         >
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg">
-              Get Started Now →
-            </Button>
+            <Link href="https://livquiz.com/auth/sign-up">
+              <Button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg">
+                Get Started Now →
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

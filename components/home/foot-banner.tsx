@@ -2,6 +2,7 @@
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 const floatAnimation = {
   y: [0, -10, 0],
@@ -36,9 +37,11 @@ export default function FootBanner() {
             transition={{ duration: 1.5 }}
             className="max-w-full mx-auto mt-4"
           >
-            <Button className="py-3 text-white font-bold bg-purple-600 rounded-full border-r-4 border-r-purple-800 border-b-4 border-b-purple-800 border border-purple-800 hover:bg-purple-700 w-44 tracking-wide">
-              Let&apos;s Start For Free
-            </Button>
+            <Link href="https://livquiz.com/auth/sign-up">
+              <Button className="py-3 text-white font-bold bg-purple-600 rounded-full border-r-4 border-r-purple-800 border-b-4 border-b-purple-800 border border-purple-800 hover:bg-purple-700 w-44 tracking-wide">
+                Let&apos;s Start For Free
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
 
@@ -72,13 +75,15 @@ export default function FootBanner() {
             transition={{ duration: 1.5 }}
             className="max-w-full mx-auto mt-4"
           >
-            <motion.button
-              className="py-3 text-white font-bold bg-purple-600 rounded-full border-r-4 border-r-purple-800 border-b-4 border-b-purple-800 border border-purple-800 hover:bg-purple-700 w-44 tracking-wide"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Let&apos;s Start For Free
-            </motion.button>
+            <Link href="https://livquiz.com/auth/sign-up">
+              <motion.button
+                className="py-3 text-white font-bold bg-purple-600 rounded-full border-r-4 border-r-purple-800 border-b-4 border-b-purple-800 border border-purple-800 hover:bg-purple-700 w-44 tracking-wide"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Let&apos;s Start For Free
+              </motion.button>
+            </Link>
           </motion.div>
         </motion.div>
       </section>

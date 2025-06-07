@@ -31,6 +31,7 @@ import {
   Monitor,
   Target,
 } from "lucide-react"
+import Link from "next/link"
 
 const heroFeatures = [
   {
@@ -299,41 +300,7 @@ const securityFeatures = [
   },
 ]
 
-const accessibilityFeatures = [
-  {
-    icon: Users,
-    title: "Inclusive Design",
-    description:
-      "Our platform is designed to be accessible to all users, including those with disabilities, ensuring an inclusive learning experience.",
-    features: [
-      "Keyboard navigation support",
-    ],
-    color: "bg-green-100",
-    visual: {
-      icon: Users,
-      title: "Inclusive Learning",
-      subtitle: "Making education accessible to everyone",
-      bgColor: "bg-green-600",
-    },
-  },
-  {
-    icon: Monitor,
-    title: "Adaptive Interface",
-    description:
-      "Automatically adapts to different user needs and preferences, providing a personalized learning experience.",
-    features: [
-      "Responsive design for all devices",
-      "Adjustable timing settings",
-    ],
-    color: "bg-blue-100",
-    visual: {
-      icon: Monitor,
-      title: "Adaptive Experience",
-      subtitle: "Personalized for every learner's needs",
-      bgColor: "bg-blue-600",
-    },
-  },
-]
+
 
 const platformFeatures = [
   {
@@ -504,12 +471,14 @@ export default function FeaturesPage() {
                   real learning outcomes.
                 </p>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button
-                    size="lg"
-                    className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold"
-                  >
-                    Sign Up - It's free
-                  </Button>
+                  <Link href="https://livquiz.com/auth/sign-up">
+                    <Button
+                      size="lg"
+                      className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold"
+                    >
+                      Sign Up - It's free
+                    </Button>
+                  </Link>
                 </motion.div>
               </motion.div>
             </div>
@@ -873,72 +842,7 @@ export default function FeaturesPage() {
           </div>
         </section>
 
-        {/* Accessibility Section */}
-        <section id="accessibility" className="py-16 lg:py-24 bg-gray-50">
-          <div className="container max-w-7xl mx-auto px-4 lg:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <div className="flex items-center justify-center mb-6">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
-                  <Users className="w-6 h-6 text-green-600" />
-                </div>
-                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">Accessibility</h2>
-              </div>
-              <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                Making learning accessible to everyone with inclusive design and adaptive features.
-              </p>
-            </motion.div>
 
-            <div className="space-y-16">
-              {accessibilityFeatures.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch ${
-                    index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-                  }`}
-                >
-                  {/* Text content side */}
-                  <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""} flex flex-col h-full`}>
-                    <div className="flex flex-col h-full justify-center">
-                      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                      <p className="text-lg text-gray-600 mb-8 leading-relaxed">{feature.description}</p>
-                      <ul className="space-y-3">
-                        {feature.features.map((item, itemIndex) => (
-                          <li key={itemIndex} className="flex items-center space-x-3">
-                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                            <span className="text-gray-700">{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Visual card side */}
-                  <div className={`${index % 2 === 1 ? "lg:col-start-1" : ""} flex items-center h-full`}>
-                    <div
-                      className={`${feature.visual.bgColor} rounded-3xl p-8 text-white text-center shadow-xl hover:shadow-2xl transition-all duration-300 w-full h-full flex flex-col justify-center`}
-                    >
-                      <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <feature.visual.icon className="w-8 h-8 text-white" />
-                      </div>
-                      <h4 className="text-xl font-bold mb-2">{feature.visual.title}</h4>
-                      <p className="text-white/90">{feature.visual.subtitle}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* CTA Section */}
         <section className="py-16 lg:py-24 bg-[#7c3aed]">

@@ -251,16 +251,20 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.3 }}
           >
-            <Button
-              variant="ghost"
-              className="text-gray-700 hover:text-[#6052CC] hover:bg-purple-50 transition-all duration-200"
-            >
-              Log In
-            </Button>
-            <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.2 }}>
-              <Button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-200 border border-purple-600">
-                Sign Up →
+            <Link href="https://livquiz.com/auth/login?returnUrl=%2Fdashboard">
+              <Button
+                variant="ghost"
+                className="text-gray-700 hover:text-[#6052CC] hover:bg-purple-50 transition-all duration-200"
+              >
+                Log In
               </Button>
+            </Link>
+            <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.2 }}>
+              <Link href="https://livquiz.com/auth/sign-up">
+                <Button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-200 border border-purple-600">
+                  Sign Up →
+                </Button>
+              </Link>
             </motion.div>
           </motion.div>
 
@@ -342,12 +346,16 @@ export default function Header() {
                   </motion.div>
                 ))}
                 <div className="pt-4 border-t border-gray-100 space-y-3">
-                  <Button variant="ghost" className="w-full justify-start text-gray-700">
-                    Log In
-                  </Button>
-                  <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-200 border border-purple-600">
-                    Sign Up →
-                  </Button>
+                  <Link href="https://livquiz.com/auth/login?returnUrl=%2Fdashboard">
+                    <Button variant="ghost" className="w-full justify-start text-gray-700">
+                      Log In
+                    </Button>
+                  </Link>
+                  <Link href="https://livquiz.com/auth/sign-up">
+                    <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-200 border border-purple-600">
+                      Sign Up →
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </motion.div>

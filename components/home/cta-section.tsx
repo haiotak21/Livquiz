@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
+import Link from "next/link"
 
 const floatAnimation = {
   y: [0, -20, 0],
@@ -73,19 +74,23 @@ export default function CTASection() {
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
               >
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pruple-600 hover:from-purple-700 hover:to-pruple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg group">
-                    Start For Free
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  <Link href="https://livquiz.com/auth/sign-up">
+                    <Button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pruple-600 hover:from-purple-700 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg group">
+                      Start For Free
+                      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
                 </motion.div>
 
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button
-                    variant="outline"
-                    className="px-8 py-4 border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-lg"
-                  >
-                    Schedule Demo
-                  </Button>
+                  <Link href="https://livquiz.com/auth/sign-up">
+                    <Button
+                      variant="outline"
+                      className="px-8 py-4 border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-lg"
+                    >
+                      Schedule Demo
+                    </Button>
+                  </Link>
                 </motion.div>
               </motion.div>
 

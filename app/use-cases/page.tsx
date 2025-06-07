@@ -25,6 +25,7 @@ import {
   Calculator,
 } from "lucide-react"
 import { handlePageLoadScroll } from "@/utils/navigation"
+import Link from "next/link"
 
 const categoryNavigation = [
   { id: "corporate-training", name: "Corporate Training", icon: Building2 },
@@ -512,9 +513,7 @@ export default function UseCasesPage() {
                         ))}
                       </div>
 
-                      <Button className="bg-[#6052CC] hover:bg-[#4A4093] text-white px-6 py-3 rounded-full border border-[#4A4093] w-fit mt-auto">
-                        Learn More
-                      </Button>
+                     
                     </div>
 
                     <div
@@ -562,12 +561,7 @@ export default function UseCasesPage() {
                           ))}
                         </div>
 
-                        <Button
-                          variant="outline"
-                          className="w-full border-[#6052CC] text-[#6052CC] hover:bg-[#6052CC] hover:text-white rounded-full"
-                        >
-                          Learn More
-                        </Button>
+                       
                       </motion.div>
                     ))}
                   </motion.div>
@@ -773,12 +767,14 @@ export default function UseCasesPage() {
                 Join thousands of organizations who rely on LivQuiz to create engaging, interactive learning and
                 assessment experiences that drive real results.
               </p>
-              <Button
-                size="lg"
-                className="bg-white text-[#7c3aed] hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold"
-              >
-                Start Your Free Trial
-              </Button>
+              <Link href="https://livquiz.com/auth/sign-up">
+                <Button
+                  size="lg"
+                  className="bg-white text-[#7c3aed] hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold"
+                >
+                  Start Your Free Trial
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </section>

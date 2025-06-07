@@ -63,13 +63,6 @@ const features = [
     bgColor: "bg-teal-50",
   },
   {
-    icon: Award,
-    title: "Gamification & Rewards",
-    description: "Keep learners motivated with built-in leaderboards. (Badges, XP, and streaks coming soon)",
-    color: "from-pink-500 to-pink-600",
-    bgColor: "bg-pink-50",
-  },
-  {
     icon: Book,
     title: "Gamification & Rewards",
     description: "Create and assign standalone flashcards or grouped study sets — ideal for review, self-paced learning, or prep.",
@@ -147,20 +140,6 @@ export default function FeaturesSection() {
           })}
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-16 lg:mt-24"
-        >
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg">
-              Explore All Features →
-            </button>
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   )

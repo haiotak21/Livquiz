@@ -8,6 +8,7 @@ import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 import { Check, X, Star, Users, Zap, Shield } from "lucide-react"
 import { handlePageLoadScroll } from "@/utils/navigation"
+import Link from "next/link"
 
 const planTypes = ["Personal", "Business", "School"]
 
@@ -491,15 +492,17 @@ export default function PricingPage() {
                     </div>
 
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                      <Button
-                        className={`w-full py-4 rounded-xl font-semibold text-lg transition-all duration-300 ${
-                          plan.highlight
-                            ? "bg-purple-600 hover:bg-purple-700 text-white shadow-lg hover:shadow-xl border border-purple-600"
-                            : "bg-gray-100 hover:bg-gray-200 text-gray-900 hover:bg-purple-600 hover:text-white border hover:border-purple-600"
-                        }`}
-                      >
-                        {plan.cta}
-                      </Button>
+                      <Link href="https://livquiz.com/auth/sign-up">
+                        <Button
+                          className={`w-full py-4 rounded-xl font-semibold text-lg transition-all duration-300 ${
+                            plan.highlight
+                              ? "bg-purple-600 hover:bg-purple-700 text-white shadow-lg hover:shadow-xl border border-purple-600"
+                              : "bg-gray-100 hover:bg-gray-200 text-gray-900 hover:bg-purple-600 hover:text-white border hover:border-purple-600"
+                          }`}
+                        >
+                          {plan.cta}
+                        </Button>
+                      </Link>
                     </motion.div>
                   </div>
                 </motion.div>
@@ -698,12 +701,14 @@ export default function PricingPage() {
                 Join thousands of educators and trainers who trust LivQuiz. Start your free trial today.
               </p>
               <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
-                <Button
-                  size="lg"
-                  className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200"
-                >
-                  Start Free Trial
-                </Button>
+                <Link href="https://livquiz.com/auth/sign-up">
+                  <Button
+                    size="lg"
+                    className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200"
+                  >
+                    Start Free Trial
+                  </Button>
+                </Link>
               </motion.div>
             </motion.div>
           </div>

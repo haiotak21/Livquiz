@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Play, Users, BarChart3, Zap, Clock, Shield } from "lucide-react"
+import Link from "next/link"
 
 const steps = [
   {
@@ -234,19 +235,21 @@ export default function HowItWorksPage() {
           >
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">Ready to Get Started?</h2>
             <p className="text-lg lg:text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-                Join thousands of educators and trainers who rely on LivQuiz to create engaging, interactive learning experiences.
-              </p>
+              Join thousands of educators and trainers who rely on LivQuiz to create engaging, interactive learning experiences.
+            </p>
+            <Link href="https://livquiz.com/auth/sign-up">
               <Button
                 size="lg"
                 className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold"
               >
                 Start Creating Now
               </Button>
-            </motion.div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
-  )
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </div>
+)
 }
