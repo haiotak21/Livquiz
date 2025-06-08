@@ -113,7 +113,7 @@ export default function FeaturesSection() {
                 className="group"
               >
                 <div
-                  className={`${feature.bgColor} p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 h-full border border-white/50`}
+                  className={`${feature.bgColor} p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 h-full border border-white/50 flex flex-col items-center text-center`}
                 >
                   {/* Icon */}
                   <div

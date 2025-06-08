@@ -256,6 +256,23 @@ const analyticsFeatures = [
       bgColor: "bg-green-600",
     },
   },
+  {
+    icon: Bot,
+    title: "AI-Powered Flashcard Assistance",
+    description: "Unlock smarter studying with AI tools that simplify flashcard creation, personalize content, and accelerate learning.",
+    features: [
+      "Instant Flashcard Creation: Automatically generate flashcards from notes, documents, or any text input using AI.",
+      "Key Concept Detection: Let AI identify and extract essential terms, definitions, and ideas for you.",
+      "AI-Powered Review Scheduler: Stay on track with intelligent reminders and review timing based on proven memory retention techniques.",
+    ],
+    color: "bg-red-100",
+    visual: {
+      icon: Bot,
+      title: "AI-Powered Flashcard Assistance",
+      subtitle: "Generate Flashcard automatically using topics or documents.",
+      bgColor: "bg-red-600",
+    },
+  },
 ]
 
 const securityFeatures = [
@@ -457,10 +474,10 @@ export default function FeaturesPage() {
 
               {/* Right side - Content */}
               <motion.div
-                initial={{ opacity: 0, x: 50 }}
+                initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="order-1 lg:order-2"
+                transition={{ duration: 0.8 }}
+                className="order-1 lg:order-2 flex flex-col items-center"
               >
                 <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-6">
                 Create Effective Learning <span className="text-yellow-800">Content Quickly and easy</span> For Business,
@@ -470,16 +487,14 @@ export default function FeaturesPage() {
                   Create engaging quizzes, assessments, and interactive content that captivates your audience and drives
                   real learning outcomes.
                 </p>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Link href="https://livquiz.com/auth/sign-up">
-                    <Button
-                      size="lg"
-                      className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold"
-                    >
-                      Sign Up - It's free
-                    </Button>
-                  </Link>
-                </motion.div>
+                <Link href="/auth/sign-up" className="block mx-auto">
+                  <Button
+                    size="lg"
+                    className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold"
+                  >
+                    Sign Up - It's free
+                  </Button>
+                </Link>
               </motion.div>
             </div>
 
@@ -536,7 +551,7 @@ export default function FeaturesPage() {
               className="text-center mb-16"
             >
               <div className="flex items-center justify-center mb-6">
-                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                <div className="hidden lg:flex w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
                   <Edit3 className="w-6 h-6 text-purple-600" />
                 </div>
                 <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
@@ -591,7 +606,7 @@ export default function FeaturesPage() {
               className="text-center mb-16"
             >
               <div className="flex items-center justify-center mb-6">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                <div className="hidden lg:flex w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
                   <UserCheck className="w-6 h-6 text-blue-600" />
                 </div>
                 <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
@@ -646,7 +661,7 @@ export default function FeaturesPage() {
               className="text-center mb-16"
             >
               <div className="flex items-center justify-center mb-6">
-                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                <div className="hidden lg:flex w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
                   <Gamepad2 className="w-6 h-6 text-purple-600" />
                 </div>
                 <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
@@ -715,7 +730,7 @@ export default function FeaturesPage() {
               className="text-center mb-16"
             >
               <div className="flex items-center justify-center mb-6">
-                <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mr-4">
+                <div className="hidden lg:flex w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mr-4">
                   <BarChart3 className="w-6 h-6 text-pink-600" />
                 </div>
                 <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
@@ -785,7 +800,7 @@ export default function FeaturesPage() {
               className="text-center mb-16"
             >
               <div className="flex items-center justify-center mb-6">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                <div className="hidden lg:flex w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
                   <Shield className="w-6 h-6 text-blue-600" />
                 </div>
                 <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">Security & Exam Integrity</h2>
@@ -860,12 +875,6 @@ export default function FeaturesPage() {
                 Join thousands of educators, trainers, and organizations who trust LivQuiz to deliver engaging learning
                 experiences.
               </p>
-              <Button
-                size="lg"
-                className="bg-white text-[#7c3aed] hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold"
-              >
-                Start Your Free Trial
-              </Button>
             </motion.div>
           </div>
         </section>

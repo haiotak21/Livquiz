@@ -700,22 +700,12 @@ export default function PricingPage() {
               <p className="text-lg lg:text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
                 Join thousands of educators and trainers who trust LivQuiz. Start your free trial today.
               </p>
-              <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
-                <Link href="https://livquiz.com/auth/sign-up">
-                  <Button
-                    size="lg"
-                    className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200"
-                  >
-                    Start Free Trial
-                  </Button>
-                </Link>
               </motion.div>
-            </motion.div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-      <FloatingHelpButton />
-    </div>
-  )
-}
+            </div>
+          </section>
+        </main>
+        <Footer />
+        <FloatingHelpButton />
+      </div>
+    )
+  }

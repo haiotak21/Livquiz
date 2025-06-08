@@ -146,7 +146,7 @@ export default function HeroSection() {
             {stats.map((stat, index) => {
               const IconComponent = stat.icon
               return (
-                <motion.div key={index} whileHover={{ scale: 1.05 }} className="text-center">
+                <motion.div key={index} whileHover={{ scale: 1.05 }} className="text-center flex flex-col items-center">
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-100 rounded-xl mb-3">
                     <IconComponent className="w-6 h-6 text-purple-600" />
                   </div>

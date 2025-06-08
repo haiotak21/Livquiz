@@ -70,7 +70,7 @@ export default function UseCasesSection() {
             >
               {/* Content */}
               <div className="flex-1 space-y-6">
-                <div className="flex items-center space-x-4">
+                <div className="flex flex-col items-center text-center space-y-2 lg:flex-row lg:text-left lg:space-x-4 lg:space-y-0">
                   <div
                     className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${useCase.color} rounded-2xl`}
                   >

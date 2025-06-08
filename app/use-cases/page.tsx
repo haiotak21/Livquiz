@@ -466,8 +466,15 @@ export default function UseCasesPage() {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                   >
-                    <div className="inline-block bg-white rounded-3xl px-8 py-6 shadow-sm border border-gray-200 mb-8">
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">{useCase.headerTitle}</h2>
+                    <div className="flex flex-col items-center bg-white rounded-3xl px-8 py-6 shadow-sm border border-gray-200 mb-8">
+                      {useCase.headerTitle.includes(" ") && (
+                        <div className="text-5xl mb-4">{useCase.headerTitle.split(" ")[0]}</div>
+                      )}
+                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+                        {useCase.headerTitle.includes(" ")
+                          ? useCase.headerTitle.substring(useCase.headerTitle.indexOf(" ") + 1)
+                          : useCase.headerTitle}
+                      </h2>
                       <p className="text-lg text-gray-600 max-w-2xl mx-auto">{useCase.headerSubtitle}</p>
                     </div>
                   </motion.div>
@@ -483,7 +490,7 @@ export default function UseCasesPage() {
                     }`}
                   >
                     <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""} flex flex-col h-full`}>
-                      <div className="flex items-center space-x-4 mb-6">
+                      <div className="flex flex-col items-center text-center space-y-4 mb-6 md:flex-row md:text-left md:space-x-4 md:space-y-0">
                         <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center flex-shrink-0">
                           <useCase.icon className="w-8 h-8 text-purple-600" />
                         </div>
@@ -545,12 +552,13 @@ export default function UseCasesPage() {
                         whileHover={{ y: -5, scale: 1.02 }}
                         className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300"
                       >
-                        <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
-                          <subCase.icon className="w-6 h-6 text-purple-600" />
+                        <div className="flex flex-col items-center text-center mb-4">
+                          <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-2">
+                            <subCase.icon className="w-6 h-6 text-purple-600" />
+                          </div>
+                          <h3 className="text-xl font-bold text-gray-900">{subCase.title}</h3>
                         </div>
-
-                        <h3 className="text-xl font-bold text-gray-900 mb-3">{subCase.title}</h3>
-                        <p className="text-gray-600 mb-4 leading-relaxed">{subCase.description}</p>
+                        <p className="text-gray-600 leading-relaxed">{subCase.description}</p>
 
                         <div className="space-y-2 mb-6">
                           {subCase.features.map((feature, featureIndex) => (
@@ -635,9 +643,9 @@ export default function UseCasesPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <div className="flex items-center justify-center mb-6">
-                <Calculator className="w-8 h-8 text-[#6052CC] mr-3" />
-                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">Calculate Your ROI</h2>
+              <div className="flex flex-col items-center mb-6">
+                <Calculator className="w-8 h-8 text-[#6052CC]" />
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 text-center">Calculate Your ROI</h2>
               </div>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Estimate the potential return on investment for implementing LivQuiz in your organization
@@ -767,14 +775,6 @@ export default function UseCasesPage() {
                 Join thousands of organizations who rely on LivQuiz to create engaging, interactive learning and
                 assessment experiences that drive real results.
               </p>
-              <Link href="https://livquiz.com/auth/sign-up">
-                <Button
-                  size="lg"
-                  className="bg-white text-[#7c3aed] hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold"
-                >
-                  Start Your Free Trial
-                </Button>
-              </Link>
             </motion.div>
           </div>
         </section>

@@ -233,7 +233,7 @@ export default function ProductsPage() {
                   Transform your teaching, training, or team development with interactive quizzes built to captivate and
                   educate.
                 </p>
-                <Link href="https://livquiz.com/auth/sign-up">
+                <Link href="https://livquiz.com/auth/sign-up" className="block mx-auto">
                   <Button
                     size="lg"
                     className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold"
@@ -343,25 +343,25 @@ export default function ProductsPage() {
 
                 {/* Feature Cards Grid */}
                 <div className="lg:col-span-2 grid grid-cols-2 gap-6">
-                  <div className="bg-gray-50 rounded-2xl p-6 text-center">
+                  <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <FileText className="w-6 h-6 text-purple-600" />
                     </div>
                     <h4 className="font-bold text-gray-900 mb-2">Curriculum Mapping</h4>
                   </div>
-                  <div className="bg-gray-50 rounded-2xl p-6 text-center">
+                  <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <Users className="w-6 h-6 text-blue-600" />
                     </div>
                     <h4 className="font-bold text-gray-900 mb-2">Parent Portals</h4>
                   </div>
-                  <div className="bg-gray-50 rounded-2xl p-6 text-center">
+                  <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <Shield className="w-6 h-6 text-green-600" />
                     </div>
                     <h4 className="font-bold text-gray-900 mb-2">FERPA Compliance</h4>
                   </div>
-                  <div className="bg-gray-50 rounded-2xl p-6 text-center">
+                  <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <BarChart3 className="w-6 h-6 text-orange-600" />
                     </div>
@@ -401,25 +401,25 @@ export default function ProductsPage() {
 
                 {/* Feature Cards Grid */}
                 <div className="lg:col-span-2 grid grid-cols-2 gap-6">
-                  <div className="bg-gray-50 rounded-2xl p-6 text-center">
+                  <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <Users className="w-6 h-6 text-purple-600" />
                     </div>
                     <h4 className="font-bold text-gray-900 mb-2">Employee Training</h4>
                   </div>
-                  <div className="bg-gray-50 rounded-2xl p-6 text-center">
+                  <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <Target className="w-6 h-6 text-blue-600" />
                     </div>
                     <h4 className="font-bold text-gray-900 mb-2">Performance Analytics</h4>
                   </div>
-                  <div className="bg-gray-50 rounded-2xl p-6 text-center">
+                  <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <Users className="w-6 h-6 text-green-600" />
                     </div>
                     <h4 className="font-bold text-gray-900 mb-2">Team Collaboration</h4>
                   </div>
-                  <div className="bg-gray-50 rounded-2xl p-6 text-center">
+                  <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <FileText className="w-6 h-6 text-orange-600" />
                     </div>
@@ -457,7 +457,7 @@ export default function ProductsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 h-full flex flex-col"
+                  className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 h-full flex flex-col items-center text-center"
                 >
                   <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
                     <feature.icon className="w-6 h-6 text-purple-600" />
@@ -508,10 +508,10 @@ export default function ProductsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-start space-x-6 bg-white p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300"
+                  className="flex flex-col items-center text-center bg-white p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300"
                 >
                   <div
-                    className={`w-20 h-20 ${feature.color} ${feature.shape} flex items-center justify-center flex-shrink-0`}
+                    className={`w-20 h-20 ${feature.color} ${feature.shape} flex items-center justify-center flex-shrink-0 mb-4`}
                   >
                     <span className={`text-2xl font-bold ${feature.textColor}`}>{feature.number}</span>
                   </div>
@@ -599,7 +599,7 @@ export default function ProductsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gray-50 p-6 rounded-2xl hover:shadow-lg transition-all duration-300"
+                  className="bg-gray-50 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center"
                 >
                   <div className={`w-12 h-12 ${feature.color} rounded-xl flex items-center justify-center mb-4`}>
                     <feature.icon className={`w-6 h-6 ${feature.iconColor}`} />
@@ -637,7 +637,7 @@ export default function ProductsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                  className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center text-center"
                 >
                   <div className={`w-16 h-16 ${solution.color} rounded-2xl flex items-center justify-center mb-6`}>
                     <solution.icon className={`w-8 h-8 ${solution.iconColor}`} />
@@ -730,14 +730,6 @@ export default function ProductsPage() {
                 Join thousands of educators, trainers, and organizations who trust LivQuiz to deliver engaging learning
                 experiences.
               </p>
-              <Link href="https://livquiz.com/auth/sign-up">
-                <Button
-                  size="lg"
-                  className="bg-white text-[#7c3aed] hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold"
-                >
-                  Start Your Free Trial
-                </Button>
-              </Link>
             </motion.div>
           </div>
         </section>
