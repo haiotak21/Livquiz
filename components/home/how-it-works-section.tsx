@@ -97,10 +97,10 @@ export default function HowItWorksSection() {
                 <p className="text-gray-600 leading-relaxed text-lg mb-6">{step.description}</p>
 
                 {/* Features List */}
-                <div className="grid grid-cols-1 gap-2 mb-6">
+                <div className="grid grid-cols-1 gap-2 mb-6 text-left">
                   {step.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center justify-center space-x-2">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-purple-600 rounded-full flex-shrink-0"></div>
                       <span className="text-gray-700 text-sm">{feature}</span>
                     </div>
                   ))}

@@ -66,10 +66,10 @@ export default function UseCasesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} items-center gap-12 lg:gap-16`}
+              className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} items-center gap-12 lg:gap-16 lg:items-stretch`}
             >
               {/* Content */}
-              <div className="flex-1 space-y-6">
+              <div className="flex-1 space-y-6 flex flex-col h-full">
                 <div className="flex flex-col items-center text-center space-y-2 lg:flex-row lg:text-left lg:space-x-4 lg:space-y-0">
                   <div
                     className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${useCase.color} rounded-2xl`}
@@ -84,12 +84,12 @@ export default function UseCasesSection() {
 
                 <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">{useCase.description}</p>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {useCase.features.map((feature, featureIndex) => (
                     <motion.div
                       key={featureIndex}
                       whileHover={{ scale: 1.05 }}
-                      className={`${useCase.bgColor} p-4 rounded-xl border border-white/50 hover:shadow-md transition-all duration-200`}
+                      className={`${useCase.bgColor} p-4 rounded-xl border border-white/50 hover:shadow-md transition-all duration-200 text-left`}
                     >
                       <div className="flex items-center space-x-2">
                         <div className={`w-2 h-2 bg-gradient-to-r ${useCase.color} rounded-full`}></div>
@@ -103,14 +103,16 @@ export default function UseCasesSection() {
               </div>
 
               {/* Image */}
-              <motion.div whileHover={{ scale: 1.02 }} className="flex-1">
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <motion.div whileHover={{ scale: 1.02 }} className="flex-1 flex flex-col h-full">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl h-full">
                   <Image
                     src={useCase.image || "/placeholder.svg"}
                     alt={`${useCase.title} use case`}
                     width={600}
                     height={400}
-                    className="w-full h-auto"
+                    layout="responsive"
+                    objectFit="cover"
+                    className="rounded-3xl shadow-lg"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
                 </div>

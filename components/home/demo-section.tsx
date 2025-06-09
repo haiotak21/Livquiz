@@ -102,7 +102,7 @@ export default function DemoSection() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link href="https://livquiz.com/auth/sign-up">
+                <Link href="/contact">
                   <Button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pruple-600 hover:from-purple-700 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg">
                     🎮 Try Demo Quiz
                   </Button>

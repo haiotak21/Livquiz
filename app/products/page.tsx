@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { handlePageLoadScroll } from "@/utils/navigation"
+import Link from "next/link"
 import {
   Check,
   X,
@@ -27,12 +28,14 @@ import {
   GraduationCap,
   Building2,
   Globe,
-  Link,
+  Link as LinkIcon,
   FileText,
   Settings,
   Palette,
   HeadphonesIcon,
   Award,
+  Bot,
+
 } from "lucide-react"
 
 const features = [
@@ -124,7 +127,7 @@ const examFeatures = [
       "Create an exam with multiple question types like multiple choice, true/false, and more. Customize scoring and feedback settings.",
     color: "bg-purple-400",
     shape: "rounded-2xl",
-    textColor: "text-white",
+    textColor: "text-gray-900",
   },
   {
     number: "03",
@@ -132,7 +135,7 @@ const examFeatures = [
     description: "Stop students from cheating to ensure that the results are reliable.",
     color: "bg-pink-400",
     shape: "rounded-full",
-    textColor: "text-white",
+    textColor: "text-gray-900",
   },
   {
     number: "04",
@@ -149,7 +152,7 @@ const examFeatures = [
       "Exam results are displayed in real-time, with in-depth details such as exam duration and average score.",
     color: "bg-blue-400",
     shape: "rounded-full",
-    textColor: "text-white",
+    textColor: "text-gray-900",
   },
 ]
 
@@ -233,14 +236,12 @@ export default function ProductsPage() {
                   Transform your teaching, training, or team development with interactive quizzes built to captivate and
                   educate.
                 </p>
-                <Link href="https://livquiz.com/auth/sign-up" className="block mx-auto">
-                  <Button
-                    size="lg"
-                    className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold"
-                  >
-                    Sign Up - It's free
-                  </Button>
-                </Link>
+                <button
+                  onClick={() => window.location.href = "https://livquiz.com/auth/sign-up"}
+                  className="block mx-auto bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold"
+                >
+                  Sign Up - It's free
+                </button>
               </motion.div>
 
               <motion.div
@@ -324,8 +325,7 @@ export default function ProductsPage() {
               <div className="text-center mb-8">
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">LivQuiz for Education</h2>
                 <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                  Specially designed for educational institutions with features that support curriculum standards, grade
-                  management, and student privacy compliance.
+                Transform classrooms with interactive quizzes that make learning engaging and fun. Perfect for homework, assessments, and review sessions.
                 </p>
               </div>
 
@@ -347,25 +347,25 @@ export default function ProductsPage() {
                     <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <FileText className="w-6 h-6 text-purple-600" />
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">Curriculum Mapping</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">Classroom Management</h4>
                   </div>
                   <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <Users className="w-6 h-6 text-blue-600" />
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">Parent Portals</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">Progress Tracking</h4>
                   </div>
                   <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <Shield className="w-6 h-6 text-green-600" />
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">FERPA Compliance</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">Flashcards & Study Sets</h4>
                   </div>
                   <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <BarChart3 className="w-6 h-6 text-orange-600" />
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">Grade Integration</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">Live Exam Mode</h4>
                   </div>
                 </div>
               </div>
@@ -382,8 +382,7 @@ export default function ProductsPage() {
               <div className="text-center mb-8">
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">LivQuiz for Business</h2>
                 <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                  Tailored for corporate training, employee development, and professional certification programs with
-                  advanced reporting and compliance features.
+                Enhance employee training programs with interactive content that improves retention and engagement across your organization.
                 </p>
               </div>
 
@@ -405,25 +404,25 @@ export default function ProductsPage() {
                     <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <Users className="w-6 h-6 text-purple-600" />
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">Employee Training</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">Skills Assessment</h4>
                   </div>
                   <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <Target className="w-6 h-6 text-blue-600" />
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">Performance Analytics</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">Compliance Training</h4>
                   </div>
                   <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <Users className="w-6 h-6 text-green-600" />
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">Team Collaboration</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">Team Building</h4>
                   </div>
                   <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <FileText className="w-6 h-6 text-orange-600" />
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">Compliance Tracking</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">Performance Analytics</h4>
                   </div>
                 </div>
               </div>
@@ -463,17 +462,16 @@ export default function ProductsPage() {
                     <feature.icon className="w-6 h-6 text-purple-600" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed flex-grow">{feature.description}</p>
-
-                  <div className="space-y-3">
-                    {feature.benefits.map((benefit, benefitIndex) => (
-                      <div key={benefitIndex} className="flex items-center space-x-3">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed mb-6">{feature.description}</p>
+                  <ul className="space-y-3 mb-6 text-left">
+                    {feature.benefits.map((benefit, bIndex) => (
+                      <li key={bIndex} className="flex items-start space-x-3">
                         <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
                         <span className="text-sm text-gray-700">{benefit}</span>
-                      </div>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </motion.div>
               ))}
             </div>
@@ -508,16 +506,16 @@ export default function ProductsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex flex-col items-center text-center bg-white p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300"
+                  className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 h-full flex flex-col"
                 >
-                  <div
-                    className={`w-20 h-20 ${feature.color} ${feature.shape} flex items-center justify-center flex-shrink-0 mb-4`}
-                  >
+                  <div className={`w-12 h-12 ${feature.color} rounded-full mb-6 flex items-center justify-center`}>
                     <span className={`text-2xl font-bold ${feature.textColor}`}>{feature.number}</span>
                   </div>
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                    <p className="text-gray-600 leading-relaxed text-lg">{feature.description}</p>
+                    <p className={`${feature.textColor} text-lg leading-relaxed mb-6 text-left`}>
+                      {feature.description}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -542,12 +540,13 @@ export default function ProductsPage() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16 lg:items-stretch">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
+                className="flex flex-col"
               >
                 <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Real-Time Interactive Experience</h3>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
@@ -577,17 +576,20 @@ export default function ProductsPage() {
 
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
+                className="flex flex-col h-full"
               >
-                <Image
-                  src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww"
-                  alt="Live Quizzes Interface"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto rounded-2xl shadow-lg"
-                />
+                <div className="relative h-full">
+                  <Image
+                    src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww"
+                    alt="Live Quizzes Interface"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-2xl shadow-lg"
+                  />
+                </div>
               </motion.div>
             </div>
 
@@ -658,6 +660,7 @@ export default function ProductsPage() {
               <Button
                 size="lg"
                 className="bg-white text-[#6052CC] hover:bg-gray-50 px-8 py-4 rounded-full text-lg font-semibold border-2 border-white hover:border-gray-200"
+                onClick={() => window.location.href = "/contact"}
               >
                 Request Demo
               </Button>
@@ -710,6 +713,23 @@ export default function ProductsPage() {
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Certifications</h3>
                 <p className="text-gray-600 text-sm">Digital badges and certificate generation</p>
               </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 text-center"
+              >
+                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Bot className="w-8 h-8 text-red-600" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">AI-Powered Learning Tools</h3>
+                <p className="text-gray-600 text-sm">Smart Quiz generation and Flashcards, personalized feedback, and real-time performance insights.
+
+</p>
+              </motion.div>
+
             </div>
           </div>
         </section>

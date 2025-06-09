@@ -30,8 +30,6 @@ const footerSections = [
   {
     title: "Company",
     links: [
-      { name: "Terms and Conditions", href: "/terms" },
-      { name: "Privacy", href: "/privacy" },
       { name: "About Us", href: "/about" },
       { name: "Careers", href: "/careers" },
     ],
@@ -84,7 +82,7 @@ export default function Footer() {
 
             {/* Description */}
             <p className="text-gray-600 mb-6 leading-relaxed">
-              LivQuiz allows our users to teach participants to learn via interactive game modules.
+            Your AI-Powered Platform for Collaborative Learning.
             </p>
 
             {/* Social Links */}

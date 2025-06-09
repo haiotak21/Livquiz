@@ -251,7 +251,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.3 }}
           >
-            <Link href="https://livquiz.com/auth/login?returnUrl=%2Fdashboard">
+            <Link href="https://livquiz.com/auth/login">
               <Button
                 variant="ghost"
                 className="text-gray-700 hover:text-[#6052CC] hover:bg-purple-50 transition-all duration-200"
@@ -346,8 +346,11 @@ export default function Header() {
                   </motion.div>
                 ))}
                 <div className="pt-4 border-t border-gray-100 space-y-3">
-                  <Link href="https://livquiz.com/auth/login?returnUrl=%2Fdashboard">
-                    <Button variant="ghost" className="w-full justify-start text-gray-700">
+                  <Link href="https://livquiz.com/auth/login">
+                    <Button
+                      variant="ghost"
+                      className="text-gray-700 hover:text-[#6052CC] hover:bg-purple-50 transition-all duration-200"
+                    >
                       Log In
                     </Button>
                   </Link>

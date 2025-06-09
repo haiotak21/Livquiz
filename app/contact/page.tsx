@@ -14,14 +14,14 @@ const contactMethods = [
     icon: Mail,
     title: "Email Support",
     description: "Reach out anytime via email and get a response within 24 hours.",
-    contact: "support@livquiz.com",
+    contact: "info@livquiz.com",
     availability: "24/7 response",
   },
   {
     icon: Phone,
     title: "Phone Support",
     description: "Speak directly with our team during business hours.",
-    contact: "+251 996916442",
+    contact: "+1 416 827 0711",
     availability: "Mon-Fri, 9AM-6PM EST",
   },
   {
@@ -36,21 +36,21 @@ const contactMethods = [
 const offices = [
   {
     city: "Canada",
-    address: "Toronto, CA 94105",
-    phone: "+251 996916442",
-    email: "Canada@livquiz.com",
+    address: "56a Mill Street East, Unit #220, Acton, L7J 1H3",
+    phone: "+1 416 827 0711",
+    email: "info@livquiz.com",
   },
   {
-    city: "New York",
-    address: "New, New York, 10001",
-    phone: "+251 996916442",
-    email: "Newyork@livquiz.com",
+    city: "Cameroon",
+    address: "BP 2676, Messa, Yaoundé",
+    phone: "+237 94 53 63 19",
+    email: "info@livquiz.com",
   },
   {
     city: "Ethiopia",
     address: "Addis ababa, Mexico",
     phone: "+251 996916442",
-    email: "Ethiopia@livquiz.com",
+    email: "info@livquiz.com",
   },
 ]
 
@@ -131,17 +131,17 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">First Name *</label>
-                      <Input placeholder="Haile" className="rounded-xl border-gray-200" />
+                      <Input placeholder="first name" className="rounded-xl border-gray-200" />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Last Name *</label>
-                      <Input placeholder="Takele" className="rounded-xl border-gray-200" />
+                      <Input placeholder="Last name" className="rounded-xl border-gray-200" />
                     </div>
                   </div>
 
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
-                    <Input type="email" placeholder="haiotak21@gmail.com" className="rounded-xl border-gray-200" />
+                    <Input type="email" placeholder="your email" className="rounded-xl border-gray-200" />
                   </div>
 
                   <div>
@@ -187,7 +187,7 @@ export default function ContactPage() {
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
                       <Users className="w-5 h-5 text-purple-600" />
-                      <span className="text-gray-700">Trusted by 50,000+ educators worldwide</span>
+                      <span className="text-gray-700">Trusted by 10,000+ educators worldwide</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Clock className="w-5 h-5 text-purple-600" />
@@ -195,7 +195,7 @@ export default function ContactPage() {
                     </div>
                     <div className="flex items-center space-x-3">
                       <MapPin className="w-5 h-5 text-purple-600" />
-                      <span className="text-gray-700">Global presence in 150+ countries</span>
+                      <span className="text-gray-700">Global presence in 50+ countries</span>
                     </div>
                   </div>
                 </div>

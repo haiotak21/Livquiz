@@ -16,6 +16,7 @@ const stats = [
 
 export default function HeroSection() {
   const [quizCode, setQuizCode] = useState("")
+  const [showQuizInput, setShowQuizInput] = useState(false)
 
   return (
     <section className="relative pt-20 lg:pt-24 pb-16 lg:pb-24 overflow-hidden" id="hero">
@@ -51,43 +52,61 @@ export default function HeroSection() {
             professional, create, play, or host quizzes in real time — on any device.
           </motion.p>
 
-          {/* Quiz Code Input */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-12"
-          >
-            <div className="relative flex-1">
-              <Input
-                type="text"
-                placeholder="Enter quiz code..."
-                value={quizCode}
-                onChange={(e) => setQuizCode(e.target.value)}
-                className="px-4 py-4 rounded-2xl border-2 border-purple-200 focus:border-purple-500 text-lg"
-              />
-            </div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg">
-                Play Now!
+          {/* New Join Quizzes Button */}
+          {!showQuizInput && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex justify-center mb-12"
+            >
+              <Button
+                onClick={() => setShowQuizInput(true)}
+                className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg"
+              >
+                Join Quizzes
               </Button>
             </motion.div>
-          </motion.div>
+          )}
 
-          {/* CTA Buttons */}
+          {/* Quiz Code Input & Play Now Button - Conditionally Rendered */}
+          {showQuizInput && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-12 items-center"
+            >
+              <div className="relative flex-1">
+                <Input
+                  type="text"
+                  placeholder="Enter quiz code..."
+                  value={quizCode}
+                  onChange={(e) => setQuizCode(e.target.value)}
+                  className="px-4 py-4 rounded-2xl border-2 border-purple-200 focus:border-purple-500 text-lg"
+                />
+              </div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg">
+                  Play Now!
+                </Button>
+              </motion.div>
+            </motion.div>
+          )}
+
+          {/* New Sign Up - It's free Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-16 items-center"
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link href="https://livquiz.com/auth/sign-up">
                 <Button
-                  variant="outline"
-                  className="px-8 py-4 border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-lg"
+                  className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg"
                 >
-                  Create Your First Quiz
+                  Sign Up - It's free
                 </Button>
               </Link>
             </motion.div>

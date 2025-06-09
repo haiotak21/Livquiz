@@ -549,27 +549,20 @@ export default function UseCasesPage() {
                     {useCase.subCases.map((subCase, subIndex) => (
                       <motion.div
                         key={subIndex}
-                        whileHover={{ y: -5, scale: 1.02 }}
-                        className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: subIndex * 0.1 }}
+                        viewport={{ once: true }}
+                        className="flex flex-col items-center text-center p-6 rounded-lg bg-sky-50 border border-sky-100 shadow-md hover:shadow-lg transition-all duration-300"
                       >
-                        <div className="flex flex-col items-center text-center mb-4">
-                          <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-2">
-                            <subCase.icon className="w-6 h-6 text-purple-600" />
-                          </div>
-                          <h3 className="text-xl font-bold text-gray-900">{subCase.title}</h3>
-                        </div>
-                        <p className="text-gray-600 leading-relaxed">{subCase.description}</p>
-
-                        <div className="space-y-2 mb-6">
+                        <subCase.icon className="h-12 w-12 text-primary mb-4" />
+                        <h3 className="text-xl font-semibold mb-2">{subCase.title}</h3>
+                        <p className="text-gray-600 mb-4">{subCase.description}</p>
+                        <ul className="text-left text-gray-500 space-y-2 list-disc list-inside mt-auto">
                           {subCase.features.map((feature, featureIndex) => (
-                            <div key={featureIndex} className="flex items-start space-x-2">
-                              <span className="text-purple-600 font-bold text-sm mt-1">→</span>
-                              <span className="text-sm text-gray-600">{feature}</span>
-                            </div>
+                            <li key={featureIndex}>{feature}</li>
                           ))}
-                        </div>
-
-                       
+                        </ul>
                       </motion.div>
                     ))}
                   </motion.div>
@@ -592,9 +585,9 @@ export default function UseCasesPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <div className="flex items-center justify-center mb-6">
-                <Star className="w-8 h-8 text-yellow-300 mr-3" />
-                <h2 className="text-4xl lg:text-5xl font-bold text-white">Success Stories</h2>
+              <div className="flex flex-col items-center mb-6">
+                <Star className="w-8 h-8 text-yellow-300 mb-3" />
+                <h2 className="text-4xl lg:text-5xl font-bold text-white text-center">Success Stories</h2>
               </div>
               <p className="text-xl text-white/90 max-w-3xl mx-auto">
                 Real results from real organizations using LivQuiz to transform their learning experiences
@@ -612,11 +605,11 @@ export default function UseCasesPage() {
                   whileHover={{ y: -8, scale: 1.02 }}
                   className="bg-white/15 backdrop-blur-lg border border-white/20 rounded-3xl p-8 hover:bg-white/20 transition-all duration-300 relative overflow-hidden"
                 >
-                  <div className="absolute top-4 right-4 bg-green-400 text-green-900 px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="absolute top-8 right-4 bg-green-400 text-green-900 px-1.5 py-0.5 rounded-full text-[10px] font-semibold">
                     {story.impact}
                   </div>
 
-                  <div className="flex items-center space-x-4 mb-6">
+                  <div className="flex items-center space-x-4 mb-6 pt-8">
                     <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center text-2xl">
                       {story.avatar}
                     </div>
@@ -719,7 +712,7 @@ export default function UseCasesPage() {
                   <div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-8">Your Estimated Savings</h3>
                     <div className="bg-gradient-to-br from-[#9333ea] to-purple-600 text-white rounded-2xl p-8">
-                      <div className="grid grid-cols-2 gap-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="text-center">
                           <div className="text-3xl font-bold mb-2">{roiResults.timeSaved.toLocaleString()}</div>
                           <div className="text-sm opacity-90">Hours Saved</div>

@@ -492,7 +492,7 @@ export default function FeaturesPage() {
                     size="lg"
                     className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold"
                   >
-                    Sign Up - It's free
+                    <span>Sign Up - It's free</span>
                   </Button>
                 </Link>
               </motion.div>
