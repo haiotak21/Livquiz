@@ -11,7 +11,7 @@ import StickyButtonsFooter from "@/components/layout/StickyButtonsFooter"
 
 const stats = [
   { icon: Users, value: "10k+", label: "Active users" },
-  { icon: Play, value: "15K+", label: "Quizzes and Flashcard" },
+  { icon: Play, value: "15K+", label: "Quizzes and Flashcards" },
   { icon: Globe, value: "50+", label: "county" },
   { icon: Zap, value: "99.9%", label: "Uptime" },
 ]
@@ -70,7 +70,7 @@ export default function HeroSection() {
           >
           
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="https://livquiz.com/join">
+            <Link href="">
               <Button
                 onClick={() => setShowQuizInput(true)}
                 className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg"

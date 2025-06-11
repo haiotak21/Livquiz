@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Users, Play, BarChart3, Shield, Clock, BookOpen, Zap, Globe, Award, Book} from "lucide-react"
+import { Users, Play, BarChart3, Shield, Clock, BookOpen, Zap, Globe, Award, Book, Sparkles, FileStack} from "lucide-react"
 
 const features = [
   {
@@ -11,6 +11,20 @@ const features = [
       "Host real-time quizzes with unlimited players. Perfect for classrooms, training, or group competitions.",
     color: "from-blue-500 to-blue-600",
     bgColor: "bg-blue-50",
+  },
+  {
+    icon: Sparkles,
+    title: "AI-Powered Study Tools",
+    description: "Create smart flashcards and generate quizzes instantly with AI. Whether you're reviewing key concepts or testing knowledge, our AI adapts to your needs for efficient, personalized learning.",
+    color: "from-red-500 to-red-600",
+    bgColor: "bg-pink-50",
+  },
+  {
+    icon: FileStack,
+    title: "Smarter Flashcard Study",
+    description: "Master key concepts with dynamic flashcards designed for active recall, spaced repetition, and focused learning—anytime, anywhere.",
+    color: "from-teal-500 to-teal-600",
+    bgColor: "bg-teal-50",
   },
   {
     icon: Play,
@@ -55,20 +69,7 @@ const features = [
     color: "from-yellow-500 to-yellow-600",
     bgColor: "bg-yellow-50",
   },
-  {
-    icon: Globe,
-    title: "Global Accessibility",
-    description: "Designed to work smoothly on mobile, tablet, and desktop — no downloads, fully web-based and responsive.",
-    color: "from-teal-500 to-teal-600",
-    bgColor: "bg-teal-50",
-  },
-  {
-    icon: Book,
-    title: "Gamification & Rewards",
-    description: "Create and assign standalone flashcards or grouped study sets — ideal for review, self-paced learning, or prep.",
-    color: "from-red-500 to-red-600",
-    bgColor: "bg-pink-50",
-  },
+ 
 ]
 
 export default function FeaturesSection() {
