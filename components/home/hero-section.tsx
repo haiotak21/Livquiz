@@ -1,12 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search, Play, Users, Zap } from "lucide-react"
 import Link from "next/link"
+import StickyButtonsFooter from "@/components/layout/StickyButtonsFooter"
 
 const stats = [
   { icon: Users, value: "50K+", label: "Active Users" },
@@ -17,6 +18,13 @@ const stats = [
 export default function HeroSection() {
   const [quizCode, setQuizCode] = useState("")
   const [showQuizInput, setShowQuizInput] = useState(false)
+  const quizInputRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (showQuizInput && quizInputRef.current) {
+      quizInputRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [showQuizInput]);
 
   return (
     <section className="relative pt-20 lg:pt-24 pb-16 lg:pb-24 overflow-hidden" id="hero">
@@ -52,14 +60,14 @@ export default function HeroSection() {
             professional, create, play, or host quizzes in real time — on any device.
           </motion.p>
 
-          {/* New Join Quizzes Button */}
-          {!showQuizInput && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex justify-center mb-12"
-            >
+          {/* Combined Buttons for Join Quizzes and Sign Up - Only visible on desktop */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="hidden md:flex flex-col sm:flex-row gap-4 justify-center mb-16 items-center"
+          >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 onClick={() => setShowQuizInput(true)}
                 className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg"
@@ -67,11 +75,21 @@ export default function HeroSection() {
                 Join Quizzes
               </Button>
             </motion.div>
-          )}
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link href="https://livquiz.com/auth/sign-up">
+                <Button
+                  className="px-8 py-4 bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg"
+                >
+                  Sign Up - It's free
+                </Button>
+              </Link>
+            </motion.div>
+          </motion.div>
 
           {/* Quiz Code Input & Play Now Button - Conditionally Rendered */}
           {showQuizInput && (
             <motion.div
+              ref={quizInputRef}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -93,24 +111,6 @@ export default function HeroSection() {
               </motion.div>
             </motion.div>
           )}
-
-          {/* New Sign Up - It's free Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-16 items-center"
-          >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link href="https://livquiz.com/auth/sign-up">
-                <Button
-                  className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg"
-                >
-                  Sign Up - It's free
-                </Button>
-              </Link>
-            </motion.div>
-          </motion.div>
 
           {/* Hero Image */}
           <motion.div
@@ -177,6 +177,7 @@ export default function HeroSection() {
           </motion.div>
         </div>
       </div>
+      <StickyButtonsFooter setShowQuizInput={setShowQuizInput} />
     </section>
   )
 }

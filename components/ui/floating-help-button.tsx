@@ -185,7 +185,7 @@ export default function FloatingHelpButton({ showOnPage = true }: FloatingHelpBu
         </AnimatePresence>
 
         {/* Main Help Button */}
-        {!isChatOpen && (
+        {!isMobile && !isChatOpen && (
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
             whileHover={{ scale: 1.1 }}
