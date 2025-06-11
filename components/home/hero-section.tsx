@@ -68,13 +68,16 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="hidden md:flex flex-col sm:flex-row gap-4 justify-center mb-16 items-center"
           >
+          
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link href="https://livquiz.com/join">
               <Button
                 onClick={() => setShowQuizInput(true)}
                 className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg"
               >
                 Join Quizzes
               </Button>
+              </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link href="https://livquiz.com/auth/sign-up">
@@ -87,31 +90,6 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Quiz Code Input & Play Now Button - Conditionally Rendered */}
-          {showQuizInput && (
-            <motion.div
-              ref={quizInputRef}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-12 items-center"
-            >
-              <div className="relative flex-1">
-                <Input
-                  type="text"
-                  placeholder="Enter quiz code..."
-                  value={quizCode}
-                  onChange={(e) => setQuizCode(e.target.value)}
-                  className="px-4 py-4 rounded-2xl border-2 border-purple-200 focus:border-purple-500 text-lg"
-                />
-              </div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg">
-                  Play Now!
-                </Button>
-              </motion.div>
-            </motion.div>
-          )}
 
           {/* Hero Image */}
           <motion.div

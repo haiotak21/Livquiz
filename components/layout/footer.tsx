@@ -23,7 +23,7 @@ const footerSections = [
     links: [
       { name: "Business", href: "/use-cases#corporate-training" },
       { name: "Education", href: "/use-cases#education" },
-      { name: "Onboarding", href: "/use-cases#events-conferences" },
+      { name: "Events", href: "/use-cases#events-conferences" },
       { name: "Recruitment", href: "/use-cases#recruitment" },
     ],
   },

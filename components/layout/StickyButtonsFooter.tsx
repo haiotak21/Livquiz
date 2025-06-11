@@ -17,12 +17,14 @@ export default function StickyButtonsFooter({ setShowQuizInput }: StickyButtonsF
     >
       <div className="flex flex-row gap-2 flex-grow">
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1">
+        <Link href="https://livquiz.com/join">
           <Button
             onClick={() => setShowQuizInput(true)}
             className="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-base"
           >
             Join Quiz
           </Button>
+          </Link>
         </motion.div>
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1">
           <Link href="https://livquiz.com/auth/sign-up">
