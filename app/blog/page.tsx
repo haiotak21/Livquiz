@@ -5,34 +5,34 @@ import { Calendar, User, ArrowRight } from "lucide-react"
 const blogPosts = [
   {
     title: "10 Tips for Creating Engaging Quizzes",
-    excerpt: "Learn how to create quizzes that captivate your audience and improve learning outcomes.",
+    excerpt: "Discover expert-backed strategies to build captivating quizzes using LivQuiz’s powerful tools — and keep your learners coming back for more.",
     author: "Haile Takele",
     date: "March 15, 2024",
-    image: "https://images.unsplash.com/photo-1627392449335-f0f44bf536fb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
+    image: "https://i.pinimg.com/736x/8f/09/d0/8f09d08149477f8268e61886b1092c0f.jpg",
     category: "Tips & Tricks",
   },
   {
     title: "The Future of Interactive Learning",
-    excerpt: "Explore how technology is transforming education and what it means for educators.",
+    excerpt: "See how platforms like LivQuiz are redefining education through smart automation, AI, and live interactivity — and what that means for educators.",
     author: "Haile Takele",
     date: "March 10, 2024",
-    image: "https://images.unsplash.com/photo-1610333248098-eef6d6ff4b31?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
+    image: "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "Industry Insights",
   },
   {
-    title: "Case Study: How XYZ Corp Improved Training",
-    excerpt: "See how one company used LivQuiz to transform their employee training program.",
+    title: "LivQuiz in Action: A Corporate Training Transformation",
+    excerpt: "Explore how one company turned dull, outdated training into dynamic learning experiences with LivQuiz’s interactive features.",
     author: "Haile Takele",
     date: "March 5, 2024",
-    image: "https://images.unsplash.com/photo-1516515429572-bf32372f2409?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
+    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "Case Studies",
   },
   {
-    title: "Best Practices for Live Quiz Sessions",
-    excerpt: "Master the art of hosting engaging live quiz sessions that keep participants engaged.",
+    title: " Mastering Live Quiz Sessions: Best Practices with LivQuiz",
+    excerpt: "Discover proven strategies for running smooth, engaging live quizzes using LivQuiz’s interactive tools to maximize participation and impact.",
     author: "Haile Takele",
     date: "February 28, 2024",
-    image: "https://images.unsplash.com/photo-1616451466972-60b201a0c717?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzZ8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
+    image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "Best Practices",
   },
 ]
@@ -85,10 +85,10 @@ export default function BlogPage() {
                       </div>
 
                       <a
-                        href="#"
+                        href="https://livquiz.com/auth/sign-up"
                         className="inline-flex items-center space-x-2 text-purple-600 hover:text-purple-700 font-semibold"
                       >
-                        <span>Read More</span>
+                        <span>Try now</span>
                         <ArrowRight className="w-4 h-4" />
                       </a>
                     </div>

@@ -12,21 +12,21 @@ import { Users, Play, Zap, Globe } from "lucide-react"
 const team = [
   {
     name: "Clovis Simo",
-    role: "CEO & Founder",
-    image: "/placeholder.svg?height=300&width=300",
-    bio: "...",
+    role: "CTO of Livquiz",
+    image: "/clovis.jpg",
+    bio: "Heads all things tech at LivQuiz—leading development, innovation, and system architecture with precision and creativity.",
   },
   {
     name: "Eunice Gapie",
-    role: "..",
-    image: "/placeholder.svg?height=300&width=300",
-    bio: "...",
+    role: "CEO of Livquiz",
+    image: "/Eunice.jpg",
+    bio: "Visionary leader driving LivQuiz's mission to make learning fun, accessible, and effective for everyone.",
   },
   {
     name: "H/mariam Takele",
-    role: "..",
-    image: "/placeholder.svg?height=300&width=300",
-    bio: "...",
+    role: "Qa and Front end developer",
+    image: "/hailee.jpg",
+    bio: "Ensures LivQuiz looks and feels amazing on every screen—meticulously testing, refining, and perfecting the user experience.",
   },
 ]
 

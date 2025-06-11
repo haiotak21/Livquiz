@@ -15,7 +15,7 @@ const steps = [
     description:
       "Use our intuitive drag-and-drop builder to create engaging quizzes with multiple question types, media, and custom themes.",
     features: ["Multiple question types", "Rich media support", "Study set", "Exams"],
-    image: "https://images.unsplash.com/photo-1511360764098-91482031eaf6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
+    image: "https://i.pinimg.com/736x/88/59/95/88599567283a293d73dd39acdbf650b0.jpg",
     color: "bg-blue-100",
     iconColor: "text-blue-600",
   },
@@ -25,7 +25,7 @@ const steps = [
     description:
       "Share your quiz with participants through various methods and host live interactive sessions that keep everyone engaged.",
     features: ["Multiple sharing options", "Live sessions", "Real-time participation", "Mobile-friendly"],
-    image: "https://images.unsplash.com/photo-1603553329474-99f95f35394f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
+    image: "https://i.pinimg.com/736x/0a/18/5f/0a185f66bac0cf3020df5186753119d7.jpg",
     color: "bg-purple-100",
     iconColor: "text-purple-600",
   },
@@ -35,7 +35,7 @@ const steps = [
     description:
       "Monitor performance with detailed analytics and insights that help you understand learning patterns and improve outcomes.",
     features: ["Real-time analytics", "Performance tracking", "Detailed reports", "Export capabilities"],
-    image: "https://images.unsplash.com/photo-1610333248098-eef6d6ff4b31?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
+    image: "https://i.pinimg.com/736x/f1/5f/1d/f15f1de1d6b7c90bfc7a1c6302c9d280.jpg",
     color: "bg-green-100",
     iconColor: "text-green-600",
   },
@@ -44,13 +44,13 @@ const steps = [
 const features = [
   {
     icon: Zap,
-    title: "Lightning Fast Setup",
-    description: "Create and launch your first quiz in under 5 minutes",
+    title: "Easy to create Quiz/Flashcard/study set/Exam",
+    description: "Create and launch",
   },
   {
     icon: Users,
-    title: "Unlimited Participants",
-    description: "Host sessions with thousands of participants simultaneously",
+    title: "Multiplayer feature",
+    description: "Host sessions with participants simultaneously",
   },
   {
     icon: BarChart3,
@@ -59,13 +59,8 @@ const features = [
   },
   {
     icon: Clock,
-    title: "24/7 Availability",
+    title: "Avaliblity",
     description: "Your quizzes are accessible anytime, anywhere, on any device",
-  },
-  {
-    icon: Shield,
-    title: "Enterprise Security",
-    description: "Bank-level security with GDPR compliance and data protection",
   },
   {
     icon: Play,

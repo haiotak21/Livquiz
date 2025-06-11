@@ -252,7 +252,7 @@ export default function ProductsPage() {
               >
                 <div className="relative w-full h-96 bg-gray-100 rounded-2xl shadow-lg overflow-hidden border-2 border-dashed border-gray-300">
                   <Image
-                    src="https://images.unsplash.com/photo-1596061343518-bdcae243ceca?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww"
+                    src="https://i.pinimg.com/736x/d1/88/da/d188da345a1aa258f410cae6f82d4818.jpg"
                     alt="LivQuiz Product Interface"
                     width={600}
                     height={500}
@@ -333,7 +333,7 @@ export default function ProductsPage() {
                 {/* Education Edition Card (Image) */}
                 <div className="lg:col-span-1">
                   <Image
-                    src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3VwZXIlMjBjYXJ8ZW58MHx8MHx8fDA%3D"
+                    src="https://i.pinimg.com/736x/2a/ae/e3/2aaee308cfff38dab4e7e0b7172314a4.jpg"
                     alt="Education Edition"
                     width={400}
                     height={300}
@@ -390,7 +390,7 @@ export default function ProductsPage() {
                 {/* Business Edition Card (Image) */}
                 <div className="lg:col-span-1">
                   <Image
-                    src="https://images.unsplash.com/photo-1531920327645-347e96a7f31e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww"
+                    src="https://i.pinimg.com/736x/4a/c1/53/4ac15353a40d9fb359a6395156e93f81.jpg"
                     alt="Business Edition"
                     width={400}
                     height={300}
@@ -583,7 +583,7 @@ export default function ProductsPage() {
               >
                 <div className="relative h-full">
                   <Image
-                    src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww"
+                    src="https://i.pinimg.com/736x/10/44/22/104422ff81bf93aaab236dc47f42dd04.jpg"
                     alt="Live Quizzes Interface"
                     layout="fill"
                     objectFit="cover"

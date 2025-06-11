@@ -86,7 +86,7 @@ const useCases = [
       "Performance evaluation",
     ],
     image:
-      "https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
+      "https://i.pinimg.com/736x/0b/32/4a/0b324a3a6ebe38fcd74625f2fb88ecff.jpg",
     stats: { companies: "50+", employees: "200+", completion: "95%" },
     id: "corporate-training",
     headerTitle: "🏢 Corporate Training & Development",
@@ -144,7 +144,7 @@ const useCases = [
       "Boost classroom participation with live instructor-led quizzes",
     ],
     image:
-      "https://plus.unsplash.com/premium_photo-1686730540270-93f2c33351b6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
+      "https://i.pinimg.com/736x/69/4d/84/694d84de66919f09291649930f14cfe9.jpg",
     stats: { users: "10k+", quizzes: "15K+", satisfaction: "99%" },
     id: "education",
     headerTitle: "🎓 Education & Academic Learning",
@@ -199,7 +199,7 @@ const useCases = [
       "Moderate sessions with live controls for smooth interaction",
     ],
     image:
-      "https://images.unsplash.com/photo-1617814086906-d847a8bc6fca?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzh8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
+      "https://i.pinimg.com/736x/bf/1e/08/bf1e087e2c6777d548e2e774cf52dc7a.jpg",
     stats: { events: "200+", participants: "5k+", engagement: "92%" },
     id: "events-conferences",
     headerTitle: "🎪 Events, Conferences & Workshops",
@@ -254,7 +254,7 @@ const useCases = [
       "Prepare candidates with practice quizzes",
     ],
     image:
-      "https://plus.unsplash.com/premium_photo-1664304752635-3e0d8d8185e3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3VwZXIlMjBjYXJ8ZW58MHx8MHx8fDA%3D",
+      "https://i.pinimg.com/736x/49/79/ef/4979efecfa4d687f3f03d238875c00db.jpg",
     stats: { hires: "100+", companies: "20+", accuracy: "89%" },
     id: "recruitment",
     headerTitle: "💼 Recruitment & Hiring",

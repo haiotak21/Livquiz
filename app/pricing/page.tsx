@@ -31,7 +31,7 @@ const basePlans = {
         ],
         excluded: ["Video or audio attachments"],
       },
-      cta: "Get Started Free",
+      cta: "start now",
       highlight: false,
     },
     {
@@ -53,7 +53,7 @@ const basePlans = {
         ],
         excluded: [],
       },
-      cta: "Start 14-Day Free Trial",
+      cta: "Start 5-Day Free Trial",
       highlight: true,
     },
     {
@@ -75,7 +75,7 @@ const basePlans = {
         ],
         excluded: [],
       },
-      cta: "Start Free Trial",
+      cta: "Start now",
       highlight: false,
     },
   ],
@@ -100,7 +100,7 @@ const basePlans = {
         ],
         excluded: ["Unlimited media resources", "Unlimited team members"],
       },
-      cta: "Start Free Trial",
+      cta: "Start now",
       highlight: false,
     },
     {
@@ -147,7 +147,7 @@ const basePlans = {
         ],
         excluded: ["Multiple classrooms", "Unlimited students"],
       },
-      cta: "Start Free Trial",
+      cta: "Start now",
       highlight: false,
     },
     {
@@ -613,7 +613,7 @@ export default function PricingPage() {
               {[
                 {
                   icon: Users,
-                  title: "Trusted by 50K+ Users",
+                  title: "Trusted by 10K+ Users",
                   description:
                     "Join educators and trainers worldwide who rely on LivQuiz for engaging learning experiences.",
                 },
