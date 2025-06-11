@@ -21,7 +21,7 @@ export default function StickyButtonsFooter({ setShowQuizInput }: StickyButtonsF
             onClick={() => setShowQuizInput(true)}
             className="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-base"
           >
-            Join
+            Join Quiz
           </Button>
         </motion.div>
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1">
@@ -29,7 +29,7 @@ export default function StickyButtonsFooter({ setShowQuizInput }: StickyButtonsF
             <Button
               className="w-full py-3 bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-base"
             >
-              Signup
+              Sign up FREE
             </Button>
           </Link>
         </motion.div>

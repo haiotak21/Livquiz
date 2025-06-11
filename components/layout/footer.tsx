@@ -12,10 +12,10 @@ const footerSections = [
   {
     title: "Product",
     links: [
-      { name: "Quiz Maker", href: "/features#quiz-maker" },
-      { name: "Live Quizzes", href: "/features#live-quizzes" },
-      { name: "Exam Builder", href: "/features#exam-builder" },
-      { name: "Flashcards", href: "/features#flashcards" },
+      { name: "Platform Editions", href: "/products#platform-editions" },
+      { name: "Live Quizzes", href: "/products#live-quizzes" },
+      { name: "Exam Builder", href: "/products#exam-builder" },
+      { name: "Amazing Tools", href: "/products#amazing-tools" },
     ],
   },
   {
@@ -31,13 +31,12 @@ const footerSections = [
     title: "Company",
     links: [
       { name: "About Us", href: "/about" },
-      { name: "Careers", href: "/careers" },
+      { name: "Contact", href: "/contact" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { name: "Contact Us", href: "/contact" },
       { name: "Help Center", href: "/help" },
       { name: "How LivQuiz Works", href: "/how-it-works" },
       { name: "Blog", href: "/blog" },
@@ -143,13 +142,13 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-600 text-sm">© 2025 LivQuiz. All rights reserved.</p>
             <div className="flex space-x-6 text-sm">
-              <Link href="/terms" className="text-gray-600 hover:text-[#6052CC] transition-colors">
+              <Link href="/terms-conditions" className="text-gray-600 hover:text-[#6052CC] transition-colors">
                 Terms
               </Link>
-              <Link href="/privacy" className="text-gray-600 hover:text-[#6052CC] transition-colors">
+              <Link href="/privacy-policy" className="text-gray-600 hover:text-[#6052CC] transition-colors">
                 Privacy
               </Link>
-              <Link href="/cookies" className="text-gray-600 hover:text-[#6052CC] transition-colors">
+              <Link href="/cookies-policy" className="text-gray-600 hover:text-[#6052CC] transition-colors">
                 Cookies
               </Link>
             </div>

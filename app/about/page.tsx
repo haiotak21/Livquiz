@@ -1,32 +1,32 @@
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
-import { Users, Target, Award, Globe } from "lucide-react"
+import { Users, Play, Zap, Globe } from "lucide-react"
 
  const stats = [
-  { icon: Users, value: "50K+", label: "Active Users" },
-  { icon: Target, value: "1M+", label: "Quizzes Created" },
-  { icon: Award, value: "99.9%", label: "Uptime" },
-  { icon: Globe, value: "150+", label: "Countries" },
+  { icon: Users, value: "10k+", label: "Active Users" },
+  { icon: Play, value: "15K+", label: "Quizzes and Flashcard" },
+  { icon: Globe, value: "50+", label: "Countries" },
+  { icon: Zap, value: "99.9%", label: "Uptime" },
 ]
 
 const team = [
   {
-    name: "Sarah Johnson",
+    name: "Clovis Simo",
     role: "CEO & Founder",
     image: "/placeholder.svg?height=300&width=300",
-    bio: "Former educator with 15+ years of experience in educational technology.",
+    bio: "...",
   },
   {
-    name: "Michael Chen",
-    role: "CTO",
+    name: "Eunice Gapie",
+    role: "..",
     image: "/placeholder.svg?height=300&width=300",
-    bio: "Tech veteran with expertise in scalable learning platforms.",
+    bio: "...",
   },
   {
-    name: "Emily Rodriguez",
-    role: "Head of Product",
+    name: "H/mariam Takele",
+    role: "..",
     image: "/placeholder.svg?height=300&width=300",
-    bio: "Product strategist focused on user experience and engagement.",
+    bio: "...",
   },
 ]
 
@@ -40,7 +40,7 @@ export default function AboutPage() {
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 About{" "}
-                <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-purple-600 to-purple-600 bg-clip-text text-transparent">
                   LivQuiz
                 </span>
               </h1>
@@ -54,10 +54,7 @@ export default function AboutPage() {
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  At LivQuiz, we believe that learning should be fun, interactive, and accessible to everyone. Our
-                  platform empowers educators, trainers, and organizations to create engaging quiz experiences that
-                  boost participation and improve learning outcomes. We're committed to transforming the way people
-                  learn and assess knowledge through innovative technology and user-centered design.
+                At LivQuiz, we’re redefining the way the world learns—making it fun, interactive, and accessible for all. Our platform empowers educators, trainers, and organizations to deliver dynamic quiz experiences that spark engagement and elevate learning outcomes. With a focus on innovation and human-centered design, we're on a mission to transform knowledge sharing into a more effective, meaningful, and enjoyable journey.
                 </p>
               </div>
             </div>

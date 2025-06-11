@@ -5,13 +5,14 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Search, Play, Users, Zap } from "lucide-react"
+import { Search, Play, Users, Zap, Award, Globe } from "lucide-react"
 import Link from "next/link"
 import StickyButtonsFooter from "@/components/layout/StickyButtonsFooter"
 
 const stats = [
-  { icon: Users, value: "50K+", label: "Active Users" },
-  { icon: Play, value: "1M+", label: "Quizzes Created" },
+  { icon: Users, value: "10k+", label: "Active users" },
+  { icon: Play, value: "15K+", label: "Quizzes and Flashcard" },
+  { icon: Globe, value: "50+", label: "county" },
   { icon: Zap, value: "99.9%", label: "Uptime" },
 ]
 
@@ -160,7 +161,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto"
+            className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-2xl mx-auto"
           >
             {stats.map((stat, index) => {
               const IconComponent = stat.icon

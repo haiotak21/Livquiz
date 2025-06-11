@@ -62,13 +62,14 @@ const featureCategories = [
   { id: "multiplayer", name: "Live Multiplayer", icon: Gamepad2 },
   { id: "analytics", name: "Analytics", icon: BarChart3 },
   { id: "security", name: "Security", icon: Shield },
-  { id: "accessibility", name: "Accessibility", icon: Users },
+  
 ]
 
 const creationFeatures = [
   {
     icon: Edit3,
     title: "Multiple Question Types",
+    id:"quizmaker",
     description: "Design quizzes that align with any learning goal using a wide variety of question formats:",
     features: [
       "Multiple Choice Questions (MCQ)",
@@ -123,6 +124,7 @@ const creationFeatures = [
 const instructorFeatures = [
   {
     icon: Play,
+    id:"quizmaker",
     title: "Live Quiz Moderation",
     description: "Complete control over quiz flow and pacing to match your teaching style and student needs.",
     features: [
@@ -487,7 +489,7 @@ export default function FeaturesPage() {
                   Create engaging quizzes, assessments, and interactive content that captivates your audience and drives
                   real learning outcomes.
                 </p>
-                <Link href="/auth/sign-up" className="block mx-auto">
+                <Link href="https://livquiz.com/auth/sign-up" className="block mx-auto">
                   <Button
                     size="lg"
                     className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold"

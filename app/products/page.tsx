@@ -456,7 +456,7 @@ export default function ProductsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 h-full flex flex-col items-center text-center"
+                  className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 h-full flex flex-col text-left"
                 >
                   <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
                     <feature.icon className="w-6 h-6 text-purple-600" />

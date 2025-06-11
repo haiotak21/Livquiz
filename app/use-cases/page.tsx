@@ -23,6 +23,7 @@ import {
   Calendar,
   Star,
   Calculator,
+  Play,
 } from "lucide-react"
 import { handlePageLoadScroll } from "@/utils/navigation"
 import Link from "next/link"
@@ -86,7 +87,7 @@ const useCases = [
     ],
     image:
       "https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
-    stats: { companies: "1K+", employees: "100K+", completion: "95%" },
+    stats: { companies: "50+", employees: "200+", completion: "95%" },
     id: "corporate-training",
     headerTitle: "🏢 Corporate Training & Development",
     headerSubtitle:
@@ -144,7 +145,7 @@ const useCases = [
     ],
     image:
       "https://plus.unsplash.com/premium_photo-1686730540270-93f2c33351b6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
-    stats: { users: "50K+", quizzes: "500K+", satisfaction: "98%" },
+    stats: { users: "10k+", quizzes: "15K+", satisfaction: "99%" },
     id: "education",
     headerTitle: "🎓 Education & Academic Learning",
     headerSubtitle: "Transform classrooms and online learning environments with interactive, engaging quiz experiences",
@@ -199,7 +200,7 @@ const useCases = [
     ],
     image:
       "https://images.unsplash.com/photo-1617814086906-d847a8bc6fca?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzh8fHN1cGVyJTIwY2FyfGVufDB8fDB8fHww",
-    stats: { events: "5K+", participants: "2M+", engagement: "92%" },
+    stats: { events: "200+", participants: "5k+", engagement: "92%" },
     id: "events-conferences",
     headerTitle: "🎪 Events, Conferences & Workshops",
     headerSubtitle: "Engage audiences and gather feedback at live events with interactive polling and Q&A sessions",
@@ -254,7 +255,7 @@ const useCases = [
     ],
     image:
       "https://plus.unsplash.com/premium_photo-1664304752635-3e0d8d8185e3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3VwZXIlMjBjYXJ8ZW58MHx8MHx8fDA%3D",
-    stats: { hires: "25K+", companies: "800+", accuracy: "89%" },
+    stats: { hires: "100+", companies: "20+", accuracy: "89%" },
     id: "recruitment",
     headerTitle: "💼 Recruitment & Hiring",
     headerSubtitle: "Make hiring smarter and faster with skill-based quizzes to evaluate candidates objectively",
@@ -392,8 +393,8 @@ export default function UseCasesPage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-center"
               >
-                <Target className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-                <div className="text-2xl font-bold text-gray-900">2M+</div>
+                <Users className="w-12 h-12 text-purple-600 mx-auto mb-4" />
+                <div className="text-2xl font-bold text-gray-900">10k+</div>
                 <div className="text-gray-600">Active Users</div>
               </motion.div>
               <motion.div
@@ -402,9 +403,9 @@ export default function UseCasesPage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-center"
               >
-                <Award className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-                <div className="text-2xl font-bold text-gray-900">10M+</div>
-                <div className="text-gray-600">Quizzes Created</div>
+                <Play className="w-12 h-12 text-purple-600 mx-auto mb-4" />
+                <div className="text-2xl font-bold text-gray-900">15K+</div>
+                <div className="text-gray-600">Quizzes and Flashcard</div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -412,8 +413,8 @@ export default function UseCasesPage() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-center"
               >
-                <Users className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-                <div className="text-2xl font-bold text-gray-900">150+</div>
+                <Globe className="w-12 h-12 text-purple-600 mx-auto mb-4" />
+                <div className="text-2xl font-bold text-gray-900">50+</div>
                 <div className="text-gray-600">Countries</div>
               </motion.div>
               <motion.div
@@ -422,7 +423,7 @@ export default function UseCasesPage() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-center"
               >
-                <Building2 className="w-12 h-12 text-purple-600 mx-auto mb-4" />
+                <Zap className="w-12 h-12 text-purple-600 mx-auto mb-4" />
                 <div className="text-2xl font-bold text-gray-900">99.9%</div>
                 <div className="text-gray-600">Uptime</div>
               </motion.div>
@@ -466,17 +467,12 @@ export default function UseCasesPage() {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                   >
-                    <div className="flex flex-col items-center bg-white rounded-3xl px-8 py-6 shadow-sm border border-gray-200 mb-8">
-                      {useCase.headerTitle.includes(" ") && (
-                        <div className="text-5xl mb-4">{useCase.headerTitle.split(" ")[0]}</div>
-                      )}
-                      <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-                        {useCase.headerTitle.includes(" ")
-                          ? useCase.headerTitle.substring(useCase.headerTitle.indexOf(" ") + 1)
-                          : useCase.headerTitle}
-                      </h2>
-                      <p className="text-lg text-gray-600 max-w-2xl mx-auto">{useCase.headerSubtitle}</p>
-                    </div>
+                    <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
+                      {useCase.headerTitle}
+                    </h2>
+                    <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+                      {useCase.headerSubtitle}
+                    </p>
                   </motion.div>
 
                   {/* Main Use Case */}
@@ -549,13 +545,15 @@ export default function UseCasesPage() {
                     {useCase.subCases.map((subCase, subIndex) => (
                       <motion.div
                         key={subIndex}
-                        initial={{ opacity: 0, y: 50 }}
+                        initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: subIndex * 0.1 }}
+                        transition={{ duration: 0.6, delay: subIndex * 0.1 }}
                         viewport={{ once: true }}
-                        className="flex flex-col items-center text-center p-6 rounded-lg bg-sky-50 border border-sky-100 shadow-md hover:shadow-lg transition-all duration-300"
+                        className="bg-gray-50 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 flex flex-col text-left"
                       >
-                        <subCase.icon className="h-12 w-12 text-primary mb-4" />
+                        <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                          <subCase.icon className="w-6 h-6 text-purple-600" />
+                        </div>
                         <h3 className="text-xl font-semibold mb-2">{subCase.title}</h3>
                         <p className="text-gray-600 mb-4">{subCase.description}</p>
                         <ul className="text-left text-gray-500 space-y-2 list-disc list-inside mt-auto">

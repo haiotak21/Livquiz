@@ -512,7 +512,7 @@ export default function PricingPage() {
         </section>
 
         {/* Feature Comparison Section */}
-        <section className="py-16 lg:py-24 bg-gray-50">
+        <section className="py-16 lg:py-24 bg-gray-50 hidden">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
