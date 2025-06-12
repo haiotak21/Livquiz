@@ -14,7 +14,7 @@ const useCases = [
     description:
       "Transform classrooms with interactive quizzes that make learning engaging and fun. Perfect for homework, assessments, and review sessions.",
     features: ["Classroom Management", "Progress Tracking","Flashcards & Study Sets", "Live Exam Mode"],
-    image: "https://bing.com/th/id/BCO.fd4cf7ef-df68-4444-9d5f-50d795a99cb9.png",
+    image: "https://i.pinimg.com/736x/8e/ea/b8/8eeab845675094e7aceefe109b8df12f.jpg",
     color: "from-blue-500 to-blue-600",
     bgColor: "bg-blue-50",
   },
