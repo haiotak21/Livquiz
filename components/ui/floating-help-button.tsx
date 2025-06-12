@@ -25,14 +25,14 @@ const helpOptions = [
   {
     icon: Phone,
     title: "Email Support",
-    description: "support@livquiz.com",
+    description: "info@livquiz.com",
     action: "Send us a message",
     href: "/contact#send-message",
   },
   {
     icon: Phone,
     title: "Phone Support",
-    description: "+1 (555) 123-4567",
+    description: "+1 416 827 0711",
     action: "Copy Number",
     onClick: "copyPhone",
   },
@@ -70,10 +70,10 @@ export default function FloatingHelpButton({ showOnPage = true }: FloatingHelpBu
         handleLiveChat()
         break
       case "copyEmail":
-        copyToClipboard("support@livquiz.com", "email")
+        copyToClipboard("info@livquiz.com", "email")
         break
       case "copyPhone":
-        copyToClipboard("+1 (555) 123-4567", "phone")
+        copyToClipboard("+1 416 827 0711", "phone")
         break
     }
   }

@@ -103,7 +103,7 @@ export default function DemoSection() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link href="/contact">
-                  <Button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pruple-600 hover:from-purple-700 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg">
+                  <Button className="px-8 py-4 w-[232.75px] h-[40px] bg-gradient-to-r from-purple-600 to-pruple-600 hover:from-purple-700 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg">
                     🎮 Try Demo Quiz
                   </Button>
                 </Link>
@@ -112,7 +112,7 @@ export default function DemoSection() {
                 <Link href="https://livquiz.com/auth/sign-up">
                   <Button
                     variant="outline"
-                    className="px-8 py-4 border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-lg"
+                    className="px-8 py-4 w-[232.75px] h-[40px] border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-lg"
                   >
                     📱 Join Live Session
                   </Button>

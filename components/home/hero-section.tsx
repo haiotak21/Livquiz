@@ -75,7 +75,7 @@ export default function HeroSection() {
                 onClick={() => setShowQuizInput(true)}
                 className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg"
               >
-                Join Quizzes
+                Join Quiz
               </Button>
               </Link>
             </motion.div>

@@ -35,6 +35,7 @@ import {
   HeadphonesIcon,
   Award,
   Bot,
+  MonitorSmartphone,
 
 } from "lucide-react"
 
@@ -708,10 +709,10 @@ export default function ProductsPage() {
                 className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 text-center"
               >
                 <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="w-8 h-8 text-yellow-600" />
+                  <MonitorSmartphone className="w-8 h-8 text-yellow-600" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Certifications</h3>
-                <p className="text-gray-600 text-sm">Digital badges and certificate generation</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Desktop Access</h3>
+                <p className="text-gray-600 text-sm">Seamless learning on Windows and macOS with full-featured desktop support for quizzes, flashcards, and more.</p>
               </motion.div>
 
               <motion.div

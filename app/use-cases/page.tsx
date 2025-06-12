@@ -105,31 +105,6 @@ const useCases = [
           "Career development planning",
         ],
       },
-      {
-        icon: Zap,
-        title: "Microlearning & Just-in-Time Training",
-        description: "Deliver bite-sized learning moments and quick knowledge checks throughout the workday.",
-        features: [
-          "Daily knowledge boosters",
-          "Quick procedure reminders",
-          "Safety protocol refreshers",
-          "Product knowledge updates",
-          "Team building activities",
-        ],
-      },
-      {
-        icon: Users2,
-        title: "Company-Wide Training Programs",
-        description:
-          "Deploy consistent training across multiple locations and departments with centralized management.",
-        features: [
-          "Multi-location training coordination",
-          "Department-specific modules",
-          "Progress tracking across teams",
-          "Manager dashboard reporting",
-          "Training ROI measurement",
-        ],
-      },
     ],
   },
   {
@@ -160,18 +135,6 @@ const useCases = [
           "Interactive polling during presentations",
           "Exam preparation sessions",
           "Group study coordination",
-        ],
-      },
-      {
-        icon: Globe,
-        title: "Remote & Hybrid Learning",
-        description: "Bridge the gap between in-person and virtual learning with engaging online interactions.",
-        features: [
-          "Virtual classroom activities",
-          "Asynchronous homework assignments",
-          "Breakout room competitions",
-          "Home learning support",
-          "Parent-teacher engagement tools",
         ],
       },
       {
@@ -227,18 +190,6 @@ const useCases = [
           "Industry knowledge contests",
           "Live championship brackets",
           "Award ceremony integration",
-        ],
-      },
-      {
-        icon: Globe,
-        title: "Webinars & Virtual Events",
-        description: "Enhance virtual events with interactive elements that keep remote audiences engaged.",
-        features: [
-          "Live polling during presentations",
-          "Q&A session management",
-          "Breakout room activities",
-          "Virtual networking games",
-          "Attendee feedback collection",
         ],
       },
     ],
