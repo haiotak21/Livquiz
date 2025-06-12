@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import React from 'react'
-import FloatingHelpButton from "@/components/ui/floating-help-button";
 import TawkToChat from '@/components/TawkToChat';
 
 export const metadata: Metadata = {
@@ -22,7 +21,6 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         {children}
-        <FloatingHelpButton />
         <TawkToChat />
       </body>
     </html>

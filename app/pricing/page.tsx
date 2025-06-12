@@ -2,7 +2,6 @@
 
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
-import FloatingHelpButton from "@/components/ui/floating-help-button"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
@@ -705,7 +704,6 @@ export default function PricingPage() {
           </section>
         </main>
         <Footer />
-        <FloatingHelpButton />
       </div>
     )
   }

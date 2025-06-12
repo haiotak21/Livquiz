@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { motion } from "framer-motion"
 import { Mail, Phone, MapPin, MessageCircle, Clock, Users } from "lucide-react"
 import { useState } from "react"
+import { openChat } from "@/utils/chat"
 
 const contactMethods = [
   {
@@ -96,7 +97,7 @@ export default function ContactPage() {
                     <Button
                       variant="link"
                       className="text-purple-600 font-semibold mb-2 p-0"
-                      onClick={() => window.dispatchEvent(new CustomEvent('open-live-chat'))}
+                      onClick={openChat}
                     >
                       {method.contact}
                     </Button>
@@ -221,7 +222,7 @@ export default function ContactPage() {
                   </p>
                   <Button
                     className="w-full bg-white text-purple-600 hover:bg-gray-100 py-3 rounded-xl font-semibold"
-                    onClick={() => window.dispatchEvent(new CustomEvent('open-live-chat'))}
+                    onClick={openChat}
                   >
                     Start Live Chat
                   </Button>

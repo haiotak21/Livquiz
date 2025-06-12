@@ -11,38 +11,73 @@ declare global {
 
 const TawkToChat = () => {
   useEffect(() => {
-    // Ensure Tawk_API is initialized and set autoStart before loading the script
-    window.Tawk_API = window.Tawk_API || {};
-    window.Tawk_LoadStart = new Date();
-    // window.Tawk_API.autoStart = false; // Disable auto-start
+    const loadTawkTo = () => {
+      try {
+        // Initialize Tawk_API
+        window.Tawk_API = window.Tawk_API || {};
+        window.Tawk_LoadStart = new Date();
 
-    // Set up Tawk_API callbacks
-    // window.Tawk_API.onLoad = function() {
-    //   // Initialize i18next if needed
-    //   if (typeof window.Tawk_API.$_Tawk !== 'undefined' && typeof window.Tawk_API.$_Tawk.i18next === 'undefined') {
-    //     window.Tawk_API.$_Tawk.i18next = {
-    //       t: function(key: string) { return key; }
-    //     };
-    //   }
-    //   // Hide the default Tawk.to widget (redundant with autoStart=false, but kept as fallback)
-    //   window.Tawk_API.hideWidget();
-    // };
+        // Create and configure script
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://embed.tawk.to/68380718c36f13190a60c36a/1isddnf41';
+        script.charset = 'UTF-8';
+        script.setAttribute('crossorigin', '*');
 
-    // Tawk.to script
-    const s1 = document.createElement('script');
-    const s0 = document.getElementsByTagName('script')[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/68380718c36f13190a60c36a/1isddnf41';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode?.insertBefore(s1, s0);
+        // Add load event handler
+        script.onload = () => {
+          if (window.Tawk_API) {
+            window.Tawk_API.onLoad = function() {
+              // Initialize any additional settings here if needed
+              window.Tawk_API.onBeforeLoaded = function() {
+                // Ensure the chat is ready
+                window.Tawk_API.onChatMaximized = function() {
+                  console.log('Chat maximized');
+                };
+                window.Tawk_API.onChatMinimized = function() {
+                  console.log('Chat minimized');
+                };
+              };
+            };
 
-    // Cleanup function
-    return () => {
-      if (s0.parentNode) {
-        s0.parentNode.removeChild(s1);
+            // Add event listener for custom chat open event
+            window.addEventListener('open-live-chat', () => {
+              if (window.Tawk_API) {
+                window.Tawk_API.maximize();
+              }
+            });
+          }
+        };
+
+        // Add error handler
+        script.onerror = () => {
+          console.warn('Failed to load Tawk.to script');
+        };
+
+        // Append script to document
+        document.head.appendChild(script);
+
+        // Cleanup function
+        return () => {
+          if (script.parentNode) {
+            script.parentNode.removeChild(script);
+          }
+          // Remove event listener
+          window.removeEventListener('open-live-chat', () => {
+            if (window.Tawk_API) {
+              window.Tawk_API.maximize();
+            }
+          });
+        };
+      } catch (error) {
+        console.warn('Error initializing Tawk.to:', error);
       }
     };
+
+    // Only run in browser environment
+    if (typeof window !== 'undefined') {
+      loadTawkTo();
+    }
   }, []);
 
   return null;

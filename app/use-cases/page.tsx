@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react"
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
-import FloatingHelpButton from "@/components/ui/floating-help-button"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Image from "next/image"
@@ -722,7 +721,6 @@ export default function UseCasesPage() {
         </section>
       </main>
       <Footer />
-      <FloatingHelpButton />
     </div>
   )
 }
