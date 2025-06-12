@@ -4,7 +4,7 @@ import { Users, Play, Zap, Globe } from "lucide-react"
 
  const stats = [
   { icon: Users, value: "10k+", label: "Active Users" },
-  { icon: Play, value: "15K+", label: "Quizzes and Flashcard" },
+  { icon: Play, value: "1M+", label: "Quizzes and Flashcard" },
   { icon: Globe, value: "50+", label: "Countries" },
   { icon: Zap, value: "99.9%", label: "Uptime" },
 ]
@@ -54,7 +54,7 @@ export default function AboutPage() {
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                At LivQuiz, we’re redefining the way the world learns—making it fun, interactive, and accessible for all. Our platform empowers educators, trainers, and organizations to deliver dynamic quiz experiences that spark engagement and elevate learning outcomes. With a focus on innovation and human-centered design, we're on a mission to transform knowledge sharing into a more effective, meaningful, and enjoyable journey.
+                At LivQuiz, we're redefining the way the world learns—making it fun, interactive, and accessible for all. Our platform empowers educators, trainers, and organizations to deliver dynamic quiz experiences that spark engagement and elevate learning outcomes. With a focus on innovation and human-centered design, we're on a mission to transform knowledge sharing into a more effective, meaningful, and enjoyable journey.
                 </p>
               </div>
             </div>

@@ -85,7 +85,7 @@ const useCases = [
       "Performance evaluation",
     ],
     image:
-      "https://i.pinimg.com/736x/0b/32/4a/0b324a3a6ebe38fcd74625f2fb88ecff.jpg",
+      "https://i.pinimg.com/736x/54/ec/e1/54ece158d642647451f8cd1197dddc21.jpg",
     stats: { companies: "50+", employees: "200+", completion: "95%" },
     id: "corporate-training",
     headerTitle: "🏢 Corporate Training & Development",
@@ -119,7 +119,7 @@ const useCases = [
     ],
     image:
       "https://i.pinimg.com/736x/69/4d/84/694d84de66919f09291649930f14cfe9.jpg",
-    stats: { users: "10k+", quizzes: "15K+", satisfaction: "99%" },
+    stats: { users: "10k+", quizzes: "1M+", satisfaction: "99%" },
     id: "education",
     headerTitle: "🎓 Education & Academic Learning",
     headerSubtitle: "Transform classrooms and online learning environments with interactive, engaging quiz experiences",
@@ -161,7 +161,7 @@ const useCases = [
       "Moderate sessions with live controls for smooth interaction",
     ],
     image:
-      "https://i.pinimg.com/736x/bf/1e/08/bf1e087e2c6777d548e2e774cf52dc7a.jpg",
+      "https://i.pinimg.com/736x/29/f9/88/29f98834bc46c3c099ee1625b5de38ff.jpg",
     stats: { events: "200+", participants: "5k+", engagement: "92%" },
     id: "events-conferences",
     headerTitle: "🎪 Events, Conferences & Workshops",
@@ -354,7 +354,7 @@ export default function UseCasesPage() {
                 className="text-center"
               >
                 <Play className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-                <div className="text-2xl font-bold text-gray-900">15K+</div>
+                <div className="text-2xl font-bold text-gray-900">1M+</div>
                 <div className="text-gray-600">Quizzes and Flashcard</div>
               </motion.div>
               <motion.div

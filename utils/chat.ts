@@ -1,11 +1,21 @@
 export const openChat = () => {
-    if (typeof window !== 'undefined') {
-        // Dispatch custom event to open chat
-        window.dispatchEvent(new Event('open-live-chat'));
+    if (typeof window === 'undefined') return;
 
-        // Direct API call as fallback
+    try {
+        // Try direct API call first
         if (window.Tawk_API) {
             window.Tawk_API.maximize();
+            return;
         }
+
+        // Fallback to custom event
+        window.dispatchEvent(new Event('open-live-chat'));
+    } catch (error) {
+        console.warn('Error opening chat:', error);
+
+        // Last resort: try to reload the page with chat parameter
+        const currentUrl = new URL(window.location.href);
+        currentUrl.searchParams.set('openChat', 'true');
+        window.location.href = currentUrl.toString();
     }
 }; 

@@ -11,73 +11,86 @@ declare global {
 
 const TawkToChat = () => {
   useEffect(() => {
-    const loadTawkTo = () => {
+    let script: HTMLScriptElement | null = null;
+
+    const initializeTawkTo = () => {
       try {
         // Initialize Tawk_API
         window.Tawk_API = window.Tawk_API || {};
         window.Tawk_LoadStart = new Date();
 
-        // Create and configure script
-        const script = document.createElement('script');
+        // Create script element
+        script = document.createElement('script');
         script.async = true;
         script.src = 'https://embed.tawk.to/68380718c36f13190a60c36a/1isddnf41';
         script.charset = 'UTF-8';
         script.setAttribute('crossorigin', '*');
 
-        // Add load event handler
+        // Handle script load
         script.onload = () => {
           if (window.Tawk_API) {
+            // Set up API callbacks
             window.Tawk_API.onLoad = function() {
-              // Initialize any additional settings here if needed
-              window.Tawk_API.onBeforeLoaded = function() {
-                // Ensure the chat is ready
-                window.Tawk_API.onChatMaximized = function() {
-                  console.log('Chat maximized');
-                };
-                window.Tawk_API.onChatMinimized = function() {
-                  console.log('Chat minimized');
-                };
-              };
+              // Chat is ready
+              console.log('Tawk.to chat is ready');
             };
 
-            // Add event listener for custom chat open event
-            window.addEventListener('open-live-chat', () => {
-              if (window.Tawk_API) {
-                window.Tawk_API.maximize();
+            window.Tawk_API.onBeforeLoaded = function() {
+              // Before chat is loaded
+              console.log('Tawk.to chat is loading');
+            };
+
+            window.Tawk_API.onChatMaximized = function() {
+              console.log('Chat maximized');
+            };
+
+            window.Tawk_API.onChatMinimized = function() {
+              console.log('Chat minimized');
+            };
+
+            // Set up custom event listener
+            const handleChatOpen = () => {
+              try {
+                if (window.Tawk_API) {
+                  window.Tawk_API.maximize();
+                }
+              } catch (error) {
+                console.warn('Error maximizing chat:', error);
               }
-            });
+            };
+
+            window.addEventListener('open-live-chat', handleChatOpen);
+
+            // Clean up event listener
+            return () => {
+              window.removeEventListener('open-live-chat', handleChatOpen);
+            };
           }
         };
 
-        // Add error handler
-        script.onerror = () => {
-          console.warn('Failed to load Tawk.to script');
+        // Handle script error
+        script.onerror = (error) => {
+          console.warn('Failed to load Tawk.to script:', error);
         };
 
-        // Append script to document
+        // Add script to document
         document.head.appendChild(script);
-
-        // Cleanup function
-        return () => {
-          if (script.parentNode) {
-            script.parentNode.removeChild(script);
-          }
-          // Remove event listener
-          window.removeEventListener('open-live-chat', () => {
-            if (window.Tawk_API) {
-              window.Tawk_API.maximize();
-            }
-          });
-        };
       } catch (error) {
         console.warn('Error initializing Tawk.to:', error);
       }
     };
 
-    // Only run in browser environment
+    // Only initialize in browser environment
     if (typeof window !== 'undefined') {
-      loadTawkTo();
+      initializeTawkTo();
     }
+
+    // Cleanup function
+    return () => {
+      if (script && script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
   }, []);
 
   return null;

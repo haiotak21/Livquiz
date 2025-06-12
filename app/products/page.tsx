@@ -253,7 +253,7 @@ export default function ProductsPage() {
               >
                 <div className="relative w-full h-96 bg-gray-100 rounded-2xl shadow-lg overflow-hidden border-2 border-dashed border-gray-300">
                   <Image
-                    src="https://i.pinimg.com/736x/d1/88/da/d188da345a1aa258f410cae6f82d4818.jpg"
+                    src="https://i.pinimg.com/736x/37/0a/9b/370a9b19484bbe091673d2e3932c1a8f.jpg"
                     alt="LivQuiz Product Interface"
                     width={600}
                     height={500}
@@ -584,7 +584,7 @@ export default function ProductsPage() {
               >
                 <div className="relative h-full">
                   <Image
-                    src="https://i.pinimg.com/736x/10/44/22/104422ff81bf93aaab236dc47f42dd04.jpg"
+                    src="https://i.pinimg.com/736x/4f/e8/ee/4fe8ee1c0bded8129ab26a513d7e9178.jpg"
                     alt="Live Quizzes Interface"
                     layout="fill"
                     objectFit="cover"

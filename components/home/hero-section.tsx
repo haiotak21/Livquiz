@@ -11,7 +11,7 @@ import StickyButtonsFooter from "@/components/layout/StickyButtonsFooter"
 
 const stats = [
   { icon: Users, value: "10k+", label: "Active users" },
-  { icon: Play, value: "15K+", label: "Quizzes and Flashcards" },
+  { icon: Play, value: "1M+", label: "Quizzes and Flashcards" },
   { icon: Globe, value: "50+", label: "county" },
   { icon: Zap, value: "99.9%", label: "Uptime" },
 ]
