@@ -14,7 +14,7 @@ const useCases = [
     description:
       "Transform classrooms with interactive quizzes that make learning engaging and fun. Perfect for homework, assessments, and review sessions.",
     features: ["Classroom Management", "Progress Tracking","Flashcards & Study Sets", "Live Exam Mode"],
-    image: "https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://bing.com/th/id/BCO.fd4cf7ef-df68-4444-9d5f-50d795a99cb9.png",
     color: "from-blue-500 to-blue-600",
     bgColor: "bg-blue-50",
   },
@@ -25,7 +25,7 @@ const useCases = [
     description:
       "Enhance employee training programs with interactive content that improves retention and engagement across your organization.",
     features: ["Skills Assessment", "Compliance Training", "Team Building", "Performance Analytics"],
-    image: "https://images.unsplash.com/photo-1533854775446-95c4609da544?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://bing.com/th/id/BCO.2718b9ee-c4ab-4a6d-b233-612c179e99f9.png",
     color: "from-purple-500 to-purple-600",
     bgColor: "bg-purple-50",
   },
