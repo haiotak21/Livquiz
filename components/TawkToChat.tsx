@@ -32,20 +32,18 @@ const TawkToChat = () => {
             // Set up API callbacks
             window.Tawk_API.onLoad = function() {
               // Chat is ready
-              console.log('Tawk.to chat is ready');
             };
 
             window.Tawk_API.onBeforeLoaded = function() {
               // Before chat is loaded
-              console.log('Tawk.to chat is loading');
             };
 
             window.Tawk_API.onChatMaximized = function() {
-              console.log('Chat maximized');
+              // Chat maximized
             };
 
             window.Tawk_API.onChatMinimized = function() {
-              console.log('Chat minimized');
+              // Chat minimized
             };
 
             // Set up custom event listener
@@ -55,7 +53,7 @@ const TawkToChat = () => {
                   window.Tawk_API.maximize();
                 }
               } catch (error) {
-                console.warn('Error maximizing chat:', error);
+                // Handle error silently
               }
             };
 
@@ -69,14 +67,14 @@ const TawkToChat = () => {
         };
 
         // Handle script error
-        script.onerror = (error) => {
-          console.warn('Failed to load Tawk.to script:', error);
+        script.onerror = () => {
+          // Handle error silently
         };
 
         // Add script to document
         document.head.appendChild(script);
       } catch (error) {
-        console.warn('Error initializing Tawk.to:', error);
+        // Handle error silently
       }
     };
 

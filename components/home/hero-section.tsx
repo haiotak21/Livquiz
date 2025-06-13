@@ -100,7 +100,7 @@ export default function HeroSection() {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="https://plus.unsplash.com/premium_photo-1681681082088-ccd590564f7c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://i.pinimg.com/736x/82/c4/cf/82c4cfc90ef3080c17382ba1d49caae0.jpg"
                 alt="LivQuiz Dashboard Preview"
                 width={900}
                 height={300}

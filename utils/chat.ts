@@ -10,9 +10,7 @@ export const openChat = () => {
 
         // Fallback to custom event
         window.dispatchEvent(new Event('open-live-chat'));
-    } catch (error) {
-        console.warn('Error opening chat:', error);
-
+    } catch {
         // Last resort: try to reload the page with chat parameter
         const currentUrl = new URL(window.location.href);
         currentUrl.searchParams.set('openChat', 'true');
