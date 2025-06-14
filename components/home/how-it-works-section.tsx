@@ -9,8 +9,8 @@ const steps = [
   {
     number: "01",
     title: "Create",
-    description: "Create engaging quizzes with various question types, rich media, and flexible configuration options.",
-    features: ["Multiple question types", "Flashcards & Study Sets", "Exams & Certifications", "Rich Media (images, formulas, formatting)", "Custom Timer & Scoring Options"],
+    description: "Build quizzes with different question types, images, and custom settings.",
+    features: ["Multiple question types", "Flashcards & Study Sets", "Images & media support", "Custom scoring options"],
     image: "https://i.pinimg.com/736x/d5/c5/90/d5c590ee4a652580a6b819e89d7eecfd.jpg",
     bgColor: "bg-blue-50",
     borderColor: "border-purple-200",
@@ -18,8 +18,8 @@ const steps = [
   {
     number: "02",
     title: "Host or Share",
-    description: "Host live sessions or share links to engage players on any device, instantly.",
-    features: ["Multiple sharing options", "Live sessions", "Real-time participation", "Mobile-friendly", "Guest Access (No Signup Needed)"],
+    description: "Run live sessions or share quiz links for instant participation on any device.",
+    features: ["Live sessions", "Share quiz links", "Real-time participation", "No signup required for players"],
     image: "https://i.pinimg.com/736x/9d/92/b4/9d92b4599c0ea0530e5352c0b10ac340.jpg",
     bgColor: "bg-pink-50",
     borderColor: "border-purple-200",
@@ -27,8 +27,8 @@ const steps = [
   {
     number: "03",
     title: "Play",
-    description: "Join live quizzes with a host-provided code and track your performance instantly with in-depth stats and leaderboards.",
-    features: ["Real-time analytics", "Performance tracking", "Detailed reports", "Export capabilities"],
+    description: "Players join with a code and see their performance tracked in real-time.",
+    features: ["Real-time results", "Performance tracking", "Leaderboards", "Export results"],
     image: "https://i.pinimg.com/736x/4e/72/77/4e7277e2987bb14bbafab0e6a1eedae4.jpg",
     bgColor: "bg-yellow-50",
     borderColor: "border-purple-200",
@@ -53,9 +53,7 @@ export default function HowItWorksSection() {
             work?
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            LivQuiz is a great way to create and take quizzes. It is easy to use and it offers a variety of features
-            that make it a valuable tool for education, entertainment, and marketing.
-          </p>
+          LivQuiz makes it easy to create and run interactive quizzes. Perfect for education, training, and engagement.          </p>
         </motion.div>
 
         {/* Steps Grid */}

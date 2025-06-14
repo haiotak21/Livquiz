@@ -9,7 +9,7 @@ const demoMethods = [
   {
     icon: QrCode,
     title: "Scan QR Code",
-    description: "Join live sessions instantly with your mobile device",
+    description: "Join live sessions instantly with your phone",
     color: "from-purple-500 to-purple-600",
     bgColor: "bg-purple-50",
   },
@@ -57,7 +57,7 @@ export default function DemoSection() {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            No signup required! Jump into a demo or join a live session to see how LivQuiz transforms learning.
+          No signup required! Try a demo or join a live session to see LivQuiz in action.
           </p>
         </motion.div>
 
@@ -82,7 +82,7 @@ export default function DemoSection() {
                   <method.icon className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-xl lg:text-2xl font-bold mb-4 text-gray-900">{method.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{method.description}</p>
+                <p className="text-gray-600 leading-relaxed min-h-[52px]">{method.description}</p>
               </div>
             </motion.div>
           ))}

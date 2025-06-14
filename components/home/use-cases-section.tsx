@@ -12,7 +12,7 @@ const useCases = [
     title: "Education",
     subtitle: "For Students & Teachers",
     description:
-      "Transform classrooms with interactive quizzes that make learning engaging and fun. Perfect for homework, assessments, and review sessions.",
+      "Make learning engaging with interactive quizzes for homework, assessments, and review sessions.",
     features: ["Classroom Management", "Progress Tracking","Flashcards & Study Sets", "Live Exam Mode"],
     image: "https://i.pinimg.com/736x/8e/ea/b8/8eeab845675094e7aceefe109b8df12f.jpg",
     color: "from-blue-500 to-blue-600",
@@ -23,7 +23,7 @@ const useCases = [
     title: "Corporate Training",
     subtitle: "For Workplace Learning",
     description:
-      "Enhance employee training programs with interactive content that improves retention and engagement across your organization.",
+      "Boost employee training with interactive content that drives better retention and engagement.",
     features: ["Skills Assessment", "Compliance Training", "Team Building", "Performance Analytics"],
     image: "https://i.pinimg.com/736x/4b/66/16/4b6616458972652aca68a4cf2802b6bc.jpg",
     color: "from-purple-500 to-purple-600",
@@ -53,7 +53,7 @@ export default function UseCasesSection() {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-           From classrooms to boardrooms, LivQuiz adapts to your needs with powerful features designed for diverse learning environments.
+          LivQuiz adapts to any learning environment with powerful features designed for classrooms, corporate training, and beyond.
           </p>
         </motion.div>
 

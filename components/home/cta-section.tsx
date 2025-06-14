@@ -26,7 +26,7 @@ export default function CTASection() {
             <div className="absolute bottom-10 right-10 w-32 h-32 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-pulse delay-1000"></div>
           </div>
 
-          <div className="relative w-full flex flex-col lg:flex-row gap-8 lg:gap-16">
+          <div className="relative w-full flex flex-col lg:flex-row gap-8 lg:gap-16 justify-center items-center">
             {/* Floating Images */}
            
 
@@ -52,7 +52,7 @@ export default function CTASection() {
                 </h2>
 
                 <p className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-full mx-auto">
-                  Join millions of educators, trainers, and learners who trust LivQuiz to make learning interactive and
+                  Join millions who trust LivQuiz to make learning interactive and
                   engaging.
                 </p>
               </motion.div>
