@@ -116,7 +116,7 @@ const examFeatures = [
     number: "01",
     title: "Exam Protection",
     description:
-      "Protect your exam with passwords, access codes, or email invitations. Set expiration dates and limits for exam access.",
+      "Protect your exam with passwords, access codes, or email invitations. Set expiration dates and access limits for exams.",
     color: "bg-yellow-400",
     shape: "rounded-full",
     textColor: "text-gray-900",
@@ -334,7 +334,7 @@ export default function ProductsPage() {
                 {/* Education Edition Card (Image) */}
                 <div className="lg:col-span-1">
                   <Image
-                    src="https://i.pinimg.com/736x/2a/ae/e3/2aaee308cfff38dab4e7e0b7172314a4.jpg"
+                    src="https://i.pinimg.com/736x/43/5d/55/435d5520095eeb014f0064a6de16e966.jpg"
                     alt="Education Edition"
                     width={400}
                     height={300}
@@ -391,7 +391,7 @@ export default function ProductsPage() {
                 {/* Business Edition Card (Image) */}
                 <div className="lg:col-span-1">
                   <Image
-                    src="https://i.pinimg.com/736x/4a/c1/53/4ac15353a40d9fb359a6395156e93f81.jpg"
+                    src="https://i.pinimg.com/736x/52/59/99/525999ede2a8c482eaf97be6f511f411.jpg"
                     alt="Business Edition"
                     width={400}
                     height={300}

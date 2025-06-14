@@ -12,7 +12,7 @@ import StickyButtonsFooter from "@/components/layout/StickyButtonsFooter"
 const stats = [
   { icon: Users, value: "10k+", label: "Active users" },
   { icon: Play, value: "1M+", label: "Quizzes and Flashcards" },
-  { icon: Globe, value: "50+", label: "county" },
+  { icon: Globe, value: "50+", label: "Countries" },
   { icon: Zap, value: "99.9%", label: "Uptime" },
 ]
 
@@ -43,11 +43,11 @@ export default function HeroSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6"
           >
-            The Ultimate Tool For{" "}
+            Make Learning{" "}
             <span className="bg-gradient-to-r from-purple-600 to-purple-600 bg-clip-text text-transparent">
-              Fun & Effective
+            Interactive &
             </span>{" "}
-            Learning
+            Fun
           </motion.h1>
 
           {/* Subtitle */}
@@ -57,8 +57,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
-            LivQuiz makes learning engaging, collaborative, and impactful. Whether you're a student, educator, or
-            professional, create, play, or host quizzes in real time — on any device.
+            Create, host, and play live quizzes that engage students and teams in real-time. Perfect for classrooms, training, and group activities.
           </motion.p>
 
           {/* Combined Buttons for Join Quizzes and Sign Up - Only visible on desktop */}

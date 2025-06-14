@@ -28,8 +28,8 @@ const contactMethods = [
   {
     icon: MessageCircle,
     title: "Live Chat",
-    description: "Start chatting with a specialist now!",
-    contact: "Start chat",
+    description: "Start a live chat with a specialist now!",
+    contact: "Start Chat",
     availability: "24/7 available",
   },
 ]
@@ -49,7 +49,7 @@ const offices = [
   },
   {
     city: "Ethiopia",
-    address: "Addis ababa, Mexico",
+    address: "Addis Ababa, Mexico Area",
     phone: "+251 996916442",
     email: "info@livquiz.com",
   },

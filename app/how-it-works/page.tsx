@@ -15,7 +15,7 @@ const steps = [
     description:
       "Use our intuitive drag-and-drop builder to create engaging quizzes with multiple question types, media, and custom themes.",
     features: ["Multiple question types", "Rich media support", "Study set", "Exams"],
-    image: "https://i.pinimg.com/736x/88/59/95/88599567283a293d73dd39acdbf650b0.jpg",
+    image: "https://i.pinimg.com/736x/24/3d/66/243d664a6b9a07fc696f628fcdbfb59b.jpg",
     color: "bg-blue-100",
     iconColor: "text-blue-600",
   },
@@ -25,7 +25,7 @@ const steps = [
     description:
       "Share your quiz with participants through various methods and host live interactive sessions that keep everyone engaged.",
     features: ["Multiple sharing options", "Live sessions", "Real-time participation", "Mobile-friendly"],
-    image: "https://i.pinimg.com/736x/0a/18/5f/0a185f66bac0cf3020df5186753119d7.jpg",
+    image: "https://i.pinimg.com/736x/4f/92/49/4f9249311efc63c4a1a1a3fb78f4acb7.jpg",
     color: "bg-purple-100",
     iconColor: "text-purple-600",
   },
@@ -35,7 +35,7 @@ const steps = [
     description:
       "Monitor performance with detailed analytics and insights that help you understand learning patterns and improve outcomes.",
     features: ["Real-time analytics", "Performance tracking", "Detailed reports", "Export capabilities"],
-    image: "https://i.pinimg.com/736x/f1/5f/1d/f15f1de1d6b7c90bfc7a1c6302c9d280.jpg",
+    image: "https://i.pinimg.com/736x/2c/9f/43/2c9f4398c7e7b7c4e5f5f026a30028f1.jpg",
     color: "bg-green-100",
     iconColor: "text-green-600",
   },
@@ -44,13 +44,13 @@ const steps = [
 const features = [
   {
     icon: Zap,
-    title: "Easy to create Quiz/Flashcard/study set/Exam",
+    title: "Easily create quizzes, flashcards, study sets, and exams",
     description: "Create and launch",
   },
   {
     icon: Users,
     title: "Multiplayer feature",
-    description: "Host sessions with participants simultaneously",
+    description: "Host sessions with multiple participants simultaneously",
   },
   {
     icon: BarChart3,
@@ -59,7 +59,7 @@ const features = [
   },
   {
     icon: Clock,
-    title: "Avaliblity",
+    title: "Availability",
     description: "Your quizzes are accessible anytime, anywhere, on any device",
   },
   {
@@ -180,7 +180,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Video Demo Section */}
-      <section className="py-16 lg:py-24 bg-white">
+  {/*    <section className="py-16 lg:py-24 bg-white">
         <div className="container max-w-7xl mx-auto px-4 lg:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -216,6 +216,8 @@ export default function HowItWorksPage() {
           </motion.div>
         </div>
       </section>
+
+      */}
 
       {/* CTA Section */}
       <section className="py-16 lg:py-24 bg-purple-600">

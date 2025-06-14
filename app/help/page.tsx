@@ -18,7 +18,7 @@ const categories = [
   {
     icon: Video,
     title: "Creating Quizzes",
-    description: "Step-by-step quiz creation guides",
+    description: "Step-by-step guides to creating quizzes",
     articles: 8,
   },
   {
@@ -30,7 +30,7 @@ const categories = [
   {
     icon: FileText,
     title: "Analytics & Reports",
-    description: "Understanding your quiz data",
+    description: "Understand your quiz data",
     articles: 5,
   },
 ]
@@ -39,7 +39,7 @@ const popularArticles = [
   "How to create your first quiz",
   "Setting up live quiz sessions",
   "Understanding quiz analytics",
-  "Customizing Tag themes",
+  "Customizing tag themes",
   "Managing participants",
 ]
 
@@ -67,7 +67,7 @@ export default function HelpPage() {
                   <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
                   <Input
                     type="text"
-                    placeholder="Search for help articles..."
+                    placeholder="Search help articles..."
                     className="pl-12 pr-4 py-4 rounded-2xl border-2 border-purple-200 focus:border-purple-500 text-lg"
                   />
                 </div>

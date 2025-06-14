@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Image from "next/image"
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
 import { Button } from "@/components/ui/button"
@@ -88,7 +89,7 @@ const creationFeatures = [
     features: [
       "Image uploads",
       "Audio uploads",
-      "Pdf uploads",
+      "PDF uploads",
       "Video uploads",
     ],
     color: "bg-blue-50",
@@ -102,7 +103,7 @@ const creationFeatures = [
       "Clone and duplicate quizzes/flashcards/study sets",
       "Share quizzes with friends",
       "Bulk editing capabilities",
-      "Tag and categorization",
+      "Tags and categorization",
     ],
     color: "bg-green-50",
     iconColor: "text-green-600",
@@ -271,7 +272,7 @@ const analyticsFeatures = [
     visual: {
       icon: Bot,
       title: "AI-Powered Flashcard Assistance",
-      subtitle: "Generate Flashcard automatically using topics or documents.",
+      subtitle: "Generate flashcard automatically using topics or documents.",
       bgColor: "bg-red-600",
     },
   },
@@ -405,7 +406,7 @@ export default function FeaturesPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left side - Mobile mockup */}
               <motion.div
-                initial={{ opacity: 0, x: -50 }}
+                initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 className="relative order-2 lg:order-1"
@@ -425,49 +426,14 @@ export default function FeaturesPage() {
                       </div>
 
                       {/* Quiz Interface */}
-                      <div className="pt-8 p-4 h-full">
-                        {/* Header */}
-                        <div className="text-center mb-6">
-                          <div className="w-16 h-16 bg-yellow-400 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <Trophy className="w-8 h-8 text-yellow-800" />
-                          </div>
-                          <h3 className="font-bold text-lg">Science Quiz</h3>
-                        </div>
-
-                        {/* Question */}
-                        <div className="bg-pink-100 rounded-2xl p-4 mb-6">
-                          <p className="text-sm font-medium mb-4">1. How many planets are blue?</p>
-                          <div className="space-y-2">
-                            <div className="bg-white rounded-lg p-3 flex items-center justify-between">
-                              <span className="text-sm">Three</span>
-                              <div className="w-4 h-4 rounded-full border-2 border-gray-300"></div>
-                            </div>
-                            <div className="bg-green-100 rounded-lg p-3 flex items-center justify-between border-2 border-green-500">
-                              <span className="text-sm font-medium">One</span>
-                              <div className="w-4 h-4 rounded-full bg-green-500"></div>
-                            </div>
-                            <div className="bg-white rounded-lg p-3 flex items-center justify-between">
-                              <span className="text-sm">Two</span>
-                              <div className="w-4 h-4 rounded-full border-2 border-gray-300"></div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Progress */}
-                        <div className="mb-6">
-                          <div className="flex justify-between text-xs text-gray-600 mb-2">
-                            <span>Question 1 of 5</span>
-                            <span>68 points</span>
-                          </div>
-                          <div className="w-full bg-gray-200 rounded-full h-2">
-                            <div className="bg-purple-500 h-2 rounded-full w-1/5"></div>
-                          </div>
-                        </div>
-
-                        {/* Submit Button */}
-                        <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white rounded-xl py-3">
-                          Done
-                        </Button>
+                      <div className="pt-8 p-4 h-full relative">
+                        <Image
+                          src="https://i.pinimg.com/736x/ae/0e/71/ae0e715f679c334b939ac44edd3435fc.jpg"
+                          alt="Quiz Interface Image"
+                          fill
+                          style={{ objectFit: 'cover' }}
+                          className="rounded-[2.5rem]"
+                        />
                       </div>
                     </div>
                   </div>
@@ -482,7 +448,7 @@ export default function FeaturesPage() {
                 className="order-1 lg:order-2 flex flex-col items-center"
               >
                 <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                Create Effective Learning <span className="text-yellow-800">Content Quickly and easy</span> For Business,
+                Create Effective Learning <span className="text-yellow-800">Content Quickly and Easy</span> For Business,
                   School, Or Personal Use.
                 </h1>
                 <p className="text-lg lg:text-xl text-gray-700 mb-8 leading-relaxed">

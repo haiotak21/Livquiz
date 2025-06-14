@@ -85,7 +85,7 @@ const useCases = [
       "Performance evaluation",
     ],
     image:
-      "https://i.pinimg.com/736x/54/ec/e1/54ece158d642647451f8cd1197dddc21.jpg",
+      "https://i.pinimg.com/736x/7c/ec/f4/7cecf437d35e8f4dedf34cd9752a370a.jpg",
     stats: { companies: "50+", employees: "200+", completion: "95%" },
     id: "corporate-training",
     headerTitle: "🏢 Corporate Training & Development",
@@ -113,12 +113,12 @@ const useCases = [
     description:
       "Transform classrooms and online courses with interactive quizzes that promote engagement and improve knowledge retention.",
     features: [
-      "Track student progress and assign personalized homework",
+      "Track student progress and assign tailored homework",
       "Organize quizzes easily to fit your curriculum needs",
       "Boost classroom participation with live instructor-led quizzes",
     ],
     image:
-      "https://i.pinimg.com/736x/69/4d/84/694d84de66919f09291649930f14cfe9.jpg",
+      "https://i.pinimg.com/736x/1e/7a/9b/1e7a9bbb6365ed8bf76e33fbb30382ea.jpg",
     stats: { users: "10k+", quizzes: "1M+", satisfaction: "99%" },
     id: "education",
     headerTitle: "🎓 Education & Academic Learning",
@@ -158,10 +158,10 @@ const useCases = [
       "Capture audience attention with live quizzes and polls that bring energy and participation to your presentations.",
     features: [
       "Run real-time quizzes and polls for instant feedback",
-      "Moderate sessions with live controls for smooth interaction",
+      "Moderate sessions effortlessly with live controls for smooth interaction",
     ],
     image:
-      "https://i.pinimg.com/736x/29/f9/88/29f98834bc46c3c099ee1625b5de38ff.jpg",
+      "https://i.pinimg.com/736x/53/ad/26/53ad26540af77b9ae763c69f7e732f82.jpg",
     stats: { events: "200+", participants: "5k+", engagement: "92%" },
     id: "events-conferences",
     headerTitle: "🎪 Events, Conferences & Workshops",
@@ -197,14 +197,14 @@ const useCases = [
     icon: Briefcase,
     title: "Recruitment",
     subtitle: "Simplify Candidate Assessment with Customized Quizzes",
-    description: "Make hiring smarter and faster by using skill-based quizzes to evaluate candidates objectively.",
+    description: "Accelerate hiring decisions with skill-based quizzes to evaluate candidates objectively",
     features: [
       "Build tailored skill and technical assessments",
       "Gather performance data to support hiring decisions",
       "Prepare candidates with practice quizzes",
     ],
     image:
-      "https://i.pinimg.com/736x/49/79/ef/4979efecfa4d687f3f03d238875c00db.jpg",
+      "https://i.pinimg.com/736x/e9/a2/3f/e9a23fa3c1bb10f468d18e3e666c7a2f.jpg",
     stats: { hires: "100+", companies: "20+", accuracy: "89%" },
     id: "recruitment",
     headerTitle: "💼 Recruitment & Hiring",
@@ -355,7 +355,7 @@ export default function UseCasesPage() {
               >
                 <Play className="w-12 h-12 text-purple-600 mx-auto mb-4" />
                 <div className="text-2xl font-bold text-gray-900">1M+</div>
-                <div className="text-gray-600">Quizzes and Flashcard</div>
+                <div className="text-gray-600">Quizzes and Flashcards</div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}

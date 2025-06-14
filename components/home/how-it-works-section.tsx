@@ -29,7 +29,7 @@ const steps = [
     title: "Play",
     description: "Join live quizzes with a host-provided code and track your performance instantly with in-depth stats and leaderboards.",
     features: ["Real-time analytics", "Performance tracking", "Detailed reports", "Export capabilities"],
-    image: "https://plus.unsplash.com/premium_photo-1676998931123-75789162f170?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDl8fGVkdWNhdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
+    image: "https://i.pinimg.com/736x/4e/72/77/4e7277e2987bb14bbafab0e6a1eedae4.jpg",
     bgColor: "bg-yellow-50",
     borderColor: "border-purple-200",
   },
@@ -80,7 +80,8 @@ export default function HowItWorksSection() {
 
                 {/* Image Container - This is where the images should be displayed */}
                 <div className="mb-8 relative">
-                  <div className="relative w-full h-48 bg-white rounded-2xl shadow-inner border-2 border-dashed border-gray-300 overflow-hidden">
+                <div className="relative w-full h-48 bg-white rounded-2xl shadow-inner overflow-hidden">
+
                     <Image
                       src={step.image || "/placeholder.svg"}
                       alt={`${step.title} illustration`}
