@@ -38,22 +38,22 @@ const heroFeatures = [
   {
     icon: Zap,
     title: "Lightning Fast",
-    description: "Create quizzes in minutes, not hours",
+    description: "Build quizzes in minutes",
   },
   {
     icon: Users,
     title: "Unlimited Players",
-    description: "Host sessions with thousands of participants",
+    description: "No limit on participants",
   },
   {
     icon: BarChart3,
     title: "Real-time Analytics",
-    description: "Get instant insights and detailed reports",
+    description: "Live results & reports",
   },
   {
     icon: Shield,
     title: "Secure & Reliable",
-    description: "Enterprise-grade security with 99.9% uptime",
+    description: "Always secure & available",
   },
 ]
 
@@ -69,9 +69,9 @@ const featureCategories = [
 const creationFeatures = [
   {
     icon: Edit3,
-    title: "Multiple Question Types",
+    title: "Different Question Types",
     id:"quizmaker",
-    description: "Design quizzes that align with any learning goal using a wide variety of question formats:",
+    description: "Choose from multiple choice, true/false, fill-in-the-blank, and more to match your teaching style.",
     features: [
       "Multiple Choice Questions (MCQ)",
       "True/False Questions",
@@ -84,8 +84,8 @@ const creationFeatures = [
   },
   {
     icon: ImageIcon,
-    title: "Rich Media Support",
-    description: "Enhance your quizzes with multimedia content to create more engaging learning experiences.",
+    title: "Add Images & Videos",
+    description: "Upload images, videos, audio, and PDFs to make your quizzes more engaging.",
     features: [
       "Image uploads",
       "Audio uploads",
@@ -97,8 +97,8 @@ const creationFeatures = [
   },
   {
     icon: FolderOpen,
-    title: "Organization & Reusability",
-    description: "Efficiently organize and reuse your quiz content with powerful management tools.",
+    title: "Stay Organized",
+    description: "Save time by organizing, copying, and reusing your quizzes with smart management tools.",
     features: [
       "Clone and duplicate quizzes/flashcards/study sets",
       "Share quizzes with friends",
@@ -110,8 +110,8 @@ const creationFeatures = [
   },
   {
     icon: Target,
-    title: "Flashcards & Study Sets",
-    description: "Create complementary study materials that work seamlessly with your quizzes.",
+    title: "Flashcards & Study Tools",
+    description: "Turn your quizzes into flashcards and study materials for individual or group practice.",
     features: [
       "Create standalone flashcards and study sets",
       "Organize by Tag, subject, or difficulty",
@@ -126,8 +126,8 @@ const instructorFeatures = [
   {
     icon: Play,
     id:"quizmaker",
-    title: "Live Quiz Moderation",
-    description: "Complete control over quiz flow and pacing to match your teaching style and student needs.",
+    title: "Control the Session",
+    description: "Start, pause, skip questions, and guide your quiz at your own pace.",
     features: [
       "Manual question reveal control",
       "Start, pause, and end sessions",
@@ -139,8 +139,8 @@ const instructorFeatures = [
   },
   {
     icon: Users,
-    title: "Player Management",
-    description: "Maintain a positive learning environment with comprehensive participant management tools.",
+    title: "Manage Students",
+    description: "Remove disruptive students, monitor progress, and keep your classroom focused.",
     features: [
       "Remove disruptive participants",
       "Mute or restrict players",
@@ -152,8 +152,8 @@ const instructorFeatures = [
   },
   {
     icon: Timer,
-    title: "Flexible Timing Controls",
-    description: "Customize timing to match your educational objectives and student capabilities.",
+    title: "Set Time Limits",
+    description: "Choose how long students have for each question and the overall session.",
     features: [
       "Per-question time limits",
       "Overall session timers",
@@ -187,20 +187,20 @@ const multiplayerFeatures = [
   },
   {
     icon: Smartphone,
-    title: "Flexible Access Methods",
+    title: "Simple Access Options",
     description:
-      "Multiple ways for participants to join sessions, making it easy for anyone to participate regardless of their setup or preparation level.",
+      "Students can join your quiz in seconds using whichever method works best for them.",
     features: [
-      "QR code scanning for instant access",
-      "Simple access codes or PIN codes for quick joining",
-      "Direct link sharing options",
-      "Guest participation without signup",
+      "Scan QR codes to join instantly",
+      "Enter simple room codes",
+      "Click shared links",
+      "Play without creating accounts",
     ],
     color: "bg-blue-100",
     visual: {
       icon: QrCode,
-      title: "Scan & Play",
-      subtitle: "One scan, instant access to live quiz sessions",
+      title: "Scan to Join",
+      subtitle: "Students scan a QR code and they're in - no downloads or accounts needed",
       bgColor: "bg-blue-600",
     },
   },
@@ -209,26 +209,26 @@ const multiplayerFeatures = [
 const analyticsFeatures = [
   {
     icon: BarChart3,
-    title: "Comprehensive Performance Metrics",
+    title: "Detailed Reports",
     description:
-      "Gain deep insights into learning patterns and quiz performance with detailed analytics that help improve educational outcomes.",
+      "See how each student is performing and where they need extra help.",
     features: [
-      "Individual student performance tracking",
-      "Response time and accuracy metrics",
-      "Progress over time visualization",
+      "Track individual students",
+      "See response times and scores",
+      "Monitor progress over time",
     ],
     color: "bg-purple-100",
     visual: {
       icon: TrendingUp,
-      title: "Data-Driven Insights",
-      subtitle: "Transform quiz results into actionable learning insights",
+      title: "Smart Insights",
+      subtitle: "Get clear recommendations on how to improve your teaching based on quiz results.",
       bgColor: "bg-purple-600",
     },
   },
   {
     icon: Trophy,
-    title: "Interactive Leaderboards",
-    description: "Motivate students and create healthy competition with dynamic leaderboards and achievement tracking.",
+    title: "Live Leaderboards",
+    description: "Students see their rankings update in real-time, creating excitement and healthy competition.",
     features: [
       "Real-time ranking updates",
       "Multiple ranking criteria",
@@ -236,16 +236,16 @@ const analyticsFeatures = [
     color: "bg-yellow-100",
     visual: {
       icon: Trophy,
-      title: "Competitive Learning",
-      subtitle: "Gamify education with engaging competitions",
+      title: "Leaderboards & Competition",
+      subtitle: "Keep students motivated with fun leaderboards and friendly competition.",
       bgColor: "bg-yellow-600",
     },
   },
   {
     icon: Bot,
-    title: "AI-Powered Quiz Assistance",
+    title: "Smart AI Assistant",
     description:
-      "Leverage the power of AI to enhance content creation, personalization, and learning outcomes.",
+      "Save time with AI that automatically creates quizzes and flashcards from your materials, so you can focus on teaching.",
     features: [
       "AI Quiz Generator: Instantly generate quizzes from text, documents, or topics using AI.",
       "Smart Question Suggestions: Get AI-driven suggestions while building quizzes to save time and improve quality.",
@@ -254,15 +254,15 @@ const analyticsFeatures = [
     color: "bg-green-100",
     visual: {
       icon: Bot,
-      title: "AI-Powered Quiz Assistance",
-      subtitle: "Generate questions automatically using topics or documents.",
+      title: "Auto-Generate Quizzes",
+      subtitle: "Create quizzes from any topic or document in seconds.",
       bgColor: "bg-green-600",
     },
   },
   {
     icon: Bot,
-    title: "AI-Powered Flashcard Assistance",
-    description: "Unlock smarter studying with AI tools that simplify flashcard creation, personalize content, and accelerate learning.",
+    title: "Auto-Generate Flashcards",
+    description: "Turn your notes into flashcards automatically and get smart study reminders.",
     features: [
       "Instant Flashcard Creation: Automatically generate flashcards from notes, documents, or any text input using AI.",
       "Key Concept Detection: Let AI identify and extract essential terms, definitions, and ideas for you.",
@@ -271,7 +271,7 @@ const analyticsFeatures = [
     color: "bg-red-100",
     visual: {
       icon: Bot,
-      title: "AI-Powered Flashcard Assistance",
+      title: "Turn any text into flashcards instantly.",
       subtitle: "Generate flashcard automatically using topics or documents.",
       bgColor: "bg-red-600",
     },
@@ -281,40 +281,39 @@ const analyticsFeatures = [
 const securityFeatures = [
   {
     icon: GraduationCap,
-    title: "Exam & Certification Mode",
+    title: "Professional Exam Mode",
     description:
-      "Conduct secure, professional assessments with features designed for high-stakes testing and certification programs.",
+      "Run formal assessments with timed sessions, randomized questions, and secure reporting.",
     features: [
-      "Controlled-flow exam delivery",
-      "Timed assessment sessions",
-      "Question randomization",
-      "Secure answer submission",
-      "Certification-ready reporting",
+      "Timed exams",
+      "Mixed-up questions",
+      "Secure submissions",
+      "Official reports",
     ],
     color: "bg-purple-100",
     visual: {
       icon: GraduationCap,
-      title: "Professional Testing",
-      subtitle: "Certification-grade security and reliability",
+      title: "Certification Ready",
+      subtitle: "Professional-grade security for official testing and certifications",
       bgColor: "bg-purple-600",
     },
   },
   {
     icon: Lock,
-    title: "Anti-Cheating Measures",
+    title: "Stop Cheating",
     description:
-      "Comprehensive security features that maintain assessment integrity while preserving a positive user experience.",
+      "Smart security features that catch suspicious behavior and keep exams fair.",
     features: [
-      "One-question-at-a-time reveal",
-      "Controlled navigation restrictions",
-      "Session monitoring capabilities",
-      "Suspicious activity detection",
+      "One question at a time",
+      "Navigation controls",
+      "Activity monitoring",
+      "Suspicious behavior alerts",
     ],
     color: "bg-red-100",
     visual: {
       icon: Lock,
-      title: "Secure Assessment",
-      subtitle: "Maintain integrity without compromising usability",
+      title: "Fair Testing",
+      subtitle: "Advanced security without slowing things down",
       bgColor: "bg-red-600",
     },
   },
@@ -448,12 +447,10 @@ export default function FeaturesPage() {
                 className="order-1 lg:order-2 flex flex-col items-center"
               >
                 <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                Create Effective Learning <span className="text-yellow-800">Content Quickly and Easy</span> For Business,
-                  School, Or Personal Use.
+                Build Engaging <span className="text-yellow-800">Learning Content</span> in Minutes.
                 </h1>
                 <p className="text-lg lg:text-xl text-gray-700 mb-8 leading-relaxed">
-                  Create engaging quizzes, assessments, and interactive content that captivates your audience and drives
-                  real learning outcomes.
+                Create quizzes and interactive content that keeps people engaged and learning.
                 </p>
                 <Link href="https://livquiz.com/auth/sign-up" className="block mx-auto">
                   <Button
@@ -523,12 +520,11 @@ export default function FeaturesPage() {
                   <Edit3 className="w-6 h-6 text-purple-600" />
                 </div>
                 <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
-                  Quiz Creation & Content Management
+                Build & Organize Your Quizzes
                 </h2>
               </div>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                Build engaging, professional quizzes with our intuitive creation tools and flexible content management
-                system.
+              Build engaging quizzes and keep all your content organized.
               </p>
             </motion.div>
 
@@ -578,12 +574,11 @@ export default function FeaturesPage() {
                   <UserCheck className="w-6 h-6 text-blue-600" />
                 </div>
                 <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
-                  Advanced Instructor Control
+                Instructor Dashboard
                 </h2>
               </div>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                Take complete control of your quiz sessions with powerful moderation and management tools designed for
-                educators.
+              Control your quiz sessions with easy-to-use tools that help you manage students and keep everyone engaged.
               </p>
             </motion.div>
 
@@ -687,7 +682,7 @@ export default function FeaturesPage() {
           </div>
         </section>
 
-        {/* Advanced Analytics & Insights */}
+        {/* Track Student Progress */}
         <section id="analytics" className="py-16 lg:py-24 bg-gray-50">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
             <motion.div
@@ -702,12 +697,11 @@ export default function FeaturesPage() {
                   <BarChart3 className="w-6 h-6 text-pink-600" />
                 </div>
                 <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
-                  Advanced Analytics & Insights
+                Track Student Progress
                 </h2>
               </div>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                Make data-driven decisions about learning and teaching with comprehensive analytics and performance
-                tracking.
+              Get detailed reports on student performance to see what's working and what needs improvement.
               </p>
             </motion.div>
 
@@ -771,11 +765,10 @@ export default function FeaturesPage() {
                 <div className="hidden lg:flex w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
                   <Shield className="w-6 h-6 text-blue-600" />
                 </div>
-                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">Security & Exam Integrity</h2>
+                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">Secure Testing & Anti-Cheating</h2>
               </div>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                Maintain academic integrity and secure assessment delivery with comprehensive anti-cheating and security
-                features.
+                Run secure exams and certifications with built-in anti-cheating features that keep assessments fair and reliable.
               </p>
             </motion.div>
 
@@ -837,11 +830,10 @@ export default function FeaturesPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">
-                Ready to Transform Your Quizzes?
+              Ready to Get Started?
               </h2>
               <p className="text-lg lg:text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-                Join thousands of educators, trainers, and organizations who trust LivQuiz to deliver engaging learning
-                experiences.
+              See why educators love using our quiz tools to make learning fun and effective.
               </p>
             </motion.div>
           </div>

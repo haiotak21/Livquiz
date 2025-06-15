@@ -22,6 +22,7 @@ import {
   MessageCircle,
   FileText,
   Newspaper,
+  Globe,
 } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
@@ -32,6 +33,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const pathname = usePathname()
+  const [selectedLanguage, setSelectedLanguage] = useState<string>("en")
 
   useEffect(() => {
     const handleScroll = () => {
@@ -266,6 +268,22 @@ export default function Header() {
                 </Button>
               </Link>
             </motion.div>
+            {/* Language Selector for Desktop */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-gray-700 hover:text-[#6052CC] transition-colors duration-200 font-medium group outline-none">
+                <Globe className="h-5 w-5" />
+                <span className="hidden md:inline">{selectedLanguage === "en" ? "English" : "French"}</span>
+                <ChevronDown className="ml-1 h-4 w-4 group-hover:rotate-180 transition-transform duration-200" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-40 p-2 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100">
+                <DropdownMenuItem onSelect={() => setSelectedLanguage("en")}>
+                  <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">English</button>
+                </DropdownMenuItem>
+                <DropdownMenuItem onSelect={() => setSelectedLanguage("es")}>
+                  <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">French</button>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </motion.div>
 
           {/* Mobile Menu Button */}
@@ -359,6 +377,22 @@ export default function Header() {
                       Sign Up →
                     </Button>
                   </Link>
+                  {/* Language Selector for Mobile */}
+                  <DropdownMenu>
+                    <DropdownMenuTrigger className="flex items-center space-x-2 text-gray-700 hover:text-[#6052CC] transition-colors duration-200 font-medium group outline-none w-full justify-center">
+                      <Globe className="h-5 w-5" />
+                      <span>{selectedLanguage === "en" ? "English" : "French"}</span>
+                      <ChevronDown className="ml-1 h-4 w-4 group-hover:rotate-180 transition-transform duration-200" />
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="w-40 p-2 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100">
+                      <DropdownMenuItem onSelect={() => setSelectedLanguage("en")}>
+                        <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">English</button>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem onSelect={() => setSelectedLanguage("es")}>
+                        <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">French</button>
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                 </div>
               </div>
             </motion.div>

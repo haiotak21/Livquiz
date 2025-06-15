@@ -20,7 +20,7 @@ const steps = [
     title: "Host or Share",
     description: "Run live sessions or share quiz links for instant participation on any device.",
     features: ["Live sessions", "Share quiz links", "Real-time participation", "No signup required for players"],
-    image: "https://i.pinimg.com/736x/9d/92/b4/9d92b4599c0ea0530e5352c0b10ac340.jpg",
+    image: "https://i.pinimg.com/736x/ba/9a/b7/ba9ab75e1b5528f94f0cd452a9961cfd.jpg",
     bgColor: "bg-pink-50",
     borderColor: "border-purple-200",
   },
