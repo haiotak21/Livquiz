@@ -75,14 +75,14 @@ const useCases = [
   {
     icon: Building2,
     title: "Corporate Training",
-    subtitle: "Boost Employee Development with Interactive Learning",
+    subtitle: "Replace boring presentations with live quizzes your team will love",
     description:
-      "Empower your workforce with engaging training modules, skill assessments, and real-time quizzes designed to enhance retention and drive measurable outcomes.",
+      "Ditch the death-by-PowerPoint. Run live quizzes during training sessions, create skill assessments, and turn learning into a game that keeps everyone engaged while you track real results.",
     features: [
-      "Streamline employee onboarding and compliance training",
-      "Evaluate skills and performance with actionable insights",
-      "Foster teamwork through interactive multiplayer quizzes",
-      "Performance evaluation",
+      "Live training sessions – Keep everyone awake and participating",
+      "Skill assessments – Test knowledge before and after training",
+      "Team competitions – Turn learning into friendly competition",
+      "Instant feedback – See what's working and what isn't in real-time",
     ],
     image:
       "https://i.pinimg.com/736x/7c/ec/f4/7cecf437d35e8f4dedf34cd9752a370a.jpg",
@@ -90,163 +90,67 @@ const useCases = [
     id: "corporate-training",
     headerTitle: "🏢 Corporate Training & Development",
     headerSubtitle:
-      "Boost employee engagement and measure training effectiveness with interactive corporate learning solutions",
-    subCases: [
-      {
-        icon: Building2,
-        title: "Skills Assessment & Certification",
-        description: "Evaluate employee competencies and track professional development progress with secure testing.",
-        features: [
-          "Technical skill evaluations",
-          "Compliance training verification",
-          "Professional certification tracking",
-          "Performance review integration",
-          "Career development planning",
-        ],
-      },
-    ],
+      "Transform training with interactive quizzes that engage and measure",
+    subCases: [],
   },
   {
     icon: GraduationCap,
     title: "Education",
-    subtitle: "Revolutionize Learning for Students and Educators",
+    subtitle: "Turn passive learners into active participants with live quizzes",
     description:
-      "Transform classrooms and online courses with interactive quizzes that promote engagement and improve knowledge retention.",
+      "Stop lecturing to blank stares. Run live quizzes that get every student involved, whether you're teaching in-person or online. See who gets it, who needs help, and keep everyone engaged from start to finish.",
     features: [
-      "Track student progress and assign tailored homework",
-      "Organize quizzes easily to fit your curriculum needs",
-      "Boost classroom participation with live instructor-led quizzes",
+      "Everyone participates – No more silent classrooms or empty Zoom faces",
+      "Instant feedback – Know immediately if students understand the material",
+      "Track learning – See exactly where each student needs extra help",
+      "Make it fun – Turn review sessions into exciting competitions",
     ],
     image:
       "https://i.pinimg.com/736x/1e/7a/9b/1e7a9bbb6365ed8bf76e33fbb30382ea.jpg",
     stats: { users: "10k+", quizzes: "1M+", satisfaction: "99%" },
     id: "education",
     headerTitle: "🎓 Education & Academic Learning",
-    headerSubtitle: "Transform classrooms and online learning environments with interactive, engaging quiz experiences",
-    subCases: [
-      {
-        icon: School,
-        title: "Higher Education Lectures",
-        description: "Enhance large lecture halls with interactive Q&A sessions and comprehension checks.",
-        features: [
-          "Mid-lecture comprehension checks",
-          "Anonymous question submission",
-          "Interactive polling during presentations",
-          "Exam preparation sessions",
-          "Group study coordination",
-        ],
-      },
-      {
-        icon: FileText,
-        title: "Assessment & Testing",
-        description: "Create secure, fair, and comprehensive assessments with advanced anti-cheating features.",
-        features: [
-          "Timed examinations",
-          "Standardized test preparation",
-          "Formative assessments",
-          "Placement testing",
-          "Certification exams",
-        ],
-      },
-    ],
+    headerSubtitle: "Make learning stick with interactive quizzes students actually want to participate in",
+    subCases: [],
   },
   {
     icon: Users,
     title: "Events & Conferences",
-    subtitle: "Create Engaging and Interactive Event Experiences",
+    subtitle: "Wake up your audience with interactive quizzes that get everyone involved",
     description:
-      "Capture audience attention with live quizzes and polls that bring energy and participation to your presentations.",
+      "Stop presenting to a room of people staring at their phones. Run live quizzes and polls that get every attendee participating, whether they're in the front row or joining virtually.",
     features: [
-      "Run real-time quizzes and polls for instant feedback",
-      "Moderate sessions effortlessly with live controls for smooth interaction",
+      "Break the ice – Get people talking and engaged from the start",
+      "Keep attention – No more nodding off during long presentations",
+      "Instant feedback – See what your audience thinks in real-time",
+      "Boost participation – Even shy attendees join in anonymously",
     ],
     image:
       "https://i.pinimg.com/736x/53/ad/26/53ad26540af77b9ae763c69f7e732f82.jpg",
     stats: { events: "200+", participants: "5k+", engagement: "92%" },
     id: "events-conferences",
     headerTitle: "🎪 Events, Conferences & Workshops",
-    headerSubtitle: "Engage audiences and gather feedback at live events with interactive polling and Q&A sessions",
-    subCases: [
-      {
-        icon: Calendar,
-        title: "Workshop & Training Sessions",
-        description: "Make workshops more interactive and measure learning outcomes effectively.",
-        features: [
-          "Interactive skill-building exercises",
-          "Knowledge checks throughout sessions",
-          "Group collaboration activities",
-          "Real-time progress tracking",
-          "Post-workshop assessments",
-        ],
-      },
-      {
-        icon: Target,
-        title: "Competitions & Tournaments",
-        description: "Host engaging knowledge competitions and tournaments with live leaderboards.",
-        features: [
-          "Academic competitions",
-          "Team building challenges",
-          "Industry knowledge contests",
-          "Live championship brackets",
-          "Award ceremony integration",
-        ],
-      },
-    ],
+    headerSubtitle: "Turn sleepy audiences into engaged participants with live quizzes and polls",
+    subCases: [],
   },
   {
     icon: Briefcase,
     title: "Recruitment",
-    subtitle: "Simplify Candidate Assessment with Customized Quizzes",
-    description: "Accelerate hiring decisions with skill-based quizzes to evaluate candidates objectively",
+    subtitle: "Find the right people faster with quizzes that test actual job skills",
+    description: "Skip the resume guesswork and lengthy interviews that tell you nothing about real abilities. Create custom quizzes that test the exact skills you need, so you know who can actually do the work before you hire them.",
     features: [
-      "Build tailored skill and technical assessments",
-      "Gather performance data to support hiring decisions",
-      "Prepare candidates with practice quizzes",
+      "Test real skills – See who can actually code, write, or solve problems",
+      "Save interview time – Screen out unqualified candidates early",
+      "Remove bias – Focus on ability, not impressive-sounding resumes",
+      "Compare fairly – Give every candidate the same objective test",
     ],
     image:
       "https://i.pinimg.com/736x/e9/a2/3f/e9a23fa3c1bb10f468d18e3e666c7a2f.jpg",
     stats: { hires: "100+", companies: "20+", accuracy: "89%" },
     id: "recruitment",
     headerTitle: "💼 Recruitment & Hiring",
-    headerSubtitle: "Make hiring smarter and faster with skill-based quizzes to evaluate candidates objectively",
-    subCases: [
-      {
-        icon: Target,
-        title: "Technical Skills Assessment",
-        description: "Evaluate technical competencies with coding challenges and problem-solving scenarios.",
-        features: [
-          "Programming skill tests",
-          "Technical problem solving",
-          "Code review assessments",
-          "System design challenges",
-          "Real-world scenario testing",
-        ],
-      },
-      {
-        icon: Users,
-        title: "Behavioral Assessment",
-        description: "Assess soft skills and cultural fit through interactive scenario-based questions.",
-        features: [
-          "Situational judgment tests",
-          "Communication skills evaluation",
-          "Leadership potential assessment",
-          "Team collaboration scenarios",
-          "Cultural fit evaluation",
-        ],
-      },
-      {
-        icon: FileText,
-        title: "Pre-Employment Screening",
-        description: "Streamline initial candidate screening with automated assessments and scoring.",
-        features: [
-          "Automated candidate filtering",
-          "Skills-based ranking",
-          "Time-efficient screening",
-          "Bias reduction tools",
-          "Comprehensive reporting",
-        ],
-      },
-    ],
+    headerSubtitle: "Stop guessing who can do the job – use skill quizzes to hire with confidence",
+    subCases: [],
   },
 ]
 
@@ -331,8 +235,8 @@ export default function UseCasesPage() {
                 🎯 LivQuiz Powers Success Across Industries
               </h1>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                From classrooms to boardrooms, LivQuiz helps educators, trainers, and leaders deliver impactful learning
-                experiences that inspire engagement and deliver measurable results.
+              LivQuiz Drives Results Across Every Industry
+              Whether you're teaching students, training employees, or leading teams, LivQuiz makes learning interactive and engaging while delivering real, measurable outcomes.
               </p>
             </motion.div>
 

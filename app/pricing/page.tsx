@@ -199,21 +199,20 @@ const basePlans = {
 
 const faqs = [
   {
-    question: "Can I change my plan at any time?",
-    answer:
-      "Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.",
+    question: "Can I change my plan anytime?",
+    answer: "Yes, upgrade or downgrade anytime. Changes apply to your next bill.",
   },
   {
-    question: "Is there a free trial for paid plans?",
-    answer: "Yes, we offer a 14-day free trial for our Pro plan. No credit card required to start.",
+    question: "Is there a free trial?",
+    answer: "Yes, 5-day free trial. No credit card needed.",
   },
   {
     question: "What payment methods do you accept?",
-    answer: "We accept all major credit cards, PayPal, and bank transfers for Enterprise customers.",
+    answer: "Credit cards, PayPal, and bank transfers for Enterprise.",
   },
   {
-    question: "Can I cancel my subscription anytime?",
-    answer: "Absolutely. You can cancel your subscription at any time with no cancellation fees.",
+    question: "Can I cancel anytime?",
+    answer: "Yes, cancel anytime with no fees.",
   },
 ]
 
@@ -324,8 +323,7 @@ export default function PricingPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Select from our range of flexible plans designed to fit your needs. Whether you're a student, teacher,
-                professional, or organization, we have the right plan for you.
+                Whether you're teaching, training, or presenting – we've got you covered
               </motion.p>
 
               {/* Plan Type Selector */}
@@ -604,49 +602,25 @@ export default function PricingPage() {
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Why Choose LivQuiz?</h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Join thousands of educators and organizations who trust LivQuiz for their interactive learning needs.
+                Thousands of teachers and trainers already love it – here's why
               </p>
             </motion.div>
-
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              {[
-                {
-                  icon: Users,
-                  title: "Trusted by 10K+ Users",
-                  description:
-                    "Join educators and trainers worldwide who rely on LivQuiz for engaging learning experiences.",
-                },
-                {
-                  icon: Zap,
-                  title: "Easy to Use",
-                  description: "Create professional quizzes in minutes with our intuitive drag-and-drop interface.",
-                },
-                {
-                  icon: Shield,
-                  title: "Secure & Reliable",
-                  description: "Enterprise-grade security with 99.9% uptime guarantee and GDPR compliance.",
-                },
-              ].map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -5, scale: 1.02 }}
-                  className="text-center"
-                >
-                  <motion.div
-                    className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6"
-                    whileHover={{ rotate: 5, scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <feature.icon className="w-8 h-8 text-purple-600" />
-                  </motion.div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </motion.div>
-              ))}
+              <div className="flex flex-col items-center text-center">
+                <Users className="w-12 h-12 text-purple-600 mb-4" />
+                <h3 className="font-bold text-lg mb-2">👥 Trusted by 10K+ Users</h3>
+                <p>Teachers and trainers worldwide choose LivQuiz to make learning interactive</p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <Zap className="w-12 h-12 text-purple-600 mb-4" />
+                <h3 className="font-bold text-lg mb-2">⚡ Easy to Use</h3>
+                <p>Build professional quizzes in minutes, no tech skills needed</p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <Shield className="w-12 h-12 text-purple-600 mb-4" />
+                <h3 className="font-bold text-lg mb-2">🛡 Secure & Reliable</h3>
+                <p>Enterprise security with 99.9% uptime – your data stays safe</p>
+              </div>
             </div>
           </div>
         </section>
@@ -662,8 +636,8 @@ export default function PricingPage() {
               className="text-center mb-16"
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
-              <p className="text-lg text-gray-600">
-                Have questions? We have answers. If you can't find what you're looking for, contact our support team.
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+                Got questions? We've got quick answers. Still need help? Contact support.
               </p>
             </motion.div>
 

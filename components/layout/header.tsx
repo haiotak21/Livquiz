@@ -145,6 +145,13 @@ export default function Header() {
           icon: Newspaper,
           description: "Latest news and educational content",
         },
+        {
+          name: "Language",
+          href: "#language-selector",
+          icon: Globe,
+          description: "Change site language",
+          custom: true
+        },
       ],
     },
     { name: "Pricing", href: "/pricing" },
@@ -165,7 +172,7 @@ export default function Header() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.2 }}>
             <Link href="/" className="flex items-center">
               <Image
-                src="/livquiz-logo.png"
+                src="logo-livquiz-2025-13.png"
                 alt="LivQuiz Logo"
                 width={160}
                 height={40}
@@ -193,31 +200,56 @@ export default function Header() {
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="w-80 p-2 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100">
                       <div className="space-y-1">
-                        {item.dropdown.map((subItem, subIndex) => (
-                          <DropdownMenuItem key={subItem.name || subIndex} className="p-0">
-                            <button
-                              onClick={(e) => handleNavClick(subItem.href || "#", e)}
-                              className={`flex items-start space-x-3 p-3 rounded-xl hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-200 group w-full text-left ${isActivePath(subItem.href) ? 'bg-gradient-to-r from-purple-50 to-pink-50' : ''}`}
-                            >
-                              <motion.div
-                                className="w-10 h-10 bg-gradient-to-r from-purple-100 to-pink-100 rounded-lg flex items-center justify-center flex-shrink-0"
-                                whileHover={{ scale: 1.1, rotate: 5 }}
-                                transition={{ duration: 0.2 }}
+                        {item.dropdown.map((subItem, subIndex) => {
+                          if (subItem.custom) {
+                            return (
+                              <DropdownMenuItem key={subItem.name || subIndex} className="p-0">
+                                <DropdownMenu>
+                                  <DropdownMenuTrigger className="flex items-start space-x-3 p-3 rounded-xl hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-200 group w-full text-left">
+                                    <motion.div className="w-10 h-10 bg-gradient-to-r from-purple-100 to-pink-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                      <Globe className="w-5 h-5 text-[#6052CC]" />
+                                    </motion.div>
+                                    <div className="flex-1 min-w-0">
+                                      <div className="font-semibold text-gray-900 group-hover:text-[#6052CC] transition-colors text-sm">Language</div>
+                                      <div className="text-xs text-gray-500 group-hover:text-gray-600 transition-colors mt-1">Change site language</div>
+                                    </div>
+                                    <ChevronDown className="w-4 h-4 text-gray-400 group-hover:text-[#6052CC] transition-colors flex-shrink-0" />
+                                  </DropdownMenuTrigger>
+                                  <DropdownMenuContent className="w-40 p-2 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100">
+                                    <DropdownMenuItem onSelect={() => setSelectedLanguage('en')}>
+                                      <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">English</button>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem onSelect={() => setSelectedLanguage('es')}>
+                                      <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">French</button>
+                                    </DropdownMenuItem>
+                                  </DropdownMenuContent>
+                                </DropdownMenu>
+                              </DropdownMenuItem>
+                            );
+                          }
+                          // Default rendering for other items
+                          return (
+                            <DropdownMenuItem key={subItem.name || subIndex} className="p-0">
+                              <button
+                                onClick={(e) => handleNavClick(subItem.href || "#", e)}
+                                className={`flex items-start space-x-3 p-3 rounded-xl hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-200 group w-full text-left ${isActivePath(subItem.href) ? 'bg-gradient-to-r from-purple-50 to-pink-50' : ''}`}
                               >
-                                {subItem.icon && <subItem.icon className="w-5 h-5 text-[#6052CC]" />}
-                              </motion.div>
-                              <div className="flex-1 min-w-0">
-                                <div className={`font-semibold text-gray-900 group-hover:text-[#6052CC] transition-colors text-sm ${isActivePath(subItem.href) ? 'text-[#6052CC]' : ''}`}>
-                                  {subItem.name}
+                                <motion.div
+                                  className="w-10 h-10 bg-gradient-to-r from-purple-100 to-pink-100 rounded-lg flex items-center justify-center flex-shrink-0"
+                                  whileHover={{ scale: 1.1, rotate: 5 }}
+                                  transition={{ duration: 0.2 }}
+                                >
+                                  {subItem.icon && <subItem.icon className="w-5 h-5 text-[#6052CC]" />}
+                                </motion.div>
+                                <div className="flex-1 min-w-0">
+                                  <div className={`font-semibold text-gray-900 group-hover:text-[#6052CC] transition-colors text-sm ${isActivePath(subItem.href) ? 'text-[#6052CC]' : ''}`}>{subItem.name}</div>
+                                  <div className="text-xs text-gray-500 group-hover:text-gray-600 transition-colors mt-1">{subItem.description}</div>
                                 </div>
-                                <div className="text-xs text-gray-500 group-hover:text-gray-600 transition-colors mt-1">
-                                  {subItem.description}
-                                </div>
-                              </div>
-                              <ChevronDown className="w-4 h-4 text-gray-400 rotate-[-90deg] group-hover:text-[#6052CC] transition-colors flex-shrink-0" />
-                            </button>
-                          </DropdownMenuItem>
-                        ))}
+                                <ChevronDown className="w-4 h-4 text-gray-400 rotate-[-90deg] group-hover:text-[#6052CC] transition-colors flex-shrink-0" />
+                              </button>
+                            </DropdownMenuItem>
+                          );
+                        })}
                       </div>
 
                       {/* Bottom CTA - Only for Products and Use Cases */}
@@ -268,22 +300,6 @@ export default function Header() {
                 </Button>
               </Link>
             </motion.div>
-            {/* Language Selector for Desktop */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-1 text-gray-700 hover:text-[#6052CC] transition-colors duration-200 font-medium group outline-none">
-                <Globe className="h-5 w-5" />
-                <span className="hidden md:inline">{selectedLanguage === "en" ? "English" : "French"}</span>
-                <ChevronDown className="ml-1 h-4 w-4 group-hover:rotate-180 transition-transform duration-200" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-40 p-2 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100">
-                <DropdownMenuItem onSelect={() => setSelectedLanguage("en")}>
-                  <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">English</button>
-                </DropdownMenuItem>
-                <DropdownMenuItem onSelect={() => setSelectedLanguage("es")}>
-                  <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">French</button>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
           </motion.div>
 
           {/* Mobile Menu Button */}
@@ -385,10 +401,10 @@ export default function Header() {
                       <ChevronDown className="ml-1 h-4 w-4 group-hover:rotate-180 transition-transform duration-200" />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="w-40 p-2 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100">
-                      <DropdownMenuItem onSelect={() => setSelectedLanguage("en")}>
+                      <DropdownMenuItem onSelect={() => setSelectedLanguage("en")}> 
                         <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">English</button>
                       </DropdownMenuItem>
-                      <DropdownMenuItem onSelect={() => setSelectedLanguage("es")}>
+                      <DropdownMenuItem onSelect={() => setSelectedLanguage("es")}> 
                         <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">French</button>
                       </DropdownMenuItem>
                     </DropdownMenuContent>

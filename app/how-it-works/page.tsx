@@ -13,8 +13,7 @@ const steps = [
     number: "01",
     title: "Create Your Quiz",
     description:
-      "Use our intuitive drag-and-drop builder to create engaging quizzes with multiple question types, media, and custom themes.",
-    features: ["Multiple question types", "Rich media support", "Study set", "Exams"],
+      "Build quizzes fast with our drag-and-drop builder. Choose from multiple question types, add images and videos, then customize your theme. No technical skills needed.",
     image: "https://i.pinimg.com/736x/24/3d/66/243d664a6b9a07fc696f628fcdbfb59b.jpg",
     color: "bg-blue-100",
     iconColor: "text-blue-600",
@@ -23,8 +22,7 @@ const steps = [
     number: "02",
     title: "Share & Engage",
     description:
-      "Share your quiz with participants through various methods and host live interactive sessions that keep everyone engaged.",
-    features: ["Multiple sharing options", "Live sessions", "Real-time participation", "Mobile-friendly"],
+      "Get everyone participating instantly. Share your quiz link or run it live in front of your audience. Works on any device, anywhere.",
     image: "https://i.pinimg.com/736x/4f/92/49/4f9249311efc63c4a1a1a3fb78f4acb7.jpg",
     color: "bg-purple-100",
     iconColor: "text-purple-600",
@@ -33,39 +31,10 @@ const steps = [
     number: "03",
     title: "Track & Analyze",
     description:
-      "Monitor performance with detailed analytics and insights that help you understand learning patterns and improve outcomes.",
-    features: ["Real-time analytics", "Performance tracking", "Detailed reports", "Export capabilities"],
+      "See what's working with real-time results. Get instant feedback and detailed reports that show you exactly how people performed and what they learned.",
     image: "https://i.pinimg.com/736x/2c/9f/43/2c9f4398c7e7b7c4e5f5f026a30028f1.jpg",
     color: "bg-green-100",
     iconColor: "text-green-600",
-  },
-]
-
-const features = [
-  {
-    icon: Zap,
-    title: "Easily create quizzes, flashcards, study sets, and exams",
-    description: "Create and launch",
-  },
-  {
-    icon: Users,
-    title: "Multiplayer feature",
-    description: "Host sessions with multiple participants simultaneously",
-  },
-  {
-    icon: BarChart3,
-    title: "Real-time Analytics",
-    description: "Get instant insights into participant performance and engagement",
-  },
-  {
-    icon: Clock,
-    title: "Availability",
-    description: "Your quizzes are accessible anytime, anywhere, on any device",
-  },
-  {
-    icon: Play,
-    title: "Interactive Experience",
-    description: "Gamified learning with leaderboards, timers, and instant feedback",
   },
 ]
 
@@ -87,28 +56,9 @@ export default function HowItWorksPage() {
               How LivQuiz Works
             </h1>
             <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Discover how simple it is to create, share, and analyze interactive quizzes that captivate your audience
-              and drive real results.
+            Create engaging quizzes in minutes that get real participation and measurable results
             </p>
           </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <feature.icon className="w-8 h-8 text-purple-600" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -124,7 +74,7 @@ export default function HowItWorksPage() {
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Three Simple Steps to Success</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              From creation to analysis, LivQuiz makes it easy to deliver engaging quiz experiences.
+              Create engaging quizzes in minutes, not hours
             </p>
           </motion.div>
 
@@ -149,17 +99,6 @@ export default function HowItWorksPage() {
                   </div>
 
                   <p className="text-lg text-gray-600 mb-8 leading-relaxed">{step.description}</p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                    {step.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                        <span className="text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  
                 </div>
 
                 <div className={`${index % 2 === 1 ? "lg:col-start-1" : ""} flex flex-col h-full`}>

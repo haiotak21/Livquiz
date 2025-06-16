@@ -14,19 +14,19 @@ const team = [
     name: "Eunice Gapie",
     role: "CEO",
     image: "/Eunice.jpg",
-    bio: "Visionary leader driving LivQuiz's mission to make learning fun, accessible, and effective for everyone.",
+    bio: "Leading our mission to make learning fun and accessible for everyone.",
   },
   {
     name: "Clovis Simo",
     role: "CTO",
     image: "/cloviss.jpg",
-    bio: "Heads all things tech at LivQuiz—leading development, innovation, and system architecture with precision and creativity.",
+    bio: "Building the tech that powers LivQuiz – from development to system design.",
   },
   {
     name: "H/mariam Takele",
     role: "QA Lead",
     image: "/hailee.jpg",
-    bio: "Ensures LivQuiz looks and feels amazing on every screen—meticulously testing, refining, and perfecting the user experience.",
+    bio: "Making sure LivQuiz works perfectly on every device and screen.",
   },
 ]
 
@@ -38,14 +38,14 @@ export default function AboutPage() {
         <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
             <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 About{" "}
                 <span className="bg-gradient-to-r from-purple-600 to-purple-600 bg-clip-text text-transparent">
                   LivQuiz
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                We're on a mission to make learning interactive, engaging, and accessible for everyone.
+                We believe learning should be fun, not boring
               </p>
             </div>
 
@@ -54,7 +54,7 @@ export default function AboutPage() {
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                At LivQuiz, we're redefining the way the world learns—making it fun, interactive, and accessible for all. Our platform empowers educators, trainers, and organizations to deliver dynamic quiz experiences that spark engagement and elevate learning outcomes. With a focus on innovation and human-centered design, we're on a mission to transform knowledge sharing into a more effective, meaningful, and enjoyable journey.
+                  We're making learning interactive for everyone. No more sleepy classrooms or dull training sessions – just engaging quizzes that keep people awake and help them actually remember what they learn.
                 </p>
               </div>
             </div>
@@ -76,8 +76,7 @@ export default function AboutPage() {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Meet Our Team</h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Our diverse team of educators, engineers, and designers work together to create the best learning
-                experience.
+                The people behind LivQuiz – educators, engineers, and designers making learning better
               </p>
             </div>
 

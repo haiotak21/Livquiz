@@ -71,7 +71,7 @@ export default function Footer() {
             {/* Logo */}
             <Link href="/" className="inline-block mb-6">
               <Image
-                src="/livquiz-logo.png"
+                src="/logo-livquiz-2025-13.png"
                 alt="LivQuiz Logo"
                 width={200}
                 height={51}

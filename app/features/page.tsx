@@ -243,9 +243,9 @@ const analyticsFeatures = [
   },
   {
     icon: Bot,
-    title: "Smart AI Assistant",
+    title: "Auto-Generate Quizzes",
     description:
-      "Save time with AI that automatically creates quizzes and flashcards from your materials, so you can focus on teaching.",
+      "Upload documents or enter topics and get instant quizzes with smart questions and explanations.",
     features: [
       "AI Quiz Generator: Instantly generate quizzes from text, documents, or topics using AI.",
       "Smart Question Suggestions: Get AI-driven suggestions while building quizzes to save time and improve quality.",

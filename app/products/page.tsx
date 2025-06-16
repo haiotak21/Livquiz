@@ -239,7 +239,7 @@ export default function ProductsPage() {
                 </p>
                 <button
                   onClick={() => window.location.href = "https://livquiz.com/auth/sign-up"}
-                  className="block mx-auto bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold"
+                  className="block bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold"
                 >
                   Sign Up - It's free
                 </button>

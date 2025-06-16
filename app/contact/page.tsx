@@ -14,23 +14,23 @@ const contactMethods = [
   {
     icon: Mail,
     title: "Email Support",
-    description: "Reach out anytime via email and get a response within 24 hours.",
+    description: "Quick questions or detailed help",
     contact: "info@livquiz.com",
-    availability: "24/7 response",
+    availability: "We reply within 24 hours",
   },
   {
     icon: Phone,
     title: "Phone Support",
-    description: "Speak directly with our team during business hours.",
-    contact: "+1 416 827 0711",
+    description: "Talk to a real person",
+    contact: "‪+1 416 827 0711‬",
     availability: "Mon-Fri, 9AM-6PM EST",
   },
   {
     icon: MessageCircle,
     title: "Live Chat",
-    description: "Start a live chat with a specialist now!",
+    description: "Get instant help",
     contact: "Start Chat",
-    availability: "24/7 available",
+    availability: "Available 24/7",
   },
 ]
 
@@ -75,7 +75,7 @@ export default function ContactPage() {
                 Get in Touch with LivQuiz
               </h1>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Have questions? Need assistance getting started? Our dedicated support team is here to guide you every step of the way.
+                Need help? We're here for you
               </p>
             </motion.div>
 
