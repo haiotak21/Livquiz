@@ -355,16 +355,32 @@ export default function Header() {
                               transition={{ duration: 0.2 }}
                               className="pl-4 space-y-2 overflow-hidden"
                             >
-                              {item.dropdown.map((subItem, subIndex) => (
-                                <button
-                                  key={subItem.name || subIndex}
-                                  onClick={(e) => handleNavClick(subItem.href || "#", e)}
-                                  className={`flex items-center space-x-2 text-gray-600 hover:text-[#6052CC] transition-colors py-1 w-full text-left ${isActivePath(subItem.href) ? 'text-[#6052CC]' : ''}`}
-                                >
-                                  {subItem.icon && <subItem.icon className="w-4 h-4" />}
-                                  <span>{subItem.name}</span>
-                                </button>
-                              ))}
+                              {item.dropdown.map((subItem, subIndex) => {
+                                if (item.name === "Resources" && subItem.name === "Language") {
+                                  return null; // Exclude Language from Resources dropdown on mobile
+                                }
+                                return (
+                                  <button
+                                    key={subItem.name || subIndex}
+                                    onClick={(e) => handleNavClick(subItem.href || "#", e)}
+                                    className={`flex items-center space-x-2 text-gray-600 hover:text-[#6052CC] transition-colors py-1 w-full text-left ${isActivePath(subItem.href) ? 'text-[#6052CC]' : ''}`}
+                                  >
+                                    {subItem.icon && <subItem.icon className="w-4 h-4" />}
+                                    <span>{subItem.name}</span>
+                                  </button>
+                                );
+                              })}
+                              {/* Bottom CTA - Only for Products and Use Cases for Mobile */}
+                              {(item.name === "Products" || item.name === "Use Cases") && (
+                                <div className="mt-4 pt-4 border-t border-gray-100">
+                                  <button
+                                    onClick={(e) => handleNavClick(item.href || "#", e)}
+                                    className="flex items-center justify-center py-2 px-8 bg-gradient-to-r from-[#6052CC] to-purple-600 text-white rounded-xl hover:from-[#4A4093] hover:to-purple-700 transition-all duration-200 font-semibold text-xs border border-[#4A4093]"
+                                  >
+                                    View All →
+                                  </button>
+                                </div>
+                              )}
                             </motion.div>
                           )}
                         </AnimatePresence>

@@ -190,7 +190,7 @@ export default function ProductsPage() {
     handlePageLoadScroll()
 
     const handleScroll = () => {
-      const sections = ["platform-editions", "amazing-tools", "live-quizzes", "exam-builder", "enterprise", "ecosystem"]
+      const sections = ["platform-editions", "amazing-tools", "exam-builder", "live-quizzes", "enterprise", "ecosystem"]
 
       const scrollPosition = window.scrollY + 200
 
@@ -251,7 +251,7 @@ export default function ProductsPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative"
               >
-                <div className="relative w-full h-96 bg-gray-100 rounded-2xl shadow-lg overflow-hidden border-2 border-dashed border-gray-300">
+                <div className="relative w-full h-96 bg-gray-100 rounded-2xl shadow-lg overflow-hidden border-2 border-gray-300">
                   <Image
                     src="https://i.pinimg.com/736x/37/0a/9b/370a9b19484bbe091673d2e3932c1a8f.jpg"
                     alt="LivQuiz Product Interface"
@@ -277,8 +277,8 @@ export default function ProductsPage() {
               {[
                 { id: "platform-editions", name: "Platform Editions", icon: GraduationCap },
                 { id: "amazing-tools", name: "Amazing Tools", icon: Zap },
-                { id: "live-quizzes", name: "Live Quizzes", icon: Users },
                 { id: "exam-builder", name: "Exam Builder", icon: FileText },
+                { id: "live-quizzes", name: "Live Quizzes", icon: Users },
                 { id: "enterprise", name: "Enterprise", icon: Shield },
                 { id: "ecosystem", name: "Ecosystem", icon: Globe },
               ].map((category) => (

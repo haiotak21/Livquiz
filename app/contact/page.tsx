@@ -132,7 +132,7 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">First Name *</label>
-                      <Input placeholder="first name" className="rounded-xl border-gray-200" />
+                      <Input placeholder="First name" className="rounded-xl border-gray-200" />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Last Name *</label>

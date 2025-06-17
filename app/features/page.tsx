@@ -31,6 +31,7 @@ import {
   QrCode,
   Monitor,
   Target,
+  BotMessageSquare,
 } from "lucide-react"
 import Link from "next/link"
 
@@ -241,6 +242,9 @@ const analyticsFeatures = [
       bgColor: "bg-yellow-600",
     },
   },
+]
+
+const aifeature = [
   {
     icon: Bot,
     title: "Auto-Generate Quizzes",
@@ -276,6 +280,7 @@ const analyticsFeatures = [
       bgColor: "bg-red-600",
     },
   },
+
 ]
 
 const securityFeatures = [
@@ -707,6 +712,75 @@ export default function FeaturesPage() {
 
             <div className="space-y-16">
               {analyticsFeatures.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch ${
+                    index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                  }`}
+                >
+                  {/* Text content side */}
+                  <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""} flex flex-col h-full`}>
+                    <div className="flex flex-col h-full justify-center">
+                      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                      <p className="text-lg text-gray-600 mb-8 leading-relaxed">{feature.description}</p>
+                      <ul className="space-y-3">
+                        {feature.features.map((item, itemIndex) => (
+                          <li key={itemIndex} className="flex items-center space-x-3">
+                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                            <span className="text-gray-700">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Visual card side */}
+                  <div className={`${index % 2 === 1 ? "lg:col-start-1" : ""} flex items-center h-full`}>
+                    <div
+                      className={`${feature.visual.bgColor} rounded-3xl p-8 text-white text-center shadow-xl hover:shadow-2xl transition-all duration-300 w-full h-full flex flex-col justify-center`}
+                    >
+                      <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <feature.visual.icon className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="text-xl font-bold mb-2">{feature.visual.title}</h4>
+                      <p className="text-white/90">{feature.visual.subtitle}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/*Ai feature */}
+        <section id="ai feature" className="py-16 lg:py-24 bg-gray-50">
+          <div className="container max-w-7xl mx-auto px-4 lg:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <div className="flex items-center justify-center mb-6">
+                <div className="hidden lg:flex w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mr-4">
+                  <BotMessageSquare className="w-6 h-6 text-pink-600" />
+                </div>
+                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
+                Let AI Help Create Your Content
+                </h2>
+              </div>
+              <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+              Save time with AI that automatically creates quizzes and flashcards from your materials, so you can focus on teaching.
+              </p>
+            </motion.div>
+
+            <div className="space-y-16">
+              {aifeature.map((feature, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
