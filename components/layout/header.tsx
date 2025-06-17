@@ -372,14 +372,14 @@ export default function Header() {
                               })}
                               {/* Bottom CTA - Only for Products and Use Cases for Mobile */}
                               {(item.name === "Products" || item.name === "Use Cases") && (
-                                <div className="mt-4 pt-4 border-t border-gray-100">
+                             
                                   <button
                                     onClick={(e) => handleNavClick(item.href || "#", e)}
                                     className="flex items-center justify-center py-2 px-8 bg-gradient-to-r from-[#6052CC] to-purple-600 text-white rounded-xl hover:from-[#4A4093] hover:to-purple-700 transition-all duration-200 font-semibold text-xs border border-[#4A4093]"
                                   >
                                     View All →
                                   </button>
-                                </div>
+                              
                               )}
                             </motion.div>
                           )}
