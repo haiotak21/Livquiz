@@ -5,8 +5,15 @@ import type React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { Facebook, Linkedin, Twitter } from "lucide-react"
+import { Facebook, Linkedin, Twitter, Languages } from "lucide-react"
 import { navigateToSection } from "@/utils/navigation"
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem
+} from "@/components/ui/select"
 
 const footerSections = [
   {
@@ -83,6 +90,22 @@ export default function Footer() {
             <p className="text-gray-600 mb-6 leading-relaxed">
             Your AI-Powered Platform for Collaborative Learning.
             </p>
+
+            {/* Language Selector - only show on md and up */}
+            <div className="hidden md:flex items-center gap-2 mb-6">
+              <Languages className="w-5 h-5 text-gray-500" />
+              <Select defaultValue="en">
+                <SelectTrigger className="w-32">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="en">English</SelectItem>
+                  <SelectItem value="fr">Français</SelectItem>
+                  <SelectItem value="es">Español</SelectItem>
+                  {/* Add more languages as needed */}
+                </SelectContent>
+              </Select>
+            </div>
 
             {/* Social Links */}
             <div className="flex space-x-4">

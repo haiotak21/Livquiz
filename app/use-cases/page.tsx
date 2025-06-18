@@ -604,8 +604,8 @@ export default function UseCasesPage() {
           </div>
         </section>
 
-         {/* CTA Section */}
-         <section className="py-16 lg:py-24 bg-[#7c3aed]">
+        {/* CTA Section */}
+        <section className="py-16 lg:py-24 bg-[#7c3aed]">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -614,11 +614,10 @@ export default function UseCasesPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">
-                Ready to transform your industry?
+              Ready to Get Started?
               </h2>
               <p className="text-lg lg:text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-                Join thousands of organizations who rely on LivQuiz to create engaging, interactive learning and
-                assessment experiences that drive real results.
+              See why educators love using our quiz tools to make learning fun and effective.
               </p>
             </motion.div>
           </div>

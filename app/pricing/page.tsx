@@ -289,7 +289,7 @@ export default function PricingPage() {
     if (typeof plan.monthlyPrice === "string" || plan.monthlyPrice === 0) return null
     if (billingPeriod === "annual") {
       const monthlyCost = plan.monthlyPrice * 12
-      const annualCost = plan.annualPrice * 12
+      const annualCost = plan.annualPrice
       const savings = Math.round(((monthlyCost - annualCost) / monthlyCost) * 100)
       return `Save ${savings}%`
     }

@@ -63,6 +63,7 @@ const featureCategories = [
   { id: "instructor", name: "Instructor Control", icon: UserCheck },
   { id: "multiplayer", name: "Live Multiplayer", icon: Gamepad2 },
   { id: "analytics", name: "Analytics", icon: BarChart3 },
+  { id: "ai feature", name: "Ai", icon: Bot },
   { id: "security", name: "Security", icon: Shield },
   
 ]

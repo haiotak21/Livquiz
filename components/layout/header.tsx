@@ -222,6 +222,9 @@ export default function Header() {
                                     <DropdownMenuItem onSelect={() => setSelectedLanguage('es')}>
                                       <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">French</button>
                                     </DropdownMenuItem>
+                                    <DropdownMenuItem onSelect={() => setSelectedLanguage('sp')}>
+                                      <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">Spanish</button>
+                                    </DropdownMenuItem>
                                   </DropdownMenuContent>
                                 </DropdownMenu>
                               </DropdownMenuItem>
@@ -422,6 +425,9 @@ export default function Header() {
                       </DropdownMenuItem>
                       <DropdownMenuItem onSelect={() => setSelectedLanguage("es")}> 
                         <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">French</button>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem onSelect={() => setSelectedLanguage("se")}> 
+                        <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">Spanish</button>
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
