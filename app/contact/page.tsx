@@ -142,12 +142,12 @@ export default function ContactPage() {
 
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
-                    <Input type="email" placeholder="your email" className="rounded-xl border-gray-200" />
+                    <Input type="email" placeholder="Your email" className="rounded-xl border-gray-200" />
                   </div>
 
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Company</label>
-                    <Input placeholder="Your Company" className="rounded-xl border-gray-200" />
+                    <Input placeholder="Your company" className="rounded-xl border-gray-200" />
                   </div>
 
                   <div>
