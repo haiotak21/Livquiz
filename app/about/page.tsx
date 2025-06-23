@@ -1,36 +1,20 @@
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
 import { Users, Play, Zap, Globe } from "lucide-react"
-
- const stats = [
-  { icon: Users, value: "10k+", label: "Active Users" },
-  { icon: Play, value: "1M+", label: "Quizzes and Flashcard" },
-  { icon: Globe, value: "50+", label: "Countries" },
-  { icon: Zap, value: "99.9%", label: "Uptime" },
-]
-
-const team = [
-  {
-    name: "Eunice Gapie",
-    role: "CEO",
-    image: "/Eunice.jpg",
-    bio: "Leading our mission to make learning fun and accessible for everyone.",
-  },
-  {
-    name: "Clovis Simo",
-    role: "CTO",
-    image: "/cloviss.jpg",
-    bio: "Building the tech that powers LivQuiz – from development to system design.",
-  },
-  {
-    name: "H/mariam Takele",
-    role: "QA Lead",
-    image: "/hailee.jpg",
-    bio: "Making sure LivQuiz works perfectly on every device and screen.",
-  },
-]
+import { useTranslations } from 'next-intl';
 
 export default function AboutPage() {
+  const t = useTranslations('AboutPage');
+  const stats = [
+    { icon: Users, value: "10k+", label: "Active Users" },
+    { icon: Play, value: "1M+", label: "Quizzes and Flashcard" },
+    { icon: Globe, value: "50+", label: "Countries" },
+    { icon: Zap, value: "99.9%", label: "Uptime" },
+  ];
+
+  // Get team array from translations
+  const team = t.raw('team');
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -38,7 +22,7 @@ export default function AboutPage() {
         <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
             <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 About{" "}
                 <span className="bg-gradient-to-r from-purple-600 to-purple-600 bg-clip-text text-transparent">
                   LivQuiz
@@ -74,14 +58,14 @@ export default function AboutPage() {
 
             {/* Team */}
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Meet Our Team</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">{t('teamSectionTitle')}</h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                The people behind LivQuiz – educators, engineers, and designers making learning better
+                {t('teamSectionSubtitle')}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {team.map((member, index) => (
+              {team.map((member: any, index: number) => (
                 <div key={index} className="bg-white p-8 rounded-3xl shadow-lg text-center">
                   <img
                     src={member.image || "/placeholder.svg"}
