@@ -575,6 +575,25 @@ export default function FeaturesPage() {
         {/* Live Multiplayer Quiz Games */}
         <section id="multiplayer" className="py-16 lg:py-24 bg-white">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                  <Gamepad2 className="w-6 h-6 text-purple-600" />
+                </div>
+                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
+                  {t('multiplayerTitle', { default: 'Live Multiplayer Quiz Games' })}
+                </h2>
+              </div>
+              <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+                {t('multiplayerDescription', { default: 'Transform learning into an exciting, competitive experience with real-time multiplayer quiz sessions.' })}
+              </p>
+            </motion.div>
             <div className="space-y-16">
               {multiplayerFeatures.map((feature, index) => (
                 <motion.div
@@ -624,6 +643,25 @@ export default function FeaturesPage() {
         {/* Track Student Progress */}
         <section id="analytics" className="py-16 lg:py-24 bg-gray-50">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mr-4">
+                  <BarChart3 className="w-6 h-6 text-pink-600" />
+                </div>
+                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
+                  {t('analyticsTitle', { default: 'Track Student Progress' })}
+                </h2>
+              </div>
+              <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+                {t('analyticsDescription', { default: "Get detailed reports on student performance to see what's working and what needs improvement." })}
+              </p>
+            </motion.div>
             <div className="space-y-16">
               {analyticsFeatures.map((feature, index) => (
                 <motion.div
@@ -670,9 +708,28 @@ export default function FeaturesPage() {
             </div>
           </div>
         </section>
-        {/*Ai feature */}
+        {/* AI Feature */}
         <section id="ai feature" className="py-16 lg:py-24 bg-gray-50">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mr-4">
+                  <Bot className="w-6 h-6 text-pink-600" />
+                </div>
+                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
+                  {t('aiFeatureTitle', { default: 'Let AI Help Create Your Content' })}
+                </h2>
+              </div>
+              <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+                {t('aiFeatureDescription', { default: 'Save time with AI that automatically creates quizzes and flashcards from your materials, so you can focus on teaching.' })}
+              </p>
+            </motion.div>
             <div className="space-y-16">
               {aifeature.map((feature, index) => (
                 <motion.div
@@ -722,6 +779,25 @@ export default function FeaturesPage() {
         {/* Security & Exam Integrity */}
         <section id="security" className="py-16 lg:py-24 bg-white">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                  <Shield className="w-6 h-6 text-blue-600" />
+                </div>
+                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
+                  {t('securityTitle', { default: 'Secure Testing & Anti-Cheating' })}
+                </h2>
+              </div>
+              <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+                {t('securityDescription', { default: 'Run secure exams and certifications with built-in anti-cheating features that keep assessments fair and reliable.' })}
+              </p>
+            </motion.div>
             <div className="space-y-16">
               {securityFeatures.map((feature, index) => (
                 <motion.div
