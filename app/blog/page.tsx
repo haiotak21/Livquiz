@@ -1,3 +1,5 @@
+"use client";
+
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
 import { Calendar, User, ArrowRight } from "lucide-react"
@@ -5,7 +7,7 @@ import { Calendar, User, ArrowRight } from "lucide-react"
 const blogPosts = [
   {
     title: "10 Tips for Creating Engaging Quizzes",
-    excerpt: "Discover expert-backed strategies to build captivating quizzes using LivQuiz’s powerful tools — and keep your learners coming back for more.",
+    excerpt: "Discover expert-backed strategies to build captivating quizzes using LivQuiz's powerful tools — and keep your learners coming back for more.",
     author: "Haile Takele",
     date: "March 15, 2024",
     image: "https://i.pinimg.com/736x/8f/09/d0/8f09d08149477f8268e61886b1092c0f.jpg",
@@ -21,7 +23,7 @@ const blogPosts = [
   },
   {
     title: "LivQuiz in Action: A Corporate Training Transformation",
-    excerpt: "Explore how one company turned dull, outdated training into dynamic learning experiences with LivQuiz’s interactive features.",
+    excerpt: "Explore how one company turned dull, outdated training into dynamic learning experiences with LivQuiz's interactive features.",
     author: "Haile Takele",
     date: "March 5, 2024",
     image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -29,7 +31,7 @@ const blogPosts = [
   },
   {
     title: " Mastering Live Quiz Sessions: Best Practices with LivQuiz",
-    excerpt: "Discover proven strategies for running smooth, engaging live quizzes using LivQuiz’s interactive tools to maximize participation and impact.",
+    excerpt: "Discover proven strategies for running smooth, engaging live quizzes using LivQuiz's interactive tools to maximize participation and impact.",
     author: "Haile Takele",
     date: "February 28, 2024",
     image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
