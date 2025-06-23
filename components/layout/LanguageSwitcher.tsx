@@ -1,3 +1,5 @@
+"use client"
+
 import { Link, usePathname } from '../../lib/navigation';
 
 export function LanguageSwitcher() {
