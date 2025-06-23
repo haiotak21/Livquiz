@@ -34,90 +34,92 @@ import {
   BotMessageSquare,
 } from "lucide-react"
 import Link from "next/link"
+import { useTranslations } from 'next-intl'
+
+// TODO: Add all translation keys for features, descriptions, and section headings to FeaturesPage in en.json, fr.json, es.json
 
 const heroFeatures = [
   {
     icon: Zap,
-    title: "Lightning Fast",
-    description: "Build quizzes in minutes",
+    titleKey: "heroFeatureTitle0",
+    descriptionKey: "heroFeatureDesc0",
   },
   {
     icon: Users,
-    title: "Unlimited Players",
-    description: "No limit on participants",
+    titleKey: "heroFeatureTitle1",
+    descriptionKey: "heroFeatureDesc1",
   },
   {
     icon: BarChart3,
-    title: "Real-time Analytics",
-    description: "Live results & reports",
+    titleKey: "heroFeatureTitle2",
+    descriptionKey: "heroFeatureDesc2",
   },
   {
     icon: Shield,
-    title: "Secure & Reliable",
-    description: "Always secure & available",
+    titleKey: "heroFeatureTitle3",
+    descriptionKey: "heroFeatureDesc3",
   },
 ]
 
 const featureCategories = [
-  { id: "creation", name: "Quiz Creation", icon: Edit3 },
-  { id: "instructor", name: "Instructor Control", icon: UserCheck },
-  { id: "multiplayer", name: "Live Multiplayer", icon: Gamepad2 },
-  { id: "analytics", name: "Analytics", icon: BarChart3 },
-  { id: "ai feature", name: "Ai", icon: Bot },
-  { id: "security", name: "Security", icon: Shield },
-  
+  { id: "creation", nameKey: "categoryCreation", icon: Edit3 },
+  { id: "instructor", nameKey: "categoryInstructor", icon: UserCheck },
+  { id: "multiplayer", nameKey: "categoryMultiplayer", icon: Gamepad2 },
+  { id: "analytics", nameKey: "categoryAnalytics", icon: BarChart3 },
+  { id: "ai feature", nameKey: "categoryAi", icon: Bot },
+  { id: "security", nameKey: "categorySecurity", icon: Shield },
 ]
 
 const creationFeatures = [
   {
     icon: Edit3,
-    title: "Different Question Types",
+    titleKey: "creationFeature0Title",
     id:"quizmaker",
-    description: "Choose from multiple choice, true/false, fill-in-the-blank, and more to match your teaching style.",
-    features: [
-      "Multiple Choice Questions (MCQ)",
-      "True/False Questions",
-      "Fill in the Blank",
-      "Short Answer Questions",
-      "Image-based Questions",
+    descriptionKey: "creationFeature0Desc",
+    featuresKeys: [
+      "creationFeature0Feature0",
+      "creationFeature0Feature1",
+      "creationFeature0Feature2",
+      "creationFeature0Feature3",
+      "creationFeature0Feature4",
     ],
     color: "bg-purple-50",
     iconColor: "text-purple-600",
   },
   {
     icon: ImageIcon,
-    title: "Add Images & Videos",
-    description: "Upload images, videos, audio, and PDFs to make your quizzes more engaging.",
-    features: [
-      "Image uploads",
-      "Audio uploads",
-      "PDF uploads",
-      "Video uploads",
+    titleKey: "creationFeature1Title",
+    descriptionKey: "creationFeature1Desc",
+    featuresKeys: [
+      "creationFeature1Feature0",
+      "creationFeature1Feature1",
+      "creationFeature1Feature2",
+      "creationFeature1Feature3",
     ],
     color: "bg-blue-50",
     iconColor: "text-blue-600",
   },
   {
     icon: FolderOpen,
-    title: "Stay Organized",
-    description: "Save time by organizing, copying, and reusing your quizzes with smart management tools.",
-    features: [
-      "Clone and duplicate quizzes/flashcards/study sets",
-      "Share quizzes with friends",
-      "Bulk editing capabilities",
-      "Tags and categorization",
+    titleKey: "creationFeature2Title",
+    descriptionKey: "creationFeature2Desc",
+    featuresKeys: [
+      "creationFeature2Feature0",
+      "creationFeature2Feature1",
+      "creationFeature2Feature2",
+      "creationFeature2Feature3",
     ],
     color: "bg-green-50",
     iconColor: "text-green-600",
   },
   {
     icon: Target,
-    title: "Flashcards & Study Tools",
-    description: "Turn your quizzes into flashcards and study materials for individual or group practice.",
-    features: [
-      "Create standalone flashcards and study sets",
-      "Organize by Tag, subject, or difficulty",
-      "Enable self-study and group practice modes",
+    titleKey: "creationFeature3Title",
+    descriptionKey: "creationFeature3Desc",
+    featuresKeys: [
+      "creationFeature3Feature0",
+      "creationFeature3Feature1",
+      "creationFeature3Feature2",
     ],
     color: "bg-pink-50",
     iconColor: "text-pink-600",
@@ -128,39 +130,39 @@ const instructorFeatures = [
   {
     icon: Play,
     id:"quizmaker",
-    title: "Control the Session",
-    description: "Start, pause, skip questions, and guide your quiz at your own pace.",
-    features: [
-      "Manual question reveal control",
-      "Start, pause, and end sessions",
-      "Skip questions when needed",
-      "Real-time session monitoring",
+    titleKey: "instructorFeature0Title",
+    descriptionKey: "instructorFeature0Desc",
+    featuresKeys: [
+      "instructorFeature0Feature0",
+      "instructorFeature0Feature1",
+      "instructorFeature0Feature2",
+      "instructorFeature0Feature3",
     ],
     color: "bg-cyan-50",
     iconColor: "text-cyan-600",
   },
   {
     icon: Users,
-    title: "Manage Students",
-    description: "Remove disruptive students, monitor progress, and keep your classroom focused.",
-    features: [
-      "Remove disruptive participants",
-      "Mute or restrict players",
-      "Monitor individual progress",
-      "View submission status",
+    titleKey: "instructorFeature1Title",
+    descriptionKey: "instructorFeature1Desc",
+    featuresKeys: [
+      "instructorFeature1Feature0",
+      "instructorFeature1Feature1",
+      "instructorFeature1Feature2",
+      "instructorFeature1Feature3",
     ],
     color: "bg-purple-50",
     iconColor: "text-purple-600",
   },
   {
     icon: Timer,
-    title: "Set Time Limits",
-    description: "Choose how long students have for each question and the overall session.",
-    features: [
-      "Per-question time limits",
-      "Overall session timers",
-      "Extended time for special needs",
-      "Countdown displays",
+    titleKey: "instructorFeature2Title",
+    descriptionKey: "instructorFeature2Desc",
+    featuresKeys: [
+      "instructorFeature2Feature0",
+      "instructorFeature2Feature1",
+      "instructorFeature2Feature2",
+      "instructorFeature2Feature3",
     ],
     color: "bg-orange-50",
     iconColor: "text-orange-600",
@@ -170,39 +172,37 @@ const instructorFeatures = [
 const multiplayerFeatures = [
   {
     icon: Activity,
-    title: "Real-Time Synchronization",
-    description:
-      "Experience seamless real-time quiz sessions where all participants see questions simultaneously, creating an engaging competitive environment that keeps everyone focused and motivated.",
-    features: [
-      "Synchronized question reveal across all devices",
-      "Live countdown timers for added excitement",
-      "Instant answer submission and feedback",
-      "Real-time leaderboard updates",
+    titleKey: "multiplayerFeature0Title",
+    descriptionKey: "multiplayerFeature0Desc",
+    featuresKeys: [
+      "multiplayerFeature0Feature0",
+      "multiplayerFeature0Feature1",
+      "multiplayerFeature0Feature2",
+      "multiplayerFeature0Feature3",
     ],
     color: "bg-purple-100",
     visual: {
       icon: Zap,
-      title: "Lightning-Fast Responses",
-      subtitle: "Sub-second response times ensure everyone stays in sync",
+      titleKey: "multiplayerFeature0VisualTitle",
+      subtitleKey: "multiplayerFeature0VisualSubtitle",
       bgColor: "bg-purple-600",
     },
   },
   {
     icon: Smartphone,
-    title: "Simple Access Options",
-    description:
-      "Students can join your quiz in seconds using whichever method works best for them.",
-    features: [
-      "Scan QR codes to join instantly",
-      "Enter simple room codes",
-      "Click shared links",
-      "Play without creating accounts",
+    titleKey: "multiplayerFeature1Title",
+    descriptionKey: "multiplayerFeature1Desc",
+    featuresKeys: [
+      "multiplayerFeature1Feature0",
+      "multiplayerFeature1Feature1",
+      "multiplayerFeature1Feature2",
+      "multiplayerFeature1Feature3",
     ],
     color: "bg-blue-100",
     visual: {
       icon: QrCode,
-      title: "Scan to Join",
-      subtitle: "Students scan a QR code and they're in - no downloads or accounts needed",
+      titleKey: "multiplayerFeature1VisualTitle",
+      subtitleKey: "multiplayerFeature1VisualSubtitle",
       bgColor: "bg-blue-600",
     },
   },
@@ -211,35 +211,34 @@ const multiplayerFeatures = [
 const analyticsFeatures = [
   {
     icon: BarChart3,
-    title: "Detailed Reports",
-    description:
-      "See how each student is performing and where they need extra help.",
-    features: [
-      "Track individual students",
-      "See response times and scores",
-      "Monitor progress over time",
+    titleKey: "analyticsFeature0Title",
+    descriptionKey: "analyticsFeature0Desc",
+    featuresKeys: [
+      "analyticsFeature0Feature0",
+      "analyticsFeature0Feature1",
+      "analyticsFeature0Feature2",
     ],
     color: "bg-purple-100",
     visual: {
       icon: TrendingUp,
-      title: "Smart Insights",
-      subtitle: "Get clear recommendations on how to improve your teaching based on quiz results.",
+      titleKey: "analyticsFeature0VisualTitle",
+      subtitleKey: "analyticsFeature0VisualSubtitle",
       bgColor: "bg-purple-600",
     },
   },
   {
     icon: Trophy,
-    title: "Live Leaderboards",
-    description: "Students see their rankings update in real-time, creating excitement and healthy competition.",
-    features: [
-      "Real-time ranking updates",
-      "Multiple ranking criteria",
+    titleKey: "analyticsFeature1Title",
+    descriptionKey: "analyticsFeature1Desc",
+    featuresKeys: [
+      "analyticsFeature1Feature0",
+      "analyticsFeature1Feature1",
     ],
     color: "bg-yellow-100",
     visual: {
       icon: Trophy,
-      title: "Leaderboards & Competition",
-      subtitle: "Keep students motivated with fun leaderboards and friendly competition.",
+      titleKey: "analyticsFeature1VisualTitle",
+      subtitleKey: "analyticsFeature1VisualSubtitle",
       bgColor: "bg-yellow-600",
     },
   },
@@ -248,119 +247,120 @@ const analyticsFeatures = [
 const aifeature = [
   {
     icon: Bot,
-    title: "Auto-Generate Quizzes",
-    description:
-      "Upload documents or enter topics and get instant quizzes with smart questions and explanations.",
-    features: [
-      "AI Quiz Generator: Instantly generate quizzes from text, documents, or topics using AI.",
-      "Smart Question Suggestions: Get AI-driven suggestions while building quizzes to save time and improve quality.",
-      "Answer Explanation Generator: Auto-generate clear, simple explanations for each question to support deeper understanding.",
+    titleKey: "aiFeature0Title",
+    descriptionKey: "aiFeature0Desc",
+    featuresKeys: [
+      "aiFeature0Feature0",
+      "aiFeature0Feature1",
+      "aiFeature0Feature2",
     ],
     color: "bg-green-100",
     visual: {
       icon: Bot,
-      title: "Auto-Generate Quizzes",
-      subtitle: "Create quizzes from any topic or document in seconds.",
+      titleKey: "aiFeature0VisualTitle",
+      subtitleKey: "aiFeature0VisualSubtitle",
       bgColor: "bg-green-600",
     },
   },
   {
     icon: Bot,
-    title: "Auto-Generate Flashcards",
-    description: "Turn your notes into flashcards automatically and get smart study reminders.",
-    features: [
-      "Instant Flashcard Creation: Automatically generate flashcards from notes, documents, or any text input using AI.",
-      "Key Concept Detection: Let AI identify and extract essential terms, definitions, and ideas for you.",
-      "AI-Powered Review Scheduler: Stay on track with intelligent reminders and review timing based on proven memory retention techniques.",
+    titleKey: "aiFeature1Title",
+    descriptionKey: "aiFeature1Desc",
+    featuresKeys: [
+      "aiFeature1Feature0",
+      "aiFeature1Feature1",
+      "aiFeature1Feature2",
     ],
     color: "bg-red-100",
     visual: {
       icon: Bot,
-      title: "Turn any text into flashcards instantly.",
-      subtitle: "Generate flashcard automatically using topics or documents.",
+      titleKey: "aiFeature1VisualTitle",
+      subtitleKey: "aiFeature1VisualSubtitle",
       bgColor: "bg-red-600",
     },
   },
-
 ]
 
 const securityFeatures = [
   {
     icon: GraduationCap,
-    title: "Professional Exam Mode",
-    description:
-      "Run formal assessments with timed sessions, randomized questions, and secure reporting.",
-    features: [
-      "Timed exams",
-      "Mixed-up questions",
-      "Secure submissions",
-      "Official reports",
+    titleKey: "securityFeature0Title",
+    descriptionKey: "securityFeature0Desc",
+    featuresKeys: [
+      "securityFeature0Feature0",
+      "securityFeature0Feature1",
+      "securityFeature0Feature2",
+      "securityFeature0Feature3",
     ],
     color: "bg-purple-100",
     visual: {
       icon: GraduationCap,
-      title: "Certification Ready",
-      subtitle: "Professional-grade security for official testing and certifications",
+      titleKey: "securityFeature0VisualTitle",
+      subtitleKey: "securityFeature0VisualSubtitle",
       bgColor: "bg-purple-600",
     },
   },
   {
     icon: Lock,
-    title: "Stop Cheating",
-    description:
-      "Smart security features that catch suspicious behavior and keep exams fair.",
-    features: [
-      "One question at a time",
-      "Navigation controls",
-      "Activity monitoring",
-      "Suspicious behavior alerts",
+    titleKey: "securityFeature1Title",
+    descriptionKey: "securityFeature1Desc",
+    featuresKeys: [
+      "securityFeature1Feature0",
+      "securityFeature1Feature1",
+      "securityFeature1Feature2",
+      "securityFeature1Feature3",
     ],
     color: "bg-red-100",
     visual: {
       icon: Lock,
-      title: "Fair Testing",
-      subtitle: "Advanced security without slowing things down",
+      titleKey: "securityFeature1VisualTitle",
+      subtitleKey: "securityFeature1VisualSubtitle",
       bgColor: "bg-red-600",
     },
   },
 ]
 
-
-
 const platformFeatures = [
   {
     icon: Zap,
-    title: "Lightning Fast Setup",
-    description: "Create and launch your first quiz in under 5 minutes",
+    titleKey: "platformFeature0Title",
+    descriptionKey: "platformFeature0Desc",
+    featuresKeys: ["platformFeature0Feature0"],
   },
   {
     icon: Users,
-    title: "Unlimited Participants",
-    description: "Host sessions with thousands of participants simultaneously",
+    titleKey: "platformFeature1Title",
+    descriptionKey: "platformFeature1Desc",
+    featuresKeys: ["platformFeature1Feature0"],
   },
   {
     icon: BarChart3,
-    title: "Real-time Analytics",
-    description: "Get instant insights into participant performance and engagement",
+    titleKey: "platformFeature2Title",
+    descriptionKey: "platformFeature2Desc",
+    featuresKeys: ["platformFeature2Feature0"],
   },
   {
     icon: Clock,
-    title: "24/7 Availability",
-    description: "Your quizzes are accessible anytime, anywhere, on any device",
+    titleKey: "platformFeature3Title",
+    descriptionKey: "platformFeature3Desc",
+    featuresKeys: ["platformFeature3Feature0"],
   },
   {
     icon: Shield,
-    title: "Enterprise Security",
-    description: "Bank-level security with GDPR compliance and data protection",
+    titleKey: "platformFeature4Title",
+    descriptionKey: "platformFeature4Desc",
+    featuresKeys: ["platformFeature4Feature0"],
   },
   {
     icon: Play,
-    title: "Interactive Experience",
-    description: "Gamified learning with leaderboards, timers, and instant feedback",
+    titleKey: "platformFeature5Title",
+    descriptionKey: "platformFeature5Desc",
+    featuresKeys: ["platformFeature5Feature0"],
   },
 ]
 
 export default function FeaturesPage() {
+  const t = useTranslations('FeaturesPage')
   const [activeSection, setActiveSection] = useState("creation")
 
   useEffect(() => {
@@ -453,17 +453,17 @@ export default function FeaturesPage() {
                 className="order-1 lg:order-2 flex flex-col items-center"
               >
                 <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                Build Engaging <span className="text-yellow-800">Learning Content</span> in Minutes.
+                {t('heroTitle')}
                 </h1>
                 <p className="text-lg lg:text-xl text-gray-700 mb-8 leading-relaxed">
-                Create quizzes and interactive content that keeps people engaged and learning.
+                {t('heroDescription')}
                 </p>
                 <Link href="https://livquiz.com/auth/sign-up" className="block mx-auto">
                   <Button
                     size="lg"
                     className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold"
                   >
-                    <span>Sign Up - It's free</span>
+                    <span>{t('signUpButton')}</span>
                   </Button>
                 </Link>
               </motion.div>
@@ -481,8 +481,8 @@ export default function FeaturesPage() {
                   <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-3">
                     <feature.icon className="w-6 h-6 text-yellow-800" />
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-1">{feature.title}</h3>
-                  <p className="text-sm text-gray-700">{feature.description}</p>
+                  <h3 className="font-bold text-gray-900 mb-1">{t(feature.titleKey)}</h3>
+                  <p className="text-sm text-gray-700">{t(feature.descriptionKey)}</p>
                 </div>
               ))}
             </motion.div>
@@ -504,7 +504,7 @@ export default function FeaturesPage() {
                   }`}
                 >
                   <category.icon className="w-5 h-5" />
-                  <span>{category.name}</span>
+                  <span>{t(category.nameKey)}</span>
                 </button>
               ))}
             </div>
@@ -526,11 +526,11 @@ export default function FeaturesPage() {
                   <Edit3 className="w-6 h-6 text-purple-600" />
                 </div>
                 <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
-                Build & Organize Your Quizzes
+                {t('creationTitle')}
                 </h2>
               </div>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-              Build engaging quizzes and keep all your content organized.
+              {t('creationDescription')}
               </p>
             </motion.div>
 
@@ -549,13 +549,13 @@ export default function FeaturesPage() {
                   <div className={`w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6`}>
                     <feature.icon className={`w-6 h-6 ${feature.iconColor}`} />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">{t(feature.titleKey)}</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{t(feature.descriptionKey)}</p>
                   <ul className="space-y-2 mt-auto">
-                    {feature.features.map((item, itemIndex) => (
+                    {feature.featuresKeys.map((item, itemIndex) => (
                       <li key={itemIndex} className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                        <span className="text-sm text-gray-600">{item}</span>
+                        <span className="text-sm text-gray-600">{t(item)}</span>
                       </li>
                     ))}
                   </ul>
@@ -580,11 +580,11 @@ export default function FeaturesPage() {
                   <UserCheck className="w-6 h-6 text-blue-600" />
                 </div>
                 <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
-                Instructor Dashboard
+                {t('instructorTitle')}
                 </h2>
               </div>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-              Control your quiz sessions with easy-to-use tools that help you manage students and keep everyone engaged.
+              {t('instructorDescription')}
               </p>
             </motion.div>
 
@@ -603,13 +603,13 @@ export default function FeaturesPage() {
                   <div className={`w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6`}>
                     <feature.icon className={`w-6 h-6 ${feature.iconColor}`} />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed flex-grow">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">{t(feature.titleKey)}</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed flex-grow">{t(feature.descriptionKey)}</p>
                   <ul className="space-y-2 mt-auto">
-                    {feature.features.map((item, itemIndex) => (
+                    {feature.featuresKeys.map((item, itemIndex) => (
                       <li key={itemIndex} className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                        <span className="text-sm text-gray-600">{item}</span>
+                        <span className="text-sm text-gray-600">{t(item)}</span>
                       </li>
                     ))}
                   </ul>
@@ -634,11 +634,11 @@ export default function FeaturesPage() {
                   <Gamepad2 className="w-6 h-6 text-purple-600" />
                 </div>
                 <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
-                  Live Multiplayer Quiz Games
+                  {t('multiplayerTitle')}
                 </h2>
               </div>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                Transform learning into an exciting, competitive experience with real-time multiplayer quiz sessions.
+                {t('multiplayerDescription')}
               </p>
             </motion.div>
 
@@ -657,13 +657,13 @@ export default function FeaturesPage() {
                   {/* Text content side */}
                   <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""} flex flex-col h-full`}>
                     <div className="flex flex-col h-full justify-center">
-                      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                      <p className="text-lg text-gray-600 mb-8 leading-relaxed">{feature.description}</p>
+                      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{t(feature.titleKey)}</h3>
+                      <p className="text-lg text-gray-600 mb-8 leading-relaxed">{t(feature.descriptionKey)}</p>
                       <ul className="space-y-3">
-                        {feature.features.map((item, itemIndex) => (
+                        {feature.featuresKeys.map((item, itemIndex) => (
                           <li key={itemIndex} className="flex items-center space-x-3">
                             <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                            <span className="text-gray-700">{item}</span>
+                            <span className="text-gray-700">{t(item)}</span>
                           </li>
                         ))}
                       </ul>
@@ -678,8 +678,8 @@ export default function FeaturesPage() {
                       <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                         <feature.visual.icon className="w-8 h-8 text-white" />
                       </div>
-                      <h4 className="text-xl font-bold mb-2">{feature.visual.title}</h4>
-                      <p className="text-white/90">{feature.visual.subtitle}</p>
+                      <h4 className="text-xl font-bold mb-2">{t(feature.visual.titleKey)}</h4>
+                      <p className="text-white/90">{t(feature.visual.subtitleKey)}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -703,11 +703,11 @@ export default function FeaturesPage() {
                   <BarChart3 className="w-6 h-6 text-pink-600" />
                 </div>
                 <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
-                Track Student Progress
+                {t('analyticsTitle')}
                 </h2>
               </div>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-              Get detailed reports on student performance to see what's working and what needs improvement.
+                {t('analyticsDescription')}
               </p>
             </motion.div>
 
@@ -726,13 +726,13 @@ export default function FeaturesPage() {
                   {/* Text content side */}
                   <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""} flex flex-col h-full`}>
                     <div className="flex flex-col h-full justify-center">
-                      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                      <p className="text-lg text-gray-600 mb-8 leading-relaxed">{feature.description}</p>
+                      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{t(feature.titleKey)}</h3>
+                      <p className="text-lg text-gray-600 mb-8 leading-relaxed">{t(feature.descriptionKey)}</p>
                       <ul className="space-y-3">
-                        {feature.features.map((item, itemIndex) => (
+                        {feature.featuresKeys.map((item, itemIndex) => (
                           <li key={itemIndex} className="flex items-center space-x-3">
                             <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                            <span className="text-gray-700">{item}</span>
+                            <span className="text-gray-700">{t(item)}</span>
                           </li>
                         ))}
                       </ul>
@@ -747,8 +747,8 @@ export default function FeaturesPage() {
                       <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                         <feature.visual.icon className="w-8 h-8 text-white" />
                       </div>
-                      <h4 className="text-xl font-bold mb-2">{feature.visual.title}</h4>
-                      <p className="text-white/90">{feature.visual.subtitle}</p>
+                      <h4 className="text-xl font-bold mb-2">{t(feature.visual.titleKey)}</h4>
+                      <p className="text-white/90">{t(feature.visual.subtitleKey)}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -772,11 +772,11 @@ export default function FeaturesPage() {
                   <BotMessageSquare className="w-6 h-6 text-pink-600" />
                 </div>
                 <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
-                Let AI Help Create Your Content
+                {t('aiFeatureTitle')}
                 </h2>
               </div>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-              Save time with AI that automatically creates quizzes and flashcards from your materials, so you can focus on teaching.
+                {t('aiFeatureDescription')}
               </p>
             </motion.div>
 
@@ -795,13 +795,13 @@ export default function FeaturesPage() {
                   {/* Text content side */}
                   <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""} flex flex-col h-full`}>
                     <div className="flex flex-col h-full justify-center">
-                      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                      <p className="text-lg text-gray-600 mb-8 leading-relaxed">{feature.description}</p>
+                      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{t(feature.titleKey)}</h3>
+                      <p className="text-lg text-gray-600 mb-8 leading-relaxed">{t(feature.descriptionKey)}</p>
                       <ul className="space-y-3">
-                        {feature.features.map((item, itemIndex) => (
+                        {feature.featuresKeys.map((item, itemIndex) => (
                           <li key={itemIndex} className="flex items-center space-x-3">
                             <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                            <span className="text-gray-700">{item}</span>
+                            <span className="text-gray-700">{t(item)}</span>
                           </li>
                         ))}
                       </ul>
@@ -816,8 +816,8 @@ export default function FeaturesPage() {
                       <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                         <feature.visual.icon className="w-8 h-8 text-white" />
                       </div>
-                      <h4 className="text-xl font-bold mb-2">{feature.visual.title}</h4>
-                      <p className="text-white/90">{feature.visual.subtitle}</p>
+                      <h4 className="text-xl font-bold mb-2">{t(feature.visual.titleKey)}</h4>
+                      <p className="text-white/90">{t(feature.visual.subtitleKey)}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -840,10 +840,12 @@ export default function FeaturesPage() {
                 <div className="hidden lg:flex w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
                   <Shield className="w-6 h-6 text-blue-600" />
                 </div>
-                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">Secure Testing & Anti-Cheating</h2>
+                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
+                {t('securityTitle')}
+                </h2>
               </div>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                Run secure exams and certifications with built-in anti-cheating features that keep assessments fair and reliable.
+                {t('securityDescription')}
               </p>
             </motion.div>
 
@@ -862,13 +864,13 @@ export default function FeaturesPage() {
                   {/* Text content side */}
                   <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""} flex flex-col h-full`}>
                     <div className="flex flex-col h-full justify-center">
-                      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                      <p className="text-lg text-gray-600 mb-8 leading-relaxed">{feature.description}</p>
+                      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{t(feature.titleKey)}</h3>
+                      <p className="text-lg text-gray-600 mb-8 leading-relaxed">{t(feature.descriptionKey)}</p>
                       <ul className="space-y-3">
-                        {feature.features.map((item, itemIndex) => (
+                        {feature.featuresKeys.map((item, itemIndex) => (
                           <li key={itemIndex} className="flex items-center space-x-3">
                             <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                            <span className="text-gray-700">{item}</span>
+                            <span className="text-gray-700">{t(item)}</span>
                           </li>
                         ))}
                       </ul>
@@ -883,8 +885,8 @@ export default function FeaturesPage() {
                       <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                         <feature.visual.icon className="w-8 h-8 text-white" />
                       </div>
-                      <h4 className="text-xl font-bold mb-2">{feature.visual.title}</h4>
-                      <p className="text-white/90">{feature.visual.subtitle}</p>
+                      <h4 className="text-xl font-bold mb-2">{t(feature.visual.titleKey)}</h4>
+                      <p className="text-white/90">{t(feature.visual.subtitleKey)}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -892,8 +894,6 @@ export default function FeaturesPage() {
             </div>
           </div>
         </section>
-
-
 
         {/* CTA Section */}
         <section className="py-16 lg:py-24 bg-[#7c3aed]">
@@ -905,10 +905,10 @@ export default function FeaturesPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">
-              Ready to Get Started?
+              {t('ctaTitle')}
               </h2>
               <p className="text-lg lg:text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-              See why educators love using our quiz tools to make learning fun and effective.
+              {t('ctaDescription')}
               </p>
             </motion.div>
           </div>

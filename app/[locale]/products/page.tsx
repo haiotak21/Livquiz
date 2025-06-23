@@ -1,85 +1,104 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import Header from "@/components/layout/header"
-import Footer from "@/components/layout/footer"
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import { motion } from "framer-motion"
-import { handlePageLoadScroll } from "@/utils/navigation"
-import Link from "next/link"
+import { useEffect, useState } from "react";
+import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { handlePageLoadScroll } from "@/utils/navigation";
 import {
   Check,
-  X,
   Zap,
   Users,
   BarChart3,
   Shield,
   Clock,
   BookOpen,
-  Monitor,
-  Lightbulb,
-  Share2,
-  TrendingUp,
   Presentation,
+  TrendingUp,
   Target,
   Smartphone,
-  Activity,
-  GraduationCap,
-  Building2,
-  Globe,
-  Link as LinkIcon,
   FileText,
-  Settings,
   Palette,
   HeadphonesIcon,
-  Award,
   Bot,
   MonitorSmartphone,
-
-} from "lucide-react"
-import { useTranslations } from 'next-intl'
+  GraduationCap,
+  Globe,
+} from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const features = [
   {
     icon: Zap,
     titleKey: "features0Title",
     descriptionKey: "features0Desc",
-    benefitsKeys: ["features0Benefit0", "features0Benefit1", "features0Benefit2", "features0Benefit3"],
+    benefitsKeys: [
+      "features0Benefit0",
+      "features0Benefit1",
+      "features0Benefit2",
+      "features0Benefit3",
+    ],
   },
   {
     icon: Users,
     titleKey: "features1Title",
     descriptionKey: "features1Desc",
-    benefitsKeys: ["features1Benefit0", "features1Benefit1", "features1Benefit2", "features1Benefit3"],
+    benefitsKeys: [
+      "features1Benefit0",
+      "features1Benefit1",
+      "features1Benefit2",
+      "features1Benefit3",
+    ],
   },
   {
     icon: BarChart3,
     titleKey: "features2Title",
     descriptionKey: "features2Desc",
-    benefitsKeys: ["features2Benefit0", "features2Benefit1", "features2Benefit2", "features2Benefit3"],
+    benefitsKeys: [
+      "features2Benefit0",
+      "features2Benefit1",
+      "features2Benefit2",
+      "features2Benefit3",
+    ],
   },
   {
     icon: Shield,
     titleKey: "features3Title",
     descriptionKey: "features3Desc",
-    benefitsKeys: ["features3Benefit0", "features3Benefit1", "features3Benefit2", "features3Benefit3", "features3Benefit4"],
+    benefitsKeys: [
+      "features3Benefit0",
+      "features3Benefit1",
+      "features3Benefit2",
+      "features3Benefit3",
+      "features3Benefit4",
+    ],
   },
   {
     icon: Clock,
     titleKey: "features4Title",
     descriptionKey: "features4Desc",
-    benefitsKeys: ["features4Benefit0", "features4Benefit1", "features4Benefit2", "features4Benefit3"],
+    benefitsKeys: [
+      "features4Benefit0",
+      "features4Benefit1",
+      "features4Benefit2",
+      "features4Benefit3",
+    ],
   },
   {
     icon: BookOpen,
     titleKey: "features5Title",
     descriptionKey: "features5Desc",
-    benefitsKeys: ["features5Benefit0", "features5Benefit1", "features5Benefit2", "features5Benefit3"],
+    benefitsKeys: [
+      "features5Benefit0",
+      "features5Benefit1",
+      "features5Benefit2",
+      "features5Benefit3",
+    ],
   },
-]
+];
 
-// Enterprise Solutions
 const enterpriseSolutions = [
   {
     icon: Shield,
@@ -102,16 +121,14 @@ const enterpriseSolutions = [
     color: "bg-yellow-100",
     iconColor: "text-yellow-600",
   },
-]
+];
 
-// Exam Builder Features
 const examFeatures = [
   {
     number: "01",
     titleKey: "examProtectionTitle",
     descriptionKey: "examProtectionDesc",
     color: "bg-yellow-400",
-    shape: "rounded-full",
     textColor: "text-gray-900",
   },
   {
@@ -119,7 +136,6 @@ const examFeatures = [
     titleKey: "examBuilderTitle",
     descriptionKey: "examBuilderDesc",
     color: "bg-purple-400",
-    shape: "rounded-2xl",
     textColor: "text-gray-900",
   },
   {
@@ -127,7 +143,6 @@ const examFeatures = [
     titleKey: "eliminateCheatingTitle",
     descriptionKey: "eliminateCheatingDesc",
     color: "bg-pink-400",
-    shape: "rounded-full",
     textColor: "text-gray-900",
   },
   {
@@ -135,7 +150,6 @@ const examFeatures = [
     titleKey: "sendAndArrangeYourExamsTitle",
     descriptionKey: "sendAndArrangeYourExamsDesc",
     color: "bg-green-400",
-    shape: "rounded-2xl",
     textColor: "text-gray-900",
   },
   {
@@ -143,10 +157,9 @@ const examFeatures = [
     titleKey: "allResultsAtYourFingertipsTitle",
     descriptionKey: "allResultsAtYourFingertipsDesc",
     color: "bg-blue-400",
-    shape: "rounded-full",
     textColor: "text-gray-900",
   },
-]
+];
 
 const liveQuizFeatures = [
   {
@@ -170,42 +183,48 @@ const liveQuizFeatures = [
     color: "bg-purple-100",
     iconColor: "text-purple-600",
   },
-]
+];
 
 export default function ProductsPage() {
-  const t = useTranslations('ProductsPage')
-  const [activeSection, setActiveSection] = useState("platform-editions")
+  const t = useTranslations("ProductsPage");
+  const [activeSection, setActiveSection] = useState("platform-editions");
 
   useEffect(() => {
-    handlePageLoadScroll()
+    handlePageLoadScroll();
 
     const handleScroll = () => {
-      const sections = ["platform-editions", "amazing-tools", "exam-builder", "live-quizzes", "enterprise", "ecosystem"]
-
-      const scrollPosition = window.scrollY + 200
-
+      const sections = [
+        "platform-editions",
+        "amazing-tools",
+        "exam-builder",
+        "live-quizzes",
+        "enterprise",
+        "ecosystem",
+      ];
+      const scrollPosition = window.scrollY + 200;
       for (const sectionId of sections) {
-        const element = document.getElementById(sectionId)
+        const element = document.getElementById(sectionId);
         if (element) {
-          const offsetTop = element.offsetTop
-          const offsetBottom = offsetTop + element.offsetHeight
-
-          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-            setActiveSection(sectionId)
-            break
+          const offsetTop = element.offsetTop;
+          const offsetBottom = offsetTop + element.offsetHeight;
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetBottom
+          ) {
+            setActiveSection(sectionId);
+            break;
           }
         }
       }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
-    setActiveSection(sectionId)
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
-  }
+    setActiveSection(sectionId);
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -221,20 +240,20 @@ export default function ProductsPage() {
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                  LivQuiz – The Powerful Online Quiz Maker.
+                  {t("heroTitle")}
                 </h1>
                 <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed">
-                  Transform your teaching, training, or team development with interactive quizzes built to captivate and
-                  educate.
+                  {t("heroDescription")}
                 </p>
                 <button
-                  onClick={() => window.location.href = "https://livquiz.com/auth/sign-up"}
+                  onClick={() =>
+                    (window.location.href = "https://livquiz.com/auth/sign-up")
+                  }
                   className="block bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full text-base font-semibold"
                 >
-                  Sign Up - It's free
+                  {t("signUpButton")}
                 </button>
               </motion.div>
-
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -252,25 +271,24 @@ export default function ProductsPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-gray-700">
-                    Product Interface Preview
+                    {t("productInterfacePreview")}
                   </div>
                 </div>
               </motion.div>
             </div>
           </div>
         </section>
-
         {/* Sticky Navigation */}
         <div className="sticky top-20 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 py-3 overflow-x-auto max-lg:hidden">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
             <div className="flex flex-wrap justify-center gap-2 py-4">
               {[
-                { id: "platform-editions", name: "Platform Editions", icon: GraduationCap },
-                { id: "amazing-tools", name: "Amazing Tools", icon: Zap },
-                { id: "exam-builder", name: "Exam Builder", icon: FileText },
-                { id: "live-quizzes", name: "Live Quizzes", icon: Users },
-                { id: "enterprise", name: "Enterprise", icon: Shield },
-                { id: "ecosystem", name: "Ecosystem", icon: Globe },
+                { id: "platform-editions", name: t("navPlatformEditions"), icon: GraduationCap },
+                { id: "amazing-tools", name: t("navAmazingTools"), icon: Zap },
+                { id: "exam-builder", name: t("navExamBuilder"), icon: FileText },
+                { id: "live-quizzes", name: t("navLiveQuizzes"), icon: Users },
+                { id: "enterprise", name: t("navEnterprise"), icon: Shield },
+                { id: "ecosystem", name: t("navEcosystem"), icon: Globe },
               ].map((category) => (
                 <button
                   key={category.id}
@@ -288,7 +306,6 @@ export default function ProductsPage() {
             </div>
           </div>
         </div>
-
         {/* Platform Editions Section */}
         <section id="platform-editions" className="py-16 lg:py-24 bg-gray-50">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
@@ -299,12 +316,11 @@ export default function ProductsPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">Platform Editions</h2>
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">{t("platformEditionsTitle")}</h2>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                Specialized versions of LivQuiz designed for specific use cases and environments
+                {t("platformEditionsDesc")}
               </p>
             </motion.div>
-
             {/* Education Edition */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -314,12 +330,11 @@ export default function ProductsPage() {
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 mb-12"
             >
               <div className="text-center mb-8">
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">LivQuiz for Education</h2>
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">{t("educationEditionTitle")}</h2>
                 <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Transform classrooms with interactive quizzes that make learning engaging and fun. Perfect for homework, assessments, and review sessions.
+                  {t("educationEditionDesc")}
                 </p>
               </div>
-
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                 {/* Education Edition Card (Image) */}
                 <div className="lg:col-span-1">
@@ -331,37 +346,35 @@ export default function ProductsPage() {
                     className="w-full h-auto rounded-2xl shadow-lg"
                   />
                 </div>
-
                 {/* Feature Cards Grid */}
                 <div className="lg:col-span-2 grid grid-cols-2 gap-6">
                   <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <FileText className="w-6 h-6 text-purple-600" />
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">Classroom Management</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">{t("educationFeature0")}</h4>
                   </div>
                   <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <Users className="w-6 h-6 text-blue-600" />
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">Progress Tracking</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">{t("educationFeature1")}</h4>
                   </div>
                   <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <Shield className="w-6 h-6 text-green-600" />
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">Flashcards & Study Sets</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">{t("educationFeature2")}</h4>
                   </div>
                   <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <BarChart3 className="w-6 h-6 text-orange-600" />
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">Live Exam Mode</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">{t("educationFeature3")}</h4>
                   </div>
                 </div>
               </div>
             </motion.div>
-
             {/* Business Edition */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -371,12 +384,11 @@ export default function ProductsPage() {
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <div className="text-center mb-8">
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">LivQuiz for Business</h2>
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">{t("businessEditionTitle")}</h2>
                 <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Enhance employee training programs with interactive content that improves retention and engagement across your organization.
+                  {t("businessEditionDesc")}
                 </p>
               </div>
-
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                 {/* Business Edition Card (Image) */}
                 <div className="lg:col-span-1">
@@ -388,39 +400,37 @@ export default function ProductsPage() {
                     className="w-full h-auto rounded-2xl shadow-lg"
                   />
                 </div>
-
                 {/* Feature Cards Grid */}
                 <div className="lg:col-span-2 grid grid-cols-2 gap-6">
                   <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <Users className="w-6 h-6 text-purple-600" />
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">Skills Assessment</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">{t("businessFeature0")}</h4>
                   </div>
                   <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <Target className="w-6 h-6 text-blue-600" />
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">Compliance Training</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">{t("businessFeature1")}</h4>
                   </div>
                   <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <Users className="w-6 h-6 text-green-600" />
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">Team Building</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">{t("businessFeature2")}</h4>
                   </div>
                   <div className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center justify-center">
                     <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <FileText className="w-6 h-6 text-orange-600" />
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">Performance Analytics</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">{t("businessFeature3")}</h4>
                   </div>
                 </div>
               </div>
             </motion.div>
           </div>
         </section>
-
         {/* Amazing Tools Section */}
         <section id="amazing-tools" className="py-16 lg:py-24 bg-white">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
@@ -432,13 +442,12 @@ export default function ProductsPage() {
               className="text-center mb-16"
             >
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">
-                Amazing Tools to Build Expert Quizzes
+                {t("amazingToolsTitle")}
               </h2>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                Discover powerful features designed to make quiz creation effortless and effective.
+                {t("amazingToolsDesc")}
               </p>
             </motion.div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
                 <motion.div
@@ -452,7 +461,6 @@ export default function ProductsPage() {
                   <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
                     <feature.icon className="w-6 h-6 text-purple-600" />
                   </div>
-
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">{t(feature.titleKey)}</h3>
                   <p className="text-gray-600 leading-relaxed mb-6">{t(feature.descriptionKey)}</p>
                   <ul className="space-y-3 mb-6 text-left">
@@ -468,7 +476,6 @@ export default function ProductsPage() {
             </div>
           </div>
         </section>
-
         {/* Exam Builder Section */}
         <section id="exam-builder" className="py-16 lg:py-24 bg-gray-50">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
@@ -481,14 +488,12 @@ export default function ProductsPage() {
               className="mb-12"
             >
               <div className="inline-block bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold text-lg mb-8">
-                Exam Builder
+                {t("examBuilderPill")}
               </div>
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                The Ultimate Solution For Creating And Delivering <span className="font-black">Professional Exams</span>{" "}
-                Online
+                {t("examBuilderTitleMain")}
               </h2>
             </motion.div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {examFeatures.map((feature, index) => (
                 <motion.div
@@ -513,7 +518,6 @@ export default function ProductsPage() {
             </div>
           </div>
         </section>
-
         {/* Live Quizzes Section */}
         <section id="live-quizzes" className="py-16 lg:py-24 bg-white">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
@@ -524,13 +528,11 @@ export default function ProductsPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">Live Quizzes</h2>
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">{t("liveQuizzesTitle")}</h2>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                Engage your audience with real-time interactive quizzes that bring energy and excitement to any event or
-                classroom.
+                {t("liveQuizzesDesc")}
               </p>
             </motion.div>
-
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16 lg:items-stretch">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -539,32 +541,29 @@ export default function ProductsPage() {
                 viewport={{ once: true }}
                 className="flex flex-col"
               >
-                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Real-Time Interactive Experience</h3>
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">{t("liveQuizzesFeatureTitle")}</h3>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Create memorable experiences with live quizzes that keep participants engaged and excited. Perfect for
-                  classrooms, conferences, team building, and training sessions.
+                  {t("liveQuizzesFeatureDesc")}
                 </p>
-
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <Check className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700">Unlimited participants</span>
+                    <span className="text-gray-700">{t("liveQuizzesBenefit0")}</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Check className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700">Real-time leaderboards</span>
+                    <span className="text-gray-700">{t("liveQuizzesBenefit1")}</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Check className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700">Instant feedback and scoring</span>
+                    <span className="text-gray-700">{t("liveQuizzesBenefit2")}</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Check className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700">Multi-device compatibility</span>
+                    <span className="text-gray-700">{t("liveQuizzesBenefit3")}</span>
                   </div>
                 </div>
               </motion.div>
-
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -583,7 +582,6 @@ export default function ProductsPage() {
                 </div>
               </motion.div>
             </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {liveQuizFeatures.map((feature, index) => (
                 <motion.div
@@ -604,7 +602,6 @@ export default function ProductsPage() {
             </div>
           </div>
         </section>
-
         {/* Enterprise Solutions Section */}
         <section id="enterprise" className="py-16 lg:py-24 bg-white">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
@@ -615,13 +612,11 @@ export default function ProductsPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">Enterprise Solutions</h2>
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">{t("enterpriseTitle")}</h2>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                Scalable, secure, and customizable solutions designed for large organizations with advanced
-                requirements.
+                {t("enterpriseDesc")}
               </p>
             </motion.div>
-
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {enterpriseSolutions.map((solution, index) => (
                 <motion.div
@@ -640,7 +635,6 @@ export default function ProductsPage() {
                 </motion.div>
               ))}
             </div>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -651,14 +645,13 @@ export default function ProductsPage() {
               <Button
                 size="lg"
                 className="bg-white text-[#6052CC] hover:bg-gray-50 px-8 py-4 rounded-full text-lg font-semibold border-2 border-white hover:border-gray-200"
-                onClick={() => window.location.href = "/contact"}
+                onClick={() => (window.location.href = "/contact")}
               >
-                Request Demo
+                {t("requestDemoButton")}
               </Button>
             </motion.div>
           </div>
         </section>
-
         {/* Our Product Ecosystem Section */}
         <section id="ecosystem" className="py-16 lg:py-24 bg-gray-50">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
@@ -669,13 +662,11 @@ export default function ProductsPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">Our Product Ecosystem</h2>
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">{t("ecosystemTitle")}</h2>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                A comprehensive suite of tools and integrations that work seamlessly together to enhance your learning
-                and assessment experience.
+                {t("ecosystemDesc")}
               </p>
             </motion.div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -687,10 +678,9 @@ export default function ProductsPage() {
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Smartphone className="w-8 h-8 text-green-600" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Mobile Apps</h3>
-                <p className="text-gray-600 text-sm">Native iOS and Android applications</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{t("ecosystemFeature0Title")}</h3>
+                <p className="text-gray-600 text-sm">{t("ecosystemFeature0Desc")}</p>
               </motion.div>
-
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -701,10 +691,9 @@ export default function ProductsPage() {
                 <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <MonitorSmartphone className="w-8 h-8 text-yellow-600" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Desktop Access</h3>
-                <p className="text-gray-600 text-sm">Seamless learning on Windows and macOS with full-featured desktop support for quizzes, flashcards, and more.</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{t("ecosystemFeature1Title")}</h3>
+                <p className="text-gray-600 text-sm">{t("ecosystemFeature1Desc")}</p>
               </motion.div>
-
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -715,18 +704,14 @@ export default function ProductsPage() {
                 <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Bot className="w-8 h-8 text-red-600" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">AI-Powered Learning Tools</h3>
-                <p className="text-gray-600 text-sm">Smart Quiz generation and Flashcards, personalized feedback, and real-time performance insights.
-
-</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{t("ecosystemFeature2Title")}</h3>
+                <p className="text-gray-600 text-sm">{t("ecosystemFeature2Desc")}</p>
               </motion.div>
-
             </div>
           </div>
         </section>
-
-       {/* CTA Section */}
-       <section className="py-16 lg:py-24 bg-[#7c3aed]">
+        {/* CTA Section */}
+        <section className="py-16 lg:py-24 bg-[#7c3aed]">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -735,10 +720,10 @@ export default function ProductsPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">
-              Ready to Get Started?
+                {t("ctaTitle")}
               </h2>
               <p className="text-lg lg:text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-              See why educators love using our quiz tools to make learning fun and effective.
+                {t("ctaDesc")}
               </p>
             </motion.div>
           </div>
@@ -746,5 +731,5 @@ export default function ProductsPage() {
       </main>
       <Footer />
     </div>
-  )
-}
+  );
+} 

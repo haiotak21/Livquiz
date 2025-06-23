@@ -1,11 +1,11 @@
 "use client"
 
 import type React from "react"
-
-import { useState, useEffect } from "react"
-import Link from "next/link"
+import { useTranslations } from 'next-intl'
+import { useLocale } from 'next-intl';
+import { useState, useEffect, useTransition } from "react"
+import { Link, usePathname, useRouter } from '../../lib/navigation';
 import Image from "next/image"
-import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import {
   ChevronDown,
@@ -25,7 +25,16 @@ import {
   Globe,
 } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { 
+  DropdownMenu, 
+  DropdownMenuContent, 
+  DropdownMenuItem, 
+  DropdownMenuTrigger,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuPortal
+} from "@/components/ui/dropdown-menu"
 import { navigateToSection } from "@/utils/navigation"
 
 export default function Header() {
@@ -33,7 +42,11 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const pathname = usePathname()
-  const [selectedLanguage, setSelectedLanguage] = useState<string>("en")
+  const t = useTranslations('Header')
+  const locale = useLocale();
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,6 +67,12 @@ export default function Header() {
     setOpenDropdown(openDropdown === name ? null : name)
   }
 
+  const onSelectLocale = (locale: string) => {
+    startTransition(() => {
+      router.replace(pathname, {locale});
+    });
+  }
+
   const isActivePath = (path: string) => {
     if (path === '/') {
       return pathname === path
@@ -62,99 +81,99 @@ export default function Header() {
   }
 
   const navItems = [
-    { name: "Features", href: "/features" },
+    { name: t('nav.features'), href: '/features' },
     {
-      name: "Products",
-      href: "/products",
+      name: t('nav.products.title'),
+      href: '/products',
       dropdown: [
         {
-          name: "Quiz Maker",
-          href: "/products#amazing-tools",
+          name: t('nav.products.quizMaker.title'),
+          href: '/products#amazing-tools',
           icon: Zap,
-          description: "Create engaging quizzes with our intuitive builder",
+          description: t('nav.products.quizMaker.desc'),
         },
         {
-          name: "Live Quizzes",
-          href: "/products#live-quizzes",
+          name: t('nav.products.liveQuizzes.title'),
+          href: '/products#live-quizzes',
           icon: Users,
-          description: "Real-time multiplayer quiz sessions",
+          description: t('nav.products.liveQuizzes.desc'),
         },
         {
-          name: "Exam Builder",
-          href: "/products#exam-builder",
+          name: t('nav.products.examBuilder.title'),
+          href: '/products#exam-builder',
           icon: FileText,
-          description: "Professional assessment and testing tools",
+          description: t('nav.products.examBuilder.desc'),
         },
       ],
     },
     {
-      name: "Use Cases",
-      href: "/use-cases",
+      name: t('nav.useCases.title'),
+      href: '/use-cases',
       dropdown: [
         {
-          name: "Business",
-          href: "/use-cases#corporate-training",
+          name: t('nav.useCases.business.title'),
+          href: '/use-cases#corporate-training',
           icon: Building2,
-          description: "Corporate training and team building",
+          description: t('nav.useCases.business.desc'),
         },
         {
-          name: "Education",
-          href: "/use-cases#education",
+          name: t('nav.useCases.education.title'),
+          href: '/use-cases#education',
           icon: GraduationCap,
-          description: "Classroom learning and student engagement",
+          description: t('nav.useCases.education.desc'),
         },
         {
-          name: "Onboarding",
-          href: "/use-cases#events-conferences",
+          name: t('nav.useCases.onboarding.title'),
+          href: '/use-cases#events-conferences',
           icon: UserCheck,
-          description: "Employee orientation and training",
+          description: t('nav.useCases.onboarding.desc'),
         },
         {
-          name: "Recruitment",
-          href: "/use-cases#recruitment",
+          name: t('nav.useCases.recruitment.title'),
+          href: '/use-cases#recruitment',
           icon: Briefcase,
-          description: "Candidate assessment and screening",
+          description: t('nav.useCases.recruitment.desc'),
         },
       ],
     },
     {
-      name: "Resources",
-      href: "/resources",
+      name: t('nav.resources.title'),
+      href: '/contact',
       dropdown: [
         {
-          name: "Contact Us",
-          href: "/contact",
+          name: t('nav.resources.contact.title'),
+          href: '/contact',
           icon: MessageCircle,
-          description: "Get in touch with our support team",
+          description: t('nav.resources.contact.desc'),
         },
         {
-          name: "Help Center",
-          href: "/help",
+          name: t('nav.resources.help.title'),
+          href: '/help',
           icon: HelpCircle,
-          description: "Find answers and documentation",
+          description: t('nav.resources.help.desc'),
         },
         {
-          name: "How LivQuiz Works",
-          href: "/how-it-works",
+          name: t('nav.resources.howItWorks.title'),
+          href: '/how-it-works',
           icon: BookOpen,
-          description: "Learn about our platform features",
+          description: t('nav.resources.howItWorks.desc'),
         },
         {
-          name: "Blog",
-          href: "/blog",
+          name: t('nav.resources.blog.title'),
+          href: '/blog',
           icon: Newspaper,
-          description: "Latest news and educational content",
+          description: t('nav.resources.blog.desc'),
         },
         {
-          name: "Language",
-          href: "#language-selector",
+          name: t('nav.resources.language.title'),
+          href: '#language-selector',
           icon: Globe,
-          description: "Change site language",
+          description: t('nav.resources.language.desc'),
           custom: true
         },
       ],
     },
-    { name: "Pricing", href: "/pricing" },
+    { name: t('nav.pricing'), href: '/pricing' },
   ]
 
   return (
@@ -172,7 +191,7 @@ export default function Header() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.2 }}>
             <Link href="/" className="flex items-center">
               <Image
-                src="logo-livquiz-2025-13.png"
+                src="/logo-livquiz-2025-13.png"
                 alt="LivQuiz Logo"
                 width={160}
                 height={40}
@@ -193,44 +212,46 @@ export default function Header() {
               >
                 {item.dropdown ? (
                   <DropdownMenu>
-                    <DropdownMenuTrigger className={`flex items-center text-gray-700 hover:text-[#6052CC] transition-colors duration-200 font-medium group relative outline-none ${isActivePath(item.href) ? 'text-[#6052CC]' : ''}`}>
-                      {item.name}
-                      <ChevronDown className="ml-1 h-4 w-4 group-hover:rotate-180 transition-transform duration-200" />
-                      <span className={`absolute -left-2 top-1/2 -translate-y-1/2 w-1 h-0 bg-[#6052CC] group-hover:h-6 transition-all duration-200 rounded-full ${isActivePath(item.href) ? 'h-6' : ''}`}></span>
+                    <DropdownMenuTrigger asChild>
+                      <button
+                        className={`flex items-center text-gray-700 hover:text-[#6052CC] transition-colors duration-200 font-medium group relative outline-none ${isActivePath(item.href) ? 'text-[#6052CC]' : ''}`}
+                      >
+                        {item.name}
+                        <ChevronDown className="ml-1 h-4 w-4 group-hover:rotate-180 transition-transform duration-200" />
+                        <span className={`absolute -left-2 top-1/2 -translate-y-1/2 w-1 h-0 bg-[#6052CC] group-hover:h-6 transition-all duration-200 rounded-full ${isActivePath(item.href) ? 'h-6' : ''}`}></span>
+                      </button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="w-80 p-2 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100">
                       <div className="space-y-1">
                         {item.dropdown.map((subItem, subIndex) => {
                           if (subItem.custom) {
                             return (
-                              <DropdownMenuItem key={subItem.name || subIndex} className="p-0">
-                                <DropdownMenu>
-                                  <DropdownMenuTrigger className="flex items-start space-x-3 p-3 rounded-xl hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-200 group w-full text-left">
-                                    <motion.div className="w-10 h-10 bg-gradient-to-r from-purple-100 to-pink-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                      <Globe className="w-5 h-5 text-[#6052CC]" />
-                                    </motion.div>
-                                    <div className="flex-1 min-w-0">
-                                      <div className="font-semibold text-gray-900 group-hover:text-[#6052CC] transition-colors text-sm">Language</div>
-                                      <div className="text-xs text-gray-500 group-hover:text-gray-600 transition-colors mt-1">Change site language</div>
-                                    </div>
-                                    <ChevronDown className="w-4 h-4 text-gray-400 group-hover:text-[#6052CC] transition-colors flex-shrink-0" />
-                                  </DropdownMenuTrigger>
-                                  <DropdownMenuContent className="w-40 p-2 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100">
-                                    <DropdownMenuItem onSelect={() => setSelectedLanguage('en')}>
-                                      <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">English</button>
+                              <DropdownMenuSub key={subItem.name}>
+                                <DropdownMenuSubTrigger className="flex items-start space-x-3 p-3 rounded-xl hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-200 group w-full text-left">
+                                  <motion.div className="w-10 h-10 bg-gradient-to-r from-purple-100 to-pink-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <Globe className="w-5 h-5 text-[#6052CC]" />
+                                  </motion.div>
+                                  <div className="flex-1 min-w-0">
+                                    <div className="font-semibold text-gray-900 group-hover:text-[#6052CC] transition-colors text-sm">{subItem.name}</div>
+                                    <div className="text-xs text-gray-500 group-hover:text-gray-600 transition-colors mt-1">{subItem.description}</div>
+                                  </div>
+                                </DropdownMenuSubTrigger>
+                                <DropdownMenuPortal>
+                                  <DropdownMenuSubContent className="w-40 p-2 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100">
+                                    <DropdownMenuItem onSelect={() => onSelectLocale('en')}>
+                                      <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50" disabled={isPending}>English</button>
                                     </DropdownMenuItem>
-                                    <DropdownMenuItem onSelect={() => setSelectedLanguage('es')}>
-                                      <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">French</button>
+                                    <DropdownMenuItem onSelect={() => onSelectLocale('fr')}>
+                                      <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50" disabled={isPending}>Français</button>
                                     </DropdownMenuItem>
-                                    <DropdownMenuItem onSelect={() => setSelectedLanguage('sp')}>
-                                      <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">Spanish</button>
+                                    <DropdownMenuItem onSelect={() => onSelectLocale('es')}>
+                                      <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50" disabled={isPending}>Español</button>
                                     </DropdownMenuItem>
-                                  </DropdownMenuContent>
-                                </DropdownMenu>
-                              </DropdownMenuItem>
+                                  </DropdownMenuSubContent>
+                                </DropdownMenuPortal>
+                              </DropdownMenuSub>
                             );
                           }
-                          // Default rendering for other items
                           return (
                             <DropdownMenuItem key={subItem.name || subIndex} className="p-0">
                               <button
@@ -256,13 +277,13 @@ export default function Header() {
                       </div>
 
                       {/* Bottom CTA - Only for Products and Use Cases */}
-                      {(item.name === "Products" || item.name === "Use Cases") && (
+                      {(item.name === t('nav.products.title') || item.name === t('nav.useCases.title')) && (
                         <div className="mt-4 pt-4 border-t border-gray-100">
                           <button
                             onClick={(e) => handleNavClick(item.href || "#", e)}
                             className="flex items-center justify-center w-full p-3 bg-gradient-to-r from-[#6052CC] to-purple-600 text-white rounded-xl hover:from-[#4A4093] hover:to-purple-700 transition-all duration-200 font-semibold text-sm border border-[#4A4093]"
                           >
-                            View All {item.name} →
+                            {t('nav.viewAll', { section: item.name })} →
                           </button>
                         </div>
                       )}
@@ -293,13 +314,13 @@ export default function Header() {
                 variant="ghost"
                 className="text-gray-700 hover:text-[#6052CC] hover:bg-purple-50 transition-all duration-200"
               >
-                Log In
+                {t('auth.login')}
               </Button>
             </Link>
             <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.2 }}>
               <Link href="https://livquiz.com/auth/sign-up">
                 <Button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-200 border border-purple-600">
-                  Sign Up →
+                {t('auth.signUp')} →
                 </Button>
               </Link>
             </motion.div>
@@ -359,8 +380,8 @@ export default function Header() {
                               className="pl-4 space-y-2 overflow-hidden"
                             >
                               {item.dropdown.map((subItem, subIndex) => {
-                                if (item.name === "Resources" && subItem.name === "Language") {
-                                  return null; // Exclude Language from Resources dropdown on mobile
+                                if (subItem.custom) {
+                                  return null; 
                                 }
                                 return (
                                   <button
@@ -373,16 +394,14 @@ export default function Header() {
                                   </button>
                                 );
                               })}
-                              {/* Bottom CTA - Only for Products and Use Cases for Mobile */}
-                              {(item.name === "Products" || item.name === "Use Cases") && (
-                             
-                                  <button
-                                    onClick={(e) => handleNavClick(item.href || "#", e)}
-                                    className="flex items-center justify-center py-2 px-8 bg-gradient-to-r from-[#6052CC] to-purple-600 text-white rounded-xl hover:from-[#4A4093] hover:to-purple-700 transition-all duration-200 font-semibold text-xs border border-[#4A4093]"
-                                  >
-                                    View All →
-                                  </button>
-                              
+                               {/* Bottom CTA - Only for Products and Use Cases for Mobile */}
+                               {(item.name === t('nav.products.title') || item.name === t('nav.useCases.title')) && (
+                                <button
+                                  onClick={(e) => handleNavClick(item.href || "#", e)}
+                                  className="flex items-center justify-center py-2 px-8 bg-gradient-to-r from-[#6052CC] to-purple-600 text-white rounded-xl hover:from-[#4A4093] hover:to-purple-700 transition-all duration-200 font-semibold text-xs border border-[#4A4093]"
+                                >
+                                  {t('nav.viewAllMobile')} →
+                                </button>
                               )}
                             </motion.div>
                           )}
@@ -399,35 +418,38 @@ export default function Header() {
                   </motion.div>
                 ))}
                 <div className="pt-4 border-t border-gray-100 space-y-3">
-                  <Link href="https://livquiz.com/auth/login">
+                  <Link href="https://livquiz.com/auth/login" className="w-full block">
                     <Button
-                      variant="ghost"
-                      className="text-gray-700 hover:text-[#6052CC] hover:bg-purple-50 transition-all duration-200"
+                      variant="outline"
+                      className="w-full"
                     >
-                      Log In
+                      {t('auth.login')}
                     </Button>
                   </Link>
-                  <Link href="https://livquiz.com/auth/sign-up">
+                  <Link href="https://livquiz.com/auth/sign-up" className="w-full block">
                     <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-200 border border-purple-600">
-                      Sign Up →
+                    {t('auth.signUp')} →
                     </Button>
                   </Link>
                   {/* Language Selector for Mobile */}
                   <DropdownMenu>
                     <DropdownMenuTrigger className="flex items-center space-x-2 text-gray-700 hover:text-[#6052CC] transition-colors duration-200 font-medium group outline-none w-full justify-center">
                       <Globe className="h-5 w-5" />
-                      <span>{selectedLanguage === "en" ? "English" : "French"}</span>
-                      <ChevronDown className="ml-1 h-4 w-4 group-hover:rotate-180 transition-transform duration-200" />
+                      <span>
+                        {locale === 'en' && 'English'}
+                        {locale === 'fr' && 'Français'}
+                        {locale === 'es' && 'Español'}
+                      </span>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="w-40 p-2 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100">
-                      <DropdownMenuItem onSelect={() => setSelectedLanguage("en")}> 
+                      <DropdownMenuItem onSelect={() => onSelectLocale("en")}> 
                         <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">English</button>
                       </DropdownMenuItem>
-                      <DropdownMenuItem onSelect={() => setSelectedLanguage("es")}> 
-                        <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">French</button>
+                      <DropdownMenuItem onSelect={() => onSelectLocale("fr")}> 
+                        <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">Français</button>
                       </DropdownMenuItem>
-                      <DropdownMenuItem onSelect={() => setSelectedLanguage("se")}> 
-                        <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">Spanish</button>
+                      <DropdownMenuItem onSelect={() => onSelectLocale("es")}> 
+                        <button className="w-full text-left p-2 rounded-lg hover:bg-gray-50">Español</button>
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>

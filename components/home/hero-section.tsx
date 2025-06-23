@@ -8,18 +8,20 @@ import { Input } from "@/components/ui/input"
 import { Search, Play, Users, Zap, Award, Globe } from "lucide-react"
 import Link from "next/link"
 import StickyButtonsFooter from "@/components/layout/StickyButtonsFooter"
+import { useTranslations } from 'next-intl';
 
 const stats = [
-  { icon: Users, value: "10k+", label: "Active users" },
-  { icon: Play, value: "1M+", label: "Quizzes and Flashcards" },
-  { icon: Globe, value: "50+", label: "Countries" },
-  { icon: Zap, value: "99.9%", label: "Uptime" },
+  { icon: Users, value: "10k+", labelKey: "heroStat0" },
+  { icon: Play, value: "1M+", labelKey: "heroStat1" },
+  { icon: Globe, value: "50+", labelKey: "heroStat2" },
+  { icon: Zap, value: "99.9%", labelKey: "heroStat3" },
 ]
 
 export default function HeroSection() {
   const [quizCode, setQuizCode] = useState("")
   const [showQuizInput, setShowQuizInput] = useState(false)
   const quizInputRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations('HomePage');
 
   useEffect(() => {
     if (showQuizInput && quizInputRef.current) {
@@ -43,11 +45,11 @@ export default function HeroSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6"
           >
-            Make Learning{" "}
+            {t('heroHeadline1')}{" "}
             <span className="bg-gradient-to-r from-purple-600 to-purple-600 bg-clip-text text-transparent">
-            Interactive &
+              {t('heroHeadline2')}
             </span>{" "}
-            Fun
+            {t('heroHeadline3')}
           </motion.h1>
 
           {/* Subtitle */}
@@ -57,7 +59,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
-            Create, host, and play live quizzes that engage students and teams in real-time. Perfect for classrooms, training, and group activities.
+            {t('heroSubtitle')}
           </motion.p>
 
           {/* Combined Buttons for Join Quizzes and Sign Up - Only visible on desktop */}
@@ -67,15 +69,14 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="hidden md:flex flex-col sm:flex-row gap-4 justify-center mb-16 items-center"
           >
-          
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="">
-              <Button
-                onClick={() => setShowQuizInput(true)}
-                className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg"
-              >
-                Join Quiz
-              </Button>
+              <Link href="">
+                <Button
+                  onClick={() => setShowQuizInput(true)}
+                  className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg"
+                >
+                  {t('heroJoinQuiz')}
+                </Button>
               </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -83,12 +84,11 @@ export default function HeroSection() {
                 <Button
                   className="px-8 py-4 bg-purple-100 hover:bg-purple-200 text-purple-700 font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg"
                 >
-                  Sign Up - It's free
+                  {t('heroSignUp')}
                 </Button>
               </Link>
             </motion.div>
           </motion.div>
-
 
           {/* Hero Image */}
           <motion.div
@@ -99,7 +99,7 @@ export default function HeroSection() {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="https://i.pinimg.com/736x/82/c4/cf/82c4cfc90ef3080c17382ba1d49caae0.jpg"
+                src="https://i.pinimg.com/736x/44/84/43/4484432de907cb5d6594b08bd2766078.jpg"
                 alt="LivQuiz Dashboard Preview"
                 width={900}
                 height={300}
@@ -117,7 +117,7 @@ export default function HeroSection() {
             >
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium">Live Session</span>
+                <span className="text-sm font-medium">{t('heroLiveSession')}</span>
               </div>
             </motion.div>
 
@@ -128,7 +128,7 @@ export default function HeroSection() {
             >
               <div className="flex items-center space-x-2">
                 <Users className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium">247 Players</span>
+                <span className="text-sm font-medium">{t('heroPlayers')}</span>
               </div>
             </motion.div>
           </motion.div>
@@ -148,7 +148,7 @@ export default function HeroSection() {
                     <IconComponent className="w-6 h-6 text-purple-600" />
                   </div>
                   <div className="text-2xl lg:text-3xl font-bold text-gray-900 mb-1">{stat.value}</div>
-                  <div className="text-gray-600">{stat.label}</div>
+                  <div className="text-gray-600">{t(stat.labelKey)}</div>
                 </motion.div>
               )
             })}

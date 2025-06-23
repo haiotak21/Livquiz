@@ -4,31 +4,47 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { useTranslations } from 'next-intl'
 
 const steps = [
   {
     number: "01",
-    title: "Create",
-    description: "Build quizzes with different question types, images, and custom settings.",
-    features: ["Multiple question types", "Flashcards & Study Sets", "Images & media support", "Custom scoring options"],
+    titleKey: "howItWorksStep1Title",
+    descriptionKey: "howItWorksStep1Description",
+    featuresKeys: [
+      "howItWorksStep1Feature0",
+      "howItWorksStep1Feature1",
+      "howItWorksStep1Feature2",
+      "howItWorksStep1Feature3",
+    ],
     image: "https://i.pinimg.com/736x/d5/c5/90/d5c590ee4a652580a6b819e89d7eecfd.jpg",
     bgColor: "bg-blue-50",
     borderColor: "border-purple-200",
   },
   {
     number: "02",
-    title: "Host or Share",
-    description: "Run live sessions or share quiz links for instant participation on any device.",
-    features: ["Live sessions", "Share quiz links", "Real-time participation", "No signup required for players"],
+    titleKey: "howItWorksStep2Title",
+    descriptionKey: "howItWorksStep2Description",
+    featuresKeys: [
+      "howItWorksStep2Feature0",
+      "howItWorksStep2Feature1",
+      "howItWorksStep2Feature2",
+      "howItWorksStep2Feature3",
+    ],
     image: "https://i.pinimg.com/736x/ba/9a/b7/ba9ab75e1b5528f94f0cd452a9961cfd.jpg",
     bgColor: "bg-pink-50",
     borderColor: "border-purple-200",
   },
   {
     number: "03",
-    title: "Play",
-    description: "Players join with a code and see their performance tracked in real-time.",
-    features: ["Real-time results", "Performance tracking", "Leaderboards", "Export results"],
+    titleKey: "howItWorksStep3Title",
+    descriptionKey: "howItWorksStep3Description",
+    featuresKeys: [
+      "howItWorksStep3Feature0",
+      "howItWorksStep3Feature1",
+      "howItWorksStep3Feature2",
+      "howItWorksStep3Feature3",
+    ],
     image: "https://i.pinimg.com/736x/4e/72/77/4e7277e2987bb14bbafab0e6a1eedae4.jpg",
     bgColor: "bg-yellow-50",
     borderColor: "border-purple-200",
@@ -36,6 +52,7 @@ const steps = [
 ]
 
 export default function HowItWorksSection() {
+  const t = useTranslations('HomePage');
   return (
     <section className="py-20 lg:py-32 bg-white" id="how-it-works">
       <div className="container max-w-7xl mx-auto px-4 lg:px-6">
@@ -48,12 +65,13 @@ export default function HowItWorksSection() {
           className="text-center mb-16 lg:mb-24"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            How does{" "}
+            {t('howItWorksTitle1')}{" "}
             <span className="bg-gradient-to-r from-purple-600 to-purple-600 bg-clip-text text-transparent">LivQuiz</span>{" "}
-            work?
+            {t('howItWorksTitle2')}
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-          LivQuiz makes it easy to create and run interactive quizzes. Perfect for education, training, and engagement.          </p>
+            {t('howItWorksSubtitle')}
+          </p>
         </motion.div>
 
         {/* Steps Grid */}
@@ -78,11 +96,10 @@ export default function HowItWorksSection() {
 
                 {/* Image Container - This is where the images should be displayed */}
                 <div className="mb-8 relative">
-                <div className="relative w-full h-48 bg-white rounded-2xl shadow-inner overflow-hidden">
-
+                  <div className="relative w-full h-48 bg-white rounded-2xl shadow-inner overflow-hidden">
                     <Image
                       src={step.image || "/placeholder.svg"}
-                      alt={`${step.title} illustration`}
+                      alt={`${t(step.titleKey)} illustration`}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
@@ -92,20 +109,18 @@ export default function HowItWorksSection() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-900">{step.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-lg mb-6">{step.description}</p>
+                <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-900">{t(step.titleKey)}</h3>
+                <p className="text-gray-600 leading-relaxed text-lg mb-6">{t(step.descriptionKey)}</p>
 
                 {/* Features List */}
                 <div className="grid grid-cols-1 gap-2 mb-6 text-left">
-                  {step.features.map((feature, featureIndex) => (
+                  {step.featuresKeys.map((featureKey, featureIndex) => (
                     <div key={featureIndex} className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-purple-600 rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700 text-sm">{feature}</span>
+                      <span className="text-gray-700 text-sm">{t(featureKey)}</span>
                     </div>
                   ))}
                 </div>
-
-                
               </div>
             </motion.div>
           ))}
@@ -122,7 +137,7 @@ export default function HowItWorksSection() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link href="https://livquiz.com/auth/sign-up">
               <Button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg">
-                Get Started Now →
+                {t('howItWorksCTA')}
               </Button>
             </Link>
           </motion.div>

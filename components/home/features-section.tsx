@@ -2,77 +2,76 @@
 
 import { motion } from "framer-motion"
 import { Users, Play, BarChart3, Shield, Clock, BookOpen, Zap, Globe, Award, Book, Sparkles, FileStack} from "lucide-react"
+import { useTranslations } from 'next-intl';
 
 const features = [
   {
     icon: Users,
-    title: "Live Multiplayer Quizzes",
-    description:
-      "Host real-time quizzes with unlimited players. Perfect for classrooms, training, or competitions.",
+    titleKey: "featureTitle0",
+    descriptionKey: "featureDesc0",
     color: "from-blue-500 to-blue-600",
     bgColor: "bg-blue-50",
   },
   {
     icon: Sparkles,
-    title: "AI-Powered Study Tools",
-    description: "Create smart flashcards and generate quizzes instantly with AI. Adapts to your needs for efficient, personalized learning.",
+    titleKey: "featureTitle1",
+    descriptionKey: "featureDesc1",
     color: "from-red-500 to-red-600",
     bgColor: "bg-pink-50",
   },
   {
     icon: FileStack,
-    title: "Smarter Flashcard Study",
-    description: "Master key concepts with dynamic flashcards designed for active recall and spaced repetition—anytime, anywhere.",
+    titleKey: "featureTitle2",
+    descriptionKey: "featureDesc2",
     color: "from-teal-500 to-teal-600",
     bgColor: "bg-teal-50",
   },
   {
     icon: Play,
-    title: "Instructor Control Panel",
-    description: "Manage live sessions with full control — reveal questions manually, pause anytime, skip questions, and monitor participation.",
+    titleKey: "featureTitle3",
+    descriptionKey: "featureDesc3",
     color: "from-purple-500 to-purple-600",
     bgColor: "bg-purple-50",
   },
   {
     icon: BarChart3,
-    title: "Advanced Analytics",
-    description:
-      "Track performance at every level — per player, question, quiz, or session. Export data for deeper insights.",
+    titleKey: "featureTitle4",
+    descriptionKey: "featureDesc4",
     color: "from-green-500 to-green-600",
     bgColor: "bg-green-50",
   },
   {
     icon: Shield,
-    title: "Anti-Cheating Technology",
-    description: "Ensure fair play with timed question reveal, navigation locks, anonymization, and role-based quiz creation.",
+    titleKey: "featureTitle5",
+    descriptionKey: "featureDesc5",
     color: "from-red-500 to-red-600",
     bgColor: "bg-red-50",
   },
   {
     icon: Clock,
-    title: "Resumable Progress",
-    description: "Solo or assigned quizzes auto-save progress — players can disconnect and return without losing their place.",
+    titleKey: "featureTitle6",
+    descriptionKey: "featureDesc6",
     color: "from-blue-500 to-blue-600",
     bgColor: "bg-blue-50",
   },
   {
     icon: BookOpen,
-    title: "All-in-One Learning Suite",
-    description: "Supports quizzes, flashcards, exams, and certifications — fully integrated, no third-party tools needed.",
+    titleKey: "featureTitle7",
+    descriptionKey: "featureDesc7",
     color: "from-indigo-500 to-indigo-600",
     bgColor: "bg-indigo-50",
   },
   {
     icon: Zap,
-    title: "Instant Feedback",
-    description: "Players get real-time scoring and response feedback. Hosts see submission rates and progress live.",
+    titleKey: "featureTitle8",
+    descriptionKey: "featureDesc8",
     color: "from-yellow-500 to-yellow-600",
     bgColor: "bg-yellow-50",
   },
- 
 ]
 
 export default function FeaturesSection() {
+  const t = useTranslations('HomePage');
   return (
     <section className="py-20 lg:py-32 bg-gray-50" id="features">
       <div className="container max-w-7xl mx-auto px-4 lg:px-6">
@@ -85,16 +84,16 @@ export default function FeaturesSection() {
           className="text-center mb-16 lg:mb-24"
         >
           <div className="inline-block bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            ✨ Powerful Features
+            {t('featuresHeader')}
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Everything You Need for{" "}
+            {t('featuresTitle1')}{" "}
             <span className="bg-gradient-to-r from-purple-600 to-purple-600 bg-clip-text text-transparent">
-              Interactive Learning
+              {t('featuresTitle2')}
             </span>
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          LivQuiz gives students, teachers, tutors, and professionals the tools to create, host, and engage in interactive learning — in real time and at scale.
+            {t('featuresSubtitle')}
           </p>
         </motion.div>
 
@@ -125,10 +124,10 @@ export default function FeaturesSection() {
 
                   {/* Content */}
                   <h3 className="text-xl lg:text-2xl font-bold mb-4 text-gray-900 group-hover:text-gray-800 transition-colors">
-                    {feature.title}
+                    {t(feature.titleKey)}
                   </h3>
                   <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
-                    {feature.description}
+                    {t(feature.descriptionKey)}
                   </p>
 
                   {/* Hover Effect */}

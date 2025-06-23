@@ -8,190 +8,197 @@ import { useState, useEffect } from "react"
 import { Check, X, Star, Users, Zap, Shield } from "lucide-react"
 import { handlePageLoadScroll } from "@/utils/navigation"
 import Link from "next/link"
+import { useTranslations } from "next-intl"
 
-const planTypes = ["Personal", "Business", "School"]
+const planTypes = [
+  "Personal",
+  "Business",
+  "School"
+]
 
 const basePlans = {
   Personal: [
     {
-      name: "Personal Basic",
+      nameKey: "personalBasicName",
       monthlyPrice: 5.99,
       annualPrice: 57.99,
-      period: "per month",
-      description: "Perfect for individual users getting started",
+      periodKey: "perMonth",
+      descriptionKey: "personalBasicDesc",
       popular: false,
       features: {
         included: [
-          "Up to 5 images per quiz/flashcard/study set",
-          "Up to 20 quizzes, 20 flashcard sets, 10 study sets per month",
-          "Up to 10 players per game",
-          "Can clone up to 5 resources per month",
-          "15 AI-generated items per month",
+          "personalBasicFeature0",
+          "personalBasicFeature1",
+          "personalBasicFeature2",
+          "personalBasicFeature3",
+          "personalBasicFeature4"
         ],
-        excluded: ["Video or audio attachments"],
+        excluded: ["personalBasicExcluded0"],
       },
-      cta: "start now",
+      ctaKey: "startNow",
       highlight: false,
     },
     {
-      name: "Active Learner",
+      nameKey: "activeLearnerName",
       monthlyPrice: 12.99,
-      annualPrice: 123.99, // 20% discount
-      period: "per month",
-      description: "Best for individual educators and trainers",
+      annualPrice: 123.99,
+      periodKey: "perMonth",
+      descriptionKey: "activeLearnerDesc",
       popular: true,
       features: {
         included: [
-          "Up to 15 images per quiz/flashcard/study set",
-          "Up to 2 audio files per resource",
-          "1 video (up to 2 minutes) per resource",
-          "Up to 50 quizzes, 50 flashcard sets, 30 study sets per month",
-          "Up to 25 players per game",
-          "Can clone up to 20 resources per month",
-          "40 AI-generated items per month",
+          "activeLearnerFeature0",
+          "activeLearnerFeature1",
+          "activeLearnerFeature2",
+          "activeLearnerFeature3",
+          "activeLearnerFeature4",
+          "activeLearnerFeature5",
+          "activeLearnerFeature6"
         ],
         excluded: [],
       },
-      cta: "Start 5-Day Free Trial",
+      ctaKey: "startFreeTrial",
       highlight: true,
     },
     {
-      name: "Active Learner Pro",
+      nameKey: "activeLearnerProName",
       monthlyPrice: 19.99,
-      annualPrice: 191.99, // 20% discount
-      period: "per month",
-      description: "Advanced features for power users",
+      annualPrice: 191.99,
+      periodKey: "perMonth",
+      descriptionKey: "activeLearnerProDesc",
       popular: false,
       features: {
         included: [
-          "Unlimited images per quiz/flashcard/study set",
-          "Up to 10 audio files per resource",
-          "Up to 5 videos (up to 5 minutes each) per resource",
-          "Unlimited resource creation",
-          "Up to 50 players per game",
-          "Unlimited cloning",
-          "Unlimited AI generation",
+          "activeLearnerProFeature0",
+          "activeLearnerProFeature1",
+          "activeLearnerProFeature2",
+          "activeLearnerProFeature3",
+          "activeLearnerProFeature4",
+          "activeLearnerProFeature5",
+          "activeLearnerProFeature6"
         ],
         excluded: [],
       },
-      cta: "Start now",
+      ctaKey: "startNow",
       highlight: false,
     },
   ],
   Business: [
     {
-      name: "Business Basic",
+      nameKey: "businessBasicName",
       monthlyPrice: 29.99,
-      annualPrice: 287.99, // 20% discount
-      period: "per month",
-      description: "Perfect for small to medium teams",
+      annualPrice: 287.99,
+      periodKey: "perMonth",
+      descriptionKey: "businessBasicDesc",
       popular: false,
       features: {
         included: [
-          "Up to 20 images per quiz/flashcard/study set",
-          "Up to 5 audio files per resource",
-          "Up to 3 videos (up to 5 minutes each) per resource",
-          "Up to 10 team members",
-          "Up to 30 participants in live training sessions",
-          "Up to 15 active training modules",
-          "Up to 3 collaborators per resource",
-          "75 AI-generated items per month",
+          "businessBasicFeature0",
+          "businessBasicFeature1",
+          "businessBasicFeature2",
+          "businessBasicFeature3",
+          "businessBasicFeature4",
+          "businessBasicFeature5",
+          "businessBasicFeature6",
+          "businessBasicFeature7"
         ],
-        excluded: ["Unlimited media resources", "Unlimited team members"],
+        excluded: ["businessBasicExcluded0", "businessBasicExcluded1"],
       },
-      cta: "Start now",
+      ctaKey: "startNow",
       highlight: false,
     },
     {
-      name: "Business Pro",
+      nameKey: "businessProName",
       monthlyPrice: 69.99,
-      annualPrice: 671.99, // 20% discount
-      period: "per month",
-      description: "For large organizations with advanced needs",
+      annualPrice: 671.99,
+      periodKey: "perMonth",
+      descriptionKey: "businessProDesc",
       popular: true,
       features: {
         included: [
-          "Unlimited images, audio, and video per resource",
-          "Extended video length (up to 20 minutes each)",
-          "Up to 50 team members",
-          "Up to 150 participants in live training sessions",
-          "Unlimited training modules",
-          "Up to 10 collaborators per resource",
-          "Unlimited AI generation",
+          "businessProFeature0",
+          "businessProFeature1",
+          "businessProFeature2",
+          "businessProFeature3",
+          "businessProFeature4",
+          "businessProFeature5",
+          "businessProFeature6"
         ],
-        excluded: ["Unlimited team members"],
+        excluded: ["businessProExcluded0"],
       },
-      cta: "Contact Sales",
+      ctaKey: "startNow",
       highlight: true,
     },
   ],
   School: [
     {
-      name: "School Basic",
+      nameKey: "schoolBasicName",
       monthlyPrice: 89.99,
-      annualPrice: 863.99, // 20% discount
-      period: "per month",
-      description: "Perfect for individual teachers and classrooms",
+      annualPrice: 863.99,
+      periodKey: "perMonth",
+      descriptionKey: "schoolBasicDesc",
       popular: false,
       features: {
         included: [
-          "Up to 20 images per quiz/flashcard/study set",
-          "Up to 5 audio files per resource",
-          "Up to 3 videos (up to 5 minutes each) per resource",
-          "Up to 30 students per classroom",
-          "1 classroom",
-          "Up to 50 participants in live instructor games",
-          "75 AI-generated items per month",
-          "Up to 75 tasks per month",
+          "schoolBasicFeature0",
+          "schoolBasicFeature1",
+          "schoolBasicFeature2",
+          "schoolBasicFeature3",
+          "schoolBasicFeature4",
+          "schoolBasicFeature5",
+          "schoolBasicFeature6",
+          "schoolBasicFeature7",
+          "schoolBasicFeature8"
         ],
-        excluded: ["Multiple classrooms", "Unlimited students"],
+        excluded: ["schoolBasicExcluded0", "schoolBasicExcluded1"],
       },
-      cta: "Start now",
+      ctaKey: "startNow",
       highlight: false,
     },
     {
-      name: "School Pro",
+      nameKey: "schoolProName",
       monthlyPrice: 149.99,
-      annualPrice: 1439.99, // 20% discount
-      period: "per month",
-      description: "Complete solution for entire schools",
+      annualPrice: 1439.99,
+      periodKey: "perMonth",
+      descriptionKey: "schoolProDesc",
       popular: true,
       features: {
         included: [
-          "Unlimited images per quiz/flashcard/study set",
-          "Up to 15 audio files per resource",
-          "Up to 10 videos (up to 10 minutes each) per resource",
-          "Up to 50 students per classroom",
-          "Up to 5 classrooms",
-          "Up to 100 participants in live instructor games",
-          "200 AI-generated items per month",
-          "Up to 250 tasks per month",
+          "schoolProFeature0",
+          "schoolProFeature1",
+          "schoolProFeature2",
+          "schoolProFeature3",
+          "schoolProFeature4",
+          "schoolProFeature5",
+          "schoolProFeature6",
+          "schoolProFeature7",
+          "schoolProFeature8"
         ],
-        excluded: ["Unlimited classrooms", "Unlimited students"],
+        excluded: ["schoolProExcluded0", "schoolProExcluded1"],
       },
-      cta: "Contact Sales",
+      ctaKey: "contactSales",
       highlight: true,
     },
     {
-      name: "Enterprise",
+      nameKey: "enterpriseName",
       monthlyPrice: 299.99,
-      annualPrice: 2879.99, // 20% discount
-      period: "per month",
-      description: "Enterprise solution for school districts",
+      annualPrice: 2879.99,
+      periodKey: "perMonth",
+      descriptionKey: "enterpriseDesc",
       popular: false,
       features: {
         included: [
-          "Unlimited images, audio, and video per resource",
-          "Extended video length (up to 30 minutes each)",
-          "Unlimited students per classroom",
-          "Unlimited classrooms",
-          "Up to 300 participants in live instructor games",
-          "Unlimited AI generation",
-          "Unlimited task assignment",
+          "enterpriseFeature0",
+          "enterpriseFeature1",
+          "enterpriseFeature2",
+          "enterpriseFeature3",
+          "enterpriseFeature4",
+          "enterpriseFeature5",
+          "enterpriseFeature6"
         ],
         excluded: [],
       },
-      cta: "Contact Sales",
+      ctaKey: "contactSales",
       highlight: false,
     },
   ],
@@ -199,75 +206,25 @@ const basePlans = {
 
 const faqs = [
   {
-    question: "Can I change my plan anytime?",
-    answer: "Yes, upgrade or downgrade anytime. Changes apply to your next bill.",
+    questionKey: "faqChangePlanQ",
+    answerKey: "faqChangePlanA",
   },
   {
-    question: "Is there a free trial?",
-    answer: "Yes,unlimited free trial but some futures are restricted.",
+    questionKey: "faqTrialQ",
+    answerKey: "faqTrialA",
   },
   {
-    question: "What payment methods do you accept?",
-    answer: "Credit cards, PayPal, and bank transfers for Enterprise.",
+    questionKey: "faqPaymentQ",
+    answerKey: "faqPaymentA",
   },
   {
-    question: "Can I cancel anytime?",
-    answer: "Yes, cancel anytime with no fees.",
-  },
-]
-
-const comparisonFeatures = [
-  {
-    name: "-----",
-    Personal: "-----",
-    Business: "-----",
-    School: "-----",
-  },
-  {
-    name: "-----",
-    Personal: "-----",
-    Business: "-----",
-    School: "-----",
-  },
-  {
-    name: "-----",
-    Personal: "-----",
-    Business: "-----",
-    School: "-----",
-  },
-  {
-    name: "-----",
-    Personal: "-----",
-    Business: "-----",
-    School: "-----",
-  },
-  {
-    name: "-----",
-    Personal: "-----",
-    Business: "✓",
-    School: "✓",
-  },
-  {
-    name: "-----",
-    Personal: "N/A",
-    Business: "✓",
-    School: "✓",
-  },
-  {
-    name: "-----",
-    Personal: "✗",
-    Business: "✓",
-    School: "✓",
-  },
-  {
-    name: "-----",
-    Personal: "✗",
-    Business: "✓",
-    School: "✓",
+    questionKey: "faqCancelQ",
+    answerKey: "faqCancelA",
   },
 ]
 
 export default function PricingPage() {
+  const t = useTranslations('PricingPage')
   const [selectedPlanType, setSelectedPlanType] = useState("Personal")
   const [billingPeriod, setBillingPeriod] = useState("monthly")
 
@@ -291,7 +248,7 @@ export default function PricingPage() {
       const monthlyCost = plan.monthlyPrice * 12
       const annualCost = plan.annualPrice
       const savings = Math.round(((monthlyCost - annualCost) / monthlyCost) * 100)
-      return `Save ${savings}%`
+      return t('savePercent', { percent: savings })
     }
     return null
   }
@@ -315,7 +272,7 @@ export default function PricingPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                Choose a Plan That Works for You
+                {t('heroTitle')}
               </motion.h1>
               <motion.p
                 className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12"
@@ -323,7 +280,7 @@ export default function PricingPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Whether you're teaching, training, or presenting – we've got you covered
+                {t('heroSubtitle')}
               </motion.p>
 
               {/* Plan Type Selector */}
@@ -347,7 +304,7 @@ export default function PricingPage() {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        {type}
+                        {t(`planType${type}`)}
                       </motion.button>
                     ))}
                   </div>
@@ -375,7 +332,7 @@ export default function PricingPage() {
                         billingPeriod === "monthly" ? "text-white" : "text-gray-600 hover:text-gray-900"
                       }`}
                     >
-                      Monthly
+                      {t('monthly')}
                     </button>
                     <button
                       onClick={() => setBillingPeriod("annual")}
@@ -383,13 +340,13 @@ export default function PricingPage() {
                         billingPeriod === "annual" ? "text-white" : "text-gray-600 hover:text-gray-900"
                       }`}
                     >
-                      <span>Annual</span>
+                      <span>{t('annual')}</span>
                       <span
                         className={`ml-2 text-xs px-2 py-1 rounded-full font-bold whitespace-nowrap ${
                           billingPeriod === "annual" ? "bg-white/20 text-white" : "bg-green-100 text-green-800"
                         }`}
                       >
-                        Save 20%
+                        {t('save20')}
                       </span>
                     </button>
                   </div>
@@ -425,29 +382,25 @@ export default function PricingPage() {
                     >
                       <span className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center space-x-1 border border-purple-600">
                         <Star className="w-4 h-4" />
-                        <span>Most Popular</span>
+                        <span>{t('mostPopular')}</span>
                       </span>
                     </motion.div>
                   )}
 
                   <div className="p-8">
                     <div className="text-center mb-8">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{t(plan.nameKey)}</h3>
                       <div className="mb-4">
                         <motion.span
                           className="text-4xl lg:text-5xl font-bold text-gray-900"
-                          key={`${plan.name}-${billingPeriod}`}
+                          key={`${plan.nameKey}-${billingPeriod}`}
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.3 }}
                         >
                           {getDisplayPrice(plan)}
                         </motion.span>
-                        {plan.period === "contact us" ? (
-                          <span className="text-gray-600 ml-2">/{plan.period}</span>
-                        ) : (
-                          <span className="text-gray-600 ml-2">/{billingPeriod === "monthly" ? "per month" : "annual"}</span>
-                        )}
+                        <span className="text-gray-600 ml-2">/{t(plan.periodKey)}</span>
                       </div>
                       {getSavings(plan) && (
                         <motion.div
@@ -458,11 +411,11 @@ export default function PricingPage() {
                           {getSavings(plan)}
                         </motion.div>
                       )}
-                      <p className="text-gray-600">{plan.description}</p>
+                      <p className="text-gray-600">{t(plan.descriptionKey)}</p>
                     </div>
 
                     <div className="space-y-4 mb-8">
-                      {plan.features.included.map((feature, featureIndex) => (
+                      {plan.features.included.map((featureKey: string, featureIndex: number) => (
                         <motion.div
                           key={featureIndex}
                           className="flex items-center space-x-3"
@@ -471,10 +424,10 @@ export default function PricingPage() {
                           transition={{ duration: 0.3, delay: featureIndex * 0.05 }}
                         >
                           <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                          <span className="text-gray-700">{feature}</span>
+                          <span className="text-gray-700">{t(featureKey)}</span>
                         </motion.div>
                       ))}
-                      {plan.features.excluded.map((feature, featureIndex) => (
+                      {plan.features.excluded.map((featureKey: string, featureIndex: number) => (
                         <motion.div
                           key={featureIndex}
                           className="flex items-center space-x-3 opacity-50"
@@ -483,7 +436,7 @@ export default function PricingPage() {
                           transition={{ duration: 0.3, delay: (plan.features.included.length + featureIndex) * 0.05 }}
                         >
                           <X className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                          <span className="text-gray-500">{feature}</span>
+                          <span className="text-gray-500">{t(featureKey)}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -497,7 +450,7 @@ export default function PricingPage() {
                               : "bg-gray-100 hover:bg-gray-200 text-gray-900 hover:bg-purple-600 hover:text-white border hover:border-purple-600"
                           }`}
                         >
-                          {plan.cta}
+                          {t(plan.ctaKey)}
                         </Button>
                       </Link>
                     </motion.div>
@@ -505,88 +458,6 @@ export default function PricingPage() {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Feature Comparison Section */}
-        <section className="py-16 lg:py-24 bg-gray-50 hidden">
-          <div className="container max-w-7xl mx-auto px-4 lg:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-6">Feature Comparison</h2>
-              <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                Compare features across all our plans to find the perfect fit for your needs
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-3xl shadow-xl overflow-hidden"
-            >
-              {/* Header */}
-              <div className="bg-gradient-to-r from-purple-600 to-purple-600 text-white p-6">
-                <h3 className="text-2xl font-bold text-center">Plan Feature Comparison</h3>
-              </div>
-
-              {/* Comparison Table */}
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
-                    <tr className="border-b border-gray-200">
-                      <th className="text-left p-6 font-semibold text-gray-900">Feature</th>
-                      <th className="text-center p-6 font-semibold text-gray-900">Personal</th>
-                      <th className="text-center p-6 font-semibold text-gray-900">Business</th>
-                      <th className="text-center p-6 font-semibold text-gray-900">School</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {comparisonFeatures.map((feature, index) => (
-                      <tr
-                        key={index}
-                        className={`border-b border-gray-100 ${index % 2 === 0 ? "bg-gray-50" : "bg-white"}`}
-                      >
-                        <td className="p-6 font-medium text-gray-900">{feature.name}</td>
-                        <td className="p-6 text-center">
-                          {feature.Personal === "✓" ? (
-                            <Check className="w-5 h-5 text-green-500 mx-auto" />
-                          ) : feature.Personal === "✗" ? (
-                            <X className="w-5 h-5 text-red-500 mx-auto" />
-                          ) : (
-                            <span className="text-gray-900">{feature.Personal}</span>
-                          )}
-                        </td>
-                        <td className="p-6 text-center">
-                          {feature.Business === "✓" ? (
-                            <Check className="w-5 h-5 text-green-500 mx-auto" />
-                          ) : feature.Business === "✗" ? (
-                            <X className="w-5 h-5 text-red-500 mx-auto" />
-                          ) : (
-                            <span className="text-gray-900">{feature.Business}</span>
-                          )}
-                        </td>
-                        <td className="p-6 text-center">
-                          {feature.School === "✓" ? (
-                            <Check className="w-5 h-5 text-green-500 mx-auto" />
-                          ) : feature.School === "✗" ? (
-                            <X className="w-5 h-5 text-red-500 mx-auto" />
-                          ) : (
-                            <span className="text-gray-900">{feature.School}</span>
-                          )}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </motion.div>
           </div>
         </section>
 
@@ -600,26 +471,26 @@ export default function PricingPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Why Choose LivQuiz?</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">{t('whyChooseTitle')}</h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Thousands of teachers and trainers already love it – here's why
+                {t('whyChooseSubtitle')}
               </p>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               <div className="flex flex-col items-center text-center">
                 <Users className="w-12 h-12 text-purple-600 mb-4" />
-                <h3 className="font-bold text-lg mb-2">👥 Trusted by 10K+ Users</h3>
-                <p>Teachers and trainers worldwide choose LivQuiz to make learning interactive</p>
+                <h3 className="font-bold text-lg mb-2">{t('trustedBy')}</h3>
+                <p>{t('trustedByDesc')}</p>
               </div>
               <div className="flex flex-col items-center text-center">
                 <Zap className="w-12 h-12 text-purple-600 mb-4" />
-                <h3 className="font-bold text-lg mb-2">⚡ Easy to Use</h3>
-                <p>Build professional quizzes in minutes, no tech skills needed</p>
+                <h3 className="font-bold text-lg mb-2">{t('easyToUse')}</h3>
+                <p>{t('easyToUseDesc')}</p>
               </div>
               <div className="flex flex-col items-center text-center">
                 <Shield className="w-12 h-12 text-purple-600 mb-4" />
-                <h3 className="font-bold text-lg mb-2">🛡 Secure & Reliable</h3>
-                <p>Enterprise security with 99.9% uptime – your data stays safe</p>
+                <h3 className="font-bold text-lg mb-2">{t('secureReliable')}</h3>
+                <p>{t('secureReliableDesc')}</p>
               </div>
             </div>
           </div>
@@ -635,9 +506,9 @@ export default function PricingPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">{t('faqTitle')}</h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-                Got questions? We've got quick answers. Still need help? Contact support.
+                {t('faqSubtitle')}
               </p>
             </motion.div>
 
@@ -652,8 +523,8 @@ export default function PricingPage() {
                   whileHover={{ scale: 1.02 }}
                   className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
                 >
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-600">{faq.answer}</p>
+                  <h3 className="text-lg font-bold text-gray-900 mb-3">{t(faq.questionKey)}</h3>
+                  <p className="text-gray-600">{t(faq.answerKey)}</p>
                 </motion.div>
               ))}
             </div>
@@ -669,15 +540,15 @@ export default function PricingPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">Ready to get started?</h2>
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">{t('ctaTitle')}</h2>
               <p className="text-lg lg:text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-                Join thousands of educators and trainers who trust LivQuiz. Start your free trial today.
+                {t('ctaSubtitle')}
               </p>
-              </motion.div>
-            </div>
-          </section>
-        </main>
-        <Footer />
-      </div>
-    )
-  }
+            </motion.div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  )
+} 

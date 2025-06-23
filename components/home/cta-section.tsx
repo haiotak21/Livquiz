@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
 import Link from "next/link"
+import { useTranslations } from 'next-intl';
 
 const floatAnimation = {
   y: [0, -20, 0],
@@ -16,6 +17,7 @@ const floatAnimation = {
 }
 
 export default function CTASection() {
+  const t = useTranslations('HomePage');
   return (
     <section className="py-20 lg:py-32 bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50">
       <div className="container max-w-7xl mx-auto px-4 lg:px-6">
@@ -41,19 +43,18 @@ export default function CTASection() {
               >
                 <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
                   <Sparkles className="w-4 h-4" />
-                  <span>Ready to Get Started?</span>
+                  <span>{t('ctaReady')}</span>
                 </div>
 
                 <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 max-w-full mx-auto break-words">
-                  Let&apos;s Build Your{" "}
+                  {t('ctaHeadline1')}{" "}
                   <span className="bg-gradient-to-r from-purple-600 to-purple-600 bg-clip-text text-transparent">
-                    First Quiz
+                    {t('ctaHeadline2')}
                   </span>
                 </h2>
 
                 <p className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-full mx-auto">
-                  Join millions who trust LivQuiz to make learning interactive and
-                  engaging.
+                  {t('ctaSubtitle')}
                 </p>
               </motion.div>
 
@@ -66,8 +67,8 @@ export default function CTASection() {
               >
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link href="https://livquiz.com/auth/sign-up">
-                    <Button className="px-8 py-4 w-[205.9px] h-[40px] bg-gradient-to-r from-purple-600 to-pruple-600 hover:from-purple-700 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg group">
-                      Start For Free
+                    <Button className="px-8 py-4 w-[280.9px] h-[40px] bg-gradient-to-r from-purple-600 to-pruple-600 hover:from-purple-700 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg group">
+                      {t('ctaStart')}
                       <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
@@ -77,9 +78,9 @@ export default function CTASection() {
                   <Link href="/contact">
                     <Button
                       variant="outline"
-                      className="px-8 py-4 w-[205.9px] h-[40px] border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-lg"
+                      className="px-8 py-4 w-[280.9px] h-[40px] border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-lg"
                     >
-                      Schedule Demo
+                      {t('ctaDemo')}
                     </Button>
                   </Link>
                 </motion.div>
@@ -95,15 +96,15 @@ export default function CTASection() {
               >
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span>Free to start</span>
+                  <span>{t('ctaFree')}</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span>No credit card required</span>
+                  <span>{t('ctaNoCard')}</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span>Setup in 2 minutes</span>
+                  <span>{t('ctaSetup')}</span>
                 </div>
               </motion.div>
             </div>
