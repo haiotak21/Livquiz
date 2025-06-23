@@ -161,7 +161,7 @@ export default function ContactPage() {
                       placeholder="Your message..."
                       className="w-full h-32 resize-none rounded-xl border-gray-200 focus:border-purple-500"
                       value={message}
-                      onChange={(e) => setMessage(e.target.value)}
+                      onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)}
                     />
                   </div>
 
