@@ -104,19 +104,19 @@ export default function DemoSection() {
             <h3 className="text-2xl lg:text-3xl font-bold mb-4">{t('demoReadyTitle')}</h3>
             <p className="text-gray-600 mb-8">{t('demoReadySubtitle')}</p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <div className="flex flex-col gap-4 justify-center w-full">
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full min-w-0">
                 <Link href="/contact">
-                  <Button className="px-8 py-4 w-[310.75px] h-[40px] bg-gradient-to-r from-purple-600 to-pruple-600 hover:from-purple-700 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg">
+                  <Button className="w-full py-4 bg-gradient-to-r from-purple-600 to-pruple-600 hover:from-purple-700 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-base sm:text-lg break-words min-w-0">
                     {t('demoTryDemoQuiz')}
                   </Button>
                 </Link>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full min-w-0">
                 <Link href="https://livquiz.com/auth/sign-up">
                   <Button
                     variant="outline"
-                    className="px-8 py-4 w-[310.75px] h-[40px] border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-lg"
+                    className="w-full py-4 border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-base sm:text-lg break-words min-w-0"
                   >
                     {t('demoJoinLiveSession')}
                   </Button>
@@ -126,12 +126,12 @@ export default function DemoSection() {
           </div>
 
           {/* Platform Icons */}
-          <div className="flex flex-wrap justify-center items-center gap-4 sm:space-x-8 pt-8 border-t border-gray-100">
-            <span className="text-gray-500 font-medium">{t('demoAvailableOn')}</span>
+          <div className="flex flex-row flex-nowrap justify-center items-center gap-x-1 pt-8 border-t border-gray-100 overflow-x-auto">
+            <span className="text-gray-500 font-medium text-sm">{t('demoAvailableOn')}</span>
             {platforms.map((platform, index) => {
               const Icon = platform.icon
               return (
-                <motion.div key={index} whileHover={{ scale: 1.1 }} className="flex items-center space-x-2 text-gray-600">
+                <motion.div key={index} whileHover={{ scale: 1.1 }} className="flex items-center space-x-1 text-gray-600">
                   <Icon className="w-5 h-5" />
                   <span className="text-sm font-medium">{t(platform.nameKey)}</span>
                 </motion.div>

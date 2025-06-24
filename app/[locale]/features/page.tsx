@@ -449,27 +449,6 @@ export default function FeaturesPage() {
             </motion.div>
           </div>
         </section>
-        {/* Feature Categories Navigation */}
-        <section className="bg-white border-b border-gray-200 sticky top-20 z-40">
-          <div className="container max-w-7xl mx-auto px-4 lg:px-6 max-lg:hidden">
-            <div className="flex flex-wrap justify-center gap-2 py-4">
-              {featureCategories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => scrollToSection(category.id)}
-                  className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                    activeSection === category.id
-                      ? "bg-purple-600 text-white shadow-lg"
-                      : "text-gray-600 hover:text-purple-600 hover:bg-purple-50"
-                  }`}
-                >
-                  <category.icon className="w-5 h-5" />
-                  <span>{t(category.nameKey)}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
         {/* Quiz Creation & Content Management */}
         <section id="creation" className="py-16 lg:py-24 bg-white">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">

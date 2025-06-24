@@ -279,7 +279,7 @@ export default function ProductsPage() {
           </div>
         </section>
         {/* Sticky Navigation */}
-        <div className="sticky top-20 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 py-3 overflow-x-auto max-lg:hidden">
+        <div className="sticky top-20 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 py-3 overflow-x-auto hidden md:block">
           <div className="container max-w-7xl mx-auto px-4 lg:px-6">
             <div className="flex flex-wrap justify-center gap-2 py-4">
               {[
