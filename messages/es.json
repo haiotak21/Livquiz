@@ -252,8 +252,27 @@
         "statLabel1": "Cuestionarios y tarjetas de memoria",
         "statLabel2": "Países",
         "statLabel3": "Disponibilidad",
+        "team": [
+            {
+                "name": "Eunice Gapie",
+                "role": "CEO",
+                "bio": "Liderando nuestra misión de hacer que el aprendizaje sea divertido y accesible para todos."
+            },
+            {
+                "name": "Clovis Simo",
+                "role": "CTO",
+                "bio": "Construyendo la tecnología que impulsa LivQuiz – desde el desarrollo hasta el diseño del sistema."
+            },
+            {
+                "name": "H/mariam Takele",
+                "role": "Líder de QA",
+                "bio": "Asegurando que LivQuiz funcione perfectamente en todos los dispositivos y pantallas."
+            }
+        ],
+        "teamSectionTitle": "Conoce a nuestro equipo",
+        "teamSectionSubtitle": "Las personas detrás de LivQuiz – educadores, ingenieros y diseñadores que mejoran el aprendizaje",
         "teamTitle": "Conoce a nuestro equipo",
-        "teamSubtitle": "Las personas detrás de LivQuiz: educadores, ingenieros y diseñadores que mejoran el aprendizaje"
+        "teamSubtitle": "Las personas detrás de LivQuiz – educadores, ingenieros y diseñadores que mejoran el aprendizaje"
     },
     "ProductsPage": {
         "heroTitle": "LivQuiz – El potente creador de cuestionarios en línea.",

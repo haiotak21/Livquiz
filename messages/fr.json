@@ -253,7 +253,26 @@
         "statLabel2": "Pays",
         "statLabel3": "Disponibilité",
         "teamTitle": "Rencontrez notre équipe",
-        "teamSubtitle": "Les personnes derrière LivQuiz – éducateurs, ingénieurs et designers qui améliorent l'apprentissage"
+        "teamSubtitle": "Les personnes derrière LivQuiz – éducateurs, ingénieurs et designers qui améliorent l'apprentissage",
+        "team": [
+            {
+                "name": "Eunice Gapie",
+                "role": "PDG",
+                "bio": "Dirige notre mission de rendre l'apprentissage amusant et accessible à tous."
+            },
+            {
+                "name": "Clovis Simo",
+                "role": "CTO",
+                "bio": "Développe la technologie qui propulse LivQuiz – du développement à la conception système."
+            },
+            {
+                "name": "H/mariam Takele",
+                "role": "Responsable QA",
+                "bio": "S'assure que LivQuiz fonctionne parfaitement sur tous les appareils et écrans."
+            }
+        ],
+        "teamSectionTitle": "Rencontrez notre équipe",
+        "teamSectionSubtitle": "Les personnes derrière LivQuiz – éducateurs, ingénieurs et designers qui améliorent l'apprentissage"
     },
     "ProductsPage": {
         "heroTitle": "LivQuiz – Le puissant créateur de quiz en ligne.",

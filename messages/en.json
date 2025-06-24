@@ -252,6 +252,25 @@
         "statLabel1": "Quizzes and Flashcard",
         "statLabel2": "Countries",
         "statLabel3": "Uptime",
+        "team": [
+            {
+                "name": "Eunice Gapie",
+                "role": "CEO",
+                "bio": "Leading our mission to make learning fun and accessible for everyone."
+            },
+            {
+                "name": "Clovis Simo",
+                "role": "CTO",
+                "bio": "Building the tech that powers LivQuiz – from development to system design."
+            },
+            {
+                "name": "H/mariam Takele",
+                "role": "QA Lead",
+                "bio": "Making sure LivQuiz works perfectly on every device and screen."
+            }
+        ],
+        "teamSectionTitle": "Meet Our Team",
+        "teamSectionSubtitle": "The people behind LivQuiz – educators, engineers, and designers making learning better",
         "teamTitle": "Meet Our Team",
         "teamSubtitle": "The people behind LivQuiz – educators, engineers, and designers making learning better"
     },
