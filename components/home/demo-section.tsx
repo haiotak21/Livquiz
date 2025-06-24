@@ -98,16 +98,16 @@ export default function DemoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-white rounded-3xl shadow-2xl p-8 lg:p-12 mb-16"
+          className="bg-white rounded-3xl shadow-2xl p-4 md:p-6 lg:p-8 mb-12 max-w-2xl mx-auto"
         >
           <div className="text-center mb-8">
             <h3 className="text-2xl lg:text-3xl font-bold mb-4">{t('demoReadyTitle')}</h3>
             <p className="text-gray-600 mb-8">{t('demoReadySubtitle')}</p>
 
-            <div className="flex flex-col gap-4 justify-center w-full">
+            <div className="flex flex-col gap-3 justify-center w-full">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full min-w-0">
                 <Link href="/contact">
-                  <Button className="w-full py-4 bg-gradient-to-r from-purple-600 to-pruple-600 hover:from-purple-700 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-base sm:text-lg break-words min-w-0">
+                  <Button className="w-full py-3 md:py-2 px-4 md:px-3 bg-gradient-to-r from-purple-600 to-pruple-600 hover:from-purple-700 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 text-base md:text-sm break-words min-w-0">
                     {t('demoTryDemoQuiz')}
                   </Button>
                 </Link>
@@ -116,7 +116,7 @@ export default function DemoSection() {
                 <Link href="https://livquiz.com/auth/sign-up">
                   <Button
                     variant="outline"
-                    className="w-full py-4 border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-base sm:text-lg break-words min-w-0"
+                    className="w-full py-3 md:py-2 px-4 md:px-3 border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white font-semibold rounded-2xl transition-all duration-200 text-base md:text-sm break-words min-w-0"
                   >
                     {t('demoJoinLiveSession')}
                   </Button>

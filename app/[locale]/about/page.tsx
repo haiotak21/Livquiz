@@ -19,7 +19,7 @@ const team = [
     bio: "Leading our mission to make learning fun and accessible for everyone.",
   },
   {
-    name: "Clovis Simo",
+    name: "Jenny Sims",
     role: "CTO",
     image: "/cloviss.jpg",
     bio: "Building the tech that powers LivQuiz – from development to system design.",
